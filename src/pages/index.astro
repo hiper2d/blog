@@ -1,12 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
 import PostListItem from '../components/PostListItem.astro';
+import ProfileHero from '../components/ProfileHero.astro';
 import { getPosts } from '../lib/posts';
 
 const posts = (await getPosts()).slice(0, 15);
 ---
 
 <Base>
+  <ProfileHero />
+
   <section class="intro">
     <p>
       Notes on AI, cybersecurity, and what happens when the two collide.
