@@ -1,0 +1,20 @@
+---
+import { formatDate, postUrl, type Post } from '../lib/posts';
+
+export interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<li class="post-list__item">
+  <a class="post-list__link" href={postUrl(post)}>
+    <h3 class="post-list__title">
+      {post.data.title}
+      {post.data.status === 'draft' && <span class="post-list__draft-badge">Draft</span>}
+    </h3>
+    <p class="post-list__date">{formatDate(post.data.date)}</p>
+    {post.data.summary && <p class="post-list__summary">{post.data.summary}</p>}
+  </a>
+</li>

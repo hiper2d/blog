@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import PostListItem from '../components/PostListItem.astro';
+import { getPosts } from '../lib/posts';
+
+const posts = await getPosts();
+
+// Group by year for the archive view.
+const byYear = new Map<number, typeof posts>();
+for (const p of posts) {
+  const y = p.data.date.getFullYear();
+  if (!byYear.has(y)) byYear.set(y, []);
+  byYear.get(y)!.push(p);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+---
+
+<Base title="Archive">
+  <h1>Archive</h1>
+  {posts.length === 0 ? (
+    <p>Nothing published yet.</p>
+  ) : (
+    years.map((y) => (
+      <section class="archive-year">
+        <h2>{y}</h2>
+        <ul class="post-list">
+          {byYear.get(y)!.map((post) => <PostListItem post={post} />)}
+        </ul>
+      </section>
+    ))
+  )}
+</Base>

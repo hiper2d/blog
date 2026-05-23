@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPosts, formatDate } from '../../lib/posts';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.data.slug ?? post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.summary}>
+  {post.data.canonical_url && (
+    <link slot="head" rel="canonical" href={post.data.canonical_url} />
+  )}
+  <article>
+    {post.data.header_image && (
+      <img class="post-header-image" src={post.data.header_image} alt="" />
+    )}
+    <h1>{post.data.title}</h1>
+    <p class="post-meta">
+      {formatDate(post.data.date)}
+      {post.data.status === 'draft' && <span class="post-status-draft">Draft</span>}
+    </p>
+    {post.data.summary && <p class="post-summary">{post.data.summary}</p>}
+    <div class="post-content">
+      <Content />
+    </div>
+    <footer class="post-footer">
+      <p class="post-footer__signature">— Alex</p>
+      {post.data.tags.length > 0 && (
+        <div>
+          <span style="color: var(--fg-faint);">Tags: </span>
+          <div class="post-footer__tags">
+            {post.data.tags.map((t) => (
+              <span class="post-list__mention">{t}</span>
+            ))}
+          </div>
+        </div>
+      )}
+    </footer>
+  </article>
+</Base>
+
+<style>
+  .post-header-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+    margin: 0 0 2rem;
+    border-radius: 4px;
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import PostListItem from '../components/PostListItem.astro';
+import { getPosts } from '../lib/posts';
+
+const posts = (await getPosts()).slice(0, 15);
+---
+
+<Base>
+  <section class="intro">
+    <p>
+      Notes on AI, cybersecurity, and what happens when the two collide.
+      Written by a working defender, edited with an AI pair partner.
+      <a href="/about/">More on what this is</a>.
+    </p>
+  </section>
+
+  <h2>Recent</h2>
+  {posts.length === 0 ? (
+    <p>Nothing published yet.</p>
+  ) : (
+    <ul class="post-list">
+      {posts.map((post) => <PostListItem post={post} />)}
+    </ul>
+  )}
+</Base>
