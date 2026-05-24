@@ -24,7 +24,7 @@ If you don't care about the security weeds, you can skip to [Three takeaways](#t
 
 <figure>
   <img src="/images/bsides-talk-slide.jpg" alt="A projector screen at BSides Tampa showing a slide titled 'Hallucinations, Hustlers and Human Hacking — AI's Role in Social Engineering' by Erich Kron, CISO Advisor at KnowBe4. A speaker stands at a podium on the right." />
-  <figcaption>A talk at the same conference: <em>AI's Role in Social Engineering</em>. The conversation is already happening.</figcaption>
+  <figcaption>A speaker is walking the audience through the AI horrors of modern social engineering — while we, in the same room, are solving the CTF with AI.</figcaption>
 </figure>
 
 ## Three bugs, one auth flow
