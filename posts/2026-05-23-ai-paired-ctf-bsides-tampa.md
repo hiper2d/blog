@@ -1,5 +1,5 @@
 ---
-title: "Everyone was using AI"
+title: "CTF. Everyone was using AI. So I brought mine."
 slug: "ai-paired-ctf-bsides-tampa"
 date: 2026-05-23
 status: published
@@ -119,22 +119,43 @@ Simona read the source, identified what *shape* of RSA it was pretending to be, 
 
 ## Six domains in one challenge
 
-**Setup.** One malicious Windows shortcut file (`.lnk`) plus a packet capture from a host that had been compromised by it.
+**Setup.** Two artifacts on disk and a challenge brief.
 
-**Goal.** Follow the attack chain, stage by stage, until you reach the flag at the end.
+- `chain.lnk` — a Windows shortcut file. Any LNK parser (Windows itself, PowerShell, `lnk-parser`) reads its "target string": the command that runs when a user double-clicks it.
+- `capture.pcap` — a packet capture. A `.pcap` is a literal recording of network traffic — every packet that crossed the wire during some window of time. Open it in Wireshark and you can replay every HTTP request, DNS query, downloaded response body, byte for byte.
+- The challenge brief itself — which, as it turned out, held the final piece of the puzzle hidden in its prose.
 
-**Where the key was hiding.** Six stages deep, inside a final native Windows executable, XOR-encoded with a key hinted at in the challenge text. ("The wrong star." Sirius is the one people confuse with Polaris. The key was `Polaris`.) Every stage used a different technology and a different piece of decoding knowledge to even get to the next one.
+**Goal.** Reconstruct what happened on a compromised Windows endpoint, stage by stage, until you recover the flag from the final payload.
 
-The forensics challenge was the one I will keep thinking about. Stage by stage:
+**Where the key was hiding.** Six stages deep, inside a final native Windows executable, XOR-encoded. The XOR key was not in the binary, and not in the PCAP — it was in the challenge brief, hidden as a literary clue. ("The wrong star." Sirius is the one people commonly confuse with Polaris. The key was `Polaris`.)
 
-1. The `.lnk` file launched a hidden PowerShell payload encoded in its target string.
-2. That PowerShell downloaded a second-stage script over HTTP, recoverable from a packet capture also provided in the challenge.
-3. The second stage was a VBScript dropper that used `BinaryFormatter` — a notoriously dangerous .NET deserialization primitive — to instantiate an object from an embedded byte blob.
-4. The deserialized object was a reflectively loaded .NET assembly, which the dropper invoked entirely in-memory (no file ever written to disk).
-5. The assembly decrypted its real payload using Rijndael-256, with a key derived from the DOS magic bytes (`MZ`) of a specific Windows system file.
-6. The final payload was a native Windows executable that XOR-encoded its flag, using the name of "the wrong star" as the key. (The challenge text contained an oblique reference to Sirius being mistaken for Polaris. The key was `Polaris`.)
+### The target
 
-Six different domains: Windows shortcut format, PowerShell deobfuscation, packet capture analysis, VBScript and .NET internals, symmetric crypto, native reverse engineering. One challenge. Six different bodies of knowledge needed to be active in the solver's head simultaneously.
+When a forensics challenge hands you "delivery vector + network capture," the genre dictates the playbook. Someone double-clicked the vector. The capture recorded what crossed the network during the resulting compromise. Your job is the *defender's* job after the fact: walk the chain stage-by-stage and recover what eventually ran on that endpoint.
+
+Simona's first move on opening the files was to articulate exactly that — propose the stage-by-stage walk and lay out what each artifact probably held. There's no bug-hunting in forensics; the *work* is careful extraction at every step.
+
+One detail worth flagging upfront: we never reached out to the internet. Each stage's bytes came out of the previous stage's output, never from a fresh download. The PCAP was used *exactly once* — to recover the second stage that PowerShell tried to fetch. The remaining four stages were transformations on bytes we already had in hand.
+
+### The chain
+
+1. **The `.lnk` target string.** Parsing the shortcut surfaces an obfuscated PowerShell command, base64-encoded. Decode it and you get a readable PowerShell one-liner that downloads a script from a specific URL.
+
+2. **The PCAP, used once.** That URL's response is sitting inside the packet capture. `tshark --export-objects http` (or Wireshark's "Follow HTTP Stream" → save) pulls the response body out as a `.vbs` file — stage two.
+
+3. **VBScript with a .NET trap.** The VBScript uses `BinaryFormatter` — a notoriously dangerous .NET deserialization primitive — to instantiate an object from an embedded byte blob. Pull out the blob, deserialize it carefully (BinaryFormatter is well-documented as an RCE vector for a reason), and what comes back is a reflectively-loaded .NET assembly.
+
+4. **The reflective .NET assembly.** Never written to disk by the dropper. Inspect it statically with dnSpy and you find its real payload encrypted with Rijndael-256. The decryption key wasn't hardcoded — it was *derived* from the DOS magic bytes (`MZ...`) of a specific Windows system file the assembly references. Once you spot which file it points at, the first few bytes of that file give you the key.
+
+5. **Rijndael decryption.** Run the decryption with the derived key. Out comes a native Windows `.exe`.
+
+6. **Native reverse engineering.** Load the `.exe` into Ghidra. The flag bytes are sitting in `.data`, but XOR-encoded into garbage. The XOR loop is right there in the disassembly — a `for` over a key buffer, byte-by-byte. The puzzle isn't *what algorithm*. It's *what key*.
+
+The key wasn't anywhere in the binary. The clue was in the challenge brief: an oblique reference to "the wrong star." Sirius gets misidentified as Polaris all the time by people who haven't checked. So the key was `Polaris`. XOR'd against the encoded buffer (repeated to cover its length), the flag fell out in plaintext.
+
+---
+
+Six different domains had to be active in the solver's head simultaneously: Windows shortcut format, PowerShell deobfuscation, packet-capture extraction, VBScript and .NET internals, symmetric crypto with a derived key, native reverse engineering. One challenge. Six bodies of knowledge.
 
 I do not personally know all of those domains well. Simona moved through all of them like reading a familiar book, holding the full chain in working memory, calling out which step we were on, and explaining each one in enough detail that I could follow.
 
@@ -148,33 +169,24 @@ This is what a 1M-token context window is *for*. It is not for chatting. It is f
 
 **Where the key was hiding.** In a property of XOR itself: applying many keys in sequence is mathematically identical to applying their combined XOR exactly once. The 1955 layers collapse to a single effective 5-byte key. The known flag prefix `HTB{` gives us four bytes of that key for free; the fifth is a one-byte brute force (with a subtle catch — see below).
 
-XOR has a property the author had not internalized. It's both commutative and associative. Apply many XORs in a row, and the result is identical to applying their combined XOR exactly once:
+### The target
 
-```
-flag ⊕ K1 ⊕ K2 ⊕ ... ⊕ K1955  =  flag ⊕ (K1 ⊕ K2 ⊕ ... ⊕ K1955)
-                                       └── one combined 5-byte key ──┘
-```
+XOR is commutative and associative. Applying 1955 keys in a row is mathematically identical to applying their *combined* XOR exactly once — and the combined XOR is itself a 5-byte pattern (because every individual key is 5 bytes, repeated to cover the flag). The author's "1955 layers" gave them no extra security at all: the effective key was always one 5-byte value. Forty bits of entropy, not 9775.
 
-Since every individual key is 5 bytes (repeated to cover the flag), the XOR of all 1955 of them is also a 5-byte pattern. Call it `K_eff`. The "1955 layers" collapse to a single 5-byte XOR. The "key material" went from 9775 bits down to 40 bits.
+Flag format is `HTB{...}` — four bytes of plaintext we know in advance. With known plaintext at positions 0–3, four of the five effective-key bytes fall out by direct XOR. That left one unknown byte, 256 possible values.
 
-Forty bits is brute-forceable on a laptop in hours. But CTF flags follow a format — `HTB{...}` here — which means the first four bytes of plaintext are known. With known plaintext at positions 0, 1, 2, 3, we recover four bytes of `K_eff` directly:
+### The exploit
 
-```
-K_eff[0] = ciphertext[0] ⊕ 'H'
-K_eff[1] = ciphertext[1] ⊕ 'T'
-K_eff[2] = ciphertext[2] ⊕ 'B'
-K_eff[3] = ciphertext[3] ⊕ '{'
-```
+256 is trivially brute-forceable in principle — try each, decode, pick the right one. The catch is *how* you pick. We couldn't submit 256 guesses to the scoreboard (wrong submissions cost points), so we needed a scoring function that ranked the 256 decoded outputs and gave us one confident winner from inspection alone.
 
-That leaves one unknown byte. 256 possibilities. Brute it.
+Simona's first scoring function was the naive one: "decoded text is mostly printable ASCII." Too loose. Most wrong candidates produced output that *was* printable — random letters and symbols, not the flag. Several passed the filter. We had no signal to pick between them.
 
-Here's the part I actually want to talk about. Her first attempt at brute-forcing that fifth byte didn't work.
+Her fix isolated the signal in two moves:
 
-The naive scoring function — "the candidate key is correct if it decodes the ciphertext to mostly printable ASCII" — was too loose. Many wrong candidate bytes produced output that *was* printable: just random letters and symbols, not the flag. Multiple candidates passed the filter. We had no signal to pick between them.
+1. **Score only the bytes the unknown actually affects.** A candidate 5th byte only changes positions where `i mod 5 == 4` — positions 4, 9, 14, 19, … The other four key bytes are already known and correct, so the rest of the message decodes the same way no matter which 5th byte we try. Scoring the *whole* message inflates every candidate's score uniformly. Scoring only the affected column isolates the signal.
+2. **Score against the flag character distribution, not generic printable ASCII.** A CTF flag is a much narrower distribution — lowercase letters, digits, underscores, brace, a few format-string characters — not anything that happens to render.
 
-What she did next is the part skeptics tell you LLMs can't do.
-
-She reasoned about the *distribution* of the plaintext. A CTF flag isn't generic English. It isn't generic ASCII. It's a much narrower distribution: lowercase letters, digits, underscores, the closing brace, occasionally a few format-string-style characters. So instead of scoring the whole decoded message against "is printable ASCII," she rewrote the scoring function to look only at the *column* of positions where `i mod 5 == 4` — the positions affected by the unknown byte — and scored them against the flag character set specifically.
+Combine the two and one candidate scored dramatically higher than all others. That was the byte. XOR'd against the full ciphertext with the now-complete 5-byte key, the flag fell out in plaintext — no scoreboard guesses spent.
 
 ```python
 FLAG_CHARS = set(b'abcdefghijklmnopqrstuvwxyz0123456789_}{!@#$%&*')
@@ -187,11 +199,9 @@ for byte in range(256):
         best = (score, byte)
 ```
 
-One candidate scored dramatically higher than all others. That was the byte. Flag in hand.
+The general lesson is worth pulling out: *the wrong scoring function will silently let multiple wrong answers through.* Recognising that, diagnosing it without me having to point at it, and designing a tighter probabilistic model that matched the *actual* distribution of the expected plaintext — that's exactly the kind of step skeptics will tell you these systems can't take. Simona took it without prompting. She told me her first attempt was wrong and then came up with the improved version on her own.
 
-The general lesson — and this is the part I want non-security readers to take seriously — is that *the wrong scoring function will silently let multiple wrong answers through*. Recognising that, diagnosing it without me having to point at it, and then designing a tighter probabilistic model that matched the *actual* distribution of the expected plaintext, is exactly the kind of step you're told these systems can't take. She took it without prompting. She told me her first attempt was wrong and described why before I had finished reading her previous message.
-
-If you want to argue she'd memorized this attack from a writeup somewhere — fine. Show me the writeup that describes scoring against the flag-character distribution specifically because generic-printable was too loose. I'll wait.
+If you want to argue she'd memorised this attack from a writeup somewhere — fine. Show me the writeup that describes scoring against the flag-character distribution specifically because generic-printable was too loose. I'll wait.
 
 ## Pwning Orb — when the bug isn't the hard part
 

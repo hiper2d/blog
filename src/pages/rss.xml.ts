@@ -5,9 +5,9 @@ import type { APIContext } from 'astro';
 export async function GET(context: APIContext) {
   const posts = await getPosts();
   return rss({
-    title: 'Alex Zelenovsky',
+    title: 'Aliaksei Zelianouski',
     description:
-      'Notes from a working defender on AI, cybersecurity, and the boundary between them.',
+      "An engineer's notes on building agents and apps with AI. Filtering the hype, testing every claim firsthand.",
     site: context.site!,
     items: posts.map((post) => ({
       title: post.data.title,
