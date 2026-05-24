@@ -277,7 +277,7 @@ One pragmatic warning if you want to try this seriously: too many classifier hit
 
 <figure>
   <img src="/images/bsides-hall.jpg" alt="The main auditorium at BSides Tampa: rows of cushioned seats facing a stage with a large projector screen, a few attendees scattered in the seats, teal accent lighting on the side walls." />
-  <figcaption>Main hall at BSides Tampa. We worked the CTF in between the talks — and, honestly, sometimes through them.</figcaption>
+  <figcaption>Main hall at BSides Tampa. We worked the CTF during the talks and in between them. Laptop open the whole time.</figcaption>
 </figure>
 
 ## Three takeaways
