@@ -15,10 +15,13 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Base title={post.data.title} description={post.data.summary}>
-  {post.data.canonical_url && (
-    <link slot="head" rel="canonical" href={post.data.canonical_url} />
-  )}
+<Base
+  title={post.data.title}
+  description={post.data.summary}
+  canonical={post.data.canonical_url}
+  ogType="article"
+  image={post.data.header_image}
+>
   <article>
     {post.data.header_image && (
       <img class="post-header-image" src={post.data.header_image} alt="" />

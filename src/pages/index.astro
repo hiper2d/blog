@@ -5,9 +5,32 @@ import ProfileHero from '../components/ProfileHero.astro';
 import { getPosts } from '../lib/posts';
 
 const posts = (await getPosts()).slice(0, 15);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Aliaksei Zelianouski',
+  givenName: 'Aliaksei',
+  familyName: 'Zelianouski',
+  alternateName: 'Alex',
+  url: new URL('/', Astro.site).href,
+  image: new URL('/images/profile.jpg', Astro.site).href,
+  jobTitle: 'Software Engineer',
+  description: "Engineer building agents and apps with AI for fun. Writes about what he tests firsthand.",
+  sameAs: [
+    'https://github.com/hiper2d',
+    'https://www.linkedin.com/in/aliakseizelianouski/',
+  ],
+};
 ---
 
 <Base>
+  <script
+    slot="head"
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(personSchema)}
+  />
   <ProfileHero />
 
   <section class="intro">

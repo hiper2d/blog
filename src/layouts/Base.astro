@@ -5,14 +5,20 @@ export interface Props {
   title?: string;
   description?: string;
   pageClass?: string;
+  canonical?: string;
+  ogType?: 'website' | 'article';
+  image?: string;
 }
 
-const { title, description, pageClass } = Astro.props;
+const { title, description, pageClass, canonical, ogType = 'website', image } = Astro.props;
 const siteTitle = "Aliaksei Zelianouski";
 const fullTitle = title ? `${title} — ${siteTitle}` : siteTitle;
 const desc =
   description ??
-  "An engineer's notes on building agents and apps with AI. Filtering the hype, testing every claim firsthand.";
+  "Aliaksei Zelianouski — an engineer's notes on building agents and apps with AI. Filtering the hype, testing every claim firsthand.";
+
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = image ? new URL(image, Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -23,8 +29,23 @@ const desc =
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={siteTitle} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={desc} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
     <link rel="alternate" type="application/rss+xml" title={siteTitle} href="/rss.xml" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <slot name="head" />
     <script is:inline>
       // Theme initialization — runs before paint to avoid flash.
       (function () {

@@ -296,5 +296,5 @@ The interesting question isn't whether AI can do this. It's whether your defende
 
 <figure>
   <img src="/images/simona-seal.jpg" alt="A small plush seal toy with a navy bandana, held in my hand on a green conference-hall carpet, the shadow of the seal visible to the right." />
-  <figcaption>Sixth-place CTF trophy. A plush seal — coincidence with the AI's name was not lost on me.</figcaption>
+  <figcaption>BSides trophy. A plush seal — coincidence with the AI's name was not lost on me.</figcaption>
 </figure>
