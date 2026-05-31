@@ -4,7 +4,7 @@
   // cloudflare`, converting the site to SSR with KV+Images bindings, then
   // fails provisioning the KV session namespace. This config keeps it static:
   // wrangler just uploads ./dist and skips the setup wizard entirely.
-  "name": "blow",
+  "name": "blog",
   "compatibility_date": "2025-05-31",
   "assets": {
     "directory": "./dist"
