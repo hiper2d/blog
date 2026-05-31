@@ -8,26 +8,22 @@ tags: [ai, pricing, api, llm]
 header_image: /images/ai-api-prices-april-may-2026.jpg
 ---
 
-The story everyone's running this month is **GitHub Copilot moving off flat $20/mo and onto usage-based billing**. The takes write themselves: the era of cheap subscription vibe-coding is ending, the AI companies were eating the loss to capture users, and now the bill is coming due.
+AI is getting more expensive, and everyone can feel it. It's not just GitHub Copilot swapping its flat $20/month subscription for usage-based billing, or Claude Code tightening its quotas and nudging Pro users toward the $100/month tier. Tokens themselves are getting more expensive.
 
-That story is real. But it's downstream. The number that actually moves is the **per-token API price** model providers charge — and that's where the more interesting move is happening.
+I run an [AI Werewolf side project](https://github.com/hiper2d/werewolf-ai-party-game) that uses the APIs of every major AI company, so I track how their pricing moves release over release. These spring updates are an interesting batch.
 
-## A weird vantage point
+Almost every model that shipped in **April and May 2026** is more expensive than the one it replaced.
 
-I run an [AI Werewolf party game](https://github.com/hiper2d/werewolf-ai-party-game) where AI bots pretend to be human players. Every couple of weeks I update the model roster — new versions ship, old ones deprecate, and I update the pricing config the cost calculator reads. So I've been watching the per-token rates from the inside, across eight providers, for over a year.
-
-Across **April and May 2026**, most new model releases raised prices — and several did so steeply. Not "a little." A lot. Here's the tally, all figures from each provider's first-party pricing page, per 1M tokens.
-
-| Model bump | Input ($/M) | Output ($/M) | Cache ($/M) | Avg ↑ (in/out) |
-|---|---|---|---|---|
-| OpenAI GPT-5 → GPT-5.5 | 2.50 → **5.00** | 15.00 → **30.00** | 0.25 → **2.50** | **+100%** |
-| DeepSeek Reasoner → V4 Pro | 0.28 → **0.44** | 1.68 → **0.87** | 0.028 → **0.0036** | **+3%** |
-| Mistral Medium 3.1 → 3.5 | 0.40 → **1.50** | 2.00 → **7.50** | — | **+275%** |
-| Google Gemini 3 Flash → 3.5 | 0.50 → **1.50** | 3.00 → **9.00** | 0.05 → **0.15** | **+200%** |
-| Moonshot Kimi K2.5 → K2.6 | 0.60 → **0.95** | 3.00 → **4.00** | 0.10 → **0.16** | **+46%** |
-| Z.AI GLM-5 → GLM-5.1 | 1.00 → **1.40** | 3.20 → **4.40** | 0.20 → **0.26** | **+39%** |
-| xAI Grok 4 → 4.3 | 3.00 → **1.25** | 15.00 → **2.50** | — → **0.20** | **−71%** |
-| Anthropic Claude 4.6 → 4.8 Opus | 5.00 → 5.00 | 25.00 → 25.00 | — | **0%** |
+| Model bump                        | Input ($/M) | Output ($/M) | Cache ($/M) | Avg ↑ (in/out) |
+|-----------------------------------|---|---|---|---|
+| OpenAI GPT-5.4 → GPT-5.5          | 2.50 → **5.00** | 15.00 → **30.00** | 0.25 → **0.50** | **+100%** |
+| DeepSeek Reasoner (V3.2) → V4 Pro | 0.28 → **0.44** | 1.68 → **0.87** | 0.028 → **0.0036** | **+3%** |
+| Mistral Medium 3.1 → 3.5          | 0.40 → **1.50** | 2.00 → **7.50** | — | **+275%** |
+| Google Gemini 3.1 Flash → 3.5     | 0.50 → **1.50** | 3.00 → **9.00** | 0.05 → **0.15** | **+200%** |
+| Moonshot Kimi K2.5 → K2.6         | 0.60 → **0.95** | 3.00 → **4.00** | 0.10 → **0.16** | **+46%** |
+| Z.AI GLM-5 → GLM-5.1              | 1.00 → **1.40** | 3.20 → **4.40** | 0.20 → **0.26** | **+39%** |
+| xAI Grok 4.2 → 4.3                | 3.00 → **1.25** | 15.00 → **2.50** | — → **0.20** | **−71%** |
+| Anthropic Claude Opus 4.7 → 4.8   | 5.00 → 5.00 | 25.00 → 25.00 | — | **0%** |
 
 Five raised, one cut, one held flat, and one (DeepSeek) net-flat after a late reversal. Median: **+42%**. Mean: **+74%**.
 
@@ -35,21 +31,21 @@ Five raised, one cut, one held flat, and one (DeepSeek) net-flat after a late re
 
 A rate-card delta doesn't tell you *why*. Here's the read on each.
 
-**OpenAI — the headline doubling.** GPT-5 launched at $2.50/$15 and held through the 5.x point releases; **5.5 doubled it to $5/$30**, twice the price of the 5.4 it replaced. OpenAI's pitch is that 5.5 is more token-efficient — it burns fewer tokens to finish a complex task, so the cost *per task* rises less than the rate card suggests. Maybe. That's a hard claim to check from the outside, and it conveniently isn't printed on the pricing page. The quieter move is worse: **the prompt-cache rate went up 10x**, $0.25 → $2.50/M. Caching is what makes long-context agentic apps economically viable — if you're hammering a 100K-token system prompt thousands of times a day, that one line item just jumped an order of magnitude. Nobody wrote that headline; it's buried two levels deep in the pricing page.
+**OpenAI — a great model, and double the price.** Credit first: GPT-5.5 is genuinely strong. It trades blows with Claude Opus and beats it on some benchmarks, and Codex now holds its own against Claude Code for agentic coding. The catch is the bill — **5.5 doubled the price of the 5.4 it replaced, to $5/$30**. OpenAI's defense is that 5.5 is more token-efficient in its reasoning. It might even be true. But it's unfalsifiable by design: OpenAI doesn't let you see the reasoning tokens you're paying for, only a short summary of them. You take the efficiency claim on faith and pay double up front.
 
-**Mistral — repricing ahead of a new family.** Medium 3.1 → 3.5 went $0.40/$2.00 → $1.50/$7.50, **+275%**. The tell is that their new *mid-tier* now costs more than the previous-gen Large flagship. That's not a normal version bump — it's a lineup being shifted upward, which usually means a next-gen family is staging behind it and the whole ladder is moving. Medium 3.5 is genuinely good and fast. It's also nearly 4x the price it was.
+**Google — "Flash" isn't the cheap tier anymore.** Gemini 3.1 Flash → 3.5 Flash tripled, $0.50/$3 → $1.50/$9 (**+200%**), and Google now pitches 3.5 Flash as the default workhorse while 3.5 Pro is still cooking. At $1.50/$9, "Flash" is creeping into the old Pro band (Gemini 3 Pro is $2/$12). The play is familiar: take the mid-size model, promote it to the default, and reprice it accordingly. The cheap-by-name tier quietly became a mid tier.
 
-**Google — "Flash" isn't the cheap tier anymore.** Gemini 3 Flash → 3.5 Flash tripled, $0.50/$3 → $1.50/$9 (**+200%**), and Google now pitches 3.5 Flash as the default workhorse while 3.5 Pro is still cooking. At $1.50/$9, "Flash" is creeping into the old Pro band (Gemini 3 Pro is $2/$12). Same playbook as Mistral: take the mid-size model, promote it to primary, and reprice it accordingly. The cheap-by-name tier quietly became a mid tier.
+**Mistral — repricing ahead of a new family.** Medium 3.1 → 3.5 went $0.40/$2.00 → $1.50/$7.50, **+275%** — the same promote-the-middle move as Google's Flash, taken further. The tell is that their new *mid-tier* now costs more than the previous-gen Large flagship. That's not a normal version bump — it's a lineup being shifted upward, which usually means a next-gen family is staging behind it and the whole ladder is moving. Medium 3.5 is genuinely good and fast. It's also nearly 4x the price it was.
 
-**Moonshot Kimi — the cheap SKU just disappeared.** Strange one. Kimi used to run a dirt-cheap, very slow K2 alongside a faster, pricier Turbo — the same cheap-but-check-which-SKU-you're-actually-running trap as DeepSeek. Now both are gone. What's left is a single K2.6 at $0.95/$4 (**+46%**), and it isn't cheap. They didn't just raise a price — they retired the budget option entirely.
+**Moonshot Kimi — the cheap option is gone.** Kimi retired its budget lineup and kept exactly one model, K2.6, at $0.95/$4 (**+46%**). It still undercuts most of the US mid-tier, but the gap is narrow now — nothing like the old chasm. The real loss is the *choice*: Kimi used to let you pick your tradeoff out loud — a dirt-cheap but slow model, or a faster Turbo build that cost more. That menu made the throughput tax explicit; you could see exactly what speed was costing you.
 
-**Z.AI GLM — a slow doubling.** This bump alone (5 → 5.1) is only **+39%**, $1.00/$3.20 → $1.40/$4.40. But zoom out: GLM-4.5 was $0.60/$2.20. Across 4.5 → 5 → 5.1 the input price ran **+133%** and output **+100%** — a clean doubling in under a year, one modest-looking step at a time. The per-release number hides the trend; the trend is everyone else's.
+**Z.AI GLM — a slow doubling.** This bump alone (5 → 5.1) is only **+39%**, $1.00/$3.20 → $1.40/$4.40. But zoom out: GLM-4.5 was $0.60/$2.20. Across 4.5 → 5 → 5.1 the input price ran **+133%** and output **+100%** — a clean doubling in under a year, one modest-looking step at a time.
 
-**DeepSeek — the only walk-back, and it has a catch.** This one needs the backstory. V4 Pro *launched* at $1.74/$3.48 — a 6x jump on input over the old Reasoner ($0.28/$1.68) — and for about two weeks the "cheap disruptor is dead" piece wrote itself (+314% on the launch-day headline). Then DeepSeek ran a 75%-off promo and, as of **May 31**, made it the permanent rate: **$0.435/$0.87**. That lands input modestly above the old Reasoner and output actually *below* it — the net move is a rounding error, which is why the table shows +3%. Genuinely the only provider that flinched this cycle. But the catch is the one V3 always had: it's *slow*. I was reluctant to wire DeepSeek V3 into the Werewolf game even at its rock-bottom rate, because a turn that takes 40 seconds to come back kills the round — and V4 Pro is still slow on the official API. The permanent discount reads less like generosity than like the going rate for a tier whose throughput can't command more. Cheap, again, with the speed asterisk.
+**DeepSeek — the only walk-back.** V4 Pro *launched* at $1.74/$3.48 — a 6x jump on input over the old V3.2 ($0.28/$1.68). Then DeepSeek ran a 75%-off promo and, as of **May 31**, made it the permanent rate: **$0.435/$0.87**. That lands input modestly above V3.2 and output actually *below* it. The only problem: it's still as slow as V3.2 was on the official API — slower, in my testing, than the new Kimi. Looks like that's how DeepSeek keeps the price low.
 
-**xAI Grok — the one cut, with a quiet subtraction.** Grok 4 → 4.3 dropped hard, $3/$15 → $1.25/$2.50 (**−71%**), the only real cut in the cycle. But while the flagship got cheaper, xAI **deprecated its genuinely cheap specialist models**: `grok-4-fast` ($0.20/$0.50) and `grok-code-fast-1` ($0.20/$1.50), both now folded into Grok 4.3. Those were ~6x cheaper on input than the main model — `grok-code-fast-1` in particular was a real subscription-free option for coding. So yes, the flagship cut is real; but the *floor* came up. The cheapest way to use Grok got more expensive even as the headline model got cheaper. Why kill a good cheap coding model right as coding tools go usage-based? Presumably because consolidating onto one model is cleaner — and because the cheap tier was leaving money on the table.
+**xAI Grok — the one cut, with a quiet subtraction.** Grok 4.2 → 4.3 dropped hard, $3/$15 → $1.25/$2.50 (**−71%**), the only real cut in the cycle. But while the flagship got cheaper, xAI **deprecated its genuinely cheap specialist models**: `grok-4-fast` ($0.20/$0.50) and `grok-code-fast-1` ($0.20/$1.50), both now folded into Grok 4.3. So yes, the flagship cut is real; but the *floor* came up.
 
-**Anthropic — flat, and at the top.** Three version bumps (4.6 → 4.7 → 4.8 Opus), zero price change, Opus pinned at $5/$25 (Sonnet $3/$15, Haiku $1/$5). In a cycle where everyone else moved, *not* moving is a position — either the margins are comfortable enough that they don't need to, or they're treating price stability as its own moat against switching costs. Probably both. When a buyer is choosing between Claude and GPT-5.5, "your costs won't double on us next quarter" is a real selling point. The flip side is the ceiling: Opus is already the most expensive mainstream flagship by a wide margin, and with labs signaling even pricier top-tier families ahead, it's fair to ask how long the best models stay affordable for individuals rather than only funded teams. On this trajectory, we may already be at that line.
+**Anthropic — flat, and at the top.** Three version bumps (4.6 → 4.7 → 4.8 Opus), zero price change — Opus pinned at $5/$25, Sonnet at $3/$15, Haiku at $1/$5. Opus has long been the priciest flagship on the board, and it's still right at the top; this cycle only GPT-5.5 edged past it, and only on output. The ceiling is about to rise anyway: Anthropic has announced **Mythos**, a model *class above* Opus — pricier still, and gated to security and enterprise partners before any wider release. We may be about to get the first frontier model that's effectively enterprise-only, priced past what anyone would put on a personal card.
 
 ## What the price actually buys
 
@@ -79,27 +75,23 @@ Two things line up with the pricing story, and one cuts against it.
 
 ## What's actually going on
 
-Two reads, both probably right.
+**Tokens.** Everything that's supposed to push the price of a token *down* is, in fact, pushing down. The architecture has improved on every axis — attention, training, quantization, serving. The field keeps getting better at squeezing more tokens out of the same GPU. Everyone's pouring money into datacenters and their own chips. And the per-token rate goes up anyway.
 
-**Read one: reasoning tokens are expensive.** Most of these new versions either turned reasoning on by default or expanded thinking budgets. Reasoning eats compute — for every visible output token, there can be 5–10x as many hidden thinking tokens behind the scenes. The provider pays for that GPU time whether the customer sees the tokens or not. Either the price goes up, or the margin disappears. They picked.
+**Reasoning.** Practically every model worth using is a reasoning model now — turns out chain-of-thought works after all. Which means more tokens burned per task, every task. And good luck auditing them: who's even counting reasoning tokens? OpenAI won't show you the ones you're paying for.
 
-**Read two: the customer-acquisition phase is over.** The cheap pricing of 2024 was about getting apps wired in. Now there's a captive base of products built on these APIs, with real switching costs — prompts tuned to a specific model, evals built around its quirks, agent harnesses designed for its tool-calling style. The spreadsheets came out, and the providers found out what their pricing power actually was. It turns out to be quite a lot.
+**Harness.** The agentic layer is tightening in lockstep. Copilot going usage-based is the loudest example — and the latest. Claude Code quietly became unusable on the $20/month plan months ago: half an hour of real work and you'd hit the ceiling. Comfortable coding now means Claude's $100/month Max tier. Codex just went the same way. And the assistants keep getting more agentic — more parallel sessions, more background workers, all of it chewing through your quota faster.
 
-## So the Copilot story is the wrong frame
-
-The discourse this month is treating Copilot's pricing change as the leading indicator. It's not. It's a lagging one.
-
-**The leading indicator is the per-token rate card, and it's been moving for two months.** Copilot's price change is the *first visible consequence* of the API-layer move, the moment it hit retail. Cursor, Windsurf, Replit, every agent-style coding tool — they're all looking at the same spreadsheet right now. The subscription-tier reshuffles will keep coming.
+It's getting pricier on all fronts.
 
 ## Time to refresh plan B
 
-The Moore's-Law-for-tokens story — every release cheaper than the last — was a 2023–2024 thing. Prices are going up now, and they're going to keep going up. The architectures keep improving, everyone's spinning up their own chips and datacenters, and the rate cards still climb anyway. That's not a contradiction: better models cost more to run, and the providers have worked out exactly how much pricing power they have. None of them have a reason to charge less any time soon.
+So while the AI companies work on locking you in and turning up the meter, what do you actually do about it?
 
-So the question for anyone building on these APIs isn't *why* prices are rising. It's what you do about it — keep paying the frontier tax, or get uncomfortable and start standing up a plan B on cheaper, weaker models?
+I'm not ready to give up Claude Code or Codex — but the feeling of being on the hook keeps getting more real. A year ago I was happy on $20/month; now I'm paying 5x that for the tier where the work doesn't stall halfway through a session.
 
-And plan B is more real than it was a year ago. Claude Code will happily talk to GLM instead of Claude. DeepSeek is reportedly building its own coding assistant. On the open-source side, Roo Code and opencode both exist and are improving fast. I've even run this locally — Qwen2.5-Coder on a 16GB Radeon RX 6950 XT, using a build fine-tuned on Cline's prompt/output format, and it actually worked. Not Opus-4.8 good. Not GPT-5.5 good. But good enough to keep in your back pocket for the day the metered models get too expensive to think with.
+So it's probably time to blow the dust off my old 16GB AMD card and give the latest Qwen, Gemma, and Mistral another run. Last time I tried, the heavily quantized local models were decent at conversation and pretty bad at function calling. I'm curious to see what has changed there.
 
-I'm not pretending the gap is closed — the flagships are clearly better. But the capability gap is narrowing while the price gap widens, and that's exactly when a plan B starts to pay for itself. The labs have zero incentive to stop raising prices. I'd like to think they still need the community of independent builders and enthusiasts; I suspect they're betting on enterprise instead. We'll see who's right.
+And for what it's worth, we still live in capitalism, like it or not. Companies are already complaining about their AI bills. So I'm not convinced the plan to keep ratcheting prices up finds as much love in the enterprise as the providers are betting on. The squeeze works right up until the people being squeezed start doing the math.
 
 <figure>
   <img src="/images/ai-api-prices-bill-coming-due.jpg" alt="A long thermal-printer receipt unspooling off a dark desk lit by monitor glow, coiling into a pile on the floor — an impossibly long itemized bill in a dim, empty office." />
