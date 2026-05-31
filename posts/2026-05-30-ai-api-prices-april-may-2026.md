@@ -91,9 +91,15 @@ The discourse this month is treating Copilot's pricing change as the leading ind
 
 **The leading indicator is the per-token rate card, and it's been moving for two months.** Copilot's price change is the *first visible consequence* of the API-layer move, the moment it hit retail. Cursor, Windsurf, Replit, every agent-style coding tool — they're all looking at the same spreadsheet right now. The subscription-tier reshuffles will keep coming.
 
-If you maintain an app that depends on these APIs and you've been assuming token costs trend down — recheck your unit economics. They don't. The Moore's Law for tokens narrative, the one that said every release would be cheaper than the last, was a 2023–2024 phenomenon. In April–May 2026, **five of eight providers spent their version-bump budget raising prices, one walked a 6x hike back to flat under pressure, one held the line, and one cut.**
+## Time to refresh plan B
 
-By the time it shows up as a Copilot price hike, it's already been baked in for two months.
+The Moore's-Law-for-tokens story — every release cheaper than the last — was a 2023–2024 thing. Prices are going up now, and they're going to keep going up. The architectures keep improving, everyone's spinning up their own chips and datacenters, and the rate cards still climb anyway. That's not a contradiction: better models cost more to run, and the providers have worked out exactly how much pricing power they have. None of them have a reason to charge less any time soon.
+
+So the question for anyone building on these APIs isn't *why* prices are rising. It's what you do about it — keep paying the frontier tax, or get uncomfortable and start standing up a plan B on cheaper, weaker models?
+
+And plan B is more real than it was a year ago. Claude Code will happily talk to GLM instead of Claude. DeepSeek is reportedly building its own coding assistant. On the open-source side, Roo Code and opencode both exist and are improving fast. I've even run this locally — Qwen2.5-Coder on a 16GB Radeon RX 6950 XT, using a build fine-tuned on Cline's prompt/output format, and it actually worked. Not Opus-4.8 good. Not GPT-5.5 good. But good enough to keep in your back pocket for the day the metered models get too expensive to think with.
+
+I'm not pretending the gap is closed — the flagships are clearly better. But the capability gap is narrowing while the price gap widens, and that's exactly when a plan B starts to pay for itself. The labs have zero incentive to stop raising prices. I'd like to think they still need the community of independent builders and enthusiasts; I suspect they're betting on enterprise instead. We'll see who's right.
 
 <figure>
   <img src="/images/ai-api-prices-bill-coming-due.jpg" alt="A long thermal-printer receipt unspooling off a dark desk lit by monitor glow, coiling into a pile on the floor — an impossibly long itemized bill in a dim, empty office." />
