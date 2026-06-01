@@ -14,16 +14,16 @@ I run an [AI Werewolf side project](https://github.com/hiper2d/werewolf-ai-party
 
 Almost every model that shipped in **April and May 2026** is more expensive than the one it replaced.
 
-| Model bump                        | Input ($/M) | Output ($/M) | Cache ($/M) | Avg ↑ (in/out) |
-|-----------------------------------|---|---|---|---|
-| OpenAI GPT-5.4 → GPT-5.5          | 2.50 → **5.00** | 15.00 → **30.00** | 0.25 → **0.50** | **+100%** |
-| DeepSeek Reasoner (V3.2) → V4 Pro | 0.28 → **0.44** | 1.68 → **0.87** | 0.028 → **0.0036** | **+3%** |
-| Mistral Medium 3.1 → 3.5          | 0.40 → **1.50** | 2.00 → **7.50** | — | **+275%** |
-| Google Gemini 3.1 Flash → 3.5     | 0.50 → **1.50** | 3.00 → **9.00** | 0.05 → **0.15** | **+200%** |
-| Moonshot Kimi K2.5 → K2.6         | 0.60 → **0.95** | 3.00 → **4.00** | 0.10 → **0.16** | **+46%** |
-| Z.AI GLM-5 → GLM-5.1              | 1.00 → **1.40** | 3.20 → **4.40** | 0.20 → **0.26** | **+39%** |
-| xAI Grok 4.2 → 4.3                | 3.00 → **1.25** | 15.00 → **2.50** | — → **0.20** | **−71%** |
-| Anthropic Claude Opus 4.7 → 4.8   | 5.00 → 5.00 | 25.00 → 25.00 | — | **0%** |
+| Model bump | Pricing ($/M, old → new) | Avg ↑ (in/out) |
+|---|---|---|
+| OpenAI GPT-5.4 → GPT-5.5          | In 2.50 → **5.00**<br>Out 15.00 → **30.00**<br>Cache 0.25 → **0.50** | **+100%** |
+| DeepSeek Reasoner (V3.2) → V4 Pro | In 0.28 → **0.44**<br>Out 1.68 → **0.87**<br>Cache 0.028 → **0.0036** | **+3%** |
+| Mistral Medium 3.1 → 3.5          | In 0.40 → **1.50**<br>Out 2.00 → **7.50**<br>Cache — | **+275%** |
+| Google Gemini 3.1 Flash → 3.5     | In 0.50 → **1.50**<br>Out 3.00 → **9.00**<br>Cache 0.05 → **0.15** | **+200%** |
+| Moonshot Kimi K2.5 → K2.6         | In 0.60 → **0.95**<br>Out 3.00 → **4.00**<br>Cache 0.10 → **0.16** | **+46%** |
+| Z.AI GLM-5 → GLM-5.1              | In 1.00 → **1.40**<br>Out 3.20 → **4.40**<br>Cache 0.20 → **0.26** | **+39%** |
+| xAI Grok 4.2 → 4.3                | In 3.00 → **1.25**<br>Out 15.00 → **2.50**<br>Cache — → **0.20** | **−71%** |
+| Anthropic Claude Opus 4.7 → 4.8   | In 5.00 → 5.00<br>Out 25.00 → 25.00<br>Cache — | **0%** |
 
 Five raised, one cut, one held flat, and one (DeepSeek) net-flat after a late reversal. Median: **+42%**. Mean: **+74%**.
 
