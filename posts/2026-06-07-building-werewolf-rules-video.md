@@ -3,7 +3,7 @@ title: "My video generation pipeline"
 slug: "building-werewolf-rules-video"
 date: 2026-06-07
 status: published
-summary: "Two minutes of cinematic AI video, built across two months with my AI sidekick. The receipts: forty-five dollars in API calls, a git reflog recovery in one session that quietly wiped half the untracked video assets in another, a salvage operation that pulled images back from /tmp and expiring fal.media URLs, and a pixel-perfect cut between a static image and a generated video that took an outpaint-and-paste trick to land. Here's the whole arc."
+summary: "Two minutes of cinematic AI video, built across two months with my AI sidekick, all through a casual conversation. Every image, voice, and frame generated — and the tools built themselves along the way."
 tags: [ai, video-production, claude-code, simona]
 ---
 
