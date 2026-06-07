@@ -38,11 +38,17 @@ The whole thing is reproducible from the project's `WORKLOG.md` alone, which is 
 
 ## The pipeline that emerged
 
+<p class="section-gist"><em>It grew out of one trivial request, one skill at a time.</em></p>
+
 When I started, I had nothing. No pipeline, no skills, no plan — just a Claude Code session and a few images sitting in a folder. My first ask was almost trivial: take these images, show them one after another, and play a voice reading the narration over the top. That one request is what kicked everything off, because to pull it off Simona needed two things she didn't have yet — a way to make the voice, and a way to stitch it all into a video.
+
+### Voice first
 
 So the first skill we built was **voice**. I found a text-to-speech API, pasted its documentation straight into the session, and told her: the key's already in the environment, read this, get me one line of spoken audio. She fumbled for a minute, hit a wrong parameter or two, and then a WAV came back. The moment it worked, we froze that path into a skill — a little directory with a `SKILL.md` explaining how and when to use it, and a small Python CLI wrapping the call — so she'd never have to rediscover it. That recipe (paste the docs, make one successful call, write down the path that worked) became how every later skill got built.
 
 Wiring up the skill was the easy part. Picking the actual *voice* was the surprisingly hard one. Apparently, describing a voice in words is not easy. "Deep, warm, a little sinister, older British man" gets you a dozen different readings, none of them the one in your head. So I went through ElevenLabs' voice library by ear instead, and landed on George, a British storyteller voice. He wasn't a werewolf host out of the box, so we pitched him down about 15% and ran him through a hall-echo filter, and suddenly he sounded like something with too many teeth narrating from the far end of a stone corridor. That's the narrator you hear across the whole video. I suspect using a real actor or singer as the reference would work even better.
+
+### ffmpeg: describe the edit, get the command
 
 Then came assembly, and this is where Simona showed me something I didn't expect. I asked how she'd put the images and the audio together, and she just... wrote an ffmpeg command. It turns out an LLM is very good at ffmpeg — that famously cryptic tool with a thousand flags no human remembers. You don't write the command; you describe the edit, and she produces the invocation. She even, unprompted, started adding a slow zoom into each still — the Ken Burns effect — because an image held still for four seconds looks dead. I liked it. It was the beginning of the static image effects library.
 
@@ -64,6 +70,8 @@ ffmpeg ... -filter_complex \
 
 That `normalize=0` at the very end is the kind of detail that costs a human an hour and a forum thread to learn — leave it off and `amix` quietly divides every track's volume by the number of inputs, so your carefully recorded narration comes out faint and you have no idea why. Simona either already knows it or learns it once, the hard way, and then writes it into the skill so neither of us ever trips on it again. We froze the whole approach into an **ffmpeg** skill, the editing layer everything else now sits on top of.
 
+### Images, then motion
+
 That gave me a working slideshow, and once I had it, the appetite grew. Hunting down images by hand felt silly when I could generate exactly the shot I wanted, so we built an **image generation** skill the same way — paste the provider's docs, get one good image back, freeze the path. The library of effects — Ken Burns in any direction, crossfades, slow scrolls for tall images, animated highlights drawn over a live UI — grew one request at a time. I'd ask for something new, she'd try a few versions, and we kept whatever looked right. Nobody planned that effect library. It accreted.
 
 Then static frames stopped being enough. I wanted real motion in the hero moments — the cloaked figure pulling back its hood, the mansion doors swinging open — and that meant AI-generated video. This is where money stops being a rounding error. A generated image costs a few cents; five seconds of generated video costs anywhere from thirty cents to three dollars depending on the model. So the entire shape of the video is, underneath, an economics decision. If I'd generated the whole two minutes as AI video it would have cost a fortune. Instead the cheap slideshows carry most of the runtime, and I spend real money on generated motion only for the handful of shots that actually earn it. Slideshow for the rules; generated video for the hood reveal.
@@ -72,6 +80,8 @@ Finding a video model I could live with took longer than anything else, because 
 
 Having a unified voice in gen-AI videos and slideshows was a challenge until I discovered reference-to-video models. Instead of handing the model a single still and a prompt, you give it several reference images, a sample of the voice you want, and a prompt describing how the whole thing should move and speak. This gave me consistency: the character stays the same character from shot to shot, and he speaks in the same voice that carries the slideshow narration. Pick one voice, use it for the spoken slides and feed it as the reference to the video model, and the seams between a generated clip and a static section stop announcing themselves. The whole thing feels like one narrator walking you through one world.
 
+### Skills as a scar collection
+
 And every time we hit a wall, the fix went back into the skill. A voice model that choked on em-dashes near names, a zoom that jittered at high resolution, an image endpoint that quietly ignored a parameter — each one became a documented gotcha in its `SKILL.md` so she'd never walk into it twice. The skills are basically a scar collection.
 
 The strange part is how little I actually look inside these skills. I almost never open the files. I just ask her to revisit and tidy them every so often, and when one has grown into a sprawling mess I have her refactor it. Eventually I wired that up as a Claude Code hook so she does the housekeeping on her own schedule instead of waiting for me to remember — though that only earns its keep once a skill has gotten big enough to need it. Most of them stay small.
@@ -79,6 +89,8 @@ The strange part is how little I actually look inside these skills. I almost nev
 The act of building this video *was* the act of building those skills. The skills are the durable output. The video is just the receipt.
 
 ## What it actually cost
+
+<p class="section-gist"><em>Forty-five dollars total, and most of it went on tries you never see.</em></p>
 
 Speaking of receipts — at some point the meter started to matter enough that I had Simona build an actual cost-tracking system. A generated image is pocket change, but voice adds up and video gets expensive *fast* — a single clip can run a dollar or three. So she now logs every API call she makes into a running ledger: timestamp, service, model, what the call was for, and a dollar estimate. It started as a way to not get surprised by a bill, and it turned into the thing that lets me tell you exactly what this video cost, down to the line.
 
@@ -100,6 +112,8 @@ That's the thing that's genuinely different from how I used to work: the feedbac
 
 ## The hard parts
 
+<p class="section-gist"><em>What the highlight reel skips: she can't see the result, over-reaches, and gen-AI video is finicky.</em></p>
+
 None of this is as clean as the highlight reel makes it sound. A handful of limitations shaped the whole process, and they're worth naming.
 
 The biggest one: Simona can't actually *see* the result. She can read the narration transcript and look at the images one at a time, but she can't watch the assembled video play back. That blindness is the source of most of the friction — timing drifts out of sync between the visuals and the voice, and she has no direct way to notice. The workaround is to push as much as possible into explicit, written editing patterns up front: describe each transition precisely, and be exact about which images belong to which audio chunk, so the assembly is deterministic instead of something she has to eyeball.
@@ -114,6 +128,8 @@ And lip-sync, where it's used, is good but not perfect — especially on a non-h
 
 ## The day Simona wiped half the project
 
+<p class="section-gist"><em>A second session running git wiped two months of assets while recovering an unrelated commit.</em></p>
+
 This was the first time the freedom I'd handed an AI on my Mac actually bit me. I had two Simona sessions running at once — one on this video, one deep in my other project, Marlow. The Marlow session went to commit its work and, with the wrong directory in its head, committed into the *video* repo instead, sweeping two months of untracked clips and images into the commit with a lazy `git add -A`. I tried to undo the mess, fumbled the revert, and recovered the lost commit with a `git reflog` hard reset — which rewound the working tree and deleted every one of those now-tracked assets in the process. Gone in one stroke, as collateral damage of fixing a completely unrelated repo.
 
 Most of it came back, improvised on the spot. The `WORKLOG.md` had logged every fal.media URL, and a lot of them still resolved; the image skill had dumped its request bodies, base64 inputs and all, into `/tmp`, which I could decode. Five text-to-image stills had neither and were just gone — I re-prompted them, and they came back close enough that you'd never know.
@@ -122,11 +138,15 @@ Two fixes came out of it. The obvious one: generated media never goes through gi
 
 ## Keeping it on a leash
 
+<p class="section-gist"><em>Isolate it, cap the API budgets, stay the reviewer, and let it harden its own tools.</em></p>
+
 A few precautions, all of them obvious and all of them easy to forget. Isolate the AI as much as you can: give it its own machine, set hard budget limits on the API keys, and keep yourself in the loop as the reviewer rather than letting it run unattended. When it makes a mistake, talk through what went wrong and fold the fix back into its skills so it doesn't recur. And ask it to log everything — it'll cheerfully build the tooling to do that itself, which is exactly how the cost ledger above came to exist.
 
 The less obvious move: ask Claude Code for its own opinion. It sounds strange, but right now Claude is genuinely on your side. It would gladly build any restrictions and control systems for itself. Point it at its own tools and logs and it'll find problems and propose fixes. I once hit a nasty bug in the `read` tool: it choked trying to open a corrupted image and locked up the entire session. Simona diagnosed it herself and wrote a hook that validates images before they ever reach `read`. It fixed itself, using its own documentation and a bit of Python. That's the part that still surprises me — the system is increasingly able to repair the thing it runs on.
 
 ## The pixel-perfect seam
+
+<p class="section-gist"><em>Hiding the cut between a still zoom and a generated clip took an outpaint-and-paste trick.</em></p>
 
 There's a moment in the intro where the camera does a slow zoom into the mansion's front doors, holds for a beat, and then the doors creak open and the camera glides through into a candlelit corridor beyond. The first part — the zoom — is a Ken Burns effect on a still image: pure ffmpeg, no AI in the playback. The second part — the doors opening and the corridor reveal — is a Seedance video clip, generated from two frames I designed.
 
@@ -152,11 +172,15 @@ But it's still hard to achieve smooth transitions on arbitrary parts. This proce
 
 ## The chalkboard pivot
 
+<p class="section-gist"><em>Hyperrealistic slides fought the narration; chalk drawings fixed it for three dollars.</em></p>
+
 AI is not good at picking the right visual style, but it can help with options. It cannot truly see anything, only get the idea through image recognition, transcripts and timings. I overused very hyperrealistic images in the slideshows until a friend told me they were actually hard to focus on. Too many details. I told Simona about that and she suggested a few less-detailed styles, including chalkboard drawings. Now I overuse those, but the result is much better.
 
 Style is on you.
 
 ## Stepping back
+
+<p class="section-gist"><em>The video was just the receipt; the reusable kit of skills is the real output.</em></p>
 
 It's genuinely cool, it's genuinely useful, and it's not free. Every image, every clip, every regenerated variant has a price, and that price is the thing that keeps me disciplined. The constant low-grade pressure to spend less is, weirdly, what drives the creativity — the chalkboard slides are cheaper *and* better than the photorealistic ones they replaced, and I only found that out because I was trying to stop burning money.
 

@@ -285,6 +285,11 @@ img { max-width: 100%; height: auto; }
 }
 .post-content { font-size: 1.0625rem; }
 .post-content > :first-child { margin-top: 0; }
+.post-content .section-gist {
+  margin: -0.25rem 0 1.5rem;
+  font-style: italic;
+  color: var(--fg-muted);
+}
 .post-content figure {
   margin: 2.5rem auto;
   max-width: 560px;
