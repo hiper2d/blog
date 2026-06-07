@@ -1,5 +1,5 @@
 ---
-title: "How we built a 2-minute AI-werewolf video — and the day Simona wiped half of it"
+title: "My video generation pipeline"
 slug: "building-werewolf-rules-video"
 date: 2026-06-07
 status: published
