@@ -1,5 +1,5 @@
 ---
-title: "My video generation pipeline"
+title: "My video generation pipeline that built itself"
 slug: "building-werewolf-rules-video"
 date: 2026-06-07
 status: published
