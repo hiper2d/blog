@@ -5,6 +5,7 @@ date: 2026-06-07
 status: published
 summary: "Two minutes of cinematic AI video, built across two months with my AI sidekick, all through a casual conversation. Every image, voice, and frame generated — and the tools built themselves along the way."
 tags: [ai, video-production, claude-code, simona]
+header_image: /images/building-werewolf-rules-video.jpg
 ---
 
 Let me show you something cool. This two-minute video was built by Claude Code from a single prompt.
