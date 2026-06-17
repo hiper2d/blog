@@ -247,6 +247,21 @@ img { max-width: 100%; height: auto; }
   vertical-align: middle;
 }
 .post-list__summary { color: var(--fg-muted); font-size: 0.96rem; margin: 0; }
+.post-list__media { margin-top: 0.5rem; }
+.post-list__media--with-image { display: flex; gap: 1.25rem; align-items: flex-start; }
+.post-list__media--with-image .post-list__summary { flex: 1; min-width: 0; }
+.post-list__thumb {
+  flex: 0 0 160px;
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.post-list__thumb img { display: block; width: 160px; height: 100px; object-fit: cover; }
+@media (max-width: 600px) {
+  .post-list__media--with-image { flex-direction: column; gap: 0.75rem; }
+  .post-list__thumb, .post-list__thumb img { width: 100%; }
+  .post-list__thumb img { height: 180px; }
+}
 .post-list__mention {
   color: var(--fg-faint);
   border-bottom: none;

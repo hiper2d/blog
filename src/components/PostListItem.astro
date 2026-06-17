@@ -15,6 +15,13 @@ const { post } = Astro.props;
       {post.data.status === 'draft' && <span class="post-list__draft-badge">Draft</span>}
     </h3>
     <p class="post-list__date">{formatDate(post.data.date)}</p>
-    {post.data.summary && <p class="post-list__summary">{post.data.summary}</p>}
+    <div class={`post-list__media ${post.data.header_image ? 'post-list__media--with-image' : ''}`}>
+      {post.data.header_image && (
+        <div class="post-list__thumb">
+          <img src={post.data.header_image} alt="" loading="lazy" />
+        </div>
+      )}
+      {post.data.summary && <p class="post-list__summary">{post.data.summary}</p>}
+    </div>
   </a>
 </li>
