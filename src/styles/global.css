@@ -305,6 +305,38 @@ img { max-width: 100%; height: auto; }
   font-style: italic;
   color: var(--fg-muted);
 }
+.post-content .callout {
+  margin: 1.8rem 0;
+  padding: 0.85rem 1.2rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+}
+.post-content .callout > :first-child { margin-top: 0; }
+.post-content .callout > :last-child { margin-bottom: 0; }
+.post-content .simona-interlude {
+  margin: 1.8rem 0;
+  padding: 1rem 1.3rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--link-hover);
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 0.94rem;
+}
+.post-content .simona-interlude > :first-child { margin-top: 0; }
+.post-content .simona-interlude > :last-child { margin-bottom: 0; }
+.post-content .simona-interlude .interlude-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--link-hover);
+  margin-bottom: 0.7rem;
+}
 .post-content figure {
   margin: 2.5rem auto;
   max-width: 560px;
