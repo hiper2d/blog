@@ -3,7 +3,7 @@ title: "What is J-space and do models really have thoughts?"
 slug: "what-is-j-space"
 date: 2026-07-13
 status: published
-summary: "There's been a lot of discussion of Anthropic's latest publication - something they found inside models and called the J-space. A part responsible for \"thoughts\" we can read quite easily. It sounds really significant."
+summary: "Do models really have thoughts we can read, or is Anthropic's J-space just marketing, as many claim? Let's work out what it actually is, from scratch and jargon-free."
 tags: [ ai, llm, interpretability, transformers ]
 header_image: /images/jspace-header.png
 ---
