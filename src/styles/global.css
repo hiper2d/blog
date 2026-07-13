@@ -355,10 +355,11 @@ img { max-width: 100%; height: auto; }
   color: var(--fg-muted);
   font-size: 0.95rem;
 }
-/* Inline markdown image captions: the italic paragraph directly after an image.
-   Markdown renders a lone image as <p><img></p> and the caption as the next <p>;
-   style it like a figcaption so captions read grey, centered, and smaller. */
-.post-content p:has(> img) + p {
+/* Inline markdown image captions: an *italic-only* paragraph directly after an
+   image. Markdown renders a lone image as <p><img></p> and an italic caption
+   (*text*) as <p><em>text</em></p>; style only that as a figcaption. A normal
+   body paragraph after an image is left as body text (was being caption-styled). */
+.post-content p:has(> img) + p:has(> em:only-child) {
   margin-top: 0.75rem;
   text-align: center;
   color: var(--fg-muted);
