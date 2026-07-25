@@ -8,7 +8,7 @@ tags: [ ai, llm, alignment, deception ]
 header_image: /images/bad-liars-header.png
 ---
 
-I run a game where AI models have to lie to each other. They are bad at it.
+I run a [game](https://aiwerewolf.net) where AI models have to lie to each other. They are bad at it.
 
 Not bad like they refuse. They will play along. Bad like you have to keep pushing them to actually commit to a lie, and the moment one of them tries something bold, every other model at the table piles on and exposes it. They hold a secret role fine. They just will not build a real strategy around a good lie.
 
