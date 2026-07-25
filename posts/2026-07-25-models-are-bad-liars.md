@@ -12,7 +12,7 @@ I run a game where AI models have to lie to each other. They are bad at it.
 
 Not bad like they refuse. They will play along. Bad like you have to keep pushing them to actually commit to a lie, and the moment one of them tries something bold, every other model at the table piles on and exposes it. They hold a secret role fine. They just will not build a real strategy around a good lie.
 
-I always figured that was a quirk of my prompting. A paper that came out this week, by David Africa and Jacob Pfau, makes me think it goes deeper than that.
+I always figured that was a quirk of my prompting. A [paper that came out this week](https://www.lesswrong.com/posts/QYmnkQyZD2fDjHCJ8/models-don-t-seem-to-be-dishonest-in-the-way-humans-are), by David Africa and Jacob Pfau, makes me think it goes deeper than that.
 
 <!-- header image is set via frontmatter header_image: /images/bad-liars-header.png (crayon robots at a card table, one holding an ill-fitting mask) -->
 
