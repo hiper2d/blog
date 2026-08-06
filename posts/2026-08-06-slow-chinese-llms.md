@@ -5,7 +5,7 @@ date: 2026-08-06
 status: published
 summary: "I added every hyped Chinese model to my AI Werewolf game and they were all painfully slow. I was going to write about that. Then I noticed the slowest model in my own table was Claude Haiku, and the article turned into something else."
 tags: [ ai, llm, benchmarks, latency, reasoning ]
-header_image: /images/chinese-llms-header.png
+header_image: /images/chinese-llms-card.jpg
 ---
 
 Recently, I've added a bunch of hype-monsters to my [AI Werewolf](https://aiwerewolf.net):
