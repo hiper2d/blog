@@ -220,4 +220,4 @@ Once the system stabilizes, it will quietly stop keeping me there.
 
 ---
 
-I wrote this for [DEV's Summer Bug Smash](https://dev.to/bugsmash), a bug-story competition run by dev.to and Sentry. There is [a copy of it over there](https://dev.to/hiper2d/rise-and-fall-of-a-self-fixing-agent-77h) too.
+I wrote this for [DEV's Summer Bug Smash](https://dev.to/bugsmash).
