@@ -217,3 +217,7 @@ It's important to record everything that happens. Marlow reads her own work logs
 Once the system stabilizes, it will quietly stop keeping me there.
 
 ![A workshop at night. The robot works steadily at a console with its back turned. Beside it, an empty desk chair and a cold coffee mug. Across the room a door is swinging quietly shut. Nobody is there.](/images/selffix-08-empty-chair-outro.jpg)
+
+---
+
+I wrote this for [DEV's Summer Bug Smash](https://dev.to/bugsmash), a bug-story competition run by dev.to and Sentry. There is [a copy of it over there](https://dev.to/hiper2d/rise-and-fall-of-a-self-fixing-agent-77h) too.
