@@ -3,7 +3,7 @@ title: "Rise and fall of a self-fixing agent"
 slug: "self-fixing-agent"
 date: 2026-08-16
 status: published
-summary: "I gave my agent the ability to fix its own code and it worked three times. Then it quietly stopped sending me a number I cared about, for four days, with every check green. It had read my instructions correctly. I had written them badly."
+summary: "This is a story of my self-fixing loop agent that guided itself into a buggy peace of mind, with all the checks green and the outcomes chaotic."
 tags: [ ai, agents, monitoring, claudecode, prompts ]
 header_image: /images/selffix-cover-robot-selfrepair.jpg
 ---
