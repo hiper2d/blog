@@ -4,7 +4,7 @@ slug: "start-creating-ai-videos"
 date: 2026-08-29
 status: published
 summary: "A year ago I couldn't see myself making videos at all. Now I do, and I enjoy it. It's a long process with a lot of planning and visualization in my head. Most of the work is outsourced to AI, but the vision and the directing are mine. I want to describe my process from zero. No tools or workflow - I'll show how I started and where it got me."
-tags: [ ai, video-production, claude-code, simona, ffmpeg ]
+tags: [ ai, video-production, claude-code, ffmpeg, simona ]
 header_image: /images/aivideo-cover-terminal.jpg
 ---
 
