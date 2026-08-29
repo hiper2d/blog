@@ -119,8 +119,6 @@ At some point, I asked Claude Code to create a skill about video editing with `f
 
 This is why I call it the training process. Claude Code learns what I want and how to get it, then remembers it in skills. I never touch those skill-files. 
 
-![A dark anime interior of a ship mess room. A crew member slumps forward onto a metal table, face down, lit from the right by a single red alarm lamp. An empty chair stands in front of the table, an open black doorway behind.](/images/aivideo-still-messhall.jpg)
-
 
 > Hey, that's a cool zooming effect - add it to the video skill
 
@@ -135,6 +133,8 @@ And it creates a video as if someone is scrolling the page. A nice trick I use a
 There is a phrase
 
 > Skills is a collection of scars
+
+![Four deep claw gashes torn diagonally through a painted metal bulkhead, edges peeled back to bare steel, a red alarm lamp glowing in the corridor to the left.](/images/aivideo-scars.jpg)
 
 I have a lot of skills - for video, voices, images, APIs. I even have a skill about filling my taxes. None of them were created by hand. Claude Code created them, Claude Code maintains them. Those skills keep growing, so it's on you to ask the harness to compact and clean them up from time to time. Or split into more granular skills.
 
