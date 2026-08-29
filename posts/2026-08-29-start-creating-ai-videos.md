@@ -29,11 +29,11 @@ This is what it took:
 - $15
 - 3 GB on disk, 1.3 GB of that scrap
 - 1,799 files, 1,480 of them temporary - and 1,297 of those are single frames I pulled out of videos to check one moment
-- 125 video files in the clips folder. One of them is the film
+- 125 video files
 - 72 voice takes generated, 8 in the final film
 - 16 images, 13 on screen
-- 9 video-model renders, 7 used. The two I threw away cost $1.65, which is 11% of the budget
-- a 2,246-line worklog across 67 logged steps, for a 42-second film
+- 9 video-model renders, 7 used
+- a 2,246-line worklog
 - tons of nostalgia
 
 So, even with AI, it's not 3 clicks and a few bucks.
@@ -118,6 +118,11 @@ And the main part - I haven't typed it myself.
 At some point, I asked Claude Code to create a skill about video editing with `ffmpeg` so we can remember useful commands. When it first tried to edit a video, it didn't do it right. It checked the docs, tried a few things, got my feedback - we spent some time getting the correct result. And the exact steps to achieve this result became a part of the skill. We remembered the successful path.
 
 This is why I call it the training process. Claude Code learns what I want and how to get it, then remembers it in skills. I never touch those skill-files. 
+
+![A dark anime interior of a ship mess room. A crew member slumps forward onto a metal table, face down, lit from the right by a single red alarm lamp. An empty chair sits in front of the table and an open black doorway behind.](/images/aivideo-still-messhall.jpg)
+
+*One of the 16 stills. This one did not make it - the composition was wrong, a second attempt replaced it, and $0.12 went in the bin. That is the cheap kind of mistake.*
+
 
 > Hey, that's a cool zooming effect - add it to the video skill
 
