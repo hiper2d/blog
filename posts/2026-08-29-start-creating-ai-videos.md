@@ -28,18 +28,15 @@ This is what it took:
 - three days
 - $15
 - 3 GB on disk, 1.3 GB of that scrap
-- 1,799 files, 1,480 of them temporary, and 1,297 of those single PNG frames
+- 1,799 files, 1,480 of them temporary - and 1,297 of those are single frames I pulled out of videos to check one moment
 - 125 video files in the clips folder. One of them is the film
 - 72 voice takes generated, 8 in the final film
 - 16 images, 13 on screen
 - 9 video-model renders, 7 used. The two I threw away cost $1.65, which is 11% of the budget
-- a 21,248-word worklog across 67 logged steps, for a 42-second film
+- a 2,246-line worklog across 67 logged steps, for a 42-second film
 - tons of nostalgia
 
 So, even with AI, it's not 3 clicks and a few bucks.
-
-This turned out too long for a single post, so it's split. This part is about the machine that
-makes the videos. The next one is about directing it.
 
 ## First, we need to talk about AI video in general
 
@@ -47,7 +44,7 @@ When people hear "AI video" they imagine something like
 [Gossip Goblin](https://www.youtube.com/@Gossip.Goblin),
 [Jurassic Smoothie](https://www.youtube.com/@Jurassic_Smoothie),
 [Doopiidoo](https://www.youtube.com/channel/UC-qfMIqavKGTyp9E4m3UuVw).
-To me, those guys are artists with their own style and technique. Not everybody can reach their level. It's also very expensive.
+To me, those guys are artists with their own style and technique. For most people that level is unreachable. It's also very expensive.
 
 My video is different. Only 35% of it came out of a video model. The rest is static images with
 camera moves added afterwards, and screen recordings of the actual game running in a real browser.
