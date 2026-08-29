@@ -121,8 +121,6 @@ This is why I call it the training process. Claude Code learns what I want and h
 
 ![A dark anime interior of a ship mess room. A crew member slumps forward onto a metal table, face down, lit from the right by a single red alarm lamp. An empty chair stands in front of the table, an open black doorway behind.](/images/aivideo-still-messhall.jpg)
 
-*One of the 16 stills. This one did not make it - the composition was wrong, a second attempt replaced it, and $0.12 went in the bin. That is the cheap kind of mistake.*
-
 
 > Hey, that's a cool zooming effect - add it to the video skill
 
@@ -130,7 +128,7 @@ After zooming, we discovered my other effects. Claude Code can take a large imag
 
 > Take a web page screen shot so its entire vertical content is captured and create a video of scrolling it down
 
-And it creates a video as if someone is scrolling the page. A nice trick I use a lot. For example, here I scroll the page: https://youtu.be/nwHEuNbRXXQ?t=46 
+And it creates a video as if someone is scrolling the page. A nice trick I use a lot. For example, [here I scroll a page](https://youtu.be/nwHEuNbRXXQ?t=46) 
 
 ### A library of scars
 
@@ -163,7 +161,7 @@ It all started from `ffmpeg` and a skill for it. But then - where do I get image
 
 > Let's create a slide-show where you explain the game rules. I want minimalistic illustrations matching the transcript in chalkboard style
 
-And it gives me this: https://youtu.be/6x5awI8HRK0?t=28
+And it gives me [this](https://youtu.be/6x5awI8HRK0?t=28)
 
 Okay, not right away. We'll first discuss the transcript, then we'll generate an image or two, then we'll generate the rest of the images. Then we'll turn them into slide-show. Then generate the voice. Then try to match the voice to the slide-show timing. There are some complications here, but first - we need to teach the harness to create assets.
 
@@ -171,15 +169,13 @@ Okay, not right away. We'll first discuss the transcript, then we'll generate an
 
 ### Images
 
-My personal favorite is `gpt-image-2` from OpenAI. To add it to your harness, just pass it the doc https://developers.openai.com/api/docs/guides/image-generation and put an API key in .env. The doc page actually lets you copy itself as a markdown file - this is very useful, you click this button and paste it into an .md file which you pass to the harness then. Works better than a URL which it has to scrape.
+My personal favorite is `gpt-image-2` from OpenAI. To add it to your harness, just pass it [the doc](https://developers.openai.com/api/docs/guides/image-generation) and put an API key in .env. The doc page actually lets you copy itself as a markdown file - this is very useful, you click this button and paste it into an .md file which you pass to the harness then. Works better than a URL which it has to scrape.
 
 If you are not sure where to get an API key or where to put it - just ask the AI, it will help.
 
 From my statistics (228 images), the average cost is $0.15 per image.
 
 ![A six-panel mood board of dark sci-fi stills: a cable-wrapped android standing in a lit doorway, a cluster of security cameras, a long empty corridor under a single lamp, a ventilation fan throwing spokes of light across a floor, and a wall of pipes and machinery.](/images/aivideo-stills-collage.jpg)
-
-*Those are six stills from the sci-fi short at the end of this article. Each one is `gpt-image-2` at 1024x1792, $0.12 a piece. The collage itself is `ffmpeg` compositing them onto a slate background, and that part cost nothing - which is the whole article in one picture.*
 
 Once the harness manages to grab your API key and generate an image using the OpenAI API call, ask it to create a skill about this. This improves quality of life in general - it's nice to be able to generate an image when you need it.
 
@@ -237,9 +233,7 @@ It got better after this - I started having far fewer wasted generations. So yea
 - LTX-2.3 - 3.7x cheaper than Seedance 2.5 (2.5x cheaper than 2.0), and it renders native 1080x1920 so there's no upscale afterwards. But it's noticeably worse at following instructions. I asked it for "no blink, no head turn, no smile, eyes narrow then hold" and got a head tilt, a look down, a smirk, and a face that drifted. It obeys roughly the first second. What matters is cost per usable second, not cost per second. I recently discovered that it can do good animations with no humans. There is LTX-2.5 but it's 3x more expensive and I see no reason to use it. And it's open-weight, so you can run it locally if you have the hardware.
 - Minimax H3 - Current king among open-weight models. I haven't tried it because providers change too much and it costs almost as much as Seedance.
 
-Models on fal.ai and EvoLink have API docs with examples on models pages:
-https://fal.ai/models/bytedance/seedance-2.5/reference-to-video/api
-https://evolink.ai/seedance-2-5
+Both providers put API docs with examples on the model pages: [Seedance 2.5 on fal.ai](https://fal.ai/models/bytedance/seedance-2.5/reference-to-video/api) and [Seedance 2.5 on EvoLink](https://evolink.ai/seedance-2-5).
 
 ### Voice
 
