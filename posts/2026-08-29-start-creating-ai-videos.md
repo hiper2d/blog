@@ -8,10 +8,6 @@ tags: [ ai, video-production, claude-code, simona, ffmpeg ]
 header_image: /images/aivideo-cover-terminal.jpg
 ---
 
-A year ago I couldn't see myself making videos at all. Now I do, and I enjoy it. It's a long process
-with a lot of planning and visualization in my head. Most of the work is outsourced to AI, but the
-vision and the directing are mine. I want to describe my process from zero. No tools or workflow - I'll show how I started and where it got me.
-
 This is work I'm proud of:
 
 <div style="position:relative;width:100%;max-width:420px;aspect-ratio:9/16;margin:1.5rem auto 2rem;">
