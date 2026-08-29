@@ -3,9 +3,9 @@ title: "How to start creating AI videos from scratch"
 slug: "start-creating-ai-videos"
 date: 2026-08-29
 status: published
-summary: "Everyone asks which video model I use. It's the wrong question. This is how I taught a code assistant to edit video with ffmpeg, generate its own assets, and remember what worked - and what three days and $15 of API calls actually buys."
+summary: "A year ago I couldn't see myself making videos at all. Now I do, and I enjoy it. It's a long process with a lot of planning and visualization in my head. Most of the work is outsourced to AI, but the vision and the directing are mine. I want to describe my process from zero. No tools or workflow - I'll show how I started and where it got me."
 tags: [ ai, video-production, claude-code, simona, ffmpeg ]
-header_image: /images/aivideo-cover-host-table.jpg
+header_image: /images/aivideo-cover-terminal.jpg
 ---
 
 A year ago I couldn't see myself making videos at all. Now I do, and I enjoy it. It's a long process
