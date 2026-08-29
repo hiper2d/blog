@@ -174,7 +174,7 @@ From my statistics (228 images), the average cost is $0.15 per image.
 
 ![A six-panel mood board of dark sci-fi stills: a cable-wrapped android standing in a lit doorway, a cluster of security cameras, a long empty corridor under a single lamp, a ventilation fan throwing spokes of light across a floor, and a wall of pipes and machinery.](/images/aivideo-stills-collage.jpg)
 
-Those are six stills from the sci-fi short at the end of this article. Each one is `gpt-image-2` at 1024x1792, $0.12 a piece. The collage itself is `ffmpeg` compositing them onto a slate background, and that part cost nothing - which is the whole article in one picture.
+*Those are six stills from the sci-fi short at the end of this article. Each one is `gpt-image-2` at 1024x1792, $0.12 a piece. The collage itself is `ffmpeg` compositing them onto a slate background, and that part cost nothing - which is the whole article in one picture.*
 
 Once the harness manages to grab your API key and generate an image using the OpenAI API call, ask it to create a skill about this. This improves quality of life in general - it's nice to be able to generate an image when you need it.
 
