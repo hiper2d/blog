@@ -119,7 +119,7 @@ At some point, I asked Claude Code to create a skill about video editing with `f
 
 This is why I call it the training process. Claude Code learns what I want and how to get it, then remembers it in skills. I never touch those skill-files. 
 
-![A dark anime interior of a ship mess room. A crew member slumps forward onto a metal table, face down, lit from the right by a single red alarm lamp. An empty chair sits in front of the table and an open black doorway behind.](/images/aivideo-still-messhall.jpg)
+![A dark anime interior of a ship mess room. A crew member slumps forward onto a metal table, face down, lit from the right by a single red alarm lamp. An empty chair stands in front of the table, an open black doorway behind.](/images/aivideo-still-messhall.jpg)
 
 *One of the 16 stills. This one did not make it - the composition was wrong, a second attempt replaced it, and $0.12 went in the bin. That is the cheap kind of mistake.*
 
