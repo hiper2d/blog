@@ -47,7 +47,7 @@ But I like the idea of showing a huge time jump. Like, a million years. It would
 
 I immediately asked Simona to craft the intro:
 
-<video src="/videos/sleeper2-counter.mp4" autoplay muted loop playsinline aria-label="Counter" style="display:block;width:100%;max-width:380px;margin:1.5rem auto;border-radius:4px;"></video>
+<video src="/videos/sleeper2-counter-2m.mp4" autoplay muted loop playsinline aria-label="Counter" style="display:block;width:100%;max-width:380px;margin:1.5rem auto;border-radius:4px;"></video>
 
 This is HTML manipulated via the Chrome debug port to create typing effects, then recorded via screenshots and turned into a video. Automated, local, free. I'll talk about this later - it's one of my money-saving techniques. And it allows me to be very precise about the screen text.
 
