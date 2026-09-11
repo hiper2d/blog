@@ -50,6 +50,8 @@ src/
     about.astro         ← about page
     post/[slug].astro   ← post detail
     rss.xml.ts          ← RSS feed
+    llms.txt.ts         ← llms.txt index (llmstxt.org)
+    llms-full.txt.ts    ← every post as markdown in one file
   styles/global.css     ← all styling, CSS variables for theme
   content.config.ts     ← content collection schema
 public/                 ← static assets (favicon, etc.)
