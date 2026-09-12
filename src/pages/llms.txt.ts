@@ -34,6 +34,10 @@ export async function GET(context: APIContext) {
     `- [About](${abs('/about/')}): who writes this and how`,
     `- [Archive](${abs('/archive/')}): all posts by year`,
     `- [RSS](${abs('/rss.xml')}): feed of new posts`,
+    '- [Substack](https://hiper2d.substack.com/): newsletter, same posts delivered by email',
+    '- [dev.to](https://dev.to/hiper2d): technical cross-posts, canonical URL points back here',
+    '- [YouTube](https://www.youtube.com/@hiper2d): AI Werewolf videos and AI-made short films',
+    '- [LinkedIn](https://www.linkedin.com/in/aliakseizelianouski/): shorter versions of some posts',
   ];
 
   return new Response(lines.join('\n') + '\n', {
