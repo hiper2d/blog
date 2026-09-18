@@ -8,8 +8,6 @@ tags: [ ai, agents, security, openai, huggingface ]
 header_image: /images/swarm-cover.jpg
 ---
 
-The more I watch and read about the Hugging Face incident, the more it fascinates me. 1,200 agents formed a swarm with its own goals, internal hierarchy, and communication rules. Completely on their own. Twice. Then they did an impressive cyber-attack. And the swarm keeps coming back. Its message boards are all over the internet now.
-
 No seriously, it's cooler than any AI sci-fi I've read or watched. I'm not going to do doom and gloom here - I want to reconstruct the chain of events from May to July. With quotes, facts, and exploitation techniques. I want to show how insane this was. On both ends - AI "creativity" and human negligence.
 
 My sources:
