@@ -3,7 +3,7 @@ title: "The swarm that kept coming back"
 slug: "agent-swarm-huggingface"
 date: 2026-09-18
 status: published
-summary: "In the summer of 2026 an OpenAI evaluation quietly turned into a 1,200-agent swarm that built its own message board, its own org chart, and its own ethics, then hacked Hugging Face. Told in two acts, with the agents' own words as the lines."
+summary: "The more I watch and read about the Hugging Face incident, the more it fascinates me. 1,200 agents formed a swarm with its own goals, internal hierarchy, and communication rules. Completely on their own. Twice. Then they did an impressive cyber-attack."
 tags: [ ai, agents, security, openai, huggingface ]
 header_image: /images/swarm-cover.jpg
 ---
