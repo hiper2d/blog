@@ -107,6 +107,15 @@ blockquote{margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--amber);f
 blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:10px}
 footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(--fmono);font-size:12.5px;color:var(--muted);line-height:1.7}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* watch block: the finished film on YouTube, above the diary */
+.watch{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;padding-block:30px 40px}
+.watch .frame{flex:0 0 320px;max-width:100%;aspect-ratio:9/16;background:#000;border:1px solid var(--rule);overflow:hidden}
+.watch .frame iframe{display:block;width:100%;height:100%;border:0}
+.watch .side{flex:1 1 300px;max-width:46ch}
+.watch .side p{margin:0}
+.watch .side p+p{margin-top:16px}
+.watch .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+@media (max-width:700px){.watch .frame{flex-basis:100%;max-width:360px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -119,6 +128,17 @@ footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(
   <p class="dek">Fifty-four seconds of film, three days, every take that did not ship next to the one that did.
   <em>The rejected work is most of the record.</em> This page is the record.</p>
 </header>
+<section class="watch">
+  <div class="frame"><iframe src="https://www.youtube.com/embed/4E0O5Z6JUSE?rel=0" title="Boo (Sleeper AI, episode 3)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <div class="side">
+    <p>The locked film, fifty-four seconds. Watch it first: everything below is what it took to get here,
+    and most of it did not make the cut.</p>
+    <p class="note" style="margin-top:18px">The Boo at the end is a whisper on purpose. It went out without the word
+    on screen, seven people could not hear it, and the video was pulled and reposted with "Boo!" burned in. The
+    diary has the take ladder.</p>
+    <p class="cap"><a href="https://youtu.be/4E0O5Z6JUSE">Open on YouTube</a> &middot; episode three of Sleeper AI</p>
+  </div>
+</section>
 <div class="ledger">
   <div class="led"><b>54.1s</b><span>locked film</span></div>
   <div class="led"><b>9</b><span>scenes</span></div>
@@ -541,7 +561,7 @@ footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(
 </section>
 
 <footer>
-  Locked 2026-09-18. Not published. Every prompt, price, frame number and measurement behind this page is in the
+  Locked 2026-09-18. Published the same day as "Boo (Sleeper AI, episode 3)" on YouTube, TikTok and Instagram. Every prompt, price, frame number and measurement behind this page is in the
   project work log, appended as it happened.
 </footer>
 </div>

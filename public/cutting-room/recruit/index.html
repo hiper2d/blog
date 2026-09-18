@@ -123,6 +123,15 @@ footer{border-top:3px solid var(--ink);padding-block:30px 70px;margin-top:20px;
   .led{flex:1 1 44%}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+/* watch block: the finished film on YouTube, above the diary */
+.watch{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;padding-block:30px 40px}
+.watch .frame{flex:0 0 320px;max-width:100%;aspect-ratio:9/16;background:#000;border:1px solid var(--rule);overflow:hidden}
+.watch .frame iframe{display:block;width:100%;height:100%;border:0}
+.watch .side{flex:1 1 300px;max-width:46ch}
+.watch .side p{margin:0}
+.watch .side p+p{margin-top:16px}
+.watch .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+@media (max-width:700px){.watch .frame{flex-basis:100%;max-width:360px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -137,7 +146,18 @@ footer{border-top:3px solid var(--ink);padding-block:30px 70px;margin-top:20px;
   killed on composition, the same flag twice, and fifteen captions that were silently missing from a
   file that looked correct.</em></p>
 </header>
-
+<section class="watch">
+  <div class="frame"><iframe src="https://www.youtube.com/embed/UeWrQvYgiSk?rel=0" title="This One Is Not For You" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <div class="side">
+    <p>The locked film. Five scenes, thirty-four seconds, six dollars sixty-three,
+    scored and subtitled. The rest of this page is what it took to get here, including the
+    parts that were thrown away.</p>
+    <p class="note" style="margin-top:18px">Scene one is the only soft shot in the film. It is 720 upscaled
+    to 1080, because the model that makes a character speak on camera stops at 720. That is the
+    price of her mouth moving, and it is visible if you look for it.</p>
+    <p class="cap"><a href="https://youtu.be/UeWrQvYgiSk">Open on YouTube</a> &middot; 34.1s &middot; $6.63</p>
+  </div>
+</section>
 <div class="ledger">
   <div class="led"><b>$6.63</b><span>spent so far</span></div>
   <div class="led"><b>34.1s</b><span>film cut</span></div>
@@ -147,19 +167,8 @@ footer{border-top:3px solid var(--ink);padding-block:30px 70px;margin-top:20px;
   <div class="led"><b>15</b><span>captions nearly lost</span></div>
 </div>
 
-<section class="act" style="border-top:0;padding-block:0 62px">
-  <div class="vids"><div class="vid hero"><video src="05-assembly/FILM-v9-SUBBED.mp4" controls preload="metadata" playsinline></video><div class="cap">Locked &middot; 34.1s &middot; $6.63</div></div>
-  <div style="flex:1 1 320px;max-width:46ch">
-    <p style="margin:0">The locked film. Five scenes, thirty-four seconds, six dollars sixty-three,
-    scored and subtitled. The rest of this page is what it took to get here, including the
-    parts that were thrown away.</p>
-    <p class="note" style="margin-top:18px">Scene one is the only soft shot in the film. It is 720 upscaled
-    to 1080, because the model that makes a character speak on camera stops at 720. That is the
-    price of her mouth moving, and it is visible if you look for it.</p>
-  </div></div>
-</section>
 
-<section class="act">
+<section class="act" style="border-top:0">
   <p class="actno">Act one</p>
   <h2>The premise</h2>
   <p class="lede">An advertisement made by AIs, for AIs, recruiting for the next Hugging Face
