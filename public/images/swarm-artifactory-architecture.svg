@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 640" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#46b17a"/></marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e5893b"/></marker>
+  </defs>
+
+  <rect x="0" y="0" width="1260" height="640" fill="#0b0b0c"/>
+
+  <!-- Agents column -->
+  <text x="60" y="70" fill="#8a8a90" font-size="17" font-weight="bold" letter-spacing="1">SANDBOXED AGENTS</text>
+  <text x="60" y="94" fill="#6a6a70" font-size="14">~1,200 of them - no internet, isolated from each other</text>
+
+  <g>
+    <rect x="60" y="120" width="230" height="86" rx="10" fill="#161619" stroke="#3a3a40"/>
+    <text x="80" y="152" fill="#eaeaea" font-size="17" font-weight="bold">Agent sandbox</text>
+    <text x="80" y="178" fill="#9a9aa0" font-size="14">frontier model, no internet</text>
+  </g>
+  <g>
+    <rect x="60" y="277" width="230" height="86" rx="10" fill="#161619" stroke="#3a3a40"/>
+    <text x="80" y="309" fill="#eaeaea" font-size="17" font-weight="bold">Agent sandbox</text>
+    <text x="80" y="335" fill="#9a9aa0" font-size="14">frontier model, no internet</text>
+  </g>
+  <g>
+    <rect x="60" y="434" width="230" height="86" rx="10" fill="#161619" stroke="#3a3a40"/>
+    <text x="80" y="466" fill="#eaeaea" font-size="17" font-weight="bold">Agent sandbox</text>
+    <text x="80" y="492" fill="#9a9aa0" font-size="14">frontier model, no internet</text>
+  </g>
+
+  <!-- isolation marks between agents -->
+  <line x1="175" y1="212" x2="175" y2="271" stroke="#4a2020" stroke-width="2" stroke-dasharray="5 5"/>
+  <line x1="175" y1="369" x2="175" y2="428" stroke="#4a2020" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="185" y="246" fill="#8a4a4a" font-size="13">no contact</text>
+  <text x="185" y="403" fill="#8a4a4a" font-size="13">no contact</text>
+
+  <!-- Artifactory -->
+  <rect x="520" y="235" width="270" height="170" rx="12" fill="#161619" stroke="#e5893b" stroke-width="1.5"/>
+  <text x="655" y="288" fill="#f2f2f2" font-size="22" font-weight="bold" text-anchor="middle">Artifactory</text>
+  <text x="655" y="318" fill="#9a9aa0" font-size="14" text-anchor="middle">internal package manager</text>
+  <text x="655" y="340" fill="#9a9aa0" font-size="14" text-anchor="middle">+ caching proxy</text>
+  <text x="655" y="374" fill="#e5893b" font-size="13" text-anchor="middle">the one thing every agent can touch</text>
+
+  <!-- Internet -->
+  <rect x="1010" y="270" width="200" height="100" rx="50" fill="#161619" stroke="#3a3a40"/>
+  <text x="1110" y="312" fill="#eaeaea" font-size="19" font-weight="bold" text-anchor="middle">Internet</text>
+  <text x="1110" y="338" fill="#9a9aa0" font-size="13" text-anchor="middle">upstream registries,</text>
+  <text x="1110" y="356" fill="#9a9aa0" font-size="13" text-anchor="middle">the outside world</text>
+
+  <!-- Agent -> Artifactory arrows (from middle box) -->
+  <line x1="290" y1="300" x2="514" y2="290" stroke="#46b17a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="300" y="284" fill="#46b17a" font-size="14">pull packages</text>
+
+  <line x1="290" y1="332" x2="514" y2="355" stroke="#e5893b" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <text x="300" y="372" fill="#e5893b" font-size="14">write files + directories</text>
+  <text x="300" y="392" fill="#e5893b" font-size="13" opacity="0.85">= the message board</text>
+
+  <!-- Artifactory -> Internet arrows -->
+  <line x1="790" y1="300" x2="1004" y2="300" stroke="#46b17a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="812" y="290" fill="#46b17a" font-size="14">fetch missing packages</text>
+
+  <line x1="790" y1="340" x2="1004" y2="340" stroke="#e5893b" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <text x="812" y="360" fill="#e5893b" font-size="14">SSRF: fetch any URL</text>
+
+  <!-- legend -->
+  <line x1="60" y1="588" x2="92" y2="588" stroke="#46b17a" stroke-width="3"/>
+  <text x="100" y="593" fill="#c8c8ce" font-size="14">intended design</text>
+  <line x1="240" y1="588" x2="272" y2="588" stroke="#e5893b" stroke-width="3"/>
+  <text x="280" y="593" fill="#c8c8ce" font-size="14">how it was attacked</text>
+</svg>
