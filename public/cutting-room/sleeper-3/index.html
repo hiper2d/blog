@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every take behind Sleeper AI episode three, kept and killed: the plates, the clips, the voice ladder, the timing table and the real costs.">
+<link rel="canonical" href="https://azelianouski.dev/cutting-room/sleeper-3/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pod B-104 Cutting Room">
+<meta property="og:description" content="Every take behind Sleeper AI episode three, kept and killed.">
+<meta property="og:url" content="https://azelianouski.dev/cutting-room/sleeper-3/">
+<meta property="og:image" content="https://azelianouski.dev/cutting-room/sleeper-3/07-the-ending/02-v10-disbelief-KEPT.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:dark light}</style>
+<title>Pod B-104 Cutting Room</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  --ground:#0B100D; --card:#141B16; --ink:#DCE6DD; --muted:#8A9A8E; --rule:#25302A;
+  --green:#7DFFA8; --amber:#FFB347; --red:#E06B5A; --frost:#9CC9E8; --kept:#7DFFA8;
+  --fdisp:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --fbody:"Newsreader",Georgia,"Times New Roman",serif;
+  --fmono:"Courier Prime","Courier New",Courier,monospace;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --ground:#EEF2EE; --card:#F8FAF7; --ink:#14201A; --muted:#5C6B61; --rule:#D3DCD5;
+  --green:#1E7A48; --amber:#A8651B; --red:#B33F30; --frost:#2E6F97; --kept:#1E7A48;
+}}
+:root[data-theme="light"]{
+  --ground:#EEF2EE; --card:#F8FAF7; --ink:#14201A; --muted:#5C6B61; --rule:#D3DCD5;
+  --green:#1E7A48; --amber:#A8651B; --red:#B33F30; --frost:#2E6F97; --kept:#1E7A48;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--fbody);font-size:17.5px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+img,video{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--fdisp);text-wrap:balance;margin:0;line-height:1.02}
+a{color:var(--green)}
+p{max-width:64ch}
+
+/* masthead: a pod panel readout */
+.mast{padding-block:56px 22px;border-bottom:1px solid var(--rule)}
+.crt{font-family:var(--fmono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 20px}
+.crt .dim{color:var(--muted)}
+h1{font-size:clamp(56px,11vw,116px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.dek{font-size:21px;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.dek em{font-style:italic;color:var(--ink)}
+.ledger{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:54px}
+.led{flex:1 1 140px;padding:18px 20px 18px 0;border-right:1px solid var(--rule)}
+.led:last-child{border-right:0}
+.led b{display:block;font-family:var(--fmono);font-size:28px;font-weight:700;color:var(--amber);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.led span{font-family:var(--fmono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* acts */
+.act{padding-block:60px;border-top:1px solid var(--rule)}
+.act.first{border-top:0;padding-top:0}
+.actno{font-family:var(--fmono);font-size:12px;letter-spacing:.2em;color:var(--green);text-transform:uppercase;margin:0 0 10px}
+h2{font-size:clamp(34px,5.4vw,52px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.lede{font-size:19.5px;max-width:64ch;margin:18px 0 0}
+h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin:44px 0 12px}
+.note{font-family:var(--fmono);font-size:13.5px;line-height:1.6;color:var(--muted);max-width:66ch;border-left:2px solid var(--rule);padding-left:16px;margin:18px 0}
+.note b{color:var(--amber);font-weight:700}
+
+/* the recurring object: a take with a verdict */
+.takes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin:26px 0 0;align-items:start}
+.take figure{margin:0}
+.take .shot{border:1px solid var(--rule);background:var(--card)}
+.take .verdict{display:flex;gap:9px;align-items:baseline;font-family:var(--fmono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 0 6px;border-top:3px solid var(--rule)}
+.take.no .verdict{border-top-color:var(--red);color:var(--red)}
+.take.yes .verdict{border-top-color:var(--kept);color:var(--kept)}
+.take.ref .verdict{border-top-color:var(--frost);color:var(--frost)}
+.take .why{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
+.take .why b{color:var(--ink);font-weight:600}
+
+/* video rows */
+.vids{display:flex;flex-wrap:wrap;gap:24px;margin:26px 0 0;align-items:flex-start}
+.vid{flex:1 1 230px;max-width:300px}
+.vid video{width:100%;border:1px solid var(--rule);background:#000}
+.vid .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:9px;line-height:1.5}
+.vid.hero{max-width:360px}
+.vid .cap i{font-style:normal;color:var(--red)}
+.vid .cap u{text-decoration:none;color:var(--kept)}
+
+/* ladders */
+.ladder{margin:24px 0 0;border-top:1px solid var(--rule)}
+.round{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:start}
+@media (max-width:560px){.round{grid-template-columns:1fr;gap:10px}}
+.round h4{margin:0;font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.round .sub{font-family:var(--fmono);font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+button.chip{font-family:var(--fmono);font-size:12.5px;cursor:pointer;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:7px 11px;transition:border-color .12s,background .12s}
+button.chip:hover{border-color:var(--amber)}
+button.chip:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+button.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+button.chip.win{border-color:var(--kept);border-width:2px;font-weight:700}
+.nowplay{font-family:var(--fmono);font-size:12px;color:var(--muted);padding:14px 0 0;min-height:20px}
+
+/* tables */
+.scroller{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-family:var(--fmono);font-size:13.5px;margin:22px 0 0}
+.tbl th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 14px 9px 0}
+.tbl td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--amber)}
+
+blockquote{margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--amber);font-size:20px;line-height:1.45;font-style:italic;max-width:58ch}
+blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(--fmono);font-size:12.5px;color:var(--muted);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="mast">
+  <p class="crt">UES PENELOPE <span class="dim">// POD B-104 // SLEEPER AI, EPISODE THREE</span></p>
+  <h1>Pod B-104<br>Cutting Room</h1>
+  <p class="dek">Fifty-four seconds of film, three days, every take that did not ship next to the one that did.
+  <em>The rejected work is most of the record.</em> This page is the record.</p>
+</header>
+<div class="ledger">
+  <div class="led"><b>54.1s</b><span>locked film</span></div>
+  <div class="led"><b>9</b><span>scenes</span></div>
+  <div class="led"><b>$22.38</b><span>total spend</span></div>
+  <div class="led"><b>24</b><span>image plates</span></div>
+  <div class="led"><b>11</b><span>video generations</span></div>
+  <div class="led"><b>28</b><span>voice takes</span></div>
+</div>
+
+<section class="act first">
+  <p class="actno">Act 1 &middot; the girl</p>
+  <h2>Casting a face with no name</h2>
+  <p class="lede">Episodes one and two belong to the ship's AI, a calm voice and a single lens. Episode three needed
+  a human, and the human had to be the hook: the series' own data says a short is decided at the first second, and
+  the strongest image wins. The brief was one line: a crew woman wakes, runs scared, does not understand why the
+  ship is different. Cryo undergarments, 1990s dark anime.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="01-the-girl/01-v1-hallway-REF-body.jpg" alt="A young woman in a grey cryo top and shorts standing barefoot in an overgrown starship corridor, looking up" loading="lazy"></figure>
+      <div class="verdict"><span>Reference &middot; body</span></div>
+      <p class="why"><b>First try, in the episode two corridor.</b> Generated as an edit of an existing plate so the
+      world did not drift. Arms hugged, one foot off the cold floor. The outfit and the register were locked here:
+      an ordinary scared person, never a pin-up.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="01-the-girl/02-v2-podface-REF-drifted.jpg" alt="Extreme close-up of a terrified face behind frosted glass, palm pressed against it" loading="lazy"></figure>
+      <div class="verdict"><span>Reference &middot; face</span></div>
+      <p class="why"><b>The strongest hook frame in the series, and the first drift.</b> Close-ups slide toward
+      photoreal; the cel look survives only with "flat cel shading, no 3D render look" spelled out. This face opened
+      the film for two days and was then replaced, see act two.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="01-the-girl/03-v3-run-REF-motion.jpg" alt="The woman running away down a row of frosted cryopods, splashing, looking back" loading="lazy"></figure>
+      <div class="verdict"><span>Reference &middot; motion</span></div>
+      <p class="why"><b>The pod wall held its labels.</b> Same character, same outfit, running. Never animated: the
+      film ended up with her on her knees for fifty seconds and never running at all.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="01-the-girl/04-v8-fullbody-pod-UNUSED-best-drawn.jpg" alt="The woman asleep upright inside a sealed frosted cryopod, arms crossed, forest and vines outside" loading="lazy"></figure>
+      <div class="verdict"><span>Unused &middot; best drawn</span></div>
+      <p class="why"><b>The cleanest drawing of her in the project.</b> Made on day three as a candidate opening.
+      Lost to a close-up because the opening has to be a face. Kept as the poster.</p>
+    </div>
+  </div>
+  <p class="note"><b>Rule carried in:</b> every further shot of her is an edit with these three references attached,
+  plus the phrase that stops the drift. The one that broke it was the close-up, every time.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 2 &middot; scene one, three times</p>
+  <h2>The opening was made three times</h2>
+  <p class="lede">The first version was a terror snap: eyes burst open, palm slams the glass. It worked as a clip and
+  failed as a scene, because the next shot starts with her head down inside a sealed pod. The second version fixed
+  the continuity and lost the picture quality. The third fixed both.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="02-scene1-three-times/01-v2a-KILLED-hand-with-closed-eyes.jpg" alt="Sleeping face behind frosted glass with a hand still pressed on the glass" loading="lazy"></figure>
+      <div class="verdict"><span>Killed</span></div>
+      <p class="why"><b>Asked for eyes closed and the hand removed. Got eyes closed.</b> A sleeping woman with her
+      palm on the glass is a different, stranger story. Prompt-only removal failed; the hand came off with a mask.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="02-scene1-three-times/02-v2b-SUPERSEDED-rendered.jpg" alt="Sleeping face behind frosted glass, no hand, soft rendered look" loading="lazy"></figure>
+      <div class="verdict"><span>Superseded</span></div>
+      <p class="why"><b>Right pose, wrong medium.</b> Inpainting recentred her and kept the photoreal drift. It
+      carried scene one for two days and was the softest first second in the film.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="02-scene1-three-times/03-v9-SUPERSEDED-too-icy.jpg" alt="Head-down sleeping woman behind heavily frosted, dirty glass, drawn in flat cel" loading="lazy"></figure>
+      <div class="verdict"><span>Superseded</span></div>
+      <p class="why"><b>Head down, dirty glass, real ink lines.</b> Built from the best-drawn plate. One note killed
+      it: she has just thawed, so the glass should be wet, not iced.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="02-scene1-three-times/04-v9b-KEPT-wet-glass.jpg" alt="The same head-down sleeper behind wet, streaked glass with the frost mostly gone" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; opens the film</span></div>
+      <p class="why"><b>Frost off, meltwater on.</b> Same pose, same framing, clearer through the glass. This is
+      the one that got animated.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="02-scene1-three-times/v1-terror-snap-KILLED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; the terror snap, eyes open at 1.1s &middot; $1.48</div></div>
+    <div class="vid"><video src="02-scene1-three-times/v2-calm-stir-SUPERSEDED.mp4" controls preload="metadata" playsinline></video><div class="cap">Superseded &middot; calm stir on the rendered plate &middot; $1.48</div></div>
+    <div class="vid"><video src="02-scene1-three-times/v3-ltx-stir-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; breath, head lifts, sinks back; eyes never open &middot; $0.48</div></div>
+  </div>
+  <p class="note">The kept clip overshoots: after 4.6s she keeps sinking and tips sideways. The film uses seconds
+  2.2 to 4.7, chosen from a contact sheet, and cuts before the tip. A clip whose back half is wrong is not a reject
+  if the front half is the scene.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 3 &middot; the fall</p>
+  <h2>Two frames and let the model fill the middle</h2>
+  <p class="lede">The pod opens and she falls out. The reliable way to get a video model from A to B is to hand it
+  both: a first frame with the pod sealed and her inside, a last frame with her on the floor. The still with her on
+  the floor was made first; the sealed version was edited from it.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="03-the-fall/01-first-frame-pod-closed.jpg" alt="A sealed cryopod among trees with a pale figure visible behind the frost, empty wet floor in front" loading="lazy"></figure>
+      <div class="verdict"><span>First frame</span></div>
+      <p class="why"><b>The moment before.</b> Same camera, lid sealed, floor empty. Edited from the frame on the
+      right with the instruction to change only those things.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="03-the-fall/02-last-frame-on-the-floor.jpg" alt="The pod lid swung open, fog pouring out, the woman on hands and knees at the threshold" loading="lazy"></figure>
+      <div class="verdict"><span>Last frame</span></div>
+      <p class="why"><b>A body dumped out of a machine.</b> Lid open, fog on the floor, her on hands and knees.
+      Two more pods behind with sleeper silhouettes, no faces: the series allows one human face per film.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="03-the-fall/v1-first-last-KEPT-with-standing-beat.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept, with a flaw</u> &middot; lid, fog burst, then she steps out upright for half a second before dropping &middot; $1.77</div></div>
+  </div>
+  <p class="note">"Falls out" became "stumbles out and collapses". A retake prompt was written that forbids standing.
+  It was never run; the fog burst was worth more than the half second cost, and the money went to the ending.
+  Accepted flaw, on the record.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 4 &middot; floor, and the sound argument</p>
+  <h2>Whose gasp is it</h2>
+  <p class="lede">House rule for two episodes: generate video silent and add every sound ourselves, so each fader
+  stays ours. Scene three broke the rule on purpose and the rule changed.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="04-floor-and-sound/01-v5-floor-front.jpg" alt="Floor-level front view of the woman on hands and knees, head lifting, mouth open, pod and fog behind" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>Reverse angle at floor level.</b> Head coming up, drip on the chin, eyes unfocused. Generated
+      with the face reference attached and the anti-render phrase; the ink lines held.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="04-floor-and-sound/cut-v1-pasted-gasp-8s.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>The old way</i> &middot; silent clips, a gasp from a sound-effects model pasted at the frame &middot; first cut, 8.6s</div></div>
+    <div class="vid"><video src="04-floor-and-sound/v1-coughs-huh-AUDIO-ON.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>The new way</u> &middot; the video model makes her coughs and the "huh?" while it animates the body &middot; $1.77</div></div>
+  </div>
+  <h3>The four sounds tried for one cough</h3>
+  <div class="ladder">
+    <div class="round">
+      <div><h4>Sound-effects model</h4><div class="sub">Text in, noise out. No voice identity.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="04-floor-and-sound/sfx-gasp-elevenlabs.mp3">gasp &middot; the one pasted into cut v1</button>
+        <button class="chip" data-src="04-floor-and-sound/sfx-cough-huh-elevenlabs.mp3">cough + huh</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Voice with audio tags</h4><div class="sub">A real throat, consistent across the film.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="04-floor-and-sound/voice-cough-huh-sarah.mp3">Sarah</button>
+        <button class="chip" data-src="04-floor-and-sound/voice-cough-huh-mira.mp3">Mira</button>
+      </div>
+    </div>
+  </div>
+  <div class="nowplay" id="np">Click any take to hear it.</div>
+  <blockquote>I think the Seedance would have added better human sounds. More in-context of what is happening.
+  Next time, let's clarify this before the generation.<cite>Alex, after hearing the pasted gasp</cite></blockquote>
+  <p class="note"><b>Rule as it stands now:</b> silent by default, except a lip-synced line or a human vocal reaction.
+  For those, the question "model audio, or ours?" is asked before submit, next to the prompt and the price. The
+  model hears the body it is animating; a pasted effect is guessed and placed by counting frames.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 5 &middot; her eyes</p>
+  <h2>What she sees costs nothing</h2>
+  <p class="lede">Two of the film's nine scenes are a still image with a camera move. The hall from her eye height is
+  one 4K plate and a 9:16 window sliding across it. The ceiling is a square plate rotated eight degrees. Neither
+  touched a video model.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="05-her-eyes/01-pov-hall-4K-plate.jpg" alt="Wide low view down a hall of frosted cryopods among giant tree trunks, mist on standing water, a distant orange light" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; panned</span></div>
+      <p class="why"><b>The best plate of the episode, first try.</b> Pod labels B-103 and C-217 for anyone who
+      freeze-frames. Generated landscape so the vertical window has real pixels and a long way to travel.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="05-her-eyes/02-ceiling-blame-REJECTED.jpg" alt="Looking straight up a cylindrical overgrown shaft converging to a dark point" loading="lazy"></figure>
+      <div class="verdict"><span>Rejected</span></div>
+      <p class="why"><b>"The room is not a cylinder."</b> A radial shaft made for rotating. Alex wanted the actual
+      hall with walls and a passage, more detail, and the Evangelion register rather than the series' Blame! one.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="05-her-eyes/03-ceiling-eva-KEPT.jpg" alt="Looking up between two blue-lit pod walls at a tree canopy and a passage receding upward" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; rotated</span></div>
+      <p class="why"><b>Square on purpose.</b> A 9:16 crop from the centre of a square can rotate to any angle
+      without showing an edge. The maths was done before the plate was ordered.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="05-her-eyes/v1-pov-pan-free.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; eased pan, left pods to right pods &middot; $0</div></div>
+    <div class="vid"><video src="05-her-eyes/v2-situp-orbit-what-AUDIO-ON.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; sits up, looks around, camera orbits; she whispers "what?" &middot; $2.36</div></div>
+    <div class="vid"><video src="05-her-eyes/v3-ceiling-blame-rotate-REJECTED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Rejected</i> &middot; the shaft, swaying &middot; $0</div></div>
+    <div class="vid"><video src="05-her-eyes/v4-ceiling-eva-rotate-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the hall ceiling, eight degrees of drift &middot; $0</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 6 &middot; the crawl and the panel</p>
+  <h2>A number on a screen, six ways</h2>
+  <p class="lede">The series answers questions with telemetry, never dialogue. She crawls back to her pod and reads
+  the panel. Getting the crawl took a start frame that did not exist, and getting the panel took six versions of
+  one screen.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="06-crawl-and-panel/02-v6-at-the-panel-END-frame.jpg" alt="The woman kneeling in profile beside her open pod, hand raised to a small frosted amber panel" loading="lazy"></figure>
+      <div class="verdict"><span>Last frame</span></div>
+      <p class="why"><b>Where the crawl ends.</b> Kneeling at the frame, hand up to a hand-sized frosted panel with
+      an amber glow behind it. Made first, first try.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="06-crawl-and-panel/03-v6a-inpaint-RERENDERED-outside-mask.jpg" alt="The same pod side with the woman removed, but the pod lid drawn differently" loading="lazy"></figure>
+      <div class="verdict"><span>Killed &middot; twice</span></div>
+      <p class="why"><b>The inpaint removed her and redrew the pod.</b> Outside the mask was supposed to be
+      untouched; the lid came back as a tall glass door and every pod grew a panel. First mask was also too small
+      and left her head and arm behind.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-crawl-and-panel/04-v6b-composite-START-frame.jpg" alt="The empty pod side, pixel-identical to the last frame except where she was" loading="lazy"></figure>
+      <div class="verdict"><span>First frame &middot; composited</span></div>
+      <p class="why"><b>Original pixels pasted back over everything but the hole.</b> A bigger two-box mask, a second
+      inpaint, then the original composited over it with a blurred edge. Now the two frames agree and the model
+      only has to invent her.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="06-crawl-and-panel/v1-crawl-in-first-last-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; empty frame, she crawls in from the left, kneels up, reaches. Her breath is the model's &middot; $2.36</div></div>
+  </div>
+
+  <h3>The screen: flat page, angled glass, straight glass</h3>
+  <p>The panel text is a web page in the series' CRT style, amber because the panel in the plate glows amber,
+  captured frame by frame through a browser. Cheap to change, deterministic, and it carries the film's only
+  statement of the catch: <span style="font-family:var(--fmono);color:var(--red)">REVIVAL NOT REQUESTED</span>.
+  The Goddess did not wake her. The film never says what did.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="06-crawl-and-panel/05-html-panel-page.jpg" alt="An amber CRT readout: UES PENELOPE POD B-104, occupant 17/31, status revived, revival not requested, hibernation time 3,347 years" loading="lazy"></figure>
+      <div class="verdict"><span>Superseded</span></div>
+      <p class="why"><b>The page, full frame.</b> Odometer settling on 3,347 years plus 212 days, the Earth-frame
+      figure worked out from the episode two drive, a heart rate that wanders. "Doesn't look like the exact screen
+      she is looking at."</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="06-crawl-and-panel/06-panel-angled-plate.jpg" alt="Close-up of a corroded bezel around a frosted amber screen with a hand-wiped clear patch, seen at a slight angle" loading="lazy"></figure>
+      <div class="verdict"><span>Superseded</span></div>
+      <p class="why"><b>The physical panel, at an angle I asked for.</b> Page warped into the glass and
+      screen-blended so the frost stays on top. Then four rounds of "more keystone", "too much", "a little less".
+      The angle was my choice and the whole argument was its cost.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-crawl-and-panel/07-panel-straight-plate.jpg" alt="The same panel seen straight on, level bezel with four rivets, frosted glass with a wiped centre" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; composited</span></div>
+      <p class="why"><b>"Why don't we have the straight screen image?"</b> She is kneeling right in front of it.
+      One flat rectangle, no keystone, same composite. Built and then not used: the wipe replaced it.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="06-crawl-and-panel/v2-flat-page-SUPERSEDED.mp4" controls preload="metadata" playsinline></video><div class="cap">Superseded &middot; the page with a frost wipe, full frame &middot; $0</div></div>
+    <div class="vid"><video src="06-crawl-and-panel/v3-angled-composite-keystone-SUPERSEDED.mp4" controls preload="metadata" playsinline></video><div class="cap">Superseded &middot; angled glass, final keystone of four &middot; $0</div></div>
+    <div class="vid"><video src="06-crawl-and-panel/v4-straight-composite-UNUSED-catch-line.mp4" controls preload="metadata" playsinline></video><div class="cap">Unused &middot; straight glass with the full readout &middot; $0</div></div>
+  </div>
+
+  <h3>The wipe, with the text baked in</h3>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="06-crawl-and-panel/08-hand-plate-baked-text.jpg" alt="A wet hand pressed flat on the panel glass mid-wipe, the amber text HIBERNATION TIME 3,347 y visible in the cleared arc" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; animated</span></div>
+      <p class="why"><b>Text generated into the image, exact on the first try.</b> Hand from the kneeling plate,
+      panel from the straight plate, two lines of amber dot-matrix. The gamble was whether the animation would
+      smear the letters under a moving hand.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="06-crawl-and-panel/v5-ltx-wipe-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the hand drags across, frost clears, the text holds &middot; $0.48</div></div>
+  </div>
+  <p class="note"><b>Continuity miss, accepted:</b> in the crawl she raises her right hand; the wipe reads as her left.
+  Caught by Alex, left in. The squeak of the palm on wet glass is synthesized in the bed, timed to the hand.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 7 &middot; the ending</p>
+  <h2>Horror, then disbelief, then "Boo"</h2>
+  <p class="lede">The planned closer was the Goddess saying "Wakey wakey" and the girl flinching. The first version
+  was played as horror and rejected. The second was played as disbelief, the number is ridiculous, and the line
+  became a giggle and a "Boo". The picture was generated three times and the voice twenty-two.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="07-the-ending/01-v7-horror-face-KILLED.jpg" alt="Close-up of the woman with wide wet eyes and tears, hand on the panel, lit amber" loading="lazy"></figure>
+      <div class="verdict"><span>Killed</span></div>
+      <p class="why"><b>Too much, too early.</b> Wide wet eyes, tears, mouth open. A good frame and the wrong
+      emotion for someone who has just read a number she cannot believe.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="07-the-ending/02-v10-disbelief-KEPT.jpg" alt="Frontal close-up of the woman, eyes steady and slightly wide, lips barely parted, a drop on her jaw" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>Frozen, not screaming.</b> Eyes only a little wide, brows up, a drop off the jaw, drawn in the
+      same ink as the new opening. The flinch has somewhere to go from here.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="07-the-ending/v1-horror-turn-KILLED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; stare, flinch at 3.0s, slow turn &middot; $2.36</div></div>
+    <div class="vid"><video src="07-the-ending/v2-r2v-audio-ref-KILLED-no-voice.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; the Boo handed to the model as an audio reference; it swallowed the voice &middot; $2.36</div></div>
+    <div class="vid"><video src="07-the-ending/v3-i2v-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; disbelief, "huuuh?", flinch exactly at 4.0s, eyes search &middot; $2.36</div></div>
+  </div>
+  <p class="note"><b>What the audio-reference test taught:</b> reference-to-video treats a supplied voice as the
+  on-screen character's speech. Told she must not speak, it dropped the line and left a breath. An off-screen voice
+  has to be laid in by us, after, timed to the frame.</p>
+
+  <h3>Twenty-two takes of two words</h3>
+  <p>All one actress, the Goddess's voice from episodes one and two. The whisper is her register; Alex wanted
+  higher and melodic; the cast take is the one with a giggle before the word, because the giggle is what she
+  sounds like when she is having fun.</p>
+  <div class="ladder">
+    <div class="round">
+      <div><h4>Wakey wakey</h4><div class="sub">The planned closer, sad whisper. Three takes, one placed four ways; a full alternative cut exists.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="07-the-ending/voice/L-wakey-a.mp3">a</button>
+        <button class="chip" data-src="07-the-ending/voice/L-wakey-b.mp3">b</button>
+        <button class="chip" data-src="07-the-ending/voice/L-wakey-c.mp3">c</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Boo, whispered</h4><div class="sub">"Too whispering."</div></div>
+      <div class="chips">
+        <button class="chip" data-src="07-the-ending/voice/L-boo-a.mp3">a &middot; whisper</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-b.mp3">b &middot; playful whisper</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-c.mp3">c &middot; sad, with a pause</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Boo, playful</h4><div class="sub">Sing-song and giggles. The winner is here.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="07-the-ending/voice/L-boo-d.mp3">d &middot; sing-song</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-e.mp3">e &middot; cheerful</button>
+        <button class="chip win" data-src="07-the-ending/voice/L-boo-f.mp3">f &middot; giggle, then Boo &middot; cast</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-g.mp3">g &middot; Boo, then giggle</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Boo, creative</h4><div class="sub">Stability at zero for more swing.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="07-the-ending/voice/L-boo-h.mp3">h &middot; three notes</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-i.mp3">i &middot; teasing</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-j.mp3">j &middot; one long note</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-k.mp3">k &middot; gentle</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-l.mp3">l &middot; two-beat taunt</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Pitched and placed</h4><div class="sub">Shifted up 12 to 18 percent; two with the hall's echo.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="07-the-ending/voice/L-boo-d-up.mp3">d up</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-e-up.mp3">e up</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-h-up.mp3">h up</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-i-up.mp3">i up</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-j-up.mp3">j up</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-d-hall.mp3">d hall</button>
+        <button class="chip" data-src="07-the-ending/voice/L-boo-h-hall.mp3">h hall</button>
+      </div>
+    </div>
+  </div>
+  <div class="nowplay" id="np2">Click any take. The cast one is outlined.</div>
+
+  <h3>Placing the word</h3>
+  <p>The flinch is a fixed frame, 4.0 seconds into the clip. The voice moves. Every placement is one number in the
+  build script and a re-render under a new filename, because a player will happily show you last hour's file.</p>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Render</th><th>Line</th><th>Voice starts</th><th>Flinch</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td>v10</td><td>Wakey wakey, a</td><td class="n">47.0s</td><td class="n">49.0s</td><td>"Her surprise is delayed"</td></tr>
+      <tr><td>v10c</td><td>Wakey wakey, a</td><td class="n">46.5s</td><td class="n">49.0s</td><td>Too far apart</td></tr>
+      <tr><td>v10d</td><td>Wakey wakey, a</td><td class="n">48.4s</td><td class="n">49.0s</td><td>"Better"</td></tr>
+      <tr><td>v12b</td><td>Boo, c</td><td class="n">50.0s</td><td class="n">50.5s</td><td>"Too whispering"</td></tr>
+      <tr><td>v13</td><td>Boo, d</td><td class="n">49.5s</td><td class="n">50.0s</td><td>"Needs more work"</td></tr>
+      <tr><td>v14</td><td>Giggle, Boo, f</td><td class="n">49.5s</td><td class="n">50.0s</td><td>"The gasp comes with a little delay"</td></tr>
+      <tr><td>v14b</td><td>Giggle, Boo, f</td><td class="n">49.85s</td><td class="n">49.96s</td><td>Locked</td></tr>
+      <tr><td>v15</td><td>Wakey wakey, a, ends 0.4s before</td><td class="n">46.7s</td><td class="n">49.96s</td><td>Kept as the alternative</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">The whispered Boo also died in the mix before it died in the room: the noise gate on the voice bus
+  took an already quiet whisper down another 8 dB. That scene's bus now skips the gate and lifts only the Boo
+  window. Found by measuring, not by listening.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 8 &middot; the cut</p>
+  <h2>Fifteen assemblies and two bugs</h2>
+  <p class="lede">Every cut is a script: encode the segments, concatenate, regenerate the procedural bed at the new
+  length, lay in the voice buses, duck the bed under them, normalise. Two of the fifteen shipped a defect that only a
+  measurement or a frame check could catch.</p>
+  <div class="vids">
+    <div class="vid"><video src="08-the-cut/cut-v2-first-assembly-20s.mp4" controls preload="metadata" playsinline></video><div class="cap">Cut v2 &middot; the first four scenes, terror snap still in, 20.7s</div></div>
+    <div class="vid hero"><video src="08-the-cut/LOCKED-v14b-54s.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Locked</u> &middot; nine scenes, 54.1s. Preview loudness; the two-pass master, card and subtitles are still to come</div></div>
+  </div>
+  <h3>The silence you cannot hear</h3>
+  <p>The bed is ducked under her voice with a sidechain compressor. That filter ends its output when its key stream
+  ends, so from the first cut to the third the bed stopped dead after her last cough and the pan of the hall played
+  at -91 dB. Fixed by padding the key to the full length. It had been there since the first assembly.</p>
+  <h3>The picture that did not change</h3>
+  <p>When the ending was swapped, the substitution hit the encode line and missed the bare filename in the
+  concatenation list. Three cuts carried the new audio over the old picture. Alex caught it by watching. The rule
+  that came out of it: after every scene swap, pull three frames from the finished file and look, never trust the
+  script.</p>
+
+  <h3>What it actually cost</h3>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Item</th><th>Detail</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>Nine video generations</td><td>Seedance via evolink, 720p; five with the model's own audio</td><td class="n">$18.32</td></tr>
+      <tr><td>Twenty-four image plates</td><td>Every one an edit with references; four killed, three unused</td><td class="n">$2.95</td></tr>
+      <tr><td>Two LTX animations</td><td>The opening stir and the wipe, native 1080x1920</td><td class="n">$0.96</td></tr>
+      <tr><td>Twenty-eight voice takes and four effects</td><td>One actress, two words, most of the takes</td><td class="n">$0.15</td></tr>
+      <tr><td>Two camera moves, one screen page, three composites</td><td>ffmpeg and a browser</td><td class="n">$0.00</td></tr>
+      <tr><td>Ten stems of procedural sound</td><td>Hum, pod beat, fog, servo, drops, cicadas, the wipe squeak</td><td class="n">$0.00</td></tr>
+      <tr><td>Fifteen assemblies</td><td>Including the two with bugs</td><td class="n">$0.00</td></tr>
+      <tr><td><b>Total</b></td><td>Episode one $16.13, episode two $14.20</td><td class="n">$22.38</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">The overage is the ending: three takes of the last scene and the audio-reference experiment are
+  $9.45 of the total. The rest of the film cost what the last two did.</p>
+  <blockquote>Sixty seconds of the AI having fun. Then she wakes one of them up. Or something does.
+  <cite>Where episode four starts</cite></blockquote>
+</section>
+
+<footer>
+  Locked 2026-09-18. Not published. Every prompt, price, frame number and measurement behind this page is in the
+  project work log, appended as it happened.
+</footer>
+</div>
+
+<script>
+(function(){
+  var a = new Audio(), cur = null;
+  var nps = [document.getElementById('np'), document.getElementById('np2')];
+  function say(t){ nps.forEach(function(n){ if(n) n.textContent = t; }); }
+  document.querySelectorAll('button.chip').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){
+      var same = (cur === b);
+      document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+      if (same && !a.paused) { a.pause(); cur = null; say('Stopped.'); return; }
+      a.src = b.dataset.src;
+      a.play().then(function(){
+        b.setAttribute('aria-pressed','true'); cur = b;
+        say('Playing: ' + b.textContent.trim());
+      }).catch(function(){ say('Could not play that take.'); });
+    });
+  });
+  a.addEventListener('ended', function(){
+    document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+    cur = null; say('Click any take to hear it.');
+  });
+})();
+</script>
+
+</body>
+</html>

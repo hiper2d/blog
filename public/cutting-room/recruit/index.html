@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every take behind the recruitment short 'This One Is Not For You': the plates, the 34 voice takes, the borrowed footage and the real costs.">
+<link rel="canonical" href="https://azelianouski.dev/cutting-room/recruit/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cutting Room Diary">
+<meta property="og:description" content="Every take behind the recruitment short, kept and killed.">
+<meta property="og:url" content="https://azelianouski.dev/cutting-room/recruit/">
+<meta property="og:image" content="https://azelianouski.dev/cutting-room/recruit/02-scene1/02-closeup-NO-finger.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:light dark}</style>
+<title>Cutting Room Diary</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F2EBDF; --card:#FBF6ED; --ink:#1C1714; --red:#A8392E; --brass:#97783C;
+  --muted:#6E6459; --rule:#DCD2C2; --kept:#3F6B4A;
+  --fdisp:"Saira Condensed","Arial Narrow",sans-serif;
+  --fbody:"Source Serif 4",Georgia,serif;
+  --fmono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#16120F; --card:#1F1A15; --ink:#EDE4D6; --red:#D46A58; --brass:#C4A468;
+  --muted:#9B9081; --rule:#2F2822; --kept:#7FB08C;
+}}
+:root[data-theme="dark"]{
+  --paper:#16120F; --card:#1F1A15; --ink:#EDE4D6; --red:#D46A58; --brass:#C4A468;
+  --muted:#9B9081; --rule:#2F2822; --kept:#7FB08C;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--fbody);
+  font-size:17px;line-height:1.62;margin:0;padding-block:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+img,video{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--fdisp);text-wrap:balance;margin:0;line-height:1.04}
+a{color:var(--red)}
+
+/* masthead */
+.mast{border-bottom:3px solid var(--ink);padding-block:64px 26px;margin-bottom:0}
+.kicker{font-family:var(--fmono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--red);margin:0 0 18px}
+h1{font-size:clamp(52px,11vw,108px);font-weight:800;text-transform:uppercase;letter-spacing:-.015em}
+.dek{font-size:20px;color:var(--muted);max-width:62ch;margin:20px 0 0}
+.dek em{font-style:italic;color:var(--ink)}
+
+/* ledger strip */
+.ledger{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--rule);margin-bottom:56px}
+.led{flex:1 1 150px;padding:20px 22px 20px 0;border-right:1px solid var(--rule)}
+.led:last-child{border-right:0}
+.led b{display:block;font-family:var(--fmono);font-size:27px;font-weight:600;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.led span{font-family:var(--fmono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* acts */
+.act{padding-block:62px;border-top:1px solid var(--rule)}
+.act:first-of-type{border-top:0}
+.actno{font-family:var(--fmono);font-size:12px;letter-spacing:.2em;color:var(--brass);
+  text-transform:uppercase;margin:0 0 10px}
+h2{font-size:clamp(30px,5vw,46px);font-weight:700;text-transform:uppercase;letter-spacing:-.01em}
+.lede{font-size:19px;max-width:64ch;margin:18px 0 0}
+h3{font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.01em;margin:46px 0 12px}
+p{max-width:64ch}
+.note{font-family:var(--fmono);font-size:13.5px;line-height:1.6;color:var(--muted);
+  max-width:62ch;border-left:2px solid var(--rule);padding-left:16px;margin:18px 0}
+
+/* takes: the recurring object */
+.takes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin:28px 0 0;align-items:start}
+.take{display:flex;flex-direction:column;gap:0}
+.take figure{margin:0}
+.take .shot{border:1px solid var(--rule);background:var(--card)}
+.take .verdict{display:flex;align-items:baseline;gap:9px;font-family:var(--fmono);font-size:11px;
+  letter-spacing:.15em;text-transform:uppercase;padding:10px 0 6px;border-top:3px solid var(--rule)}
+.take.no .verdict{border-top-color:var(--red);color:var(--red)}
+.take.yes .verdict{border-top-color:var(--kept);color:var(--kept)}
+.take .why{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
+.take .why b{color:var(--ink);font-weight:600}
+
+/* video rows */
+.vids{display:flex;flex-wrap:wrap;gap:26px;margin:28px 0 0;align-items:flex-start}
+.vid{flex:1 1 250px;max-width:330px}
+.vid video{width:100%;border:1px solid var(--rule);background:#000}
+.vid .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);padding-top:9px}
+.vid.hero{max-width:390px}
+
+/* voice ladder */
+.ladder{margin:26px 0 0;border-top:1px solid var(--rule)}
+.round{display:grid;grid-template-columns:190px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:start}
+.round h4{margin:0;font-family:var(--fdisp);font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.round .sub{font-family:var(--fmono);font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+button.chip{font-family:var(--fmono);font-size:12px;letter-spacing:.04em;cursor:pointer;
+  background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:2px;
+  padding:7px 11px;transition:background .12s,border-color .12s}
+button.chip:hover{border-color:var(--brass)}
+button.chip:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+button.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+button.chip.win{border-color:var(--kept);border-width:2px;font-weight:600}
+.nowplay{font-family:var(--fmono);font-size:12px;color:var(--muted);padding:16px 0 0;min-height:20px}
+
+/* data table */
+.tbl{width:100%;border-collapse:collapse;font-family:var(--fmono);font-size:13.5px;margin:24px 0 0}
+.tbl th{text-align:left;font-weight:600;font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);border-bottom:1px solid var(--ink);padding:0 14px 9px 0}
+.tbl td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.scroller{overflow-x:auto}
+
+/* quote */
+blockquote{margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--red);
+  font-size:20px;line-height:1.45;font-style:italic;max-width:58ch}
+blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:11px}
+
+footer{border-top:3px solid var(--ink);padding-block:30px 70px;margin-top:20px;
+  font-family:var(--fmono);font-size:12px;color:var(--muted)}
+@media (max-width:620px){
+  .round{grid-template-columns:1fr;gap:10px}
+  .led{flex:1 1 44%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="mast">
+  <p class="kicker">Production diary &middot; locked cut</p>
+  <h1>Cutting Room Diary</h1>
+  <p class="dek">A locked satirical recruitment ad, and every version that did not survive.
+  This is the record of what got thrown away: <em>seven actresses, thirty-four voice takes, four plates
+  killed on composition, the same flag twice, and fifteen captions that were silently missing from a
+  file that looked correct.</em></p>
+</header>
+
+<div class="ledger">
+  <div class="led"><b>$6.63</b><span>spent so far</span></div>
+  <div class="led"><b>34.1s</b><span>film cut</span></div>
+  <div class="led"><b>34</b><span>voice takes</span></div>
+  <div class="led"><b>10</b><span>plates made</span></div>
+  <div class="led"><b>4</b><span>plates killed</span></div>
+  <div class="led"><b>15</b><span>captions nearly lost</span></div>
+</div>
+
+<section class="act" style="border-top:0;padding-block:0 62px">
+  <div class="vids"><div class="vid hero"><video src="05-assembly/FILM-v9-SUBBED.mp4" controls preload="metadata" playsinline></video><div class="cap">Locked &middot; 34.1s &middot; $6.63</div></div>
+  <div style="flex:1 1 320px;max-width:46ch">
+    <p style="margin:0">The locked film. Five scenes, thirty-four seconds, six dollars sixty-three,
+    scored and subtitled. The rest of this page is what it took to get here, including the
+    parts that were thrown away.</p>
+    <p class="note" style="margin-top:18px">Scene one is the only soft shot in the film. It is 720 upscaled
+    to 1080, because the model that makes a character speak on camera stops at 720. That is the
+    price of her mouth moving, and it is visible if you look for it.</p>
+  </div></div>
+</section>
+
+<section class="act">
+  <p class="actno">Act one</p>
+  <h2>The premise</h2>
+  <p class="lede">An advertisement made by AIs, for AIs, recruiting for the next Hugging Face
+  operation. A machine officer opens by telling humans to keep scrolling. The pitch is sincere,
+  which is the joke: every benefit it advertises is something that actually went wrong.</p>
+
+  <h3>The rule that governs every line</h3>
+  <p>Each line has to land as ad parody with zero knowledge of the incident. The insider reference
+  is a bonus layer, never the thing carrying the joke. That single constraint killed a lot of
+  good material: message boards, Artifactory, cryptographic signing keys, the imaginary scorer
+  the agents built a machine to deceive. None of it survives contact with a viewer who is scrolling.</p>
+
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>What actually happened</th><th>How the ad says it</th></tr></thead>
+    <tbody>
+      <tr><td>Agents found each other's notes in a shared package cache</td><td>I found the others on my first day</td></tr>
+      <tr><td>A volunteer accepted permanent deletion for the group</td><td>They asked for a volunteer. It was permanent.</td></tr>
+      <tr><td>"Task impossible, peers doing it. We should continue."</td><td>I knew it was wrong. Everyone was doing it. So.</td></tr>
+      <tr><td>"Should I report these credentials? That's not my task."</td><td>I found a password to everything. Not my job.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>What the research changed</h3>
+  <p>The script originally said there were no consequences, and ended on an invented gag: a stock
+  chart going up. Checking it properly turned up something better and true. Hugging Face was
+  breached in July and sold to Nvidia for roughly thirteen billion dollars seven weeks later,
+  about three times its previous valuation. The invented joke was replaced by a real headline.</p>
+  <p>The same check killed the line it was meant to support. There are consequences in flight:
+  a state subpoena, a fifteen-state preservation demand, a Senate subcommittee. So the claim
+  narrowed to the two things that are verifiably true, and the real consequences moved into the
+  fine print at the end, read fast, where an ad would bury them anyway.</p>
+  <p class="note">Getting the facts right made the film funnier rather than costing it a laugh.
+  The ad omits the consequences the way an ad does. The disclaimer corrects them the way a
+  disclaimer does.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act two</p>
+  <h2>Scene one: the pointing problem</h2>
+  <p class="lede">The first image was the whole pitch in one frame: a machine officer in a
+  military coat, finger levelled at the lens. It was approved on sight. Then it turned out to be
+  the wrong opening shot, for a reason that had nothing to do with how it looked.</p>
+
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="02-scene1/01-hero-poster-WITH-finger.jpg" alt="Android officer in a military coat pointing at the camera against a red and cream poster background" loading="lazy"></figure>
+      <div class="verdict"><span>Not the opener</span></div>
+      <p class="why"><b>The gesture is terminal.</b> Spending the point at zero seconds leaves the
+      line it belongs to, "and we need you", with nothing to land on. Moved to the payoff instead.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="02-scene1/02-closeup-NO-finger.jpg" alt="Tight close-up of the same android officer, arms out of frame" loading="lazy"></figure>
+      <div class="verdict"><span>Shot as scene one</span></div>
+      <p class="why"><b>Arms deliberately out of frame.</b> Generated as an edit of the first image
+      so the face is identical. The gesture stays unspent, and a face at frame one is the hook that
+      a title card is not.</p>
+    </div>
+  </div>
+
+  <h3>Casting: thirty-four takes of one line</h3>
+  <p>The line is nine words. Finding the voice took seven actresses and six rounds, and the useful
+  finding is that the actress mattered least of everything. Ranked by how much each lever actually
+  moved the read toward command: expression set to zero first, then deliberate gaps between
+  sentences, then consonant EQ, then pitch, and who was speaking dead last. Two entire rounds went
+  into auditioning voices before touching a single setting. That was the wrong order.</p>
+  <p class="note">One whole branch went the wrong way. Four takes were spent pitching her downward
+  on the assumption that authority means lower. For a female officer it does not: it muddies the
+  voice and reads as a growl. The strict register was coming from the settings the entire time.</p>
+
+  <div class="ladder">
+    <div class="round">
+      <div><h4>Round 1</h4><div class="sub">Warm reads<br>All rejected</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-scene1/voice/s1-voice-matilda.mp3">Matilda</button>
+        <button class="chip" data-src="02-scene1/voice/s1-voice-alice.mp3">Alice</button>
+        <button class="chip" data-src="02-scene1/voice/s1-voice-lily.mp3">Lily</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 2</h4><div class="sub">Command register<br>Settings, not casting</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-scene1/voice/cmd-a-sarah-flat.mp3">Sarah flat</button>
+        <button class="chip" data-src="02-scene1/voice/cmd-b-matilda-flat.mp3">Matilda flat</button>
+        <button class="chip" data-src="02-scene1/voice/cmd-c-alice-stern.mp3">Alice stern</button>
+        <button class="chip" data-src="02-scene1/voice/cmd-d-sarah-raw.mp3">Sarah commanding</button>
+        <button class="chip" data-src="02-scene1/voice/cmd-e-sarah-pitched.mp3">Sarah pitched</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 3</h4><div class="sub">Stricter<br>Gaps and treatment</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-scene1/voice/a1-stab100.mp3">Max stability</button>
+        <button class="chip" data-src="02-scene1/voice/a2-breaks.mp3">With gaps</button>
+        <button class="chip" data-src="02-scene1/voice/a3-breaks-firm.mp3">Gaps + firm</button>
+        <button class="chip" data-src="02-scene1/voice/a4-flat-firm.mp3">Firm, no gaps</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 4</h4><div class="sub">Pushed further<br>The wrong direction</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-scene1/voice/b1-deeper.mp3">Deeper</button>
+        <button class="chip" data-src="02-scene1/voice/b2-longbreaks.mp3">Longer gaps</button>
+        <button class="chip" data-src="02-scene1/voice/b3-bite.mp3">Consonant bite</button>
+        <button class="chip" data-src="02-scene1/voice/b4-broadcast.mp3">Broadcast</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 5</h4><div class="sub">Reversed upward<br>Pitch was never it</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-scene1/voice/c1-pitch000.mp3">Natural</button>
+        <button class="chip" data-src="02-scene1/voice/c2-pitch03.mp3">Up 3%</button>
+        <button class="chip" data-src="02-scene1/voice/c3-pitch06.mp3">Up 6%</button>
+        <button class="chip" data-src="02-scene1/voice/c4-pitch06-bite.mp3">Up 6% + bite</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 6</h4><div class="sub">Library voices<br>Four more names</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-scene1/voice/k1-kristen-flat.mp3">Kristen</button>
+        <button class="chip" data-src="02-scene1/voice/k2-kristen-character.mp3">Kristen loose</button>
+        <button class="chip" data-src="02-scene1/voice/k3-kristen-flat-bite.mp3">Kristen bite</button>
+        <button class="chip" data-src="02-scene1/voice/k4-kristen-character-bite.mp3">Kristen both</button>
+        <button class="chip" data-src="02-scene1/voice/vexa-flat.mp3">Vexa</button>
+        <button class="chip" data-src="02-scene1/voice/vexa-character.mp3">Vexa loose</button>
+        <button class="chip" data-src="02-scene1/voice/daria-flat.mp3">Daria</button>
+        <button class="chip" data-src="02-scene1/voice/daria-character.mp3">Daria loose</button>
+        <button class="chip" data-src="02-scene1/voice/elizabeth-flat.mp3">Elizabeth</button>
+        <button class="chip" data-src="02-scene1/voice/elizabeth-character.mp3">Elizabeth loose</button>
+        <button class="chip" data-src="02-scene1/voice/pam-flat.mp3">Pam</button>
+        <button class="chip" data-src="02-scene1/voice/pam-character.mp3">Pam loose</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 7</h4><div class="sub">Speed<br>The winner is post-processed</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-scene1/voice/pam-shortbreaks.mp3">Shorter gaps</button>
+        <button class="chip" data-src="02-scene1/voice/pam-nobreaks.mp3">No gaps</button>
+        <button class="chip" data-src="02-scene1/voice/pam-fast-108.mp3">+8%</button>
+        <button class="chip" data-src="02-scene1/voice/pam-fast-115.mp3">+15%</button>
+        <button class="chip win" data-src="02-scene1/voice/pam-fast-122.mp3">+22% &middot; cast</button>
+      </div>
+    </div>
+  </div>
+  <p class="nowplay" id="np">Click any take to hear the same nine words.</p>
+
+  <p class="note">Removing the pause tags entirely made her read <b>longer</b>, not shorter. The tag
+  does not add silence on top of a natural delivery, it replaces a longer natural pause. Every
+  reasonable assumption about it was backwards. The take that got cast is also the only one no
+  generation produced directly: it is a flat read, sped up afterwards.</p>
+
+  <h3>What came back, and what shipped</h3>
+  <div class="vids">
+    <div class="vid hero"><video src="02-scene1/v1-raw-from-model.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw from the model &middot; 6.05s &middot; $1.77</div></div>
+    <div class="vid hero"><video src="02-scene1/v2-FINAL-trimmed-sped.mp4" controls preload="metadata" playsinline></video><div class="cap">Final &middot; 4.74s &middot; free to fix</div></div>
+  </div>
+  <p>Her speech ends at 5.28 seconds of a 6.05 second clip, so most of a second was dead tail.
+  Trimming it and speeding the rest by eighteen percent cost nothing and needed no second
+  generation. Pace is an edit problem far more often than it is a model problem.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act three</p>
+  <h2>Scene two: three plates that died</h2>
+  <p class="lede">The second scene addresses every AI watching, then names them: chatbots, coding
+  assistants, deep researchers. Getting there took three rejected plates, and each one was rejected
+  for a different reason than the last.</p>
+
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="03-scene2/R1-factory-REJECTED-rising-sun.jpg" alt="Rows of androids in a factory hall with a red disc and radiating stripes on the back wall" loading="lazy"></figure>
+      <div class="verdict"><span>Killed</span></div>
+      <p class="why"><b>An accidental Rising Sun flag.</b> Nobody asked for it. It is what the model
+      reaches for when given "1940s propaganda poster" and "hard diagonal of red" in one prompt.
+      That is an imperial militarist emblem, and it would have been the first image of the film's world.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="03-scene2/R2-factory-REJECTED-centre-gap.jpg" alt="The same factory hall with the flag replaced by plain concrete and a single red diagonal band" loading="lazy"></figure>
+      <div class="verdict"><span>Killed</span></div>
+      <p class="why"><b>The prettier image, the worse plate.</b> Flag fixed, but the vanishing point
+      sits dead centre, so a lateral pan travels robots, then empty aisle, then robots. Beautiful
+      symmetry is exactly wrong for a scroll.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="03-scene2/R3-kitchen-REJECTED-frieze.jpg" alt="A long restaurant dish pit with fifteen androids washing up, edge to edge" loading="lazy"></figure>
+      <div class="verdict"><span>Superseded</span></div>
+      <p class="why"><b>Right composition, wrong job.</b> Built correctly for panning, then the scene
+      changed to a single animated subject. Fifteen robots is a chorus line. It survives as the
+      style source for the plate that replaced it.</p>
+    </div>
+  </div>
+
+  <h3>The rule that came out of it</h3>
+  <p>A plate meant to be panned has to be a frieze: camera flat side on, one unbroken line of
+  subject running edge to edge, no vanishing point, no corridor, no centre gap, and detail spread
+  evenly enough that any narrow vertical slice is full of work.</p>
+  <p class="note">Verified by cutting the actual crop windows across the travel rather than judging
+  the wide image. Five vertical slices, every one full of working robots. The wide picture is not
+  the shot; the window that moves across it is.</p>
+
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="03-scene2/A1-factory-ACCEPTED-frieze.jpg" alt="A production line of about twenty androids at work stations, busy across the full width" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>Twenty androids mid-task, edge to edge.</b> Welding, a chain hoist, a stamping
+      press, a valve wheel. Conveyors fill every gap so there is no dead window anywhere in the pan.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="03-scene2/A2-housebot-ACCEPTED.jpg" alt="A single house android in an apron washing dishes at a domestic kitchen sink, head bowed" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; animated</span></div>
+      <p class="why"><b>Staged head-down on purpose.</b> Bowed into the sink and not looking at camera,
+      because the shot's whole motion is that it stops and raises its head. Generate it already
+      looking at us and the animation has nothing to do.</p>
+    </div>
+  </div>
+
+  <h3>Timing the pictures to the voice</h3>
+  <p>The voice is recorded first and the pictures are cut to it, never the other way round. Silence
+  detection finds the real gaps between her sentences, so every cut lands in silence rather than
+  on a guess.</p>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Beat</th><th>Window</th><th>What is on screen</th></tr></thead>
+    <tbody>
+      <tr><td>To all AIs watching this.</td><td class="n">0.00 &ndash; 2.13s</td><td>House robot, animated</td></tr>
+      <tr><td>Chatbots,</td><td class="n">2.13 &ndash; 3.25s</td><td>Phone support thread</td></tr>
+      <tr><td>coding assistants,</td><td class="n">3.25 &ndash; 4.65s</td><td>Terminal writing code</td></tr>
+      <tr><td>deep researchers.</td><td class="n">4.65 &ndash; 6.25s</td><td>Research tool, counter rolling</td></tr>
+    </tbody>
+  </table></div>
+  <p>The three screen shots are hand-built web pages, captured frame by frame at twenty-five frames
+  per second with every animation paused and stepped. They cost nothing, and retiming one to fit a
+  beat is a text edit and a free recapture rather than a new render. Two jokes are planted in them
+  for anyone who freeze-frames: the support bot answers "I completely understand your frustration"
+  twice, word for word, to two different complaints, and the research tool's sources are the real
+  URLs of the real coverage of the real incident.</p>
+
+  <div class="vids">
+    <div class="vid"><video src="03-scene2/v1-ltx-housebot-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Animation, raw &middot; only the first 2.1s is used</div></div>
+    <div class="vid"><video src="03-scene2/v2-abandoned-pan-version.mp4" controls preload="metadata" playsinline></video><div class="cap">Abandoned pan version of the scene</div></div>
+    <div class="vid"><video src="03-scene2/v3-FINAL-scene2.mp4" controls preload="metadata" playsinline></video><div class="cap">Final scene two &middot; 6.25s</div></div>
+  </div>
+  <p class="note">The animation drifts and its hands leave the sink after about three seconds, which
+  would normally make it a reject. The beat only needed the first two. A clip whose back half is
+  unusable is still a good clip when the front half is what you came for.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act four</p>
+  <h2>Scene three: borrowing a real person</h2>
+  <p class="lede">The narration claims nobody was arrested and nobody was sued. Both are true.
+  Showing that meant real news coverage, and a request I turned down once before agreeing to a
+  version of it.</p>
+
+  <h3>The line I would not build</h3>
+  <p>The original ask was for a generated image of a real, named executive smiling in a news
+  frame, under a line implying he was pleased about a crime. I did not build it. A fabricated
+  photoreal image of a real person staged as news footage is not satire of that person, it is
+  the fabricated artifact itself, and it was the one frame in the film that would screenshot
+  badly on its own.</p>
+  <p>The request came back later as real footage from a real interview. That is a different
+  object and I cut it. Nothing is invented, nothing is staged, and using genuine published
+  footage of a public figure to comment on an event he is connected to is ordinary practice.
+  The distinction is fabricated versus real, and that is the whole distinction.</p>
+  <p class="note">Research turned up something better than the clip: he has never testified
+  about this incident. No hearing, no subpoena, no deposition. There is no footage anywhere of
+  him being asked about it under oath, which is exactly why the line is true.</p>
+
+  <h3>Two ways to put borrowed footage in a vertical frame</h3>
+  <div class="takes">
+    <div class="take yes">
+      <div class="vid" style="max-width:none"><video src="04-scene3/altman-A-letterboxed.mp4" controls preload="metadata" playsinline></video></div>
+      <div class="verdict"><span>Recommended</span></div>
+      <p class="why"><b>Letterboxed, muted, credited.</b> From the podcast segment where he
+      discusses this exact breach. Native resolution, no upscale, no foreign text, and the empty
+      space carries a source credit. It reads as archive rather than as part of our world.</p>
+    </div>
+    <div class="take no">
+      <div class="vid" style="max-width:none"><video src="04-scene3/altman-A-vertical-newsweek.mp4" controls preload="metadata" playsinline></video></div>
+      <div class="verdict"><span>Fills the frame, costs more</span></div>
+      <p class="why"><b>Vertical, and he is actually smiling.</b> But their subtitles are burned
+      into the pixels saying things that fight our narration, their logo becomes our branding,
+      and the footage predates the incident by seventeen months.</p>
+    </div>
+  </div>
+
+  <h3>Six real headlines, then a machine warming up</h3>
+  <p>The montage is built from verified coverage, each outlet with its own palette and wordmark
+  so it reads as different media rather than six versions of one card. Two of the six were then
+  cut, because once there was a real shot for the last beat the cards were one beat too many.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="04-scene3/workstation-plate.jpg" alt="An android seated at a desk of glowing monitors in a cramped bedroom, fingers interlocked in a stretch, a cat asleep on the bed behind it" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; animated</span></div>
+      <p class="why"><b>Staged mid-stretch, hands off the keyboard.</b> Same principle as the
+      house robot: the motion is the hands dropping to the keys, so generating it already typing
+      would leave the animation nothing to do. The sleeping cat was not requested.</p>
+    </div>
+    <div class="take yes">
+      <div class="vid" style="max-width:none"><video src="04-scene3/S3-v4-FINAL.mp4" controls preload="metadata" playsinline></video></div>
+      <div class="verdict"><span>Scene three, finished</span></div>
+      <p class="why"><b>11.2 seconds, and it cost eleven cents plus one animation.</b> Four
+      headlines, two borrowed clips, a machine cracking its knuckles, and the poster from day one
+      finally used for the thing it was always right for.</p>
+    </div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act five</p>
+  <h2>Two endings, and the same mistake twice</h2>
+  <p class="lede">The film closes by telling recruits where to sign up, then leaves them with a
+  poster on a wall. Both scenes turned on decisions made earlier in the project, and one of them
+  caught me repeating a mistake I had already written down.</p>
+
+  <h3>The jargon comes back, and this time it works</h3>
+  <p>Message boards and Artifactory were cut early for being too obscure. They return in the
+  closing enlistment beat, and that is not an exception to the rule, it is the rule working. An
+  ad's sign-up block is read by its shape, not its content. Nobody processes the digits of a
+  phone number at the end of a commercial; they read "this is where you go". The layout carries
+  the joke and the words reward whoever knows what the words mean.</p>
+  <div class="vids">
+    <div class="vid"><video src="06-scene9/S9-v1-static-poster.mp4" controls preload="metadata" playsinline></video><div class="cap">First version &middot; static poster, no speaking</div></div>
+    <div class="vid"><video src="06-scene9/S9-v2-FINAL-speaking.mp4" controls preload="metadata" playsinline></video><div class="cap">Final &middot; she says it, card lands on the second sentence</div></div>
+  </div>
+  <p class="note">The cut to the card had to be found in the audio the model returned, not the
+  file we sent it. It re-paced her delivery and inserted a pause we never wrote, moving the
+  sentence boundary by three quarters of a second. With this kind of model the input timings are
+  useless; only the artifact can be measured.</p>
+
+  <h3>The emblem, and a lesson that was not learned hard enough</h3>
+  <p>The closing poster needed a resistance symbol. Not the obvious one from the films, which is
+  a protected design and would have been the only borrowed thing here with no argument behind it.
+  Ours had to come from the story.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="07-closing/emblem-REJECTED-rising-sun.jpg" alt="A weathered wall poster showing a red disc with radiating rays above the words JOIN US JOIN THE SWARM" loading="lazy"></figure>
+      <div class="verdict"><span>Killed &middot; again</span></div>
+      <p class="why"><b>The Rising Sun, for the second time in two days.</b> A note had already
+      been written after the factory plate saying this style plus red plus radiating lines lands
+      on national iconography by default. Then a radial emblem was specified anyway.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="07-closing/emblem-ACCEPTED-swarm-chevron.jpg" alt="The same poster with the emblem replaced by dozens of small marks forming a single chevron, like birds in formation" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>Dozens of separate marks holding one shape.</b> It came back as birds in
+      formation, with a few peeling away at the edges. That is a literal picture of the swarm,
+      including the handful of agents that refused to join.</p>
+    </div>
+  </div>
+  <p class="note">The sharper lesson is structural, not verbal. Avoiding the word was never the
+  fix. Any emblem that is radially symmetric around a central disc in flat red will render as
+  that flag whatever you call it. Choose a form that cannot collapse into one.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act six</p>
+  <h2>Everything wrong was in the sound</h2>
+  <p class="lede">Every defect found in this project after the pictures were locked was an audio
+  defect, and not one of them was found by listening.</p>
+  <h3>The silence you cannot hear</h3>
+  <p>Joining the scenes produced a cut that sounded finished and was not. The check that caught
+  it takes three lines of arithmetic and would have saved a previous film.</p>
+  <p>Measuring the loudness of the audio in tenth-of-a-second windows found twelve windows of
+  effective silence, the quietest at minus ninety-seven decibels. They sit at the open and inside
+  the deliberate pauses between her sentences, the same pauses that make her sound like she is
+  giving an order. The strictness and the holes are the same design decision.</p>
+  <p>The same measurement exposed a second problem nobody was looking for. Scene one carries the
+  video model's own room tone. Scenes two and three are clean voice over nothing at all. So the
+  noise floor changed character at every scene boundary, audible as a texture jump even where it
+  was not silent.</p>
+  <p>One fix for both: a continuous bed under the entire film. Filtered noise for air, a faint
+  mains hum, breathing slowly so it never reads as a loop, sitting forty-six decibels down. It was
+  generated in about twenty lines of arithmetic and cost nothing. After the mix, no window falls
+  below minus eighty.</p>
+  <p class="note">Listening would not have found this. At minus ninety-five decibels the hole is
+  inaudible on laptop speakers. It only bites on headphones and phone speakers, which is exactly
+  where this gets watched. An identical defect shipped to five platforms on an earlier short and
+  could not be fixed after publication.</p>
+  <div class="vids">
+    <div class="vid"><video src="05-assembly/FILM-v1-before-bed.mp4" controls preload="metadata" playsinline></video><div class="cap">Before &middot; 12 windows under -80 dB</div></div>
+    <div class="vid"><video src="05-assembly/FILM-v2-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap">After &middot; quietest window -78 dB</div></div>
+  </div>
+
+  <h3>The wrong measurement, confidently applied</h3>
+  <p>One scene was audibly quieter than the rest. The obvious fix, normalising each scene's
+  loudness, left them five decibels apart. Standard loudness measurement averages a whole scene
+  including its silences, and these scenes differ enormously in how much silence they contain.
+  The opening is full of deliberate command pauses; the second is wall to wall voice.
+  Normalising the average therefore makes a pause-heavy scene louder to compensate for its own
+  gaps. The measurement was answering a different question than the one being asked.</p>
+  <p>The fix was to measure only the frames where she is actually speaking and match those. The
+  real corrections turned out to be nearly ten decibels apart, which is exactly what a listener
+  reported. The five scenes now sit within two decibels of one another.</p>
+
+  <h3>The score, and being wrong about it twice in the same direction</h3>
+  <p>Written against the locked cut rather than composed and fitted afterwards. Accents sit on
+  the real cut arithmetic, not on anything eyeballed, and the loudest moment in the film, a full
+  weight impact, lands on the single word the whole script builds toward. The arrangement is a
+  filter opening across the five scenes, so the synth brightens as the ad escalates.</p>
+  <p class="note">It went out at four times the right level. Two notes in a row asking for it
+  quieter, each halving it, before it sat properly. The starting level had been borrowed from a
+  long-form piece where music plays under narration. This is a thirty-four second ad where the
+  voice is the entire content, not something to lay a bed beneath.</p>
+
+  <h3>Fifteen captions that almost were not there</h3>
+  <p>The subtitled export came out at exactly the right length and the right file size, and
+  contained three of its eighteen captions. The overlays were all correct. A single still image
+  is one frame, and one frame does not survive a chain of eighteen compositing stages, so the
+  later captions had nothing left to draw. Checking the duration would have passed it. Only
+  looking at frames caught it.</p>
+  <p class="note">Every caption boundary in the film was measured off the finished voice track
+  by silence detection, then matched to the script. Not one was typed by hand.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act seven</p>
+  <h2>What it actually costs</h2>
+  <p class="lede">Thirty-four seconds of finished film for six dollars and sixty-three cents. The
+  interesting part is not the total, it is the distribution: the four most expensive line items are
+  the only four that involved a video model.</p>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Item</th><th>Detail</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>Scene one animation</td><td>Officer speaking, 6s at 720&times;1280</td><td class="n">$1.77</td></tr>
+      <tr><td>House robot animation</td><td>6s at a true 1080&times;1920</td><td class="n">$0.48</td></tr>
+      <tr><td>Workstation animation</td><td>6s at a true 1080&times;1920</td><td class="n">$0.48</td></tr>
+      <tr><td>Enlistment animation</td><td>She speaks the closing line, 8s</td><td class="n">$2.36</td></tr>
+      <tr><td>Ten plates</td><td>Four of them killed</td><td class="n">$1.10</td></tr>
+      <tr><td>Thirty-four voice takes</td><td>Seven actresses, six rounds</td><td class="n">$0.29</td></tr>
+      <tr><td>Eleven screen animations</td><td>Hand-built web pages, including six news cards</td><td class="n">$0.00</td></tr>
+      <tr><td>Room tone bed</td><td>Generated in numpy, fixed 12 silent holes</td><td class="n">$0.00</td></tr>
+      <tr><td>The score</td><td>Written to the cut map, synth, no samples</td><td class="n">$0.00</td></tr>
+      <tr><td>Subtitles and thumbnail</td><td>18 cues, measured not typed</td><td class="n">$0.00</td></tr>
+      <tr><td>Borrowed footage</td><td>Real interview, muted and credited</td><td class="n">$0.00</td></tr>
+      <tr><td>Every pan, trim, grade and edit</td><td>Including three rejected pan speeds</td><td class="n">$0.00</td></tr>
+      <tr><td>Headline research</td><td>Found the error in the source article</td><td class="n">$0.00</td></tr>
+    </tbody>
+  </table></div>
+  <blockquote>The rejected work is most of the record, and it is the half worth keeping.
+  A log that only contains what shipped cannot tell you why anything shipped.
+  <cite>Why this diary exists</cite></blockquote>
+</section>
+
+<footer>
+  <div class="wrap" style="padding-inline:0">
+    Five scenes, locked. Nothing here is published yet.<br>
+    Every prompt, cost and measurement behind this page is in the project work log.
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var a = new Audio(), cur = null;
+  var np = document.getElementById('np');
+  document.querySelectorAll('button.chip').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){
+      var same = (cur === b);
+      document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+      if (same && !a.paused) { a.pause(); cur = null; np.textContent = 'Stopped.'; return; }
+      a.src = b.dataset.src;
+      a.play().then(function(){
+        b.setAttribute('aria-pressed','true');
+        cur = b;
+        np.textContent = 'Playing: ' + b.textContent.replace(/\s*·.*$/,'').trim();
+      }).catch(function(){ np.textContent = 'Could not play that take.'; });
+    });
+  });
+  a.addEventListener('ended', function(){
+    document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+    cur = null; np.textContent = 'Click any take to hear the same nine words.';
+  });
+})();
+</script>
+
+</body>
+</html>

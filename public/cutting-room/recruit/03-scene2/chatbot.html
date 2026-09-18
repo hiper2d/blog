@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:#000;overflow:hidden;
+  font-family:-apple-system,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
+.phone{position:absolute;inset:0;background:#000;display:flex;flex-direction:column}
+.nav{padding:56px 0 22px;text-align:center;border-bottom:1px solid #1c1c1e;flex:0 0 auto}
+.av{width:96px;height:96px;border-radius:50%;background:#2c2c2e;margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;font-size:46px;color:#8e8e93}
+.nm{color:#fff;font-size:34px;font-weight:600;letter-spacing:-.3px}
+.sub{color:#8e8e93;font-size:25px;margin-top:6px}
+.thread{flex:1;padding:44px 40px;display:flex;flex-direction:column;gap:26px;justify-content:flex-end;padding-bottom:90px}
+.row{display:flex;opacity:0;transform:translateY(26px) scale(.86);transform-origin:bottom}
+.row.me{justify-content:flex-end;transform-origin:bottom right}
+.row.them{justify-content:flex-start;transform-origin:bottom left}
+.b{max-width:74%;padding:26px 34px;border-radius:44px;font-size:38px;line-height:1.32;letter-spacing:-.2px}
+.me .b{background:#0a84ff;color:#fff;border-bottom-right-radius:14px}
+.them .b{background:#26262a;color:#fff;border-bottom-left-radius:14px}
+@keyframes pop{to{opacity:1;transform:translateY(0) scale(1)}}
+#r1{animation:pop .15s cubic-bezier(.2,1.5,.4,1) 0.03s forwards}
+#r2{animation:pop .15s cubic-bezier(.2,1.5,.4,1) 0.29s forwards}
+#r3{animation:pop .15s cubic-bezier(.2,1.5,.4,1) 0.55s forwards}
+#r4{animation:pop .15s cubic-bezier(.2,1.5,.4,1) 0.81s forwards}
+</style></head><body><div class="phone">
+<div class="nav"><div class="av">◎</div><div class="nm">Support</div><div class="sub">online now</div></div>
+<div class="thread">
+<div class="row me" id="r1"><div class="b">my order still hasn't arrived</div></div>
+<div class="row them" id="r2"><div class="b">I completely understand your frustration.</div></div>
+<div class="row me" id="r3"><div class="b">it's been three weeks</div></div>
+<div class="row them" id="r4"><div class="b">I completely understand your frustration.</div></div>
+</div></div></body></html>

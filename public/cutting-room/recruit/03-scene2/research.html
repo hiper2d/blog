@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:#111214;overflow:hidden;
+  font-family:-apple-system,"SF Pro Text",Helvetica,Arial,sans-serif}
+.app{position:absolute;inset:0;padding:100px 56px;color:#e8e8ea}
+.q{font-size:38px;color:#fff;font-weight:600;line-height:1.3;margin-bottom:16px}
+.st{font-size:27px;color:#8a8a91;margin-bottom:48px}
+.win{height:150px;overflow:hidden;margin-bottom:8px}
+.strip{will-change:transform}
+.strip div{height:150px;font-size:150px;font-weight:700;color:#fff;letter-spacing:-4px;
+  line-height:150px;font-variant-numeric:tabular-nums}
+.cl{font-size:26px;color:#8a8a91;text-transform:uppercase;letter-spacing:3px;margin-bottom:52px}
+.src{display:flex;align-items:center;gap:22px;padding:22px 0;border-top:1px solid #232428;
+  opacity:0;transform:translateX(-18px)}
+.fav{width:44px;height:44px;border-radius:10px;flex:0 0 auto}
+.u{font-size:29px;color:#c9c9cf;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tick{margin-left:auto;color:#4ade80;font-size:30px}
+@keyframes sin{to{opacity:1;transform:translateX(0)}}
+@keyframes roll{from{transform:translateY(0)}to{transform:translateY(-3600px)}}
+.strip{animation:roll 1.25s cubic-bezier(.1,.7,.2,1) .06s both}
+</style></head><body><div class="app">
+<div class="q">Compare every published account of the incident</div>
+<div class="st">Deep research &middot; running</div>
+<div class="win"><div class="strip" id="strip"></div></div>
+<div class="cl">sources read</div>
+<div id="list"></div></div>
+<script>
+var st=document.getElementById('strip');
+for(var i=0;i<=24;i++){var d=document.createElement('div');d.textContent=(i*6);st.appendChild(d);}
+var S=[["#ff6b35","metr.org/blog/investigation"],["#ffd21e","huggingface.co/blog/timeline"],
+["#000000","openai.com/index/report"],["#ff4500","news.ycombinator.com/item"],
+["#0a66c2","semafor.com/article/nvidia"],["#e63946","technologyreview.com/2026"],
+["#1d4ed8","forbes.com/sites/jonmarkman"],["#16a34a","gizmodo.com/hugging-face"]];
+var l=document.getElementById('list');
+S.forEach(function(s,i){var d=document.createElement('div');d.className='src';
+d.innerHTML='<div class="fav" style="background:'+s[0]+'"></div><div class="u">'+s[1]+'</div><div class="tick">&#10003;</div>';
+d.style.animation='sin .12s ease-out '+(0.14+i*0.115).toFixed(3)+'s forwards';l.appendChild(d);});
+</script></body></html>

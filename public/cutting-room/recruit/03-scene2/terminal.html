@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:#0c0c0d;overflow:hidden;
+  font-family:"SF Mono",Menlo,Monaco,"Courier New",monospace}
+.term{position:absolute;inset:0;padding:90px 46px;color:#d6d6d6;font-size:30px;line-height:1.5}
+.bar{display:flex;gap:14px;margin-bottom:52px}
+.dot{width:22px;height:22px;border-radius:50%}
+.prompt{color:#e8e8e8;font-size:34px;margin-bottom:14px;white-space:nowrap;overflow:hidden}
+.caret{display:inline-block;width:16px;height:34px;background:#d97757;vertical-align:-5px;margin-left:4px}
+.line{opacity:0;white-space:pre;overflow:hidden;text-overflow:ellipsis}
+.c1{color:#7aa2f7}.c2{color:#9ece6a}.c3{color:#7dcfff}.c4{color:#565f89}.c5{color:#e0af68}
+@keyframes typ{from{width:0}to{width:100%}}
+@keyframes show{to{opacity:1}}
+#p{display:inline-block;animation:typ .30s steps(18,end) .04s both}
+</style></head><body><div class="term">
+<div class="bar"><div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div></div>
+<div class="prompt"><span class="c5">&gt;</span> <span id="p">build me a website</span><span class="caret"></span></div>
+<div id="out"></div></div>
+<script>
+const L=[["c4","· thinking…"],["c4",""],["c3","● Create index.html"],["c2","  + <!doctype html>"],
+["c2","  + <html lang=\"en\">"],["c2","  +   <head>"],["c2","  +     <meta charset=\"utf-8\">"],
+["c2","  +     <title>Home</title>"],["c2","  +   </head>"],["c2","  +   <body>"],
+["c2","  +     <header class=\"hero\">"],["c2","  +       <h1>Welcome</h1>"],["c2","  +     </header>"],
+["c2","  +   </body>"],["c2","  + </html>"],["c4",""],["c3","● Create styles.css"],
+["c1","  + .hero{display:flex;"],["c1","  +   align-items:center;"],["c1","  +   min-height:100vh}"],
+["c1","  + h1{font-size:4rem}"],["c4",""],["c3","● Create app.js"],
+["c1","  + document.querySelectorAll"],["c1","  +   ('a').forEach(bind)"],["c4",""],
+["c5","● Wrote 3 files"],["c2","✔ done"]];
+const o=document.getElementById('out');
+L.forEach((l,i)=>{const d=document.createElement('div');d.className='line '+l[0];d.textContent=l[1]||' ';
+d.style.animation='show .04s linear '+(0.38+i*0.032).toFixed(3)+'s forwards';o.appendChild(d);});
+</script></body></html>
