@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Production diary for the SealedSkin trailer: Snuffy the Cosmetologist gets a voice, a set and a scene, one take at a time.">
+<link rel="canonical" href="https://azelianouski.dev/cutting-room/snuffy/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Snuffy Cutting Room">
+<meta property="og:description" content="Every take behind a trailer for a skincare site, presented by a seal in a lab coat.">
+<meta property="og:url" content="https://azelianouski.dev/cutting-room/snuffy/">
+<meta property="og:image" content="https://azelianouski.dev/cutting-room/snuffy/cover-snuffy.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:dark light}</style>
+<title>Snuffy Cutting Room</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,600;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#0f1513; --card:#182120; --ink:#f6faf8; --accent:#a9c47f; --mint:#eaf1e6;
+  --muted:#9aa89f; --rule:#25302c; --kept:#a9c47f; --no:#d47a6a; --pine:#243f39;
+  --fdisp:"Schibsted Grotesk",system-ui,sans-serif;
+  --fbody:"Schibsted Grotesk",system-ui,sans-serif;
+  --fmono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --paper:#f6faf8; --card:#ffffff; --ink:#1c2724; --accent:#5f7f3a; --mint:#eaf1e6;
+  --muted:#5f6b66; --rule:#d9e2dc; --kept:#4f7a3a; --no:#a8392e; --pine:#243f39;
+}}
+:root[data-theme="light"]{
+  --paper:#f6faf8; --card:#ffffff; --ink:#1c2724; --accent:#5f7f3a; --mint:#eaf1e6;
+  --muted:#5f6b66; --rule:#d9e2dc; --kept:#4f7a3a; --no:#a8392e; --pine:#243f39;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--fbody);font-size:17px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+img,video{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--fdisp);text-wrap:balance;margin:0;line-height:1.06}
+a{color:var(--accent)}
+
+.mast{border-bottom:3px solid var(--accent);padding-block:56px 26px}
+.kicker{font-family:var(--fmono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 16px}
+h1{font-size:clamp(44px,9vw,92px);font-weight:800;letter-spacing:-.02em}
+.dek{font-size:20px;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.dek em{font-style:italic;color:var(--ink)}
+
+.ledger{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:48px}
+.led{flex:1 1 140px;padding:18px 20px 18px 0;border-right:1px solid var(--rule)}
+.led:last-child{border-right:0}
+.led b{display:block;font-family:var(--fmono);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums}
+.led span{font-family:var(--fmono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+.act{padding-block:54px;border-top:1px solid var(--rule)}
+.act:first-of-type{border-top:0}
+.actno{font-family:var(--fmono);font-size:12px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin:0 0 10px}
+h2{font-size:clamp(28px,4.6vw,42px);font-weight:800;letter-spacing:-.015em}
+.lede{font-size:19px;max-width:62ch;margin:16px 0 0}
+h3{font-size:21px;font-weight:600;margin:40px 0 12px}
+p{max-width:64ch}
+.note{font-family:var(--fmono);font-size:13.5px;line-height:1.6;color:var(--muted);max-width:62ch;border-left:2px solid var(--accent);padding-left:16px;margin:18px 0}
+
+.hero{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:32px;align-items:start;margin:26px 0 0}
+.hero figure{margin:0;background:var(--pine);border:1px solid var(--rule);padding:22px;border-radius:6px}
+.hero figcaption{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--mint);opacity:.8;padding-top:12px}
+.hero dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;font-size:15.5px}
+.hero dt{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.hero dd{margin:0}
+.swatches{display:flex;gap:8px;margin-top:6px}
+.sw{width:26px;height:26px;border-radius:4px;border:1px solid var(--rule)}
+
+.ladder{margin:26px 0 0;border-top:1px solid var(--rule)}
+.round{display:grid;grid-template-columns:190px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:start}
+.round h4{margin:0;font-family:var(--fdisp);font-size:16px;font-weight:600}
+.round .sub{font-family:var(--fmono);font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+button.chip{font-family:var(--fmono);font-size:12.5px;letter-spacing:.03em;cursor:pointer;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:999px;padding:8px 14px;transition:background .12s,border-color .12s}
+button.chip:hover{border-color:var(--accent)}
+button.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.chip[aria-pressed="true"]{background:var(--accent);color:#0f1513;border-color:var(--accent)}
+button.chip.win{border-color:var(--kept);border-width:2px;font-weight:600}
+.nowplay{font-family:var(--fmono);font-size:12px;color:var(--muted);padding:16px 0 0;min-height:20px}
+blockquote{margin:22px 0;padding:0 0 0 18px;border-left:3px solid var(--accent);font-size:19px;line-height:1.45;font-style:italic;max-width:58ch}
+blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+
+.tbl{width:100%;border-collapse:collapse;font-family:var(--fmono);font-size:13px;margin:22px 0 0}
+.tbl th{text-align:left;font-weight:600;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 12px 8px 0}
+.tbl td{padding:9px 12px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl td.q{font-family:var(--fbody);font-size:14.5px}
+.scroller{overflow-x:auto}
+
+.takes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin:22px 0 0;align-items:start}
+.take{display:flex;flex-direction:column}
+.take figure{margin:0}
+.take .shot{border:1px solid var(--rule);background:var(--card);max-width:320px}
+.take .verdict{font-family:var(--fmono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 0 6px;border-top:3px solid var(--rule);max-width:320px}
+.take.no .verdict{border-top-color:var(--no);color:var(--no)}
+.take.yes .verdict{border-top-color:var(--kept);color:var(--kept)}
+.take .why{font-size:15px;line-height:1.5;color:var(--muted);margin:0;max-width:320px}
+.take .why b{color:var(--ink);font-weight:600}
+.vids{display:flex;flex-wrap:wrap;gap:24px;margin:22px 0 0;align-items:flex-start}
+.vid{flex:1 1 240px;max-width:320px}
+.vid video{width:100%;border:1px solid var(--rule);background:#000}
+.vid .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding-top:9px}
+.vid.hero{max-width:360px}
+.pending{border:1px dashed var(--rule);border-radius:6px;padding:18px 20px;margin:22px 0 0;font-family:var(--fmono);font-size:13.5px;color:var(--muted);max-width:62ch}
+
+footer{border-top:3px solid var(--accent);padding-block:26px 60px;margin-top:20px;font-family:var(--fmono);font-size:12px;color:var(--muted)}
+@media (max-width:640px){
+  .round{grid-template-columns:1fr;gap:10px}
+  .led{flex:1 1 44%}
+  .hero{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <p class="kicker">Production diary &middot; in progress &middot; 2026-09-20</p>
+  <h1>Snuffy Cutting Room</h1>
+  <p class="dek">A vertical trailer for SealedSkin, presented by its own mascot: a harbour seal in a lab coat.
+  This page grows as the film does. So far: <em>the character recovered from a repository's history, one line
+  read fifteen ways, and a plan with eleven beats and no footage yet.</em></p>
+</header>
+
+<div class="ledger">
+  <div class="led"><b>$4.34</b><span>spent so far</span></div>
+  <div class="led"><b>~41 s</b><span>target runtime</span></div>
+  <div class="led"><b>11</b><span>beats planned</span></div>
+  <div class="led"><b>15</b><span>voice takes</span></div>
+  <div class="led"><b>1,017</b><span>frames in the cut</span></div>
+</div>
+
+<section class="act">
+  <p class="actno">Act 1</p>
+  <h2>The character</h2>
+  <p class="lede">Snuffy the Cosmetologist already exists. He answers questions inside the app, from a chat
+  attached to every saved routine. The trailer does not invent him; it borrows him.</p>
+
+  <div class="hero">
+    <figure>
+      <img src="01-the-character/snuffy-2k-keyed.png" alt="Snuffy, a grey-green harbour seal in round spectacles and an off-white lab coat, holding a small jar of mint cream" width="1093" height="1400">
+      <figcaption>The only reference. 2K soft gouache, magenta key removed.</figcaption>
+    </figure>
+    <dl>
+      <dt>Who</dt><dd>A harbour seal, a cosmetologist by trade. Round spectacles, a clinician's coat, a jar of cream held at the chest. Warm, competent, reassuring. Never goofy.</dd>
+      <dt>Voice</dt><dd>From his own system prompt: dry and a little sarcastic, has seen a lot of people buy a lot of serums they did not need. Warm underneath. Drops the act completely when something is serious.</dd>
+      <dt>Style</dt><dd>Soft gouache, fine pine outlines, the app's own palette.
+        <div class="swatches"><span class="sw" style="background:#243f39"></span><span class="sw" style="background:#7a9e54"></span><span class="sw" style="background:#eaf1e6"></span><span class="sw" style="background:#f6faf8"></span></div></dd>
+      <dt>Anatomy</dt><dd>Exactly four flippers. Stout barrel body. Not a mermaid. The original prompt needed two rounds to get this right, so every new plate restates it.</dd>
+      <dt>Found</dt><dd>Not in the working checkout. The portrait lives in a later commit on the repository's main branch, so it was pulled straight out of history without touching the checkout.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 2</p>
+  <h2>The voice</h2>
+  <p class="lede">Nothing can move until Snuffy can speak: the animation model takes a voice sample along with
+  the picture. So the first thing bought was one line, read by three candidates.</p>
+
+  <blockquote>Skincare might be confusing. I'm Snuffy the Cosmetologist, and I'm here to make it simple for you.
+  <cite>Line 1, as edited by Alex</cite></blockquote>
+
+  <p>George was skipped on purpose; he is the Werewolf host and Snuffy cannot sound like a wolf. The three
+  below are the bookish one, the dry one, and the safe one. Settings identical for all: stability 0.45,
+  style 0.45, multilingual v2.</p>
+
+  <div class="ladder">
+    <div class="round">
+      <div><h4>Round 1</h4><div class="sub">Stock voices<br>Too straight, Alex said</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-the-voice/audition-line1-daniel.mp3">Daniel &middot; British, bookish</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-roger.mp3">Roger &middot; laid-back, dry</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-eric.mp3">Eric &middot; smooth, safe</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 2</h4><div class="sub">Cartoon register<br>Still adults</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-the-voice/audition-line1-quibble.mp3">Dr. Quibble &middot; nerdy scientist</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-ed.mp3">Ed &middot; sarcastic narrator</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-dave.mp3">Dave &middot; deadpan, dry</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-mandrake.mp3">Mandrake &middot; British academic contempt</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-werthers.mp3">Grampa Werthers &middot; old, cranky</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 3</h4><div class="sub">Childish cartoon<br>Alex's ask</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-the-voice/audition-line1-teddy.mp3">Teddy Twinkle &middot; cute cartoon boy</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-littledude.mp3">Little Dude &middot; high, mischievous</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-ziggy.mp3">Ziggy &middot; goofy coyote</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-moxy.mp3">Moxy &middot; hyped mouse</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Round 4</h4><div class="sub">Alex's own picks<br>Marcus wins</div></div>
+      <div class="chips">
+        <button class="chip" data-src="02-the-voice/audition-line1-josh.mp3">Josh &middot; teacher for kids</button>
+        <button class="chip" data-src="02-the-voice/audition-line1-southerner.mp3">Technical Southerner &middot; confident teacher</button>
+        <button class="chip win" data-src="02-the-voice/audition-line1-marcus.mp3">Marcus &middot; bright, upbeat, clear &middot; KEPT</button>
+      </div>
+    </div>
+  </div>
+  <p class="nowplay" id="np">Click any take to hear the same line.</p>
+
+  <p class="note">Round 1 was the stock catalogue: Daniel the bookish one, Roger the dry one, Eric the safe
+  one. Alex heard them and asked for something more cartoonish, so round 2 went to the shared voice library
+  and came back with five character voices. Simona's read on round 2: Quibble is the lab coat, Dave is the
+  prompt. The verdict is Alex's.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 3</p>
+  <h2>The plan</h2>
+  <p class="lede">Four parts, Alex's structure: what the site is for, how easy it is (three stages of the
+  wizard, shown in action), what you get, and the chat with Snuffy. Every UI beat is a capture of the real
+  app on a phone-sized viewport. Snuffy is on camera three times.</p>
+
+  <div class="scroller">
+  <table class="tbl">
+    <thead><tr><th>#</th><th>Part</th><th>Dur</th><th>Picture</th><th>Snuffy says</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Purpose</td><td class="n">6 s</td><td>Snuffy on camera, close, cold open on his face</td><td class="q">Skincare might be confusing. I'm Snuffy the Cosmetologist, and I'm here to make it simple for you.</td></tr>
+      <tr><td class="n">2</td><td>Purpose</td><td class="n">3 s</td><td>Snuffy mid shot, taps the jar</td><td class="q">Here's how easy this is.</td></tr>
+      <tr><td class="n">3</td><td>Stage 1</td><td class="n">4 s</td><td>Quiz question, a thumb picks an answer, the 1/7 counter ticks, rail segment fills</td><td class="q">Seven questions about your skin.</td></tr>
+      <tr><td class="n">4</td><td>Stage 2</td><td class="n">4 s</td><td>Concerns photo grid, three checkmarks pop on</td><td class="q">Tell me what you want to fix.</td></tr>
+      <tr><td class="n">5</td><td>Stage 3</td><td class="n">3 s</td><td>Commitment card tapped, review card, Build my routine</td><td class="q">How many steps you'll actually do. That's it.</td></tr>
+      <tr><td class="n">6</td><td>Results</td><td class="n">3 s</td><td>Skin analysis card, meters rise; ingredient cards slide in</td><td class="q">You get your skin type. And the ingredients it wants.</td></tr>
+      <tr><td class="n">7</td><td>Results</td><td class="n">4 s</td><td>AM steps 1-4, PM steps 1-3</td><td class="q">A morning routine. An evening routine.</td></tr>
+      <tr><td class="n">8</td><td>Results</td><td class="n">4 s</td><td>Product cards, budget / mid / premium tags, prices, sources</td><td class="q">Real products at three prices. I checked the reviews.</td></tr>
+      <tr><td class="n">9</td><td>Chat</td><td class="n">4 s</td><td>Profile, chat opens, a question types in, Snuffy replies</td><td class="q">Questions later? I'm in the app. I've heard worse.</td></tr>
+      <tr><td class="n">10</td><td>Close</td><td class="n">3 s</td><td>Snuffy on camera, small smile</td><td class="q">SealedSkin. Trust the seal.</td></tr>
+      <tr><td class="n">11</td><td>Title</td><td class="n">3 s</td><td>Wordmark, sealedskin.com, Snuffy small in the corner</td><td class="q">(music)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">Site facts that shaped this: dark mode by default; a three-segment rail (skin type / concerns
+  / preferences) that fills as you go; the skin analysis lands between stages two and three; results are four
+  screens; the chat is a bottom sheet with Snuffy's avatar in the header and his portrait watermarked behind
+  the transcript. One word banned from the script: "region". The third-stage preference is which country's
+  brands you like, not where you are.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 4</p>
+  <h2>Scene one</h2>
+  <p class="lede">The order: one plate (an edit of the reference, close framing, dark pine set), then a cheap
+  480p motion probe to see whether gouache survives being animated, then the real take.</p>
+
+  <h3>The plate</h3>
+  <p>One edit of the reference, first try. The room is the app's dark mode painted in his own gouache: pine
+  walls, a shelf of jars, a lamp, a plant. Nothing on the shelf is a brand. The jar stays in his flippers
+  because the animation will need something for them to do.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure><img class="shot" src="03-scene-one/01-plate-v1-close.jpg" alt="Snuffy chest-up in a dark green consultation room, shelves of cream jars behind him" width="788" height="1400"></figure>
+      <div class="verdict">Plate v1 &middot; review</div>
+      <p class="why"><b>gpt-image-2.5 edit, $0.06.</b> Identity held on the first pass: same spectacles, same coat, same jar. Alex approved it as the scene 1 frame.</p>
+    </div>
+  </div>
+
+  <h3>The probe</h3>
+  <p>The question a probe answers is not "is it good", it is "does the paint survive". Seedance tends to
+  smooth a flat illustration toward a 3D render. Eight seconds at 480p, with the Marcus line as the audio
+  reference so the mouth follows the words.</p>
+  <div class="vids">
+    <div class="vid hero">
+      <video controls preload="metadata" playsinline src="03-scene-one/v1-probe-480p-AUDIO-ON.mp4"></video>
+      <div class="cap">Probe v1 &middot; 480x854 &middot; 8 s &middot; $1.10 &middot; sound on &middot; says "might" twice</div>
+    </div>
+    <div class="vid hero">
+      <video controls preload="metadata" playsinline src="03-scene-one/v2-final-720p-AUDIO-ON.mp4"></video>
+      <div class="cap">Take v2 &middot; 720x1280 &middot; 8 s &middot; $2.36 &middot; sound on &middot; clean</div>
+    </div>
+  </div>
+  <p>The paint held, and the probe had one defect: he said "might" twice. Not in the reference line, which
+  transcribes clean; the model regenerates the speech from the reference and stumbled. A re-roll re-rolls
+  the speech too, so the 720p take was the fix as well as the upgrade. Every word once this time,
+  transcription-verified, with the delivery stretched 25 percent over the source as this model always does.</p>
+  <p class="note">The model choice made itself. Only Seedance 2.5 reproduces the exact words in the exact
+  voice; Seedance 2.0 has a 1080p tier but treats the audio as a style hint and invents its own delivery.
+  So the shot is 720x1280 upscaled, and true 1080p with this voice is not on the menu.</p>
+  <p class="note">Take v2 approved by Alex as scene 1.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 5</p>
+  <h2>Scene two</h2>
+  <p class="lede">Four words and a hand-off: "Here's how easy this is." Then the film cuts to the app. A
+  medium shot so the cut from scene 1 reads as a new angle, and a flipper on the jar lid so he has something
+  to do with the line.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure><img class="shot" src="04-scene-two/01-plate-v1-mid.jpg" alt="Snuffy waist-up, turned three-quarter, one flipper resting on the lid of the cream jar" width="788" height="1400"></figure>
+      <div class="verdict">Plate v1 &middot; not used</div>
+      <p class="why"><b>gpt-image-2.5 edit, $0.07.</b> Two references: the character, and the scene 1 plate for the room. A good plate for a shot that got cut: Alex decided the line works better as voice-over with the app already on screen. Kept for the record.</p>
+    </div>
+  </div>
+  <div class="ladder">
+    <div class="round">
+      <div><h4>The line</h4><div class="sub">Marcus, 1.4 s</div></div>
+      <div class="chips"><button class="chip" data-src="04-scene-two/s2-line2-marcus.mp3">Here's how easy this is.</button></div>
+    </div>
+  </div>
+  <p class="note">Decision: no second on-camera shot. Snuffy is on camera twice in the film, the open and the
+  close. The line goes to the app instead.</p>
+
+  <h3>What the line got instead</h3>
+  <p>"Here's how easy this is" now plays over the Start screen, and the scene is cut to the length of the
+  sentence: a fifth of a second of the card, the thumb gliding in, the press landing on the last word. No
+  speed change on the picture, so the hand moves like a hand. The first version gave this screen one second
+  inside a sped-up run of the whole quiz, which threw away the only moment the film introduces itself.</p>
+  <div class="vids">
+    <div class="vid hero"><video controls preload="metadata" playsinline src="04-scene-two/v1-start-screen-AUDIO-ON.mp4"></video><div class="cap">Scene 2 &middot; 1.52 s &middot; the phrase, exactly</div></div>
+  </div>
+  <p class="note">The voice is slower here than in the draft. Marcus is a quick reader, so this line was
+  re-recorded at 0.9 of his natural speed. It is the same voice, not a stretched file.</p>
+
+  <h3>Scene three: two questions, nothing more</h3>
+  <p>"Seven questions about your skin." The first cut ran three questions and the intro card through one
+  sped-up take. Alex cut it to two question screens and their two selections, which is all the beat has to
+  say. Two seconds, ending three tenths after the last word.</p>
+  <div class="vids">
+    <div class="vid hero"><video controls preload="metadata" playsinline src="05-the-app/v1-s3-questions-AUDIO-ON.mp4"></video><div class="cap">Scene 3 &middot; 3.00 s &middot; two screens, two taps</div></div>
+  </div>
+  <h3>Scene four: two cards, one view</h3>
+  <p>"Tell me what you want to fix." A grid of photographs, the thumb ticking two of them, the counter
+  climbing behind it. The scroll and the Continue press that lived in the original take are gone, so nothing
+  moves except the two things the sentence is about. It runs at natural speed, no
+  acceleration at all, and holds a beat after the second tick.</p>
+  <div class="vids">
+    <div class="vid hero"><video controls preload="metadata" playsinline src="05-the-app/v1-s4-concerns-AUDIO-ON.mp4"></video><div class="cap">Scene 4 &middot; 2.68 s &middot; two ticks, counter to three</div></div>
+  </div>
+  <p class="note">Marcus went slower again here: 0.75, which is as slow as the voice goes. Asking for 0.70
+  returns a different file of exactly the same length, so the floor is real. Each scene is now cut to its own
+  sentence rather than to a share of a long take, and the picture speed falls out of that arithmetic instead
+  of being chosen: two question windows measured off the footage, 4.52 seconds of them, fitted to a three second
+  scene at one and a half times speed.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 6</p>
+  <h2>The app</h2>
+  <p class="lede">Five captures of the real site on a phone-sized viewport, all free. The glowing dot is the
+  thumb. Every hold and every scroll is paced by the capture script, never by the page, because frame grabs
+  run slower than real time and anything the page animates on its own clock comes out time-lapsed.</p>
+  <div class="vids">
+    <div class="vid"><video controls preload="metadata" playsinline muted src="05-the-app/ui-quiz-v2.mp4"></video><div class="cap">Stage 1 &middot; seven questions &middot; take 2 &middot; 12.9 s raw</div></div>
+    <div class="vid"><video controls preload="metadata" playsinline muted src="05-the-app/ui-concerns-v1.mp4"></video><div class="cap">Stage 2 &middot; concerns, priorities, the analysis card &middot; 13.6 s raw</div></div>
+    <div class="vid"><video controls preload="metadata" playsinline muted src="05-the-app/ui-prefs-v1.mp4"></video><div class="cap">Stage 3 &middot; preferences, review, build &middot; 17.9 s raw</div></div>
+    <div class="vid"><video controls preload="metadata" playsinline muted src="05-the-app/ui-results-v1.mp4"></video><div class="cap">Results &middot; needs, ingredients, routine, products &middot; 22.2 s raw</div></div>
+    <div class="vid"><video controls preload="metadata" playsinline muted src="05-the-app/ui-chat-v1.mp4"></video><div class="cap">Chat &middot; tone picker, a question, Snuffy answers &middot; 17.7 s raw</div></div>
+  </div>
+  <p class="note">Raw captures run long on purpose; the cut takes 3-5 seconds from each and speeds the rest.
+  One miss on the way: the chat button reads "DISCUSS WITH SNUFFY" on screen but "Discuss with Snuffy" in
+  the source, and the capture tool matches the source. The first chat take was fourteen seconds of a card
+  doing nothing. The dry register in the reply is a real in-app setting, chosen on camera.</p>
+  <h3>First cut: stages one to three</h3>
+  <p>Three beats, three lines, twelve seconds. Each capture is sped up a little over two times so the taps land
+  inside the words: "Here's how easy this is. Seven questions about your skin." over the quiz, "Tell me what
+  you want to fix" over the concern cards, "How many steps you'll actually do. That's it." over the commitment
+  card and the build. The brand-origin and pregnancy screens are cut; the line no longer mentions them. No
+  music yet, no sound on the taps yet. Alex's note on v1: the thumb picked the second answer on every
+  question, which looks scripted. Take 2 of the quiz picks second, third, first.</p>
+  <div class="vids">
+    <div class="vid hero"><video controls preload="metadata" playsinline src="05-the-app/b345-segment-v2-AUDIO-ON.mp4"></video><div class="cap">Beats 3-5 &middot; segment v2 &middot; 12.3 s &middot; voice only</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 7</p>
+  <h2>The cut, voice only</h2>
+  <p class="lede">Everything mounted in order for the first time: Snuffy's opening, the three stages, the
+  results, the chat, a title card. Thirty-seven seconds. Marcus reads every line. No music, no sound on the
+  taps, and the closing shot is still a card with a voice over it rather than Snuffy on camera.</p>
+  <div class="vids">
+    <div class="vid hero"><video controls preload="metadata" playsinline src="full-v2-voice-AUDIO-ON.mp4"></video><div class="cap">Draft v1 &middot; 1080x1920 &middot; 37.3 s &middot; voice only</div></div>
+  </div>
+  <p class="note">Checks run on the file, not on the plan: every line transcribed back in order from the
+  finished master; the lines land where the beats start; the reply in the chat appears before "I've heard
+  worse". The white flash on the cut from Snuffy to the app is six frames. The title card fades in from
+  black. The tagline on it is a placeholder.</p>
+  <h3>Scenes one to four, rebuilt</h3>
+  <p>The first thirteen seconds, re-cut one scene at a time after the draft: Snuffy's opening, the Start
+  screen, two questions, two concern cards. Each scene is now the length of its own sentence, the voice is
+  slower, and the levels are matched by measurement rather than by ear. The spoken lines measured two to six
+  decibels under the opening take, because the model that speaks for Snuffy on camera is louder than the one
+  that reads the voice-over.</p>
+  <div class="vids">
+    <div class="vid hero"><video controls preload="metadata" playsinline src="full-v2-voice-AUDIO-ON.mp4"></video><div class="cap">The whole film &middot; 40.7 s &middot; voice only</div></div>
+  </div>
+  <h3>Scene five: the commitment card, then the build</h3>
+  <p>"How many steps you'll actually do. That's it." Two sentences, two things on screen: the card where you
+  choose how long a routine you will really keep, and the press that builds it. The brand-origin screen, the
+  pregnancy screen and the review card are all gone. The timing fell out of the measurements rather than
+  being chosen: the tap lands a tenth before the first sentence ends, the press lands on the word "That's",
+  and the spinner starts right after "it" and runs while the film breathes.</p>
+  <div class="vids">
+    <div class="vid hero"><video controls preload="metadata" playsinline src="05-the-app/v1-s5-prefs-AUDIO-ON.mp4"></video><div class="cap">Scene 5 &middot; 4.13 s &middot; card, press, spinner</div></div>
+  </div>
+  <h3>Scenes six to eight: one sentence, one screen</h3>
+  <p>The results are three scenes and six sentences, and each sentence owns a screen. The skin type and the
+  ingredient cards. The morning steps and the evening steps. The product prices. Where a scene has two
+  sentences the cut between screens falls in the gap between them, so the picture changes while nobody is
+  talking.</p>
+  <p>The first version of these three was mostly travel: four scrolls in eleven seconds, the page racing past
+  faster than anyone reads. Alex cut the movement down to one slow move each, and the three screens were shot
+  again for it. The routine screen does not move at all now: there is one scroll position where the morning
+  block and the evening block are both on screen, so the sentence has its picture without going anywhere. The
+  other two hold on one thing, drift to a second, and stop. Because each screen was captured at exactly the
+  length of its line, nothing is sped up; these play at the speed they were filmed.</p>
+  <div class="vids">
+    <div class="vid"><video controls preload="metadata" playsinline src="05-the-app/v1-s6-skintype-AUDIO-ON.mp4"></video><div class="cap">Scene 6 &middot; 5.12 s &middot; skin type, then two ingredients</div></div>
+    <div class="vid"><video controls preload="metadata" playsinline src="05-the-app/v1-s7-routine-AUDIO-ON.mp4"></video><div class="cap">Scene 7 &middot; 4.00 s &middot; morning and evening in one frame</div></div>
+    <div class="vid"><video controls preload="metadata" playsinline src="05-the-app/v1-s8-products-AUDIO-ON.mp4"></video><div class="cap">Scene 8 &middot; 4.60 s &middot; one price group, then the next</div></div>
+  </div>
+  <p class="note">One thing was lost in the trade. The earlier cut ended scene eight on the row of retailer
+  links and the search chip at the foot of the page, which is the evidence for "I checked the reviews" - the
+  only line in the film that makes a claim. Reaching it meant a long scroll past everything. The sources are
+  still in the app; they are no longer in the trailer.</p>
+  <h3>Scene nine: the chat, with the waiting taken out</h3>
+  <p>"Questions later? I'm in the app. I've heard worse." The question is typed, the send press lands on
+  "I'm in the app", and then the film skips the two and a half seconds the model actually took to think.
+  His reply arrives on the word "worse". The tone picker that opens the real chat is cut; the scene is
+  a question and an answer.</p>
+  <div class="vids">
+    <div class="vid hero"><video controls preload="metadata" playsinline src="05-the-app/v1-s9-chat-AUDIO-ON.mp4"></video><div class="cap">Scene 9 &middot; 4.56 s &middot; ask, send, answer</div></div>
+  </div>
+  <p class="note">The waiting is the only thing in the film that was falsified, and it is worth saying plainly:
+  the reply is real, Snuffy wrote it in the dry register the app offers, but he took two and a half seconds
+  longer to write it than the trailer admits.</p>
+  <div class="pending">Left to do: Snuffy's closing shot on camera, which needs a line chosen first. Then tap
+  sounds, music and the mix. The card at the end is a placeholder for that shot.</div>
+</section>
+
+<footer>Written by Simona from the project work log. Media pack rebuilt with demo/build_pack.sh.</footer>
+</div>
+
+<script>
+(function(){
+  var a = new Audio(), cur = null;
+  var np = document.getElementById('np');
+  document.querySelectorAll('button.chip').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){
+      var same = (cur === b);
+      document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+      if (same && !a.paused) { a.pause(); cur = null; np.textContent = 'Stopped.'; return; }
+      a.src = b.dataset.src;
+      a.play().then(function(){
+        b.setAttribute('aria-pressed','true');
+        cur = b;
+        np.textContent = 'Playing: ' + b.textContent.replace(/\s*·.*$/,'').trim();
+      }).catch(function(){ np.textContent = 'Could not play that take.'; });
+    });
+  });
+  a.addEventListener('ended', function(){
+    document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+    cur = null; np.textContent = 'Click any take to hear the same line.';
+  });
+})();
+</script>
+</body>
+</html>
