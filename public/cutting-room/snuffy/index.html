@@ -43,6 +43,12 @@ a{color:var(--accent)}
 h1{font-size:clamp(44px,9vw,92px);font-weight:800;letter-spacing:-.02em}
 .dek{font-size:20px;color:var(--muted);max-width:60ch;margin:18px 0 0}
 .dek em{font-style:italic;color:var(--ink)}
+.dek a.site{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+.visit{margin:22px 0 0}
+.visit a{display:inline-block;font-family:var(--fmono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--paper);background:var(--accent);border-radius:999px;padding:11px 20px;text-decoration:none}
+.visit a:hover{filter:brightness(1.08)}
+.visit a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
 .ledger{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:48px}
 .led{flex:1 1 140px;padding:18px 20px 18px 0;border-right:1px solid var(--rule)}
@@ -120,9 +126,11 @@ footer{border-top:3px solid var(--accent);padding-block:26px 60px;margin-top:20p
 <header class="mast">
   <p class="kicker">Production diary &middot; in progress &middot; 2026-09-20</p>
   <h1>Snuffy Cutting Room</h1>
-  <p class="dek">A vertical trailer for SealedSkin, presented by its own mascot: a harbour seal in a lab coat.
-  This page grows as the film does. So far: <em>the character recovered from a repository's history, one line
-  read fifteen ways, and a plan with eleven beats and no footage yet.</em></p>
+  <p class="dek">A vertical trailer for <a class="site" href="https://sealedskin.com">sealedskin.com</a>,
+  presented by its own mascot: a harbour seal in a lab coat. This page grows as the film does. So far:
+  <em>the character recovered from a repository's history, one line read fifteen ways, and a plan with eleven
+  beats and no footage yet.</em></p>
+  <p class="visit"><a href="https://sealedskin.com">Take the quiz at sealedskin.com &rarr;</a></p>
 </header>
 
 <div class="ledger">
