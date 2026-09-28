@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every take behind Sleeper AI episode four, kept and killed: the chase, the canteen, the cameras, the extinguisher, the railing she walked through, the voice takes and the real costs.">
+<link rel="canonical" href="https://azelianouski.dev/cutting-room/sleeper-4/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CAM 215 Cutting Room">
+<meta property="og:description" content="Every take behind Sleeper AI episode four, kept and killed.">
+<meta property="og:url" content="https://azelianouski.dev/cutting-room/sleeper-4/">
+<meta property="og:image" content="https://azelianouski.dev/cutting-room/sleeper-4/cover-sleeper-4.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:dark light}</style>
+<title>CAM 215 Cutting Room</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  --ground:#0B100D; --card:#141B16; --ink:#DCE6DD; --muted:#8A9A8E; --rule:#25302A;
+  --green:#7DFFA8; --amber:#FFB347; --red:#E06B5A; --frost:#9CC9E8; --kept:#7DFFA8;
+  --fdisp:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --fbody:"Newsreader",Georgia,"Times New Roman",serif;
+  --fmono:"Courier Prime","Courier New",Courier,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --ground:#EEF2EE; --card:#F8FAF7; --ink:#14201A; --muted:#5C6B61; --rule:#D3DCD5;
+  --green:#1E7A48; --amber:#A8651B; --red:#B33F30; --frost:#2E6F97; --kept:#1E7A48; color-scheme:light;
+}}
+:root[data-theme="light"]{
+  --ground:#EEF2EE; --card:#F8FAF7; --ink:#14201A; --muted:#5C6B61; --rule:#D3DCD5;
+  --green:#1E7A48; --amber:#A8651B; --red:#B33F30; --frost:#2E6F97; --kept:#1E7A48; color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--fbody);font-size:17.5px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+img,video{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--fdisp);text-wrap:balance;margin:0;line-height:1.02}
+a{color:var(--green)}
+p{max-width:64ch}
+
+/* masthead: a pod panel readout */
+.mast{padding-block:56px 22px;border-bottom:1px solid var(--rule)}
+.crt{font-family:var(--fmono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 20px}
+.crt .dim{color:var(--muted)}
+h1{font-size:clamp(56px,11vw,116px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.dek{font-size:21px;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.dek em{font-style:italic;color:var(--ink)}
+.ledger{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:54px}
+.led{flex:1 1 140px;padding:18px 20px 18px 0;border-right:1px solid var(--rule)}
+.led:last-child{border-right:0}
+.led b{display:block;font-family:var(--fmono);font-size:28px;font-weight:700;color:var(--amber);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.led span{font-family:var(--fmono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* acts */
+.act{padding-block:60px;border-top:1px solid var(--rule)}
+.act.first{border-top:0;padding-top:0}
+.actno{font-family:var(--fmono);font-size:12px;letter-spacing:.2em;color:var(--green);text-transform:uppercase;margin:0 0 10px}
+h2{font-size:clamp(34px,5.4vw,52px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.lede{font-size:19.5px;max-width:64ch;margin:18px 0 0}
+h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin:44px 0 12px}
+.note{font-family:var(--fmono);font-size:13.5px;line-height:1.6;color:var(--muted);max-width:66ch;border-left:2px solid var(--rule);padding-left:16px;margin:18px 0}
+.note b{color:var(--amber);font-weight:700}
+
+/* the recurring object: a take with a verdict */
+.takes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin:26px 0 0;align-items:start}
+.take figure{margin:0}
+.take .shot{border:1px solid var(--rule);background:var(--card)}
+.take .verdict{display:flex;gap:9px;align-items:baseline;font-family:var(--fmono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 0 6px;border-top:3px solid var(--rule)}
+.take.no .verdict{border-top-color:var(--red);color:var(--red)}
+.take.yes .verdict{border-top-color:var(--kept);color:var(--kept)}
+.take.ref .verdict{border-top-color:var(--frost);color:var(--frost)}
+.take .why{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
+.take .why b{color:var(--ink);font-weight:600}
+
+/* video rows */
+.vids{display:flex;flex-wrap:wrap;gap:24px;margin:26px 0 0;align-items:flex-start}
+.vid{flex:1 1 230px;max-width:300px}
+.vid video{width:100%;border:1px solid var(--rule);background:#000}
+.vid .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:9px;line-height:1.5}
+.vid.hero{max-width:360px}
+.vid .cap i{font-style:normal;color:var(--red)}
+.vid .cap u{text-decoration:none;color:var(--kept)}
+
+/* ladders */
+.ladder{margin:24px 0 0;border-top:1px solid var(--rule)}
+.round{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:start}
+@media (max-width:560px){.round{grid-template-columns:1fr;gap:10px}}
+.round h4{margin:0;font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.round .sub{font-family:var(--fmono);font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+button.chip{font-family:var(--fmono);font-size:12.5px;cursor:pointer;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:7px 11px;transition:border-color .12s,background .12s}
+button.chip:hover{border-color:var(--amber)}
+button.chip:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+button.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+button.chip.win{border-color:var(--kept);border-width:2px;font-weight:700}
+.nowplay{font-family:var(--fmono);font-size:12px;color:var(--muted);padding:14px 0 0;min-height:20px}
+
+/* tables */
+.scroller{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-family:var(--fmono);font-size:13.5px;margin:22px 0 0}
+.tbl th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 14px 9px 0}
+.tbl td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--amber)}
+
+blockquote{margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--amber);font-size:20px;line-height:1.45;font-style:italic;max-width:58ch}
+blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(--fmono);font-size:12.5px;color:var(--muted);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* watch block: the finished film on YouTube, above the diary */
+.watch{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;padding-block:30px 40px}
+.watch .frame{flex:0 0 320px;max-width:100%;aspect-ratio:9/16;background:#000;border:1px solid var(--rule);overflow:hidden}
+.watch .frame iframe{display:block;width:100%;height:100%;border:0}
+.watch .side{flex:1 1 300px;max-width:46ch}
+.watch .side p{margin:0}
+.watch .side p+p{margin-top:16px}
+.watch .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+@media (max-width:700px){.watch .frame{flex-basis:100%;max-width:360px;margin:0 auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="mast">
+  <p class="crt">UES PENELOPE <span class="dim">// CANTEEN B-14 // CAM 215 // SLEEPER AI, EPISODE FOUR</span></p>
+  <h1>CAM 215<br>Cutting Room</h1>
+  <p class="dek">Sixty seconds of film in two days: a chase, a canteen, a goddess who sees through cameras, and a girl
+  who blinds them. <em>Fourteen video generations for nine scenes, and most of the lessons came from the ones that
+  did not ship.</em></p>
+</header>
+<section class="watch">
+  <div class="frame"><iframe src="https://www.youtube.com/embed/96v87KqWyYY?rel=0" title="You missed one (Sleeper AI, episode 4)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <div class="side">
+    <p>The finished film, sixty-one seconds. Watch it first: everything below is what it took to get here,
+    and most of it did not make the cut.</p>
+    <p class="cap"><a href="https://youtu.be/96v87KqWyYY">Open on YouTube</a> &middot; episode four of Sleeper AI &middot; <a href="/cutting-room/sleeper-3/">episode three's diary</a></p>
+  </div>
+</section>
+<div class="ledger">
+  <div class="led"><b>60.9s</b><span>finished film</span></div>
+  <div class="led"><b>9</b><span>scenes</span></div>
+  <div class="led"><b>$28.34</b><span>total spend</span></div>
+  <div class="led"><b>23</b><span>image plates</span></div>
+  <div class="led"><b>14</b><span>video generations</span></div>
+  <div class="led"><b>31</b><span>voice takes</span></div>
+</div>
+
+<section class="act first">
+  <p class="actno">Act 1 &middot; the run</p>
+  <h2>Her hips, three ways</h2>
+  <p class="lede">Episode four opens where episode three ended: after the "Boo", she runs. The start frame already
+  existed, the running plate from the ep3 look tests. The first clip moved beautifully and had one problem Alex spotted
+  at once: the low camera behind her pushed her hips wider than any reference.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="01-the-run/01-v3-run-ORIGINAL.jpg" alt="The woman running away down a row of frosted cryopods, splashing, looking back over her shoulder" loading="lazy"></figure>
+      <div class="verdict"><span>Reference &middot; from episode three</span></div>
+      <p class="why"><b>Never animated in episode three.</b> A motion reference that sat unused for a week and became
+      the first second of the next film.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="01-the-run/03-v13-vs-v14-high-camera-REJECTED.jpg" alt="Two versions side by side: slimmer runner from a low camera, and the same runner seen from above head height" loading="lazy"></figure>
+      <div class="verdict"><span>Rejected &middot; both</span></div>
+      <p class="why"><b>Slimmer, then a higher camera.</b> The slim edit went too far ("now hips are too narrow") and
+      the raised camera read like surveillance but lost the drama. "I liked the old one better."</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="01-the-run/02-v3-v15-v13-three-builds.jpg" alt="Three builds of the same runner side by side: original, a slight slimming, and the over-slimmed version" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the middle one</span></div>
+      <p class="why"><b>About ten percent, original camera.</b> The edit asked for a subtle change and attached a body
+      reference with the right proportions. The animation prompt said "natural athletic build", not "narrow hips".</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="01-the-run/v1-run-KILLED-hips.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; great motion, the model widened her as she ran &middot; $1.48</div></div>
+    <div class="vid"><video src="01-the-run/v2-run-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; slim through the whole run; two pods flare orange as she passes &middot; $1.48</div></div>
+  </div>
+  <h3>Out of a door, not down another hall</h3>
+  <p>A second run toward the camera in the mushroom corridor was planned as a straight line. Alex changed it: she
+  bursts out of a side door, almost falls, looks both ways, then runs at us. The lamps above her light up one at a
+  time as she passes, the first sign that the ship is following her.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="01-the-run/04-v12-door-burst.jpg" alt="The woman lunging out of a rusted door into a concrete corridor lit by glowing mushroom lamps" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>The door landed closer than asked.</b> Better: her face is bigger. Near lamps dark, far lamps
+      lit, so the animation only had to switch them on.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="01-the-run/v3-door-KEPT-trimmed.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept, trimmed at 5.0s</u> &middot; every beat in order; the last second is her chest filling the lens, cut off &middot; $1.77</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 2 &middot; the canteen</p>
+  <h2>She hides, then the light comes on</h2>
+  <p class="lede">The old crew canteen from episode two, a tree grown through the long table. Alex's staging: she runs
+  in, hides under the table, and only then does the lamp above her switch on. Then he added a camera flying around the
+  table while she dives under it.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="02-the-canteen/01-v16-REJECTED-rendered.jpg" alt="The woman curled under the table among roots, lit by a hanging lamp, soft sepia rendering" loading="lazy"></figure>
+      <div class="verdict"><span>Rejected &middot; wrong medium</span></div>
+      <p class="why"><b>Perfect staging, the source plate's look.</b> The ep2 room was rendered sepia, and the edit
+      followed it instead of our cel register. No green anywhere.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="02-the-canteen/02-C-KEPT-cel-last-frame.jpg" alt="The same composition redrawn as flat anime cel with small glowing green mushrooms and an orange lamp" loading="lazy"></figure>
+      <div class="verdict"><span>Last frame &middot; lamp on</span></div>
+      <p class="why"><b>Restyled, composition untouched.</b> Flat cel, green mushrooms back, the lamp the only orange.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="02-the-canteen/03-A-empty-first-frame.jpg" alt="The empty canteen from high near the entrance, lamp off, only mushrooms glowing" loading="lazy"></figure>
+      <div class="verdict"><span>First frame &middot; lamp off</span></div>
+      <p class="why"><b>A different angle on purpose.</b> High and wide from the entrance, so the model has to fly the
+      camera down and around to reach the last frame.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="02-the-canteen/v1-orbit-hide-lamp-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept, first try</u> &middot; she runs in, the camera swoops around the table, she curls up, and at 7.0s the lamp snaps on &middot; $2.36</div></div>
+  </div>
+  <p class="note"><b>Measured, not assumed:</b> the fear was that a lit last frame would make the model fade the light
+  up across the whole clip. Brightness per frame said otherwise: on, off, on, off, on, in five frames, then it holds.
+  <b>Then a new trap:</b> converting to twos (every frame held twice, the hand-drawn look) would have eaten that
+  flicker, so the last second of this clip runs at full frame rate.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 3 &middot; the goddess</p>
+  <h2>A camera that pulls back from an eye</h2>
+  <p class="lede">After the lamp, cut to the one who switched it on. Alex asked for a zoom out, and then for a real
+  camera move instead of a digital zoom on a still. To stop the model inventing her body, both ends were pinned: a new
+  close-up of the lens as the first frame, the canonical episode two plate as the last.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="03-the-goddess/01-lens-closeup-first-frame.jpg" alt="Extreme close-up of a single circular camera lens with a red light at its centre, mossy cables around it" loading="lazy"></figure>
+      <div class="verdict"><span>First frame</span></div>
+      <p class="why"><b>One lens, no face.</b> The series rule held. The red light in the centre is her colour.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="03-the-goddess/02-ep2-s10-last-frame.jpg" alt="The towering figure of the ship AI from a low angle, cable hair overgrown with moss, a single lens for a face" loading="lazy"></figure>
+      <div class="verdict"><span>Last frame &middot; episode two canon</span></div>
+      <p class="why"><b>No red in this lens.</b> So the model faded the light out on the way back. Accepted.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="03-the-goddess/v1-pullback-on-twos-REJECTED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Rejected</i> &middot; the same clip on twos: "feels like low fps"</div></div>
+    <div class="vid"><video src="03-the-goddess/v2-pullback-on-ones-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; native 24 fps, 136 of 145 frames unique &middot; $1.77</div></div>
+  </div>
+  <p class="note"><b>Rule written into the series bible:</b> twos are for figure motion only. A camera move on twos
+  judders, because the whole frame steps at twelve frames a second.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 4 &middot; eyes everywhere</p>
+  <h2>She has no magic eyes. She has cameras.</h2>
+  <p class="lede">The plan for the second half was to calm down. Alex refused: "there is no reason to calm yet. How can
+  the Goddess see her? She can't, only through the cameras." So the voice explains itself with a slideshow of cameras,
+  and the last one zooms into a lens.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="04-eyes-everywhere/01-machine-hall.jpg" alt="A colossal machine hall with a giant gear and chains, a pillar covered in cameras with red lights" loading="lazy"></figure>
+      <div class="verdict"><span>Slide 1 &middot; slides sideways</span></div>
+      <p class="why"><b>Brutal, as asked: concrete, metal, unknown machines.</b> "A little too much of cameras" was the
+      note. At a second on screen, density reads as "everywhere".</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="04-eyes-everywhere/02-shaft.jpg" alt="Looking down a huge ribbed concrete shaft lined with rings of red-lit cameras" loading="lazy"></figure>
+      <div class="verdict"><span>Slide 2 &middot; tilts down</span></div>
+      <p class="why"><b>The Evangelion shot.</b> Rings of eyes, built to watch.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="04-eyes-everywhere/03-canteen-tree.jpg" alt="Three cameras grown into the bark of the canteen tree like eyes, lamp glowing beside them" loading="lazy"></figure>
+      <div class="verdict"><span>Slide 3 &middot; zooms into the lens</span></div>
+      <p class="why"><b>Cut down to three cameras after the note.</b> They grew into the bark like knots. The lowest
+      one is the camera she will blind.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="04-eyes-everywhere/v1-slides-TOO-FAST.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Too fast</i> &middot; 0.8 / 0.8 / 1.6s &middot; $0</div></div>
+    <div class="vid"><video src="04-eyes-everywhere/v2-slides-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; 1.2 / 1.2 / 2.2s, the zoom made with zoompan on a 4x upscale to kill the jitter &middot; $0</div></div>
+  </div>
+  <h3>From fear to decision</h3>
+  <p>Alex asked for one more beat: a close frame of her under the table, hand over her mouth, and then something
+  changes. She lowers the hand, breathes, and stares into the lens for a few seconds. In the cut it answers the zoom:
+  the camera looks at her, she looks back.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="04-eyes-everywhere/04-v17-closeup.jpg" alt="Close-up of the woman under the table, hand clamped over her mouth, a stripe of orange light across her eyes" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>The strongest face frame of the episode.</b> "No 3D render look" said twice in the prompt.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="04-eyes-everywhere/v3-fear-to-resolve-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the hand drops at 2.5s, the stare holds from 4s. The model's own audio came back nearly empty &middot; $1.77</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 5 &middot; the extinguisher</p>
+  <h2>Blind them one at a time</h2>
+  <p class="lede">The first plan was a smash. Alex had a better one: a fire extinguisher, foam on the lenses, and one
+  clip from the camera's point of view turned into three feeds with different crops and offset timing, so they do not
+  show the same moment. Then he split the clip in two, because crawling out and spraying is too much for one render.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="05-the-extinguisher/01-cam-view-first-frame.jpg" alt="High view from a tree-mounted camera down at the woman curled under the table, a silver extinguisher on a pillar" loading="lazy"></figure>
+      <div class="verdict"><span>Start of clip one</span></div>
+      <p class="why"><b>The extinguisher planted in the plate.</b> So the grab has somewhere to go.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="05-the-extinguisher/02-D-standing-join-frame.jpg" alt="The same camera view with the table gap empty and the woman standing by the pillar, looking up at the lens" loading="lazy"></figure>
+      <div class="verdict"><span>End of clip one &middot; start of clip two</span></div>
+      <p class="why"><b>One frame shared by two renders.</b> The join between them is invisible by construction.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="05-the-extinguisher/v1-crawl-out-SHRINKING-TABLE.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Half kept</i> &middot; the table shrinks at 3.6-4.9s; the good ends became two feeds. First submit blocked by moderation, the identical resubmit passed &middot; $1.77</div></div>
+    <div class="vid"><video src="05-the-extinguisher/v2-spray-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; no hose, she aims the cylinder like a cannon; the foam runs down the lens &middot; $1.77</div></div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="05-the-extinguisher/v3-collage-freeze-SUPERSEDED.mp4" controls preload="metadata" playsinline></video><div class="cap">Superseded &middot; two feeds froze into static &middot; $0</div></div>
+    <div class="vid"><video src="05-the-extinguisher/v4-collage-all-foamed-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; "switch to the second one, so all of them end up sprayed out" &middot; $0</div></div>
+  </div>
+  <p class="note">Monochrome, scanlines, the red REC dot and the labels are all post. The clips were rendered in
+  colour so her face stays on model; a grey start frame would have drifted her.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 6 &middot; the fourth camera</p>
+  <h2>You missed one</h2>
+  <p class="lede">Over the three white feeds a fourth one flickers on, a camera behind her. She turns and destroys it.
+  The idea took one plate. The execution took three videos and a correction on how people actually hit things.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="06-the-fourth-camera/01-cam215-v1-one-camera.jpg" alt="View from a pillar camera: the woman from behind with the extinguisher, one foamed camera in the tree" loading="lazy"></figure>
+      <div class="verdict"><span>Fixed</span></div>
+      <p class="why"><b>"There were three cameras, right?"</b> Only one was foamed.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="06-the-fourth-camera/02-cam215-v2-three-cameras.jpg" alt="The same view with three foamed cameras in the tree" loading="lazy"></figure>
+      <div class="verdict"><span>Fixed</span></div>
+      <p class="why"><b>"She sprayed it a lot."</b> Three cameras, not enough mess.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-the-fourth-camera/03-cam215-v3-KEPT-the-mess.jpg" alt="The same view, foam coating the tree, the table, the benches and dripping on the floor" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>Foam on the table, drops on the floor.</b> It reads a little like snow. It passed.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="06-the-fourth-camera/v1-smash-KILLED-snarl.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; "too angry and unattractive. It should be angry but attractive" &middot; $1.77</div></div>
+    <div class="vid"><video src="06-the-fourth-camera/v2-smash-KILLED-arms-up-no-hit.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; face fixed with an end frame, but arms over the head and no actual hit &middot; $1.77</div></div>
+    <div class="vid"><video src="06-the-fourth-camera/v3-ram-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; a level ram into the lens, the glass cracks on screen at 5.1s &middot; $1.77</div></div>
+  </div>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="06-the-fourth-camera/04-face-old-vs-new.jpg" alt="Two faces side by side: a teeth-bared snarl and a calmer fierce expression under raised arms" loading="lazy"></figure>
+      <div class="verdict"><span>Not her</span></div>
+      <p class="why"><b>The face was fixed and then rejected anyway.</b> "Right now, none of the images we have are
+      her." The image model's close-up face had drifted from the girl in the clips.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="06-the-fourth-camera/05-her-faces-from-our-clips.jpg" alt="Five crops of her face taken from the episode's own video clips" loading="lazy"></figure>
+      <div class="verdict"><span>Reference &middot; from our own clips</span></div>
+      <p class="why"><b>Her face, pulled from the video we already had.</b> Alex picked two: the steady stare and the
+      determined look up at the camera.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-the-fourth-camera/06-ram-end-frame-KEPT.jpg" alt="The moment of impact: the extinguisher base cracking the lens glass, her calm cold face behind it" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the end frame</span></div>
+      <p class="why"><b>The impact itself as the last frame.</b> Left hand under, right hand pushing, cold and in
+      control. The model then had to animate a real hit.</p>
+    </div>
+  </div>
+  <blockquote>She raised her arms too high. Who smashes cameras like that? If I needed to punch something hard with a
+  fire extinguisher, I'd use a thrust. Left arm holds it from below, the right one does the pushing. She calmed down
+  and got the situation under control.<cite>Alex, directing the third take</cite></blockquote>
+</section>
+
+<section class="act">
+  <p class="actno">Act 7 &middot; the ending</p>
+  <h2>A melting lamp and a railing she walked through</h2>
+  <p class="lede">She walks out of the canteen and onto a catwalk above the ship's spine, a hollow megastructure with
+  forest on its bridges and a tower far away. Two clips, two defects, and one of them taught the most useful rule of
+  the episode.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="07-the-ending/01-walkout-from-the-table.jpg" alt="Camera resting on a foam-covered table top, the woman walking away toward a lit doorway" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; camera on the table</span></div>
+      <p class="why"><b>Alex's angle.</b> Foam and mushrooms huge in the foreground, her walking away small.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="07-the-ending/v1-walkout-MELTING-LAMP.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Defect</i> &middot; the bulb bulges and drips like it is melting &middot; $1.48</div></div>
+    <div class="vid"><video src="07-the-ending/v2-walkout-PATCHED-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept, fixed for free</u> &middot; the lamp from frame 0 pasted over the clip; three patch shapes until the doorway stayed live &middot; $0</div></div>
+  </div>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="07-the-ending/02-spine-plate-B.jpg" alt="The woman at the rail of a catwalk over a vast hollow interior with forest bridges and a distant tower" loading="lazy"></figure>
+      <div class="verdict"><span>The cause</span></div>
+      <p class="why"><b>A good image that disagreed with the start frame.</b> Made on its own, then used as the last
+      frame for an empty-catwalk first frame. The railing did not match.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="07-the-ending/03-spine-end-frame-from-start-frame.jpg" alt="The same catwalk with the woman at the far end, face in profile, looking at the view" loading="lazy"></figure>
+      <div class="verdict"><span>The fix &middot; built from the start frame</span></div>
+      <p class="why"><b>An edit of the empty catwalk that only adds her.</b> The railing is the same pixels in both
+      frames; checked along both rails before paying for the clip.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="07-the-ending/v3-spine-THROUGH-THE-RAIL.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; at 3.4-3.8s she walks through the near railing &middot; $2.07</div></div>
+    <div class="vid"><video src="07-the-ending/v4-spine-rail-patch-SUPERSEDED.mp4" controls preload="metadata" playsinline></video><div class="cap">Superseded &middot; the rails painted back over her, three masks, "still glitchy" &middot; $0</div></div>
+    <div class="vid"><video src="07-the-ending/v5-spine-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; she walks to the end, stops, looks up, impressed; the railing stays in front of her &middot; $2.07</div></div>
+  </div>
+  <p class="note"><b>Rule for first+last renders:</b> if the two frames disagree about the geometry, the model will
+  find a path through it. Build the end frame as an edit of the start frame, place the character where nothing has to
+  cross her, and check the overlapping parts before the render. A patch can hide the crossing but not remove it.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 8 &middot; her voice</p>
+  <h2>Nine lines, two voices</h2>
+  <p class="lede">The same actress as episodes one to three, sad and whispered. Alex wrote most of the words. The new
+  idea was that she speaks two ways: close and clean, and through the ship's speakers, which had to sound like
+  speakers. The first speaker version "sounds almost the same"; the second is narrow, clipped and crushed.</p>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>At</th><th>Line</th><th>Voice</th></tr></thead>
+    <tbody>
+      <tr><td class="n">18.4s</td><td>You cannot hide from me, honey... I can see you.</td><td>close</td></tr>
+      <tr><td class="n">24.5s</td><td>I have eyes... everywhere.</td><td>close</td></tr>
+      <tr><td class="n">30.9s</td><td>So... how about you stop running, and we talk?</td><td>speaker</td></tr>
+      <tr><td class="n">38.6s</td><td>What are you...</td><td>close</td></tr>
+      <tr><td class="n">40.9s</td><td>Oh, great...</td><td>close</td></tr>
+      <tr><td class="n">43.6s</td><td>You missed one.</td><td>speaker</td></tr>
+      <tr><td class="n">49.3s</td><td>Humans...</td><td>close</td></tr>
+      <tr><td class="n">53.6s</td><td>Go on, honey... I will not stop you.</td><td>close</td></tr>
+      <tr><td class="n">58.4s</td><td>...Not yet.</td><td>close</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ladder">
+    <div class="round">
+      <div><h4>You cannot hide</h4><div class="sub">Two of three takes swallowed the last "you". Or the transcriber did.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="08-voice/L1a-cannot-hide-a.mp3">a</button>
+        <button class="chip" data-src="08-voice/L1a-cannot-hide-b.mp3">b</button>
+        <button class="chip win" data-src="08-voice/L1a-cannot-hide-c.mp3">c &middot; cast</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Eyes everywhere</h4><div class="sub">Later split into two subtitles on the pause.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="08-voice/L1b-eyes-a.mp3">a</button>
+        <button class="chip win" data-src="08-voice/L1b-eyes-b.mp3">b &middot; cast</button>
+        <button class="chip" data-src="08-voice/L1b-eyes-c.mp3">c</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Stop running</h4><div class="sub">Added because the close-up felt empty.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="08-voice/L1c-talk-a.mp3">a</button>
+        <button class="chip win" data-src="08-voice/L1c-talk-b.mp3">b &middot; cast</button>
+        <button class="chip" data-src="08-voice/L1c-talk-c.mp3">c</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>What are you / Oh, great</h4><div class="sub">Moved four times until "Oh, great" landed after the spray started.</div></div>
+      <div class="chips">
+        <button class="chip win" data-src="08-voice/L2a-what-are-you-a.mp3">what a &middot; cast</button>
+        <button class="chip" data-src="08-voice/L2a-what-are-you-b.mp3">what b</button>
+        <button class="chip" data-src="08-voice/L2a-what-are-you-c.mp3">what c</button>
+        <button class="chip win" data-src="08-voice/L2-oh-great-a.mp3">great a &middot; cast</button>
+        <button class="chip" data-src="08-voice/L2-oh-great-b.mp3">great b</button>
+        <button class="chip" data-src="08-voice/L2-oh-great-c.mp3">great c</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>You missed one</h4><div class="sub">"Not so slow and dreamy. More playful and faster."</div></div>
+      <div class="chips">
+        <button class="chip" data-src="08-voice/L3-missed-one-a.mp3">dreamy a</button>
+        <button class="chip" data-src="08-voice/L3-missed-one-b.mp3">dreamy b &middot; first cast</button>
+        <button class="chip" data-src="08-voice/L3-missed-one-c.mp3">dreamy c</button>
+        <button class="chip win" data-src="08-voice/L3p-missed-one-a.mp3">playful a &middot; cast</button>
+        <button class="chip" data-src="08-voice/L3p-missed-one-b.mp3">playful b</button>
+        <button class="chip" data-src="08-voice/L3p-missed-one-c.mp3">playful c</button>
+        <button class="chip" data-src="08-voice/L3p-missed-one-d.mp3">mischievous d</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>The ending</h4><div class="sub">"Humans..." as she walks out, then the last two.</div></div>
+      <div class="chips">
+        <button class="chip win" data-src="08-voice/L4-humans-a.mp3">humans a &middot; cast</button>
+        <button class="chip" data-src="08-voice/L4-humans-b.mp3">humans b</button>
+        <button class="chip win" data-src="08-voice/L5-go-on-a.mp3">go on a &middot; cast</button>
+        <button class="chip" data-src="08-voice/L5-go-on-b.mp3">go on b &middot; "Hammy"</button>
+        <button class="chip" data-src="08-voice/L6-not-yet-a.mp3">not yet a</button>
+        <button class="chip win" data-src="08-voice/L6-not-yet-b.mp3">not yet b &middot; cast</button>
+      </div>
+    </div>
+    <div class="round">
+      <div><h4>Through the speakers</h4><div class="sub">Clean, one speaker, many speakers; then the harsher chain Alex asked for.</div></div>
+      <div class="chips">
+        <button class="chip" data-src="08-voice/compare-L1-raw.mp3">clean</button>
+        <button class="chip" data-src="08-voice/compare-L1-pa.mp3">one speaker</button>
+        <button class="chip" data-src="08-voice/compare-L1-all.mp3">many speakers</button>
+        <button class="chip" data-src="08-voice/compare-talk-speaker-v25.mp3">speaker, first</button>
+        <button class="chip win" data-src="08-voice/compare-talk-speaker-v26.mp3">speaker, harsher &middot; kept</button>
+      </div>
+    </div>
+  </div>
+  <div class="nowplay" id="np">Click any take to hear it. The cast ones are outlined.</div>
+  <p class="note"><b>The transcriber was the problem, not the takes.</b> The small speech model heard "airbait",
+  "start running" and "I can see her" in whispered takes. The next size up read all fifteen correctly. Whispered lines
+  are now checked with the larger model.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 9 &middot; sound and subtitles</p>
+  <h2>Twenty-two stems and a yellow machine</h2>
+  <p class="lede">Most of the film was silent until the end. The sound bed is procedural, twenty-two stems from one
+  script: the ship's hum, cicadas and drips, lamp clicks and mains buzz, the iris servo, camera relays, the spray, the
+  crack of the lens, a sub hit on the black, wet steps and steps on metal grating. Then subtitles, because most people
+  meet a short with the sound off.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="09-sound-and-subs/01-subtitle-style-board.jpg" alt="Five subtitle style samples on frames of the film: three for her close voice, a green monospace and a yellow bracketed monospace for the speaker voice" loading="lazy"></figure>
+      <div class="verdict"><span>Style board &middot; $0</span></div>
+      <p class="why"><b>"I like yellow."</b> The speaker voice became amber Courier capitals in brackets, over a soft
+      dark band so it survives the pale feeds. Her close voice stayed thin white with a faint red glow.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="09-sound-and-subs/v1-before-sound.mp4" controls preload="metadata" playsinline></video><div class="cap">Before &middot; voice and the clips' own audio only</div></div>
+    <div class="vid hero"><video src="09-sound-and-subs/v2-sound-and-subs-FINAL-DRAFT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final draft</u> &middot; sound bed, subtitles, "To be continued..." on the last second and a half, 60.9s</div></div>
+  </div>
+
+  <h3>What it actually cost</h3>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Item</th><th>Detail</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>Fourteen video generations</td><td>Seedance 2.5 via evolink, 720p; five kept as they came, three killed, three fixed in post</td><td class="n">$25.12</td></tr>
+      <tr><td>Twenty-three image plates</td><td>Every one an edit with references</td><td class="n">$2.93</td></tr>
+      <tr><td>Thirty-one voice takes</td><td>Nine lines, one actress</td><td class="n">$0.29</td></tr>
+      <tr><td>Slides, collage, patches, subtitles</td><td>ffmpeg, Pillow, a few masks</td><td class="n">$0.00</td></tr>
+      <tr><td>Twenty-two stems of sound</td><td>numpy and scipy</td><td class="n">$0.00</td></tr>
+      <tr><td><b>Total</b></td><td>Episode three $22.38</td><td class="n">$28.34</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">The overage is the smash and the catwalk: two killed smashes and the railing clip are $5.61 of the
+  total. Every free fix in this diary replaced a paid re-render; two of them (the lamp, the rails) were attempts before
+  paying anyway.</p>
+  <blockquote>Go on, honey... I will not stop you. Not yet.<cite>Where episode five starts</cite></blockquote>
+</section>
+
+<footer>
+  Published 2026-09-27 on YouTube. Every prompt, price, frame number and measurement behind this page
+  is in the project work log, appended as it happened.
+</footer>
+</div>
+<script>
+(function(){
+  var a = new Audio(), cur = null;
+  var nps = document.querySelectorAll('.nowplay');
+  function say(t){ nps.forEach(function(n){ n.textContent = t; }); }
+  document.querySelectorAll('button.chip').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){
+      var same = (cur === b);
+      document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+      if (same && !a.paused) { a.pause(); cur = null; say('Stopped.'); return; }
+      a.src = b.dataset.src;
+      a.play().then(function(){ b.setAttribute('aria-pressed','true'); cur = b; say('Playing: ' + b.textContent.trim()); })
+       .catch(function(){ say('Could not play that take.'); });
+    });
+  });
+  a.addEventListener('ended', function(){
+    document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+    cur = null; say('Click any take to hear it.');
+  });
+})();
+</script>
+</body>
+</html>
