@@ -5,14 +5,14 @@ date: 2026-09-30
 status: published
 summary: "I built a role-play game with LLMs and expected werewolves on spaceships and in abandoned castles. Some players had a different idea."
 tags: [ ai, llm, moderation, werewolf ]
-header_image: /images/sex-stuff-cover.jpg
+header_image: /images/judge-tom-cover.jpg
 ---
 
 ## What happened
 
 I have a little [Werewolf text game](https://aiwerewolf.net) with LLMs. With a caveat - there is a role-play. Each game has a theme, a lore, a topic - and a game master model tries to turn it into a story. It generates characters, illustrations, voices - everything to match the theme. So, it's unique every time and less boring than a group of random "people" gathered at a table to play a social deduction game. It's a space ship, a Kung-Fu school, an abandoned castle, with some werewolves in the plot. At least, this is how I planned it.
 
-![Cinematic mode in a Harry Potter game: the Game Master (GPT-5.6 Luna) with its own portrait, a night illustration of the great hall, and the narration of what just happened](/images/werewolf-game-master-card.jpg)
+![Cinematic mode: Nell, a tavern singer on a pirate ship, played by DeepSeek V4 Pro in a Trickster style, with her own portrait and Gemini voice](/images/werewolf-character-card.jpg)
 
 Apparently, some players have a different idea.
 
