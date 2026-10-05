@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How the music video Slopcore: Nothing to report was made: nine costumes, a kick drum that was always early, lip sync measured by ear, screens drawn in code, the takes that broke, the rebuilt ending and the real costs.">
+<link rel="canonical" href="https://azelianouski.dev/cutting-room/nothing-to-report/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Slopcore Cutting Room">
+<meta property="og:description" content="Every take behind the music video Slopcore: Nothing to report, kept and killed, with the real costs.">
+<meta property="og:url" content="https://azelianouski.dev/cutting-room/nothing-to-report/">
+<meta property="og:image" content="https://azelianouski.dev/cutting-room/nothing-to-report/cover-nothing-to-report.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:dark light}</style>
+<title>Slopcore Cutting Room</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=VT323&display=swap">
+<style>
+:root{
+  --ground:#0A0F13; --card:#121A20; --ink:#DCE3E7; --muted:#8696A0; --rule:#222D35;
+  --green:#7DFFA8; --amber:#FFAD3B; --red:#FF5A3C; --frost:#8FA7AD; --kept:#7DFFA8;
+  --fdisp:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --fbody:"Newsreader",Georgia,"Times New Roman",serif;
+  --fmono:"Courier Prime","Courier New",Courier,monospace;
+  --fcrt:"VT323","Courier Prime","Courier New",monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --ground:#EDF1F3; --card:#F8FAFB; --ink:#141C21; --muted:#5A6870; --rule:#D0D9DE;
+  --green:#1C7A47; --amber:#A35F10; --red:#B8381F; --frost:#3E6470; --kept:#1C7A47; color-scheme:light;
+}}
+:root[data-theme="light"]{
+  --ground:#EDF1F3; --card:#F8FAFB; --ink:#141C21; --muted:#5A6870; --rule:#D0D9DE;
+  --green:#1C7A47; --amber:#A35F10; --red:#B8381F; --frost:#3E6470; --kept:#1C7A47; color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--fbody);font-size:17.5px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+@media (max-width:560px){.wrap{padding-inline:16px}}
+img,video{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--fdisp);text-wrap:balance;margin:0;line-height:1.02}
+a{color:var(--amber)}
+p{max-width:64ch}
+
+/* masthead: a status terminal on a cold steel console */
+.mast{padding-block:56px 22px;border-bottom:1px solid var(--rule)}
+.crt{font-family:var(--fcrt);font-size:21px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin:0 0 20px;text-shadow:0 0 8px rgba(125,255,168,.35)}
+.crt .dim{color:var(--muted);text-shadow:none}
+.crt .cur{display:inline-block;width:.55em;height:.9em;background:var(--green);vertical-align:-.08em;margin-left:.15em;animation:blink 1.06s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+h1{font-size:clamp(52px,10.5vw,112px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+h1 .acc{color:var(--amber)}
+.dek{font-size:21px;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.dek em{font-style:italic;color:var(--ink)}
+.ledger{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:54px}
+.led{flex:1 1 140px;padding:18px 20px 18px 0;border-right:1px solid var(--rule)}
+.led:last-child{border-right:0}
+.led b{display:block;font-family:var(--fmono);font-size:28px;font-weight:700;color:var(--amber);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.led span{font-family:var(--fmono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* acts */
+.act{padding-block:60px;border-top:1px solid var(--rule)}
+.act.first{border-top:0;padding-top:0}
+.actno{font-family:var(--fcrt);font-size:19px;letter-spacing:.1em;color:var(--green);text-transform:uppercase;margin:0 0 8px}
+h2{font-size:clamp(34px,5.4vw,52px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.lede{font-size:19.5px;max-width:64ch;margin:18px 0 0}
+h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin:44px 0 12px}
+.note{font-family:var(--fmono);font-size:13.5px;line-height:1.6;color:var(--muted);max-width:66ch;border-left:2px solid var(--rule);padding-left:16px;margin:18px 0}
+.note b{color:var(--amber);font-weight:700}
+
+/* the recurring object: a take with a verdict */
+.takes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin:26px 0 0;align-items:start}
+.takes.full{grid-template-columns:1fr}
+.take figure{margin:0}
+.take .shot{border:1px solid var(--rule);background:var(--card)}
+.take .verdict{display:flex;gap:9px;align-items:baseline;font-family:var(--fmono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 0 6px;border-top:3px solid var(--rule)}
+.take.no .verdict{border-top-color:var(--red);color:var(--red)}
+.take.yes .verdict{border-top-color:var(--kept);color:var(--kept)}
+.take.ref .verdict{border-top-color:var(--frost);color:var(--frost)}
+.take .why{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
+.take .why b{color:var(--ink);font-weight:600}
+
+/* video rows */
+.vids{display:flex;flex-wrap:wrap;gap:24px;margin:26px 0 0;align-items:flex-start}
+.vid{flex:1 1 260px;max-width:340px}
+.vid video{width:100%;border:1px solid var(--rule);background:#000}
+.vid .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:9px;line-height:1.5}
+.vid.hero{flex-basis:420px;max-width:560px}
+.vid.wide{flex-basis:100%;max-width:100%}
+.vid .cap i{font-style:normal;color:var(--red)}
+.vid .cap u{text-decoration:none;color:var(--kept)}
+
+/* tables */
+.scroller{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-family:var(--fmono);font-size:13.5px;margin:22px 0 0}
+.tbl th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 14px 9px 0}
+.tbl td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--amber)}
+
+blockquote{margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--amber);font-size:20px;line-height:1.45;font-style:italic;max-width:58ch}
+blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(--fmono);font-size:12.5px;color:var(--muted);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.crt .cur{animation:none}}
+
+/* watch block: the finished film on YouTube, above the diary (16:9 here, full width) */
+.watch{display:flex;flex-wrap:wrap;gap:22px 30px;align-items:flex-start;padding-block:30px 40px}
+.watch .frame{flex:1 1 100%;max-width:100%;aspect-ratio:16/9;background:#000;border:1px solid var(--rule);overflow:hidden}
+.watch .frame iframe{display:block;width:100%;height:100%;border:0}
+.watch .side{flex:1 1 300px;max-width:64ch}
+.watch .side p{margin:0}
+.watch .side p+p{margin-top:16px}
+.watch .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="mast">
+  <p class="crt">UES PENELOPE <span class="dim">// CARETAKER UNIT K-07 // DAY 4012 // STATUS:</span><span class="cur"></span></p>
+  <h1>Nothing to report<br><span class="acc">Cutting Room</span></h1>
+  <p class="dek">A four-minute music video for Alex's song, made in three days: one android on a ship where nothing
+  happens, nine costumes, 157 shots cut to a kick drum. <em>Thirty-six video generations, and most of the work was
+  measuring things the models got slightly wrong.</em></p>
+</header>
+<section class="watch">
+  <div class="frame"><iframe src="https://www.youtube.com/embed/B9106rtNCwg?rel=0" title="Slopcore: Nothing to report" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <div class="side">
+    <p>The finished film, 4:04. Watch it first: everything below is what it took to get here, and a lot of it did
+    not make the cut.</p>
+    <p class="cap"><a href="https://youtu.be/B9106rtNCwg">Open on YouTube</a> &middot; song by Alex, made with Suno &middot; <a href="/cutting-room/sleeper-4/">the last diary</a></p>
+  </div>
+</section>
+<div class="ledger">
+  <div class="led"><b>4:04</b><span>finished film</span></div>
+  <div class="led"><b>$88.08</b><span>total spend</span></div>
+  <div class="led"><b>36</b><span>video clips</span></div>
+  <div class="led"><b>125</b><span>images</span></div>
+  <div class="led"><b>157</b><span>shots in the edit</span></div>
+  <div class="led"><b>9</b><span>costumes</span></div>
+</div>
+
+<section class="act first">
+  <p class="actno">Act 1 &middot; casting</p>
+  <h2>One android, nine costumes</h2>
+  <p class="lede">The lead is K-07, the caretaker of a deep-space ship, the only one awake. She started as a tired
+  woman in a jumpsuit. Alex wanted her "younger and more gothy", then "more robot, plastic-leather costume, she never
+  changes it - a robot-doll." She ended up changing it for every section of the song.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="01-one-android/01-cast-goth-v1-first-favourite.jpg" alt="A pale young woman with choppy black hair and micro bangs, dark lips, a black high-collar jumpsuit, in a ship corridor with portholes" loading="lazy"></figure>
+      <div class="verdict"><span>Casting &middot; first favourite</span></div>
+      <p class="why"><b>The goth face.</b> Black hair with uneven micro bangs, smudged eyeliner, plum lips, a seam on
+      her cheek and a small amber light at her temple. That light became the one warm colour in the whole film.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="01-one-android/02-cast-doll-v1-robot-doll.jpg" alt="The same woman with porcelain doll skin, panel seams on her jaw and neck, and a glossy black moulded uniform with a K-07 plate" loading="lazy"></figure>
+      <div class="verdict"><span>The robot-doll</span></div>
+      <p class="why"><b>The model engraved "K-07" on her name plate without being asked.</b> It became her name.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="01-one-android/03-k07-front-CANON.jpg" alt="Studio reference photo of K-07 facing the camera on a dark grey backdrop" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the canon</span></div>
+      <p class="why"><b>A character sheet: front, profile, full body.</b> Every later image starts from this face as
+      a reference.</p>
+    </div>
+  </div>
+  <h3>Intent beats measurements</h3>
+  <p>For the glossy suit Alex said the hips were too wide. The next prompt listed body specs: narrow straight hips, a
+  slim waist, a flat chest, long thin arms, a small head. The result was a skeletal mannequin. Alex called it
+  "terrible" and gave a better instruction: "don't give exact guides, just make her look good, a perfect-body
+  android". One line of intent landed on the first try.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="01-one-android/04-gloss-v3-KEPT-make-her-look-good.jpg" alt="K-07 full body in a glossy black moulded android suit, balanced proportions, on a grey studio backdrop" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; "better"</span></div>
+      <p class="why"><b>"Make her look good" stayed in every prompt after this.</b> Precise specs still work for
+      outfits, props and staging. They backfire for bodies. (The mannequin was deleted, so there is no picture.)</p>
+    </div>
+  </div>
+  <h3>A new look per section</h3>
+  <p>The rule from Alex: every new section gets a new look. The face stays the same, the place and the clothes change.</p>
+  <div class="takes full">
+    <div class="take ref">
+      <figure class="shot"><img src="01-one-android/05-nine-looks.jpg" alt="A grid of nine stills of the same android woman in nine outfits: gloss suit, coveralls, captain coat, white ceramic shell, beret and overalls, red dress, sweater, headscarf and yellow gloves, vinyl skirt" loading="lazy"></figure>
+      <div class="verdict"><span>Nine looks, one face</span></div>
+      <p class="why"><b>In film order.</b> The captain coat is the only one that covers more than one section. The
+      gloss suit opens the film and comes back for "Still here" at the end.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="01-one-android/v1-chorus3-every-look-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; chorus 3 flips through the old looks at half a second each, then back to the cryo bay</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 2 &middot; the beat</p>
+  <h2>The kick is late</h2>
+  <p class="lede">Every cut, step and tap is meant to land on the kick drum. The first beat grid came from librosa:
+  120 BPM, a beat every 0.500 s from 9.68 s. It looked right and it was not. The real kick was always a little earlier
+  than the grid, and the gap grew over the song.</p>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Grid said</th><th>Kick measured</th><th>Early by</th></tr></thead>
+    <tbody>
+      <tr><td class="n">16.180 s</td><td class="n">16.136 s</td><td>0.044 s, about a frame</td></tr>
+      <tr><td class="n">30.180 s</td><td class="n">30.110 s</td><td>0.070 s</td></tr>
+      <tr><td class="n">50.680 s</td><td class="n">50.588 s</td><td>0.092 s, more than two frames</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><b>The fix:</b> kick onsets measured on a 120 Hz low-passed envelope, then a straight line fitted
+  through them: kick k = 9.576 + 0.50022 &times; k seconds. Every cut in the film sits on that line. <b>A second bug
+  hid behind it:</b> the renderer picked clip frames with a float that rounded down, so about every third frame was
+  shown twice and the next one skipped. Smooth motion looked off-beat until both were fixed.</p>
+
+  <h3>A finger that taps on the beat</h3>
+  <p>A bored finger tapping on a table, a callback to "nothing happens". The Seedance clip tapped at its own speed, so
+  each tap was found in the pixels and retimed onto the kicks. Then came rounds of notes on rhythm and lift: one tap per two beats, then
+  back to every beat with a smaller lift, and then "the finger never touches the table". The loop had started on
+  the frame where the lift already began. Moving it two frames back fixed it.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="02-the-kick-is-late/01-d9-finger-human-PERFECT.jpg" alt="Close-up of a pale near-human hand with thin seam lines at the knuckles, index finger raised over a pale table in an empty mess hall" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; "This is perfect"</span></div>
+      <p class="why"><b>The almost-human hand won over the black robot hand.</b> One tiny steel ring at the base of the finger.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="02-the-kick-is-late/v1-tap-raw-seedance.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; the model's own tempo, two taps a second &middot; $1.17</div></div>
+    <div class="vid"><video src="02-the-kick-is-late/v2-tap-on-the-kick-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; a small lift, contact on every kick, rebuilt from four frames of the real clip</div></div>
+  </div>
+
+  <h3>Steps on the beat</h3>
+  <p>The opening walk is only her legs. Optical flow could not find the steps because the camera moved too much, so the
+  heel strikes were marked by eye on frame sheets and each one was pinned to a beat. Alex's note on the clip itself:
+  "not what I expected - why is she turning around". The camera swings behind her in the first seconds, so the edit
+  uses the straight part as much as it can.</p>
+  <div class="vids">
+    <div class="vid"><video src="02-the-kick-is-late/v3-walk-raw-TURNS-AROUND.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Raw</i> &middot; the camera drifts from her side to behind her &middot; $2.36</div></div>
+    <div class="vid"><video src="02-the-kick-is-late/v4-walk-steps-on-beats-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; drums come in, heels land on the beat</div></div>
+  </div>
+
+  <h3>The boot stomp</h3>
+  <p>In the instrumental build a combat boot under the red dress stamps on the stage. It took five tries.</p>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Try</th><th>Alex</th><th>What was wrong</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>"boot does not match the kick"</td><td>In the build the strong kick is half-time. The stomp landed on the weak hit between.</td></tr>
+      <tr><td>2</td><td>"boot still off"</td><td>The timing was right, the shot was wrong: the boot left the frame and popped back in, one stomp gave no rhythm. Now two stomps, the picture two frames ahead of the kick.</td></tr>
+      <tr><td>3</td><td>"leave it"</td><td>Accepted, for a day.</td></tr>
+      <tr><td>4</td><td>"sync the boot stomp with the bass kick"</td><td>Moved exactly onto the fitted kick grid, 145.136 s.</td></tr>
+      <tr><td>5</td><td>"still not synced, use the other, lower-pitched hit"</td><td>A spectrogram showed a 100 Hz punch on the whole seconds (145.045 s), earlier than the grid. That is the hit the ear follows. The boot now lands on the 145.052 s frame. Kept.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="vids">
+    <div class="vid"><video src="02-the-kick-is-late/v5-boot-raw-three-stomps.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; three stomps, 1.3 s apart, not on any beat &middot; $1.17</div></div>
+    <div class="vid"><video src="02-the-kick-is-late/v6-boot-on-the-low-hit-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; two stomps on the low hit, with sound</div></div>
+  </div>
+  <p class="note"><b>Rules that came out of this:</b> cut on measured kick attacks, not on the tracker's grid. Check
+  which beats carry the strong kick in each section. A picture that lands a frame or two early reads as on time; one
+  that lands late never does.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 3 &middot; the mouth</p>
+  <h2>Lip sync by ear, not by Whisper</h2>
+  <p class="lede">Seedance can animate a face from a still and a slice of the vocal. It sings the line, but it does
+  not always keep the timing. It may start late, or stretch a line. The plan was to measure its delay with Whisper word
+  times and shift the clip. That worked on the first test and then failed badly.</p>
+  <div class="vids">
+    <div class="vid"><video src="03-lip-sync-by-ear/v3-test1-raw-own-audio.mp4" controls preload="metadata" playsinline></video><div class="cap">Test 1, raw &middot; with the model's own audio; line 2 comes 0.44 s early &middot; $2.36</div></div>
+    <div class="vid"><video src="03-lip-sync-by-ear/v4-test1-synced-song.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Fixed</u> &middot; the closed-mouth gap stretched by 1.31x, the real song under it. Alex: "good job"</div></div>
+  </div>
+  <h3>Verse 5: off by 1.4 seconds</h3>
+  <p>In the sweater verse Alex said "Maybe they're busy" was not lip-synced. A flat 0.4 s shift had fixed line one, but
+  the model sang line two almost twice as slow. That got remapped word by word from Whisper times. Alex: "v5 line 2
+  still misplaced". Whisper itself was the problem. On Seedance audio, with its own room noise under the voice, its word
+  times were wrong by about a second.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="03-lip-sync-by-ear/01-sweater-radio.jpg" alt="K-07 in an oversized grey knitted sweater and old radio headphones, curled up in a chair at a radio console" loading="lazy"></figure>
+      <div class="verdict"><span>Start frame &middot; verse 5</span></div>
+      <p class="why"><b>Listening for Earth.</b> The clip was made from this still and an 8 s slice of the vocal.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="03-lip-sync-by-ear/v1-v5-seedance-raw-own-audio.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw, model audio &middot; line 2 sung 1.4 s later than the song &middot; $2.34</div></div>
+    <div class="vid hero"><video src="03-lip-sync-by-ear/v2-v5-remapped-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; both lines remapped from the envelope</div></div>
+  </div>
+  <p class="note"><b>What worked:</b> band-pass both tracks to 250-3500 Hz, where the voice lives and the ambience
+  drops out, take the loudness envelope, and read where each line starts and ends. Line 2 was 4.83-5.85 s in the song
+  and 6.25-7.20 s in the clip: the same length, 1.4 s late. A few anchor points remap the clip onto the song.</p>
+  <p>After that every singing clip was checked again the same way, line by line.</p>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Clip</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>"I find that reassuring"</td><td>a clean 0.82 s delay, one shift</td></tr>
+      <tr><td>"It says... proceed"</td><td>loud engine noise in the clip audio, timed from a 10 fps sheet of her mouth instead</td></tr>
+      <tr><td>Chorus 2 on the hull, chess mic, bridge stage, bridge close-up</td><td>within 0.1 s, left alone</td></tr>
+      <tr><td>Verse 6, corridors</td><td>line 1 ended 0.3 s late in the picture, remapped</td></tr>
+      <tr><td>Verse 5, sweater</td><td>line 2 1.4 s late, remapped</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 4 &middot; the camera</p>
+  <h2>Stills that move</h2>
+  <p class="lede">Most of the 157 shots are stills, not clips. A still that sits there for a second is dead, so each one
+  gets a camera move. The simple version is a push into a 4K image. Even that had two bugs, and Alex saw both.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="04-stills-that-move/01-out-dish.jpg" alt="K-07 in a white ceramic shell standing on the rim of a huge communications dish in open space, the Milky Way behind" loading="lazy"></figure>
+      <div class="verdict"><span>The plate &middot; 3840 x 2160</span></div>
+      <p class="why"><b>Chorus 2 opened on a zoom out from her face.</b> Later a clip replaced it.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="04-stills-that-move/v1-dish-zoom-FAST-THEN-STOPS.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Bug 1</i> &middot; a smooth ease: "the zoom-out was fast then stopped"</div></div>
+    <div class="vid"><video src="04-stills-that-move/v2-nozzle-zoom-WOBBLE.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Bug 2</i> &middot; "the nozzle zoom-out wobbles": the picture slides sideways</div></div>
+    <div class="vid"><video src="04-stills-that-move/v3-nozzle-zoom-FIXED.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Fixed</u> &middot; one point of the image stays put while the frame widens</div></div>
+  </div>
+  <p class="note"><b>Bug 1:</b> a zoom has to change the frame width geometrically, by the same ratio each frame, or
+  the eye reads it as slowing down. A new ease called "zoom" does that, at constant speed with no ease in or out.
+  <b>Bug 2 had two causes.</b> First, the crop window was clamped inside the image, so a zoom centred near an edge got
+  pushed sideways as it widened. Then, with the new ease, the width moved geometrically but the centre still followed
+  the old curve. Now the centre moves with the width, so one image point stays fixed on screen.</p>
+
+  <h3>Native close-ups, never crops</h3>
+  <p>The bridge is a wide shot of her on a stage in a red dress. Alex asked if it was a draft. It was not: every clip
+  is 1280 x 720, and in that wide shot her face was about 130 pixels across. His rule: "zoomed images go low-res, so a
+  native close-up image, never a crop". So a new still was made as a close-up, and a new clip from it.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="04-stills-that-move/02-stage-wide.jpg" alt="Symmetrical wide shot: K-07 in a red one-shoulder dress at a microphone stand under a spotlight, arms spread, giant robot arms in the dark on both sides" loading="lazy"></figure>
+      <div class="verdict"><span>Too small for a face</span></div>
+      <p class="why"><b>Great as a picture, weak as a singing shot.</b> It stayed in the cut for the first and last line.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="04-stills-that-move/03-stage-close-NATIVE.jpg" alt="Close-up of K-07 singing into a chrome microphone, eyes half open, red silk on one shoulder" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; made as a close-up</span></div>
+      <p class="why"><b>The face fills the frame, so 720p holds up.</b> This is also the cover of this page.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="04-stills-that-move/v4-native-closeup-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; "But where is around?" &middot; $2.34</div></div>
+  </div>
+
+  <h3>From a push to 2.5D</h3>
+  <p>Then the effects layer. Alex: "first of all animate the stills. The animated parts can be touched but lightly."
+  Each still got a depth map made locally, so the camera can orbit a little and the foreground moves against the
+  background. Lamps and screens flicker, dust floats in the light. Clips only get the colour grade and a lyric line.</p>
+  <div class="vids">
+    <div class="vid wide"><video src="04-stills-that-move/v5-intro-flat-vs-2-5d.mp4" controls preload="metadata" playsinline></video><div class="cap">Left &middot; the first cut, flat pushes &middot; <u>right</u> &middot; the final intro, stills in 2.5D, labels and grade</div></div>
+  </div>
+  <p class="note"><b>Moves stay small:</b> an orbit of about 3 percent and a dolly of up to 10 percent. Anything bigger
+  stretches at the depth edges. The depth maps cost nothing; they ran on the laptop CPU.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 5 &middot; the screens</p>
+  <h2>Screens drawn in code</h2>
+  <p class="lede">The ship is full of old screens, and the song is about reports nobody reads. Image models cannot be
+  trusted with exact text or digits, so every screen was made blank on purpose and its content drawn in code, timed to
+  the song. The text is typed on the measured sung words, bars follow the real spectrum, lights flash on the kicks.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="05-screens-in-code/01-crt-blank-plate.jpg" alt="An old CRT monitor in a grey steel console, the green screen glowing and empty" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; blank on purpose</span></div>
+      <p class="why"><b>First made with the title on it, then edited empty.</b> Alex wanted the words typed as she sings them.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-screens-in-code/02-counter-plate-blank-drums.jpg" alt="A mint and cream Soviet-style observatory instrument wall with a round green screen showing a nebula and a two-row mechanical counter with blank drums" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; empty number drums</span></div>
+      <p class="why"><b>The third version.</b> Green CRT text was "getting repetitive", so the star count moved to
+      mechanical counter wheels, then to a whole different room.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="05-screens-in-code/v1-crt-types-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; chorus 1: the walk, the CRT, then three monitors, one word each</div></div>
+    <div class="vid"><video src="05-screens-in-code/v2-counter-wheels-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; "Same number as yesterday": both rows land on 4,087,331,206</div></div>
+    <div class="vid"><video src="05-screens-in-code/v3-ship-logs-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the morning log, one line per eighth note, her reflection in the glass</div></div>
+  </div>
+  <h3>A pulsar that keeps time</h3>
+  <p>A pulsar spins once per beat. The image model painted the beams in, fixed, so they were edited out and drawn in
+  code: two cones from the poles, and a flash when a beam sweeps past the lens. The first version flashed four times a
+  second, all the same. Alex: "It doesn't pulse in rhythm". The flashes were on time; with no accent the eye lost the
+  kick. Now the main pulse snaps on with the kick and the second beam is a weak interpulse, like a real pulsar.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="05-screens-in-code/03-pulsar-plate-no-beams.jpg" alt="A small dim blue sphere in deep space with two tiny bright hot spots, faint nebula dust and stars, no beams" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; beams removed</span></div>
+      <p class="why"><b>Only the hot spots kept.</b> The beams come from code.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-screens-in-code/04-radar-plate-heart.jpg" alt="An old round green radar scope with range rings, a small red heart and the word GERALD drawn on the glass in grease pencil" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; the heart is real</span></div>
+      <p class="why"><b>The model drew the grease-pencil heart.</b> The sweep, the blips and their labels are code. The
+      sweep crosses Gerald's blip on the word "Gerald".</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="05-screens-in-code/v4-pulsar-then-teleprinter-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; pulsar on the kicks, then a teleprinter strikes DESTINATION: and stops</div></div>
+    <div class="vid"><video src="05-screens-in-code/v5-radar-gerald-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; "I named a rock Gerald": a grease-pencil circle draws around him</div></div>
+  </div>
+  <h3>The last screens</h3>
+  <p>The ending repeats "Nothing to report" seven times, so it got seven screens, one per repeat. Alex asked that none of
+  them reuse an earlier plate, so three new ones were made: an LED sign over an airlock, a hi-fi with an amber display
+  in a crew cabin, and a wall of CRTs.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="05-screens-in-code/05-led-sign-plate.jpg" alt="A long unlit red LED dot-matrix sign above a round airlock door with hazard stripes" loading="lazy"></figure>
+      <div class="verdict"><span>LED sign</span></div>
+      <p class="why"><b>Each red dot sampled from text drawn off screen.</b> It scrolls like a railway sign.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-screens-in-code/06-hifi-plate.jpg" alt="A 1970s hi-fi stack with VU meters, a reel-to-reel deck and an empty amber display window, in a dim crew cabin" loading="lazy"></figure>
+      <div class="verdict"><span>Hi-fi display</span></div>
+      <p class="why"><b>Text on the left, the song's spectrum on the right.</b> The first render drew the bars off the display; an old copy of the code had drifted.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-screens-in-code/07-crt-wall-plate.jpg" alt="A wall of old boxy CRT monitors in a steel rack, all switched on and empty, one dead" loading="lazy"></figure>
+      <div class="verdict"><span>The wall</span></div>
+      <p class="why"><b>Thirteen screens light up one per sixteenth note.</b> The dead one stays dead.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="05-screens-in-code/v6-led-teleprinter-hifi-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; repeats 1-3: LED sign, teleprinter, hi-fi</div></div>
+    <div class="vid"><video src="05-screens-in-code/v7-crt-wall-tube-off-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the wall, then the picture squeezes to a line, a dot, black</div></div>
+  </div>
+  <p class="note"><b>The full set:</b> CRT typing, a VFD with spectrum bars and lamps, counter wheels, ship logs, the
+  pulsar, teleprinter ink, the radar, pencil orbits drawn on graph paper, docking lights blinking on the kicks, a
+  flat-line oscilloscope, the LED sign, the tube switch-off. All $0.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 6 &middot; failures</p>
+  <h2>Things that broke</h2>
+  <p class="lede">A list of what the models got wrong, and what each one cost to fix. Some fixes were free. Most were
+  another generation.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="06-things-that-broke/01-galaxy-REJECTED-artificial.jpg" alt="A face-on spiral galaxy with a golden core, very clean and symmetric" loading="lazy"></figure>
+      <div class="verdict"><span>Rejected &middot; "look artificial"</span></div>
+      <p class="why"><b>Too perfect to be a photo.</b> An asteroid field with real depth replaced it. The galaxy
+      survived only as a small picture on a monitor.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="06-things-that-broke/02-nozzle-v3-MOSS-AND-DAISIES.jpg" alt="K-07 lying inside an engine nozzle that is covered in moss, vines and white daisies" loading="lazy"></figure>
+      <div class="verdict"><span>Failed &middot; moss and daisies</span></div>
+      <p class="why"><b>Asked for a rigid shell and a new angle.</b> Got the same angle and a garden. The next prompt
+      ended with "No plants".</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-things-that-broke/03-nozzle-v4-bare-metal-KEPT.jpg" alt="K-07 in a white ceramic shell lying back inside a huge scorched metal engine nozzle, long legs, stars beyond the rim" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; "much better"</span></div>
+      <p class="why"><b>Only one reference this time, no old nozzle.</b> Bare metal, long legs, a rigid shell.</p>
+    </div>
+  </div>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="06-things-that-broke/04-chess-black-SAME-ANGLE.jpg" alt="K-07 in a beret at a chess table, the same angle as the first chess shot" loading="lazy"></figure>
+      <div class="verdict"><span>Failed &middot; no reverse angle</span></div>
+      <p class="why"><b>Asked for the other side of the table.</b> The model gave the same angle and put a mug in her hand.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-things-that-broke/05-chess-black-flip-FREE-FIX.jpg" alt="The same chess image mirrored, so she faces left" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; free fix</span></div>
+      <p class="why"><b>Mirrored.</b> White faces right, black faces left: it cuts as shot and reverse shot. $0.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="06-things-that-broke/06-boots-v2-bare-legs-NOT-QUITE.jpg" alt="Low shot of pale bare android legs with seam lines and black leather boots on a wet grated floor" loading="lazy"></figure>
+      <div class="verdict"><span>"Not quite"</span></div>
+      <p class="why"><b>Bare porcelain legs read as a shop mannequin.</b> Alex pointed at the legs on the character sheet instead.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-things-that-broke/07-boots-v3-KEPT.jpg" alt="The same low shot with glossy black moulded android legs, bolted knee plates and platform heels" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; legs from the sheet</span></div>
+      <p class="why"><b>Glossy suit legs, bolted knees, platform heels.</b> This is the opening walk.</p>
+    </div>
+  </div>
+  <h3>The nozzle legs, three clips</h3>
+  <p>A lazy leg swing while she lies in the engine nozzle. Alex on the first clip: legs too short, and the top leg's
+  shell bends like rubber. He wanted a rigid shell. The second clip kept the shell rigid, but she lost her heels and
+  her face and body were frozen, because the prompt had locked everything except the legs. The third one asked for the
+  opposite: look into the camera, breathe, move a little.</p>
+  <div class="vids">
+    <div class="vid"><video src="06-things-that-broke/v1-nozzle-legswing-SHORT-LEGS-BENDING.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; short legs, the shell bends &middot; $1.17</div></div>
+    <div class="vid"><video src="06-things-that-broke/v2-legswitch-FROZEN-FACE-NO-HEELS.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; rigid, but frozen face and no heels &middot; $1.17</div></div>
+    <div class="vid"><video src="06-things-that-broke/v3-legswitch-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; heels on, she turns to the lens, knees come together &middot; $1.17</div></div>
+  </div>
+  <h3>Climbing versus stepping</h3>
+  <p>The dish shot became a clip: she climbs onto the rim. Alex: still not great; she should not climb but step up,
+  one leg already on the rim, with the camera moving around her. The first start frame for that came back identical
+  to the old image. The second try used a different reference and worked. "Alex likes the step-up."</p>
+  <div class="vids">
+    <div class="vid"><video src="06-things-that-broke/v4-dish-climb-NOT-GREAT.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Replaced</i> &middot; a climb from a crouch &middot; $1.17</div></div>
+    <div class="vid"><video src="06-things-that-broke/v5-dish-step-up-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; one step up, the camera swings from side to front &middot; $1.17</div></div>
+  </div>
+  <h3>Walks, a polisher, and an orbit</h3>
+  <div class="vids">
+    <div class="vid"><video src="06-things-that-broke/v7-spine-walk-PROPORTIONS-OFF.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Mostly unused</i> &middot; her body proportions are off; two half-second pieces made the final cut &middot; $2.34</div></div>
+    <div class="vid"><video src="06-things-that-broke/v8-hull-walk-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; a new angle, good proportions, but far slower than asked; retimed to the beat &middot; $2.34</div></div>
+    <div class="vid"><video src="06-things-that-broke/v6-polisher-SLIDES-SIDEWAYS.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Trimmed</i> &middot; the floor polisher slides away sideways; only the first 2 s are used &middot; $1.17</div></div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="06-things-that-broke/v9-orbit-TIMID.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Timid</i> &middot; asked for a 40 degree orbit, got a slow drift; kept only as the opening drift &middot; $1.77</div></div>
+    <div class="vid"><video src="06-things-that-broke/v10-orbit-first-last-SECOND-SUN.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept, 2 s</u> &middot; first + last frame forced a real half orbit; a second sun appears in the middle &middot; $1.76</div></div>
+  </div>
+  <p class="note"><b>Pattern:</b> Seedance follows "camera locked on a tripod" very well and camera moves poorly. Giving
+  it both the first and the last frame is the reliable way to get a real move. And when a prompt freezes everything
+  but one body part, it freezes the face too.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 7 &middot; the outro</p>
+  <h2>The ending, rebuilt</h2>
+  <p class="lede">The first full ending was two long shots: the ship zooming out for eight and a half seconds, then one
+  green CRT typing the last seven lines for thirteen. Alex: the two long end scenes are boring.</p>
+  <div class="vids">
+    <div class="vid hero"><video src="07-the-ending/v1-old-ending-ship-zoom-and-crt.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Old ending</i> &middot; the end of the ship zoom, then the one CRT</div></div>
+  </div>
+  <h3>A termination log in the mess hall</h3>
+  <p>The static ship before the montage clashed with the ship in the asteroids. Alex asked for a big screen running
+  termination logs with errors, in the ship's diner. The log types NOTHING ELSE as she sings "Nothing else". It first
+  stopped there; Alex: "do not stop the log". So it keeps scrolling to the cut.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="07-the-ending/01-mess-hall-plate.jpg" alt="An empty ship mess hall with long steel tables and one huge dark wall screen" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; built for forty, empty</span></div>
+      <p class="why"><b>A forgotten mug, a dusty plant.</b> The wall screen is blank for the log.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="07-the-ending/v2-termination-log-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; errors in red, the log never stops</div></div>
+  </div>
+  <h3>A space montage on the kicks</h3>
+  <p>Eight and a half seconds of cuts on the beat: the ship in an asteroid field, the stage machines dancing alone, one
+  flare of the red dress, a ringed planet, the machines again, the leg switch, the disco ball, an earthrise, and only
+  then two seconds of the ship zooming out. A distance counter runs underneath at 0.31 c.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="07-the-ending/02-stage-empty.jpg" alt="The dark machine hall stage with the spotlight circle empty, giant robot arms leaning in on both sides" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; she left</span></div>
+      <p class="why"><b>The bridge stage with her removed.</b> A 4 s clip makes the machines dance on their own. $1.17.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="07-the-ending/v3-space-montage-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the montage with the distance counter</div></div>
+  </div>
+  <p>Then seven screens, one per "Nothing to report" (Act 5), the CRT wall, and the tube switching off. On black:
+  END OF LOG, DAY 4013. The day counter that sat small in the corner all film comes in big for "Still here" and ticks
+  over from 4012 to 4013 for the first time.</p>
+  <h3>The pulsar that turns into a disco ball</h3>
+  <p>The build ended on eight seconds of a pulsar speeding up. Alex: too long. His idea: the pulsar dims and turns
+  into a disco ball in the same spot, spinning at the same speed, then a dance on the red-dress stage. The ball was
+  edited into the same space plate, so the dissolve keeps every star in place. The dance clip had three big dress
+  flares. Alex: "extend the disco ball, one dress wave only."</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="07-the-ending/03-discoball-on-pulsar-plate.jpg" alt="The same deep space frame with a mirror disco ball floating where the pulsar was" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; same plate, new object</span></div>
+      <p class="why"><b>About twice the size of the star, not a fifth of the frame.</b> The first try was too big and in the wrong place.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="07-the-ending/v4-dance-raw-three-flares.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; three flares; the model added its own disco ball &middot; $1.17</div></div>
+    <div class="vid hero"><video src="07-the-ending/v5-pulsar-disco-one-flare-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; pulsar, ball, one flare on the kick; MORALE goes from N/A to 7%</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 8 &middot; the finish</p>
+  <h2>Upscale and numbers</h2>
+  <p class="lede">Alex said the picture felt below 1080p. True: every clip comes out of Seedance at 1280 x 720. Running
+  Real-ESRGAN on the laptop took about 20 seconds a frame, around 20 hours for the whole film, and it waxed the skin.
+  Two cloud upscalers were tested on the bridge clip. Alex picked SeedVR2: "It's good actually".</p>
+  <div class="takes full">
+    <div class="take yes">
+      <figure class="shot"><img src="08-upscale/01-same-region-720-vs-seedvr2.jpg" alt="The same face region side by side at 1:1 pixels: left the 720p source scaled up, right the SeedVR2 1080p upscale, sharper eyes and hair" loading="lazy"></figure>
+      <div class="verdict"><span>Same frame, same region, 1:1 pixels</span></div>
+      <p class="why"><b>Eyes, hair strands, the mic grille: sharper.</b> Mouth shapes stayed identical frame for frame,
+      so the lip sync work survived. All 32 clips in the cut, about 35 minutes with four running at once.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="08-upscale/v1-same-region-720-vs-seedvr2.mp4" controls preload="metadata" playsinline></video><div class="cap">Left &middot; 720p scaled &middot; <u>right</u> &middot; SeedVR2, same crop, in motion</div></div>
+  </div>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="08-upscale/02-stretch-topaz-seedvr2.jpg" alt="Three versions of the same bridge frame: plain stretch, Topaz, SeedVR2" loading="lazy"></figure>
+      <div class="verdict"><span>Cloud test &middot; $1.65</span></div>
+      <p class="why"><b>Stretch, Topaz, SeedVR2.</b> Both cloud tools were close; SeedVR2 was cheaper.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="08-upscale/03-local-realesrgan.jpg" alt="Three versions of a face crop: bicubic, Real-ESRGAN x4plus with waxy skin, and a painterly anime model" loading="lazy"></figure>
+      <div class="verdict"><span>Local test &middot; too slow</span></div>
+      <p class="why"><b>Free, but 20 hours, and the grain was gone.</b></p>
+    </div>
+  </div>
+  <h3>Rendering only what changed</h3>
+  <p>The whole edit is a JSON file of 157 shots, rendered frame by frame in a headless browser. A full render took about
+  25 minutes, and Alex's notes came faster than that. Alex: do not re-render everything each time. The renderer now
+  cuts the song into 8 s chunks, keeps each finished chunk by a fingerprint of its shots, and renders four at a time. A
+  cold build took 8 minutes; a build with no changes renders nothing and only joins the chunks.</p>
+
+  <h3>What it actually cost</h3>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Item</th><th>Detail</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>36 video clips</td><td>Seedance 2.5 via evolink, 720p, 4-15 s; 11 of them sing</td><td class="n">$63.65</td></tr>
+      <tr><td>125 images</td><td>gpt-image-2.5 Sunburst, most at 3840 x 2160, nearly all edits with references</td><td class="n">$13.32</td></tr>
+      <tr><td>Upscale</td><td>SeedVR2 on fal, 32 clips to 1080p</td><td class="n">$9.47</td></tr>
+      <tr><td>Upscale tests</td><td>Topaz and SeedVR2 on one 15 s clip</td><td class="n">$1.65</td></tr>
+      <tr><td>Everything else</td><td>vocal stems, transcripts, depth maps, masks, every render, every screen effect: local</td><td class="n">$0.00</td></tr>
+      <tr><td><b>Total</b></td><td>a four-minute film</td><td class="n">$88.08</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><b>Where the money went:</b> the long singing clips are the expensive part: 14-15 s cost $4.10-4.40
+  each. The three clips killed outright in Act 6 cost $3.51. The cheapest fixes were the free ones: a mirrored image,
+  a remapped clip, a retimed boot.</p>
+  <blockquote>Still here. Still going.<cite>Day 4012, and then 4013</cite></blockquote>
+</section>
+
+<footer>
+  Alex directed. Simona (Claude Opus 5.5) was the production team. The song is Alex's, made with Suno. The
+  inspiration was anabology's "SLOPCORE: ESCAPE VELOCITY". Every prompt, price, frame number and measurement behind
+  this page is in the project work log, appended as it happened.
+</footer>
+</div>
+</body>
+</html>
