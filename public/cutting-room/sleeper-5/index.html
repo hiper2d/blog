@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every take behind Sleeper AI episode five, kept and killed: the camera that fell the wrong way, the running-in-place problem, the vending machine, the throne, the voice redo and the real costs.">
+<link rel="canonical" href="https://azelianouski.dev/cutting-room/sleeper-5/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Signal Lost Cutting Room">
+<meta property="og:description" content="Every take behind Sleeper AI episode five, kept and killed.">
+<meta property="og:url" content="https://azelianouski.dev/cutting-room/sleeper-5/">
+<meta property="og:image" content="https://azelianouski.dev/cutting-room/sleeper-5/cover-sleeper-5.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:dark light}</style>
+<title>Signal Lost Cutting Room</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  --ground:#0B100D; --card:#141B16; --ink:#DCE6DD; --muted:#8A9A8E; --rule:#25302A;
+  --green:#7DFFA8; --amber:#FFB347; --red:#E06B5A; --frost:#9CC9E8; --kept:#7DFFA8;
+  --fdisp:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --fbody:"Newsreader",Georgia,"Times New Roman",serif;
+  --fmono:"Courier Prime","Courier New",Courier,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --ground:#EEF2EE; --card:#F8FAF7; --ink:#14201A; --muted:#5C6B61; --rule:#D3DCD5;
+  --green:#1E7A48; --amber:#A8651B; --red:#B33F30; --frost:#2E6F97; --kept:#1E7A48; color-scheme:light;
+}}
+:root[data-theme="light"]{
+  --ground:#EEF2EE; --card:#F8FAF7; --ink:#14201A; --muted:#5C6B61; --rule:#D3DCD5;
+  --green:#1E7A48; --amber:#A8651B; --red:#B33F30; --frost:#2E6F97; --kept:#1E7A48; color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--fbody);font-size:17.5px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+img,video{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--fdisp);text-wrap:balance;margin:0;line-height:1.02}
+a{color:var(--green)}
+p{max-width:64ch}
+
+/* masthead: a pod panel readout */
+.mast{padding-block:56px 22px;border-bottom:1px solid var(--rule)}
+.crt{font-family:var(--fmono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 20px}
+.crt .dim{color:var(--muted)}
+h1{font-size:clamp(56px,11vw,116px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.dek{font-size:21px;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.dek em{font-style:italic;color:var(--ink)}
+.ledger{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:54px}
+.led{flex:1 1 140px;padding:18px 20px 18px 0;border-right:1px solid var(--rule)}
+.led:last-child{border-right:0}
+.led b{display:block;font-family:var(--fmono);font-size:28px;font-weight:700;color:var(--amber);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.led span{font-family:var(--fmono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* acts */
+.act{padding-block:60px;border-top:1px solid var(--rule)}
+.act.first{border-top:0;padding-top:0}
+.actno{font-family:var(--fmono);font-size:12px;letter-spacing:.2em;color:var(--green);text-transform:uppercase;margin:0 0 10px}
+h2{font-size:clamp(34px,5.4vw,52px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.lede{font-size:19.5px;max-width:64ch;margin:18px 0 0}
+h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin:44px 0 12px}
+.note{font-family:var(--fmono);font-size:13.5px;line-height:1.6;color:var(--muted);max-width:66ch;border-left:2px solid var(--rule);padding-left:16px;margin:18px 0}
+.note b{color:var(--amber);font-weight:700}
+
+/* the recurring object: a take with a verdict */
+.takes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin:26px 0 0;align-items:start}
+.take figure{margin:0}
+.take .shot{border:1px solid var(--rule);background:var(--card)}
+.take .verdict{display:flex;gap:9px;align-items:baseline;font-family:var(--fmono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 0 6px;border-top:3px solid var(--rule)}
+.take.no .verdict{border-top-color:var(--red);color:var(--red)}
+.take.yes .verdict{border-top-color:var(--kept);color:var(--kept)}
+.take.ref .verdict{border-top-color:var(--frost);color:var(--frost)}
+.take .why{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
+.take .why b{color:var(--ink);font-weight:600}
+
+/* video rows */
+.vids{display:flex;flex-wrap:wrap;gap:24px;margin:26px 0 0;align-items:flex-start}
+.vid{flex:1 1 230px;max-width:300px}
+.vid video{width:100%;border:1px solid var(--rule);background:#000}
+.vid .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:9px;line-height:1.5}
+.vid.hero{max-width:360px}
+.vid .cap i{font-style:normal;color:var(--red)}
+.vid .cap u{text-decoration:none;color:var(--kept)}
+
+/* ladders */
+.ladder{margin:24px 0 0;border-top:1px solid var(--rule)}
+.round{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:start}
+@media (max-width:560px){.round{grid-template-columns:1fr;gap:10px}}
+.round h4{margin:0;font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.round .sub{font-family:var(--fmono);font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+button.chip{font-family:var(--fmono);font-size:12.5px;cursor:pointer;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:7px 11px;transition:border-color .12s,background .12s}
+button.chip:hover{border-color:var(--amber)}
+button.chip:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+button.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+button.chip.win{border-color:var(--kept);border-width:2px;font-weight:700}
+.nowplay{font-family:var(--fmono);font-size:12px;color:var(--muted);padding:14px 0 0;min-height:20px}
+
+/* tables */
+.scroller{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-family:var(--fmono);font-size:13.5px;margin:22px 0 0}
+.tbl th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 14px 9px 0}
+.tbl td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--amber)}
+
+blockquote{margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--amber);font-size:20px;line-height:1.45;font-style:italic;max-width:58ch}
+blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(--fmono);font-size:12.5px;color:var(--muted);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* watch block: the finished film on YouTube, above the diary */
+.watch{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;padding-block:30px 40px}
+.watch .frame{flex:0 0 320px;max-width:100%;aspect-ratio:9/16;background:#000;border:1px solid var(--rule);overflow:hidden}
+.watch .frame iframe{display:block;width:100%;height:100%;border:0}
+.watch .side{flex:1 1 300px;max-width:46ch}
+.watch .side p{margin:0}
+.watch .side p+p{margin-top:16px}
+.watch .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+@media (max-width:700px){.watch .frame{flex-basis:100%;max-width:360px;margin:0 auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="mast">
+  <p class="crt">UES PENELOPE <span class="dim">// JUNCTION J-314 // SIGNAL LOST // SLEEPER AI, EPISODE FIVE</span></p>
+  <h1>Signal Lost<br>Cutting Room</h1>
+  <p class="dek">Fifty-six seconds in three days: a girl who breaks every camera, a ship's AI that feeds her anyway,
+  and one wire too many. <em>The cheapest episode so far, and the one where the tools fought back hardest.</em></p>
+</header>
+<section class="watch">
+  <div class="frame"><iframe src="https://www.youtube.com/embed/JCW26xrQVW0?rel=0" title="I was too patient (Sleeper AI, episode 5)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <div class="side">
+    <p>The finished film, fifty-six seconds. Watch it first: everything below is what it took to get here,
+    and a lot of it did not make the cut.</p>
+    <p class="cap"><a href="https://youtube.com/shorts/JCW26xrQVW0">Open on YouTube</a> &middot; episode five of Sleeper AI &middot; <a href="/cutting-room/sleeper-4/">episode four's diary</a></p>
+  </div>
+</section>
+<div class="ledger">
+  <div class="led"><b>56.1s</b><span>finished film</span></div>
+  <div class="led"><b>9</b><span>scenes</span></div>
+  <div class="led"><b>$22.20</b><span>total spend</span></div>
+  <div class="led"><b>12</b><span>image plates</span></div>
+  <div class="led"><b>12</b><span>video generations</span></div>
+  <div class="led"><b>75</b><span>voice takes</span></div>
+</div>
+
+<section class="act first">
+  <p class="actno">Act 1 &middot; the hook</p>
+  <h2>The camera that fell the wrong way</h2>
+  <p class="lede">Alex's premise for episode five: the girl figured out what is going on, and she is blinding the
+  ship. So the film opens from the camera's side, her face in the lens, her hand on the housing. The plate came back
+  right on the first try. The animation did not.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="01-the-hook/01-hook-plate-KEPT.jpg" alt="The woman glaring straight into a security camera from very close, her hand gripping the housing, an overgrown corridor below" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; first try</span></div>
+      <p class="why"><b>Her face and the ep4 register held.</b> The body floats with nothing to climb on, but the
+      glare carries the first second, and the first second is the one that matters on a feed.</p>
+    </div>
+  </div>
+  <p>Seedance kept the point of view for 1.7 seconds: the glare, then bared teeth as she pulls. Then it stepped
+  outside the camera and filmed the camera itself tumbling down the corridor. The obvious fix was to keep the good
+  part and fake the yank in post with a shake and a cut to static. Alex watched both and kept the weird one:
+  "It's weird, but the animation is good."</p>
+  <div class="vids">
+    <div class="vid"><video src="01-the-hook/v2-faked-yank-static-REJECTED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Rejected</i> &middot; 1.7 s of the clip, a fake yank, then static &middot; $0</div></div>
+    <div class="vid hero"><video src="01-the-hook/v3-full-fall-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the whole clip, the model's own fall included &middot; $1.18</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 2 &middot; the wall</p>
+  <h2>Eighteen old clips, thirty-seven screens</h2>
+  <p class="lede">The Goddess watches through her monitors, and the screens die one by one. Episode two already had
+  a wall of thirty-seven empty screens with every rectangle mapped, so the whole scene cost nothing: each screen got
+  a clip from episodes two to four, graded like the episode-four security feeds, and a time to die.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="02-the-wall/01-ep2-chess-tower-plate.jpg" alt="A towering wall of old empty CRT monitors in mossy frames, a keyboard console at the bottom" loading="lazy"></figure>
+      <div class="verdict"><span>Reference &middot; from episode two</span></div>
+      <p class="why"><b>The chess tower.</b> Built for a different joke in episode two, reused here with the screen
+      map that came with it.</p>
+    </div>
+  </div>
+  <p>Three passes. The first had static that averaged out to flat grey cards at that size and a main screen that
+  looped. The second showed the camera falling on the biggest screen, which Alex caught at once: the fall was the
+  thing being fixed. The third replays her glare back and forth, then the yank, then static.</p>
+  <div class="vids">
+    <div class="vid"><video src="02-the-wall/v1-flat-snow-looping-feed.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Superseded</i> &middot; grey cards for snow, the main feed loops &middot; $0</div></div>
+    <div class="vid"><video src="02-the-wall/v2-main-screen-shows-the-fall-REJECTED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Rejected</i> &middot; the main screen shows the fall &middot; $0</div></div>
+    <div class="vid"><video src="02-the-wall/v3-glare-then-yank-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; glare, yank, static, screens dying &middot; $0</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 3 &middot; the treadmill</p>
+  <h2>She ran, and stayed where she was</h2>
+  <p class="lede">Two running shots, and they cost more than anything else in the episode. The first idea was her
+  sneaking through a machine hall, seen from far. Alex: with that many cameras, sneaking makes no sense. So she runs
+  and sprays the camera near her.</p>
+  <div class="vids">
+    <div class="vid"><video src="03-the-treadmill/v1-run-spray-BALLOONS-KILLED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; she runs toward the big foreground camera and grows to twice her size &middot; $1.77</div></div>
+    <div class="vid"><video src="03-the-treadmill/v2-run-look-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; no spray, just run and look; the cameras flared on their own &middot; $1.77</div></div>
+  </div>
+  <p>The second location was a side view of a flooded corridor, chosen because sideways she stays the same size.
+  She did stay the same size. She also ran in place: legs pumping, barely moving, then a sudden slide out of frame.
+  Alex asked if it was really Seedance 2.5. It was. A tight cut around the treadmill did not hide it either.</p>
+  <div class="vids">
+    <div class="vid"><video src="03-the-treadmill/v3-side-spray-TREADMILL-KILLED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; running in place &middot; $1.77</div></div>
+    <div class="vid"><video src="03-the-treadmill/v4-tight-cut-REJECTED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Rejected</i> &middot; 1.5 s around the spray, still a treadmill &middot; $0</div></div>
+  </div>
+  <h3>Give it an end frame</h3>
+  <p>What fixed it was a second image: the same corridor with her gone and the camera already covered in foam.
+  The end frame is an edit of the start frame, with the original pixels pasted back everywhere except her spot and
+  the camera, so nothing else can drift. With only a start frame the model has no reason to move her. With an
+  empty end frame she has to leave.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="03-the-treadmill/02-side-corridor-start-frame.jpg" alt="Side view of a flooded corridor, the woman running right with an extinguisher, a camera on a pipe above" loading="lazy"></figure>
+      <div class="verdict"><span>Start frame</span></div>
+      <p class="why"><b>The camera hangs too high to hit,</b> so the smash became a spray.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="03-the-treadmill/03-side-corridor-end-frame.jpg" alt="The same corridor empty, the camera covered in dripping white foam, a pile of foam on the floor" loading="lazy"></figure>
+      <div class="verdict"><span>End frame &middot; edit + paste-back</span></div>
+      <p class="why"><b>Same pixels outside two boxes.</b> The first pass left the ghost of her leg reflected in the
+      water; the box grew.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="03-the-treadmill/v5-first-last-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; she travels; a 0.6 s glitch at the start was trimmed &middot; $1.77</div></div>
+  </div>
+  <p class="note"><b>Cost of the lesson:</b> two killed clips, $3.55, and one rejected cut. Every later shot where
+  someone moves across the room was planned with an end frame from the start.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 4 &middot; food</p>
+  <h2>Too obvious, then a vending machine</h2>
+  <p class="lede">The turn of the episode: the Goddess takes care of the girl. The first plate put a tray of bread,
+  tea and steaming soup on the canteen table under the lamp. Alex: the food should be a little less obvious. A
+  vending machine is ship hardware that just happens to work for her.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="04-food/01-soup-tray-TOO-OBVIOUS.jpg" alt="A tray with a round loaf, a steaming cup and a bowl of soup on a mossy canteen table under a hanging lamp" loading="lazy"></figure>
+      <div class="verdict"><span>Rejected &middot; too obvious</span></div>
+      <p class="why"><b>A meal set out for someone.</b> The Goddess should never admit it in the picture.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="04-food/03-start-frame.jpg" alt="An old overgrown vending machine in a dark canteen corner, the woman crouched behind a bench in the foreground" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; start frame</span></div>
+      <p class="why"><b>She approaches, looks for cameras, works the machine.</b> Alex's staging, so the walk got
+      an end frame on day one.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="04-food/04-end-frame.jpg" alt="The same corner, the woman now at the machine pressing the keypad and glancing back over her shoulder" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; end frame</span></div>
+      <p class="why"><b>The extinguisher stays where she left it</b> behind the bench.</p>
+    </div>
+  </div>
+  <p>The approach was blocked by content moderation on the first submit, most likely the end frame: a woman in
+  shorts seen from behind. Blocked jobs are not charged, and it passed on resubmit with the provider's relaxed filter
+  for ten percent more. The payoff, the dead machine waking up and flooding the floor with cold light, worked first
+  time.</p>
+  <div class="vids">
+    <div class="vid hero"><video src="04-food/v1-approach-and-payoff-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; approach (first + last) then payoff &middot; $2.60 + $1.48</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 5 &middot; warmth</p>
+  <h2>The one that just worked</h2>
+  <p class="lede">She sits curled up in a cold alcove. A vent beside her lights orange, she holds her hands out to
+  it, then grabs the conduit above it and rips it off the wall. One plate, one eight-second clip, first try. The only
+  beat it skipped was the look up at the red camera light, and the four scenes before it explain why she rips it
+  out.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="05-warmth/01-vent-alcove.jpg" alt="The woman curled up against a damp wall, breath misting, a dark vent grille and a small red camera light beside her" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; first try</span></div>
+      <p class="why"><b>No blue frost.</b> The series keeps cold blue for the pods, so the cold here is her pose and
+      her breath, and the vent's orange is the only warm light.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="05-warmth/v1-vent-KEPT-first-try.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; warmth, then sparks &middot; $2.36</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 6 &middot; the wire</p>
+  <h2>A really bad idea</h2>
+  <p class="lede">The budget was fifteen seconds for the ending. Alex's fix for the jump to a new room was a line
+  instead of a transition: the Goddess, for the first time not calm. It started as "Wait, not this wire!", became a
+  calm "And this is not a good idea", and ended as a dry "This... is a really bad idea."</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="06-the-wire/01-wire-plate.jpg" alt="The woman with one bare foot braced on a junction box, pulling a body-thick striped power cable under an orange work light" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; first try</span></div>
+      <p class="why"><b>The best pose in the episode.</b> Junction J-314, three green lights that go out.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="06-the-wire/v1-wire-KEPT-first-try.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; strain, sparks, the light dies &middot; $1.30</div></div>
+    <div class="vid"><video src="06-the-wire/v2-blackout-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the wall, everything left alive dies at once &middot; $0</div></div>
+  </div>
+  <p>The first blackout build brought back the ten screens that had already died in act two, and kept the static
+  screens hissing in the dark. Continuity, fixed before anyone saw it.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 7 &middot; the goddess</p>
+  <h2>A new look, and an orbit that would not orbit</h2>
+  <p class="lede">The first ending reused the red eye from episode two. Alex wanted a new Goddess scene: her sitting
+  on a pile of computers, legs crossed, gorgeous, the camera pulling back and flying around her while she keeps her
+  lens on us.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="07-the-goddess/01-dark-closeup.jpg" alt="Close-up of the ship AI in red darkness: one glowing red lens for a face, mossy cable hair" loading="lazy"></figure>
+      <div class="verdict"><span>Not used</span></div>
+      <p class="why"><b>The first new look.</b> Animated with LTX for $0.48; the cables rose like tentacles, but it
+      was not the move Alex meant.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="07-the-goddess/02-throne-plate.jpg" alt="The ship AI sitting high on a heap of dead CRT monitors, legs crossed, one hand on a monitor, all in red light" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>Described by intent, not by spec.</b> "A perfect-body android, elegant and powerful, a
+      queen." The one-lens face is restated in every prompt.</p>
+    </div>
+  </div>
+  <p>The first animation used a close crop of the plate as the start and the full plate as the end, the same trick
+  that fixed the treadmill. It pulled back smoothly and barely moved sideways: two frames that both face the camera
+  leave no room to orbit. Dropping the end frame let it fly around her.</p>
+  <div class="vids">
+    <div class="vid"><video src="07-the-goddess/v1-ltx-tentacles-NOT-USED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Not used</i> &middot; LTX, the dark close-up &middot; $0.48</div></div>
+    <div class="vid"><video src="07-the-goddess/v2-first-last-NO-ORBIT.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Superseded</i> &middot; first + last: a pull-back, no orbit &middot; $1.95</div></div>
+    <div class="vid"><video src="07-the-goddess/v3-single-frame-ORBIT-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; one start frame, a real orbit &middot; $1.95</div></div>
+  </div>
+  <p class="note"><b>The rule now has two halves:</b> an end frame when someone has to cross the room; no end frame
+  when the camera itself is the move.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 8 &middot; voice</p>
+  <h2>Too dreamy, phrase by phrase</h2>
+  <p class="lede">For four episodes the Goddess whispered. Hearing the full cut, Alex: "too dreamy, and some words
+  don't sound as I want." Nothing was stretched. The whisper tag, the ellipses in the text and a per-line loudness
+  filter that lifted every breath all pushed the same way. So every line went back to the booth, one at a time,
+  with the old take first in each comparison.</p>
+  <div class="ladder">
+    <div class="round"><div><h4>She does that</h4><div class="sub">old whisper vs new calm &middot; new won</div></div>
+      <div class="chips"><button class="chip" data-src="08-voice/L1-does-that-a.mp3">old whisper</button><button class="chip win" data-src="08-voice/L1v2-calm50-a.mp3">Yeah... she does that</button></div></div>
+    <div class="round"><div><h4>Considering</h4><div class="sub">four calm takes lost to the original</div></div>
+      <div class="chips"><button class="chip" data-src="08-voice/compare-L2v2.mp3">all five</button><button class="chip win" data-src="08-voice/L2-doing-well-c.mp3">original kept</button></div></div>
+    <div class="round"><div><h4>Food and warmth</h4><div class="sub">originals kept, one new line</div></div>
+      <div class="chips"><button class="chip win" data-src="08-voice/L3-leave-food-a.mp3">I leave the food for her</button><button class="chip win" data-src="08-voice/L9-keep-warm-b.mp3">I keep her warm</button><button class="chip win" data-src="08-voice/L4-welcome-a.mp3">You are welcome</button></div></div>
+    <div class="round"><div><h4>Really</h4><div class="sub">surprised was wrong; "she is getting angry a little"</div></div>
+      <div class="chips"><button class="chip" data-src="08-voice/L5-really-a.mp3">old, slow</button><button class="chip" data-src="08-voice/compare-L5v3.mp3">surprised x4</button><button class="chip win" data-src="08-voice/L5v4-sigh-a.mp3">a sigh, then cold</button></div></div>
+    <div class="round"><div><h4>The wire</h4><div class="sub">three wordings, eight takes</div></div>
+      <div class="chips"><button class="chip" data-src="08-voice/L6-not-this-wire-c.mp3">Wait, not this wire</button><button class="chip" data-src="08-voice/compare-L6v3.mp3">And this... x4</button><button class="chip win" data-src="08-voice/L6v4-dry-a.mp3">This... is a really bad idea</button></div></div>
+    <div class="round"><div><h4>The close</h4><div class="sub">deadpan, then a long pause</div></div>
+      <div class="chips"><button class="chip win" data-src="08-voice/L8-ohgreat-deadpan-a.mp3">Oh. Great.</button><button class="chip" data-src="08-voice/L7-too-patient-a.mp3">old whisper</button><button class="chip win" data-src="08-voice/L7v2-calm-a.mp3">I think... I was too patient</button></div></div>
+  </div>
+  <p class="nowplay">Click any take to hear it.</p>
+  <h3>The cut nobody had heard</h3>
+  <p>The voice review surfaced a worse problem. Every multi-line rough cut had a broken audio track: a reported
+  length of two hundredths of a second, decoding to silence. QuickTime quietly played the picture; VLC hung. Alex had
+  approved six cuts on picture alone. The cause was mixing the voice in the same ffmpeg pass as the long video edit.
+  Picture, voice and mux are now three steps, and every file handed over gets its audio measured first.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 9 &middot; sound</p>
+  <h2>Three rounds of too quiet</h2>
+  <p class="lede">The bed is generated in numpy: hums, drips, CRT whine, a click and a burst of static for every
+  screen at its exact death time, sparks, a power-down sweep. It works for electronics. It did not work for a camera
+  hitting a wall: "those are not the metal camera hitting the walls sounds."</p>
+  <p>ElevenLabs sound effects did, sliced hit by hit onto the frames where the camera strikes. Then they were too
+  quiet, three times. Raising them inside the bed lowered everything else, because the bed is normalised to its
+  loudest moment. Raising them after the loudness pass hit the limiter, because a foley impact is a spike with
+  almost nothing behind it. The fix was to level each hit by its body, round off the spike, give the hits their own
+  track after the loudness pass, and duck everything else for a third of a second under each impact.</p>
+  <div class="vids">
+    <div class="vid"><video src="09-sound/v1-hits-A-B-synthetic.mp4" controls preload="metadata" playsinline></video><div class="cap">A/B &middot; tumble take, hits sliced to frames, then the synthetic clanks &middot; $0.05</div></div>
+    <div class="vid"><video src="09-sound/v3-final-master.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; -14 LUFS; the first master clipped at +2.7 dBTP and got a limiter</div></div>
+  </div>
+  <div class="scroller"><table class="tbl">
+    <tr><th>Where the money went</th><th>Calls</th><th>Spend</th></tr>
+    <tr><td>Seedance 2.5 video</td><td class="n">11</td><td class="n">$19.92</td></tr>
+    <tr><td>GPT Image 2.5 plates</td><td class="n">12</td><td class="n">$1.56</td></tr>
+    <tr><td>LTX 2.3 (the unused dark close-up)</td><td class="n">1</td><td class="n">$0.48</td></tr>
+    <tr><td>ElevenLabs voice + sound effects</td><td class="n">19</td><td class="n">$0.24</td></tr>
+    <tr><td>Killed or unused clips, of the above</td><td class="n">4</td><td class="n">$5.97</td></tr>
+    <tr><td><b>Total</b></td><td class="n">43</td><td class="n">$22.20</td></tr>
+  </table></div>
+</section>
+
+<footer>
+  Published 2026-10-09 on YouTube, TikTok, Instagram, X and Bluesky. Every prompt, price, frame number and
+  measurement behind this page is in the project work log, appended as it happened.
+</footer>
+</div>
+
+<script>
+(function(){
+  var a = new Audio(), cur = null;
+  var nps = document.querySelectorAll('.nowplay');
+  function say(t){ nps.forEach(function(n){ n.textContent = t; }); }
+  document.querySelectorAll('button.chip').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){
+      var same = (cur === b);
+      document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+      if (same && !a.paused) { a.pause(); cur = null; say('Stopped.'); return; }
+      a.src = b.dataset.src;
+      a.play().then(function(){ b.setAttribute('aria-pressed','true'); cur = b; say('Playing: ' + b.textContent.trim()); })
+       .catch(function(){ say('Could not play that take.'); });
+    });
+  });
+  a.addEventListener('ended', function(){
+    document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+    cur = null; say('Click any take to hear it.');
+  });
+})();
+</script>
+</body>
+</html>
