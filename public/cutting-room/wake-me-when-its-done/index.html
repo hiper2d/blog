@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How the music video Slopcore: Wake me when it's done (Nothing to Report 2) was made in a week: one android face in twelve looks, a kick grid that drifted, lip sync anchored word by word, a concert for crash-test dummies, five failed beds, and the real costs.">
+<link rel="canonical" href="https://azelianouski.dev/cutting-room/wake-me-when-its-done/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day 4,013 Cutting Room">
+<meta property="og:description" content="Every take behind Slopcore: Wake me when it's done, kept and killed, with the real costs.">
+<meta property="og:url" content="https://azelianouski.dev/cutting-room/wake-me-when-its-done/">
+<meta property="og:image" content="https://azelianouski.dev/cutting-room/wake-me-when-its-done/cover-wake-me-when-its-done.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:dark light}</style>
+<title>Day 4,013 Cutting Room</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=VT323&display=swap">
+<style>
+:root{
+  --ground:#0A0F13; --card:#121A20; --ink:#DCE3E7; --muted:#8696A0; --rule:#222D35;
+  --green:#7DFFA8; --amber:#FFAD3B; --red:#FF5A3C; --frost:#8FA7AD; --kept:#7DFFA8;
+  --fdisp:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --fbody:"Newsreader",Georgia,"Times New Roman",serif;
+  --fmono:"Courier Prime","Courier New",Courier,monospace;
+  --fcrt:"VT323","Courier Prime","Courier New",monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --ground:#EDF1F3; --card:#F8FAFB; --ink:#141C21; --muted:#5A6870; --rule:#D0D9DE;
+  --green:#1C7A47; --amber:#A35F10; --red:#B8381F; --frost:#3E6470; --kept:#1C7A47; color-scheme:light;
+}}
+:root[data-theme="light"]{
+  --ground:#EDF1F3; --card:#F8FAFB; --ink:#141C21; --muted:#5A6870; --rule:#D0D9DE;
+  --green:#1C7A47; --amber:#A35F10; --red:#B8381F; --frost:#3E6470; --kept:#1C7A47; color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--fbody);font-size:17.5px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+@media (max-width:560px){.wrap{padding-inline:16px}}
+img,video{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--fdisp);text-wrap:balance;margin:0;line-height:1.02}
+a{color:var(--amber)}
+p{max-width:64ch}
+
+/* masthead: a status terminal on a cold steel console */
+.mast{padding-block:56px 22px;border-bottom:1px solid var(--rule)}
+.crt{font-family:var(--fcrt);font-size:21px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin:0 0 20px;text-shadow:0 0 8px rgba(125,255,168,.35)}
+.crt .dim{color:var(--muted);text-shadow:none}
+.crt .cur{display:inline-block;width:.55em;height:.9em;background:var(--green);vertical-align:-.08em;margin-left:.15em;animation:blink 1.06s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+h1{font-size:clamp(52px,10.5vw,112px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+h1 .acc{color:var(--amber)}
+.dek{font-size:21px;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.dek em{font-style:italic;color:var(--ink)}
+.ledger{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:54px}
+.led{flex:1 1 140px;padding:18px 20px 18px 0;border-right:1px solid var(--rule)}
+.led:last-child{border-right:0}
+.led b{display:block;font-family:var(--fmono);font-size:28px;font-weight:700;color:var(--amber);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.led span{font-family:var(--fmono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* acts */
+.act{padding-block:60px;border-top:1px solid var(--rule)}
+.act.first{border-top:0;padding-top:0}
+.actno{font-family:var(--fcrt);font-size:19px;letter-spacing:.1em;color:var(--green);text-transform:uppercase;margin:0 0 8px}
+h2{font-size:clamp(34px,5.4vw,52px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.lede{font-size:19.5px;max-width:64ch;margin:18px 0 0}
+h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin:44px 0 12px}
+.note{font-family:var(--fmono);font-size:13.5px;line-height:1.6;color:var(--muted);max-width:66ch;border-left:2px solid var(--rule);padding-left:16px;margin:18px 0}
+.note b{color:var(--amber);font-weight:700}
+
+/* the recurring object: a take with a verdict */
+.takes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin:26px 0 0;align-items:start}
+.takes.full{grid-template-columns:1fr}
+.take figure{margin:0}
+.take .shot{border:1px solid var(--rule);background:var(--card)}
+.take .verdict{display:flex;gap:9px;align-items:baseline;font-family:var(--fmono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 0 6px;border-top:3px solid var(--rule)}
+.take.no .verdict{border-top-color:var(--red);color:var(--red)}
+.take.yes .verdict{border-top-color:var(--kept);color:var(--kept)}
+.take.ref .verdict{border-top-color:var(--frost);color:var(--frost)}
+.take .why{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
+.take .why b{color:var(--ink);font-weight:600}
+
+/* video rows */
+.vids{display:flex;flex-wrap:wrap;gap:24px;margin:26px 0 0;align-items:flex-start}
+.vid{flex:1 1 260px;max-width:340px}
+.vid video{width:100%;border:1px solid var(--rule);background:#000}
+.vid .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:9px;line-height:1.5}
+.vid.hero{flex-basis:420px;max-width:560px}
+.vid.wide{flex-basis:100%;max-width:100%}
+.vid .cap i{font-style:normal;color:var(--red)}
+.vid .cap u{text-decoration:none;color:var(--kept)}
+
+/* tables */
+.scroller{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-family:var(--fmono);font-size:13.5px;margin:22px 0 0}
+.tbl th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 14px 9px 0}
+.tbl td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--amber)}
+
+blockquote{margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--amber);font-size:20px;line-height:1.45;font-style:italic;max-width:58ch}
+blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(--fmono);font-size:12.5px;color:var(--muted);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.crt .cur{animation:none}}
+
+/* watch block: the finished film on YouTube, above the diary */
+.watch{display:flex;flex-wrap:wrap;gap:22px 30px;align-items:flex-start;padding-block:30px 40px}
+.watch .frame{flex:1 1 100%;max-width:100%;aspect-ratio:16/9;background:#000;border:1px solid var(--rule);overflow:hidden}
+.watch .frame iframe{display:block;width:100%;height:100%;border:0}
+.watch .side{flex:1 1 300px;max-width:64ch}
+.watch .side p{margin:0}
+.watch .side p+p{margin-top:16px}
+.watch .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="mast">
+  <p class="crt">UES PENELOPE <span class="dim">// CARETAKER UNIT K-07 // DAY 4013 // PASSENGERS 400 ASLEEP // AWAKE 1 // MORALE 2%</span><span class="cur"></span></p>
+  <h1>Wake me when it's done<br><span class="acc">Cutting Room</span></h1>
+  <p class="dek">The sequel to Nothing to report, made in a week: the same android, now looking after four hundred sleeping
+  CEOs with a note on every pod. Sixty-three video generations, a hundred and eighty-eight images, two Claude sessions
+  working on the same film at once. <em>Most of the week went on faces, beats and the half second between a word and a
+  mouth.</em></p>
+</header>
+<section class="watch">
+  <div class="frame"><iframe src="https://www.youtube.com/embed/Yil9JUyy23U?rel=0" title="Slopcore: Wake me when it's done (Nothing to Report 2)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <div class="side">
+    <p>The finished film, 3:53. Watch it first: everything below is what it took, and a lot of it did not make the cut.</p>
+    <p class="cap"><a href="https://youtu.be/Yil9JUyy23U">Open on YouTube</a> &middot; song by Alex, made with Suno &middot; <a href="/cutting-room/nothing-to-report/">part 1's diary</a></p>
+  </div>
+</section>
+<div class="ledger">
+  <div class="led"><b>3:53</b><span>finished film</span></div>
+  <div class="led"><b>$113.12</b><span>total spend</span></div>
+  <div class="led"><b>63</b><span>video clips</span></div>
+  <div class="led"><b>188</b><span>images</span></div>
+  <div class="led"><b>107</b><span>shots in the edit</span></div>
+  <div class="led"><b>21</b><span>full versions</span></div>
+</div>
+
+<section class="act first">
+  <p class="actno">Act 1 &middot; casting</p>
+  <h2>One face, every look</h2>
+  <p class="lede">K-07 came back from part 1 with her face sheet, her seam and her amber temple light. The first job was a
+  new base look and new costumes, one image at a time: a leather jacket over the gloss suit, an officer uniform, a
+  roller girl, a housekeeper. The second job, which never ended, was keeping her face hers.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="01-one-face/01-nightshift-THE-BASE.jpg" alt="K-07 full body on a grey studio backdrop: glossy black android bodysuit, cropped worn leather jacket, platform boots, deadpan stare" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the base image</span></div>
+      <p class="why"><b>"The night shift."</b> After the first corridor shots came back with a wider face, Alex pointed at
+      this one: use it as close as possible. From then on it was the only character reference in every prompt.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="01-one-face/04-roller-v2-KEPT.jpg" alt="K-07 gliding straight toward the camera on roller skates, upright, long legs, low camera" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; "much better"</span></div>
+      <p class="why"><b>The first roller girl had a leg kicked back and "legs look short".</b> Nothing wrong with the
+      model, everything wrong with the pose I asked for: a kicked-back leg foreshortens in a front view. Upright, toward
+      the camera, "long legs" as intent. The first one was deleted, so there is no picture.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="01-one-face/05-housekeeper.jpg" alt="K-07 full body in a dove-grey work dress with a white collar and a long black apron, a feather duster resting on her shoulder like a rifle" loading="lazy"></figure>
+      <div class="verdict"><span>The housekeeper</span></div>
+      <p class="why"><b>"Practical ship-cleaning crew, not a costume-shop maid."</b> The duster on the shoulder like a rifle
+      was in the prompt; the spray bottle in the apron pocket was too. Verse 1 is sung in this.</p>
+    </div>
+  </div>
+  <div class="takes full">
+    <div class="take ref">
+      <figure class="shot"><img src="01-one-face/02-officer-four-colours.jpg" alt="Four identical full-body shots of K-07 in a double-breasted officer uniform with a peaked cap, in navy, black, white and red leather" loading="lazy"></figure>
+      <div class="verdict"><span>Four edits, one pose</span></div>
+      <p class="why"><b>"Identical pose, only the colours change."</b> The model held the frame to the pixel, which is
+      what makes the uniform flip on every kick in the opening. White ignored the white boots I asked for and looked
+      better for it.</p>
+    </div>
+  </div>
+  <h3>The semicolon that ate three prompts</h3>
+  <p>Three early images lost things for no visible reason: the base look dropped the headphones and copied a pose, the
+  pyjama shot lost the collar, the cable and the headphones again. The API's token count gave it away: a 400-word
+  prompt was arriving as 72 words. The upload tool treats a semicolon as the end of a field, so every prompt was cut at
+  its first one and the whole "keep everything else identical" list never reached the model. One flag fixed it.
+  Everything after that was my fault properly.</p>
+  <h3>Edits keep the face</h3>
+  <p>The rule that cost the most to learn: an edit of a picture keeps the face in that picture. Ask it to "repaint only
+  her head" from a reference and it politely changes the eye colour. The cinema shot took four tries before I gave up
+  editing and generated it fresh from the base image with the set described in words. The garden shot found the other
+  way: cover her head in the shot with a grey ellipse, then the model has to paint a new one from the face reference.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="01-one-face/08-hydro-v3-TIRED.jpg" alt="K-07 in a black taffeta dress, pearls and a pillbox hat watering a tomato plant under magenta grow lamps, her face narrow and tired" loading="lazy"></figure>
+      <div class="verdict"><span>"Too tired and old"</span></div>
+      <p class="why"><b>A full regeneration still carried the old face,</b> because the shot was in the references.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="01-one-face/09-hydro-v5-MASKED-HEAD-KEPT.jpg" alt="The same hydroponics shot with a soft, young, rested face" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; head masked out</span></div>
+      <p class="why"><b>Grey oval over her head in the shot reference, soft face from the cheer still.</b> Then Alex:
+      "make her beautiful." That line went into the prompt as written and stayed.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="01-one-face/10-cheer-v2-THE-SOFT-FACE.jpg" alt="Wide shot of a white plastic hall, K-07 in a scarlet officer uniform on a cryo pod with a microphone, crash-test dummies cheering with raised arms" loading="lazy"></figure>
+      <div class="verdict"><span>The face reference, by accident</span></div>
+      <p class="why"><b>A chorus 2 still whose face Alex called "good enough"</b> became the face every later image was
+      asked to copy: soft full cheeks, soft jaw, heavy-lidded. Never "narrow", never "high cheekbones". Those words
+      made her gaunt.</p>
+    </div>
+  </div>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="01-one-face/11-sing-start-FIRST.jpg" alt="K-07 in a grey housekeeper dress and black apron walking down the cryo bay aisle, fingers on a frosted pod" loading="lazy"></figure>
+      <div class="verdict"><span>Verse 1 start frame &middot; replaced</span></div>
+      <p class="why"><b>Wide, face small.</b> Fine for the walk, weak for the singing. Three days later Alex asked for
+      another start image.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="01-one-face/12-sing-c-BEAUTIFUL-KEPT.jpg" alt="Close-up of K-07 leaning on a frosted pod, lips parted, hand on the glass, pods receding into fog" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; "I like this one"</span></div>
+      <p class="why"><b>Chest up, face large so the video model has something to hold.</b> The second singing clip was
+      made from this; the film cuts between the two.</p>
+    </div>
+  </div>
+  <div class="takes full">
+    <div class="take ref">
+      <figure class="shot"><img src="01-one-face/07-looks-grid.jpg" alt="A grid of twelve stills of the same android in twelve outfits: pyjamas, leather jacket, officer uniforms, housekeeper, varsity jacket on skates, coveralls, ball gown, orange dress, scarlet officer, red satin, a white-haired twin in yellow, officer again" loading="lazy"></figure>
+      <div class="verdict"><span>Twelve looks, one face</span></div>
+      <p class="why"><b>In film order.</b> The officer uniform comes three times: as a colour flip in the opening, in
+      scarlet for the concert, and in nine colours at the end. The eleventh is not her: K-12, the other ship's android,
+      white hair, red lips, green eyes, and a colour K-07 never wore.</p>
+    </div>
+  </div>
+  <p class="note"><b>Her rules, written down this time:</b> a seam line down her right cheek, a tiny amber light at her
+  right temple on the same side, a riveted black collar, porcelain hands with joint seams, one seam ring at each bare
+  elbow and knee, nothing translucent, no visible wiring. One sentence pasted into every prompt. And from day four:
+  <b>K-07 does not smile.</b></p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 2 &middot; the opening</p>
+  <h2>Six a.m.</h2>
+  <p class="lede">Part 1 opened on space and slow stills and made viewers wait. Alex's rule for part 2: open on her
+  face, in motion, from the first frame. I proposed the cryo bay. Alex: if she "sleeps", she should be in a bed. And she
+  should open her eyes exactly at 06:00.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="02-six-am/01-standby-bodysuit-FIRST.jpg" alt="K-07 lying on a tight grey blanket in a glossy black bodysuit, eyes closed, a cable into her neck, a flip clock reading 05:59 on the shelf" loading="lazy"></figure>
+      <div class="verdict"><span>"Not bad, but"</span></div>
+      <p class="why"><b>Alex wanted pyjamas and a sleeping hat.</b> They also bookend the last chorus, where she lies
+      down again in the same clothes.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="02-six-am/02-standby-pyjamas-v3-KEPT.jpg" alt="The same shot in black satin pyjamas with white piping and a striped nightcap with a pompom, headphones on the pillow, cable into a riveted collar" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the first frame of the film</span></div>
+      <p class="why"><b>Third version.</b> The first two lost the collar, the cable and the headphones to the semicolon
+      bug above. The clock reads 05:59; the 06:00 comes later as text.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="02-six-am/v1-hook-raw-eyes-snap.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; push in, eyes snap open in three frames at 2.9 s, temple light goes solid in the same instant &middot; $1.48</div></div>
+    <div class="vid"><video src="02-six-am/v2-situp-raw-SITUP-SKIPPED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Half used</i> &middot; Alex disliked the sit-up, liked the stand. The edit cuts in at 2.6 s, already seated &middot; $1.77</div></div>
+    <div class="vid"><video src="02-six-am/v3-glove-raw-LOCKS-ITSELF.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; the glove slides on, then an amber ring lights around the cuff. Nobody asked; it reads as the glove locking &middot; $1.18</div></div>
+  </div>
+  <h3>Getting dressed</h3>
+  <p>While she walks the corridor, cut-ins of her getting ready: a glove, a boot zip, lipstick in a cracked mirror, a
+  screwdriver at the temple light, the jacket off the hook. Five clips for a few seconds of inserts. Alex's verdict on the
+  batch: "good enough", and then: we went too far, it is too expensive to have a clip for everything. From here on the
+  default was a still with a camera move, and a clip only for key moments.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="02-six-am/03-vanity-plate.jpg" alt="A steel fold-down table under a cracked taped mirror: jeweller screwdrivers in a roll, a soldering iron, an oil can, a lipstick, a tray of spare porcelain finger segments, one caged amber lamp" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; the workbench</span></div>
+      <p class="why"><b>Vanity and repair bench in one.</b> Every prop asked for arrived, plus a tray of spare fingers.
+      It shows twice in the opening; the second time it scrolled too fast, and slowing it to a steady drift was the last
+      fix in the whole film.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="02-six-am/v4-hook-and-dressing-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; 06:00 as text, the stand, the inserts with a split-flap UNIFORM CHECK</div></div>
+    <div class="vid"><video src="02-six-am/v5-walk-raw-NO-SEAM-NO-LIGHT.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Flawed, kept</i> &middot; the 8 s walk came back without her cheek seam or temple light. Too good to throw away &middot; $2.36</div></div>
+  </div>
+  <h3>The chair, the eye, the flips</h3>
+  <p>The seven seconds before the first verse had nothing. Alex: a new setup in the officer uniform, a captain's chair
+  turning round. The bridge plate was made with the chair's back to us, then the same frame with her sitting in it. A
+  clip with both as first and last frame turned the chair in between and landed on the still, so the colour flips that
+  follow are free hard cuts. Then he swapped the close-up after the turn for a slow pan across her eyes: one human, one
+  with a machined iris.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="02-six-am/04-bridge-plate-empty-chair.jpg" alt="A symmetrical ship bridge: an oxblood leather captain's chair on a chrome pedestal with its back to the camera, a three-pane window of stars, consoles and a green radar scope" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; back to us</span></div>
+      <p class="why"><b>The empty chair is the first frame of the turn.</b> The high back hides whether anyone is in it.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="02-six-am/05-eyes-plate.jpg" alt="Extreme close-up of two eyes under a cap brim: one grey human eye, one steel-ringed lens with an amber glow" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; a new detail</span></div>
+      <p class="why"><b>Her right eye has a mechanical iris now.</b> Same side as the seam and the light. Added to her
+      rules.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="02-six-am/v6-chair-turn-first-last-frame.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; first and last frame given, the chair turns and lands on the still &middot; $1.18</div></div>
+    <div class="vid hero"><video src="02-six-am/v7-chair-eyes-flips-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; counters on the turn, the eye pan with OPTIC L NOT HUMAN / PASS ANYWAY, a uniform colour per kick with her skills typed in</div></div>
+  </div>
+  <p class="note"><b>Three frames early.</b> Alex: the costume changes do not fit the kick. Measured, the cuts sat exactly
+  on the kick grid. Measured again, the kick's attack rises 30 to 50 ms before the grid line. Four short excerpts with
+  the cuts 0, 1, 2 and 3 frames before the beat; he picked 3. A cut on the hit reads as late. The dance montage later
+  got 1 frame, the officer stills at the end 1 frame. He chose each by ear, blind.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 3 &middot; verse 1 and chorus 1</p>
+  <h2>Notes, and a throne</h2>
+  <p class="lede">Every pod has a note. The housekeeper walks the aisle and sings the first two lines; the last two are
+  the notes themselves, written in code on a blank paper plate, and the pods' screens with the sleepers' files.</p>
+  <div class="vids">
+    <div class="vid"><video src="03-notes-and-a-throne/v1-sing-v1-raw-WIDE.mp4" controls preload="metadata" playsinline></video><div class="cap">Take 1 &middot; the walking wide; voice 0.08 s late, left as is &middot; $2.36</div></div>
+    <div class="vid"><video src="03-notes-and-a-throne/v2-sing-v2-raw-CLOSE.mp4" controls preload="metadata" playsinline></video><div class="cap">Take 2, three days later &middot; the close-up, with the base image as a second reference so the face holds &middot; $2.36</div></div>
+    <div class="vid hero"><video src="03-notes-and-a-throne/v3-verse1-intercut-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; Alex: "mix both, start from the new one." Each cut carries its own clip's voice lag, so the mouths stay on the words</div></div>
+  </div>
+  <h3>Who is in the pods</h3>
+  <p>Alex's call: no real faces, ever, and putting CEOs in every video is lame anyway. The sleepers got fictional ID
+  photos, pixelated into thirteen cells with a blinking [REDACTED], and names that carry the joke: ELON M., SAM A.,
+  DARIO A. The names went through three rounds in an hour. First a redaction bar wiped over the first name. Then the full
+  name flashed for three frames as an easter egg. Then: "show the names without hiding." When a second Elon turned up,
+  he became MARK Z.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="03-notes-and-a-throne/01-note-blank-plate.jpg" alt="A blank lined paper note taped by its corners to frosted pod glass, a coffee ring on it, ice ferns and drips around" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; blank on purpose</span></div>
+      <p class="why"><b>The handwriting is code.</b> "Wake me when ASI", "Don't touch my stock", "Back in 5 min", "Do not
+      wake before IPO", written on in pencil or marker, one per kick.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="03-notes-and-a-throne/02-pod-screen-plate.jpg" alt="An empty green phosphor CRT in a chipped riveted enamel bezel on the side of a pod, two toggles, an amber lamp" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; empty glass</span></div>
+      <p class="why"><b>Name, days asleep, vitals, DO NOT WAKE, and the pixelated photo</b> are drawn into the glass.
+      In verse 2 the same screen plays their dreams.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="03-notes-and-a-throne/03-id-photos-FICTIONAL.jpg" alt="Four faded 1970s corporate ID badge photographs of made-up men against grey backdrops" loading="lazy"></figure>
+      <div class="verdict"><span>Four fictional men &middot; $0.05 each</span></div>
+      <p class="why"><b>Nobody in particular.</b> Prompted as made-up executives who resemble no one. Then pixelated
+      anyway.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="03-notes-and-a-throne/v4-notes-and-pods-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; "I read them all at six a.m., I read them, then I read again": the notes repeat faster the second time</div></div>
+  </div>
+  <h3>A throne of cleaning gear</h3>
+  <p>For the chorus Alex did not want the captain's chair again. An improvised throne, built from what she has: mop
+  buckets, brooms, spare robot parts. She sits on it very proud, in the red uniform. The image came back with duct-taped
+  yellow buckets for a seat, broom spires with a halo, spare porcelain arms as armrests and a mop for a sceptre. One
+  fifteen-second clip pulls back from her face to the whole throne while she sings all four lines.</p>
+  <div class="takes full">
+    <div class="take yes">
+      <figure class="shot"><img src="03-notes-and-a-throne/04-throne-wide-EXCELLENT.jpg" alt="K-07 in a red leather officer uniform enthroned on duct-taped yellow mop buckets, brooms and mops rising behind her like spires, porcelain arms as armrests, a floor polisher as a footstool, in the cryo bay" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the thumbnail, too</span></div>
+      <p class="why"><b>First try.</b> The pull-back clip was given this and a waist-up version as its first and last
+      frames, and really travelled between them. It ran 2.1 percent slow against the song; one retime over the whole
+      clip fixed it.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="03-notes-and-a-throne/v5-throne-raw-pullback.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw, middle of the clip &middot; 15 s, the longest and dearest shot in the film &middot; $4.43</div></div>
+    <div class="vid"><video src="03-notes-and-a-throne/v6-chorus1-done-won-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; DONE and WON rise on the word, struck through, NOT MET; the WAKE CONDITIONS board fills top right</div></div>
+    <div class="vid"><video src="03-notes-and-a-throne/v7-chorus1-real-fun-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; REAL and FUN behind her: solid letters where they clear her, outline only where they cross her</div></div>
+  </div>
+  <h3>"You are reading the lyrics timing wrong"</h3>
+  <p>The big words were late. Alex said so three times over two hours, and I fixed the wrong thing twice. The words
+  came from Whisper, which I believed ran early on sung lines, so I had stretched every line to fit its loudness window.
+  That pushed the last word of each line into the held note. Fix one moved two words by hand. Fix two measured the
+  vowel onsets and pinned all four hooks. Both left them half a second late. Then Alex's line above, and I checked the
+  premise: Whisper's raw times on the full mix, on the vocal stem, and the loud plateau of each sung vowel all agreed to
+  within a few hundredths. The raw times were right all along. The stretch was the bug. Removing it moved every lyric in
+  the film earlier, some by nearly a second.</p>
+  <div class="takes full">
+    <div class="take yes">
+      <figure class="shot"><img src="03-notes-and-a-throne/05-hooks-sheet-raw-whisper.jpg" alt="A contact sheet of eight frames from chorus 1 at the moments the words done, won, real and fun are sung, showing each big word already up" loading="lazy"></figure>
+      <div class="verdict"><span>The check sheet after the fix</span></div>
+      <p class="why"><b>Two frames per hook: just before, just after.</b> A sheet like this went to Alex with every
+      render; he reads the sheet in seconds and the render in minutes.</p>
+    </div>
+  </div>
+  <p class="note"><b>Also found that night:</b> the chorus started late in the cut. The voice begins at 46.06 s, the cut
+  was at 46.21, so for a sixth of a second she sang over the notes. The chorus now starts one kick earlier, and the clip
+  keeps its own clock, so the mouth did not move.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 4 &middot; verse 2</p>
+  <h2>Their dreams</h2>
+  <p class="lede">Pod twelve dreams of buying Mars, pod forty of faster cars, pod one is smiling in his sleep. The plan:
+  their dreams on the pod screens, her reality in between. My first version drew the dreams in code, wireframe planets
+  and ticking bids. Alex: not sure; put real animation inside the screens. The code drawings were nice. They went.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="04-their-dreams/01-dream-mars.jpg" alt="A faceless man in a suit and space helmet planting a SOLD flag on a red Martian dune, a silver rocket behind" loading="lazy"></figure>
+      <div class="verdict"><span>Dream &middot; Mars &middot; $0.04</span></div>
+      <p class="why"><b>Generated as a 1970s film still, then animated with LTX for $0.18.</b> Greyscaled and tinted
+      phosphor green inside the CRT glass. A SOLD stamp lands on the kick.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="04-their-dreams/02-dream-car.jpg" alt="A low black 1970s race car with a red stripe on an empty desert highway at dawn, dust behind it" loading="lazy"></figure>
+      <div class="verdict"><span>Dream &middot; faster cars</span></div>
+      <p class="why"><b>No logos, no plates.</b> Beside it a hairline telemetry panel: top speed, power, price climbing,
+      OWNED 0 in red. On the garage shot the panel shows her numbers instead: 11 km/h, 0.4 hp, NOT FOR SALE.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="04-their-dreams/03-dream-star-jars.jpg" alt="Dark wood shelves of glass jars each holding one glowing star, a white-gloved hand placing another star into an open jar" loading="lazy"></figure>
+      <div class="verdict"><span>Dream &middot; he owns the stars</span></div>
+      <p class="why"><b>Alex: "show the TV with the star in a glass."</b> The hand drops the star in; the lid never gets
+      screwed on, as asked. Nobody noticed.</p>
+    </div>
+  </div>
+  <h3>The cinema and the garage</h3>
+  <p>She watches pod twelve's dream with a bucket of popcorn she cannot eat. The first still had the screen at an angle
+  in frame, so there was nowhere to put the footage. New shot: the screen is behind the camera, only its green light on
+  her face, in a cinema she built from mismatched chairs. Alex: curtains behind her, she made them; and he did not like
+  the face. That was the four-try face from Act 1. Her fast roller pass got the same note as her old one: too fast for
+  this verse. It was saved for the ending, and she glides slowly around sports cars in a garage instead, in a varsity
+  jacket Alex asked for by name.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="04-their-dreams/04-popcorn-SCREEN-AT-AN-ANGLE.jpg" alt="K-07 cross-legged on the wet bay floor with a red and white popcorn bucket, a pod screen glowing green beside her at an angle" loading="lazy"></figure>
+      <div class="verdict"><span>Unused &middot; wrong angle</span></div>
+      <p class="why"><b>The screen cannot take footage.</b> Also the model engraved "K-07" on the pod. It did that to walls
+      and pods all week.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="04-their-dreams/05-cinema-v2-DRIFTED-FACE.jpg" alt="K-07 alone in the front row of mismatched chairs with popcorn, green light on her face, patchwork curtains of blankets and a silver emergency blanket behind" loading="lazy"></figure>
+      <div class="verdict"><span>Curtains right, face wrong</span></div>
+      <p class="why"><b>The curtains came out in one go:</b> ship blankets, a red bedspread, a sleeping bag, an emergency
+      blanket, red thread, tinsel. The face is the one Alex did not like, carried through two edits.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="04-their-dreams/06-cinema-v4-FRESH-KEPT.jpg" alt="The same cinema, regenerated: a younger narrow face, the curtains, the chairs, the popcorn, the green glow" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; generated fresh</span></div>
+      <p class="why"><b>Base image only, the whole set in words.</b> A clip from this swaps her crossed legs on the beat.</p>
+    </div>
+  </div>
+  <div class="takes full">
+    <div class="take yes">
+      <figure class="shot"><img src="04-their-dreams/07-garage-varsity-KEPT.jpg" alt="K-07 on roller skates in a maroon and cream varsity jacket with a K-07 chenille patch gliding between covered vintage sports cars in a cargo hold, reflections in the wet floor" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; "pretty good", then the jacket</span></div>
+      <p class="why"><b>The cargo hold is the sleeping billionaires' garage.</b> She looks after the cars; later she
+      dances between them and drives one. This jacket is the only time she wears anything that is not black, grey, red or
+      a uniform.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="04-their-dreams/v3-dreams-cinema-cars-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; Mars, the cinema, SOLD, the car with its telemetry, the garage with hers</div></div>
+  </div>
+  <h3>Pod one is smiling</h3>
+  <p>Alex's idea, built in an afternoon: his dream is two women laughing on a yacht. The frame freezes and her black
+  marker corrections pop on the sixteenth notes, blacked-out eyes, knocked-out teeth, a monobrow. Cut to her by the
+  pod, capping the marker, turning and walking off. Then another screen: a dancing robot with her lipstick print on the
+  glass. Her own face through a wiped patch in the frost was made for this line too, and was the best image of the
+  day. It was cut anyway.</p>
+  <div class="vids">
+    <div class="vid"><video src="04-their-dreams/v1-dream-girls-ltx.mp4" controls preload="metadata" playsinline></video><div class="cap">Dream &middot; two women, champagne, sunset, LTX fast &middot; $0.18</div></div>
+    <div class="vid"><video src="04-their-dreams/v2-marker-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; she caps the marker, looks at her work, walks off into the mist &middot; $1.18</div></div>
+    <div class="vid hero"><video src="04-their-dreams/v4-marker-robot-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the corrections pop on the beat, the walk-off, the robot and the kiss</div></div>
+  </div>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="04-their-dreams/08-glass-pov-CUT-ANYWAY.jpg" alt="Seen from inside a pod: K-07's deadpan face looking down through a clear oval wiped in thick frost, ice ferns and drips around, ceiling tubes haloed behind her" loading="lazy"></figure>
+      <div class="verdict"><span>Cut &middot; no room left</span></div>
+      <p class="why"><b>The sleeper's point of view.</b> She has wiped a patch to look at a man smiling in his sleep.
+      Replaced by the marker gag, which is funnier and longer.</p>
+    </div>
+  </div>
+  <h3>"I count the stars"</h3>
+  <p>The last line of the verse was sung twice. First at the observation window, pointing at a star, turning to the
+  lens on "I count the stars". The turn was the problem: Alex said she did not look like herself, and she did not. The
+  video model invented her front face as she turned. Lesson: start the shot already looking at the lens. He chose a
+  different start frame anyway, a photo of her sitting on the radar dish in the red dress, singing out to space.</p>
+  <div class="vids">
+    <div class="vid"><video src="04-their-dreams/v5-stars-raw-FACE-ROUNDED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Replaced</i> &middot; she turns to the lens and the face rounds off &middot; $1.48</div></div>
+    <div class="vid"><video src="04-their-dreams/v6-dish-sing-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; on the dish, never turning. Line 1 came back 0.08 s late, line 2 0.40 s late &middot; $1.48</div></div>
+    <div class="vid"><video src="04-their-dreams/v7-count-the-stars-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; variant F of eight</div></div>
+  </div>
+  <p class="note"><b>Lip sync, word by word.</b> The dish clip was in the film for a day before Alex heard "the last
+  stars" was off. The model had re-paced the clip inside itself: line one nearly on time, line two starting 0.4 s late
+  and ending 0.12 s late. No single shift fits that. The shot was split into pieces, each anchored on a word found by
+  Whisper in the clip and in the song. Then eight short excerpts: the anchor nudged by -0.17 to +0.17 s, with and
+  without a stretched hold on the last vowel, plus two anchored on the hiss of the final "s", which measured 165 ms
+  earlier than Whisper's word. Alex picked F: Whisper anchor, no stretch. The measurement said G. His ear wins.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 5 &middot; instrumental 1</p>
+  <h2>The maintenance round</h2>
+  <p class="lede">Thirty seconds with no vocal, and Alex wanted a new place: the pods were getting boring. An engine room,
+  orange and red. Then: contrast. Work clothes against something nice and completely inappropriate, and cut between them
+  on the kick.</p>
+  <div class="takes full">
+    <div class="take ref">
+      <figure class="shot"><img src="05-maintenance/01-engine-plate.jpg" alt="A cavernous engine room: a riveted reactor with glowing orange ports, red valve wheels, gauges, hazard-striped catwalks, chains, steam jets, a wet grated walkway" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; the engine room</span></div>
+      <p class="why"><b>Built from the corridor's style reference and a paragraph.</b> The only warm room on the ship.</p>
+    </div>
+  </div>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="05-maintenance/02-walk-work.jpg" alt="K-07 in oil-stained orange coveralls with hazard stripes and welding goggles on her forehead walking toward the camera along the walkway carrying a red toolbox, the reactor glowing behind" loading="lazy"></figure>
+      <div class="verdict"><span>The work twin</span></div>
+      <p class="why"><b>Coveralls, tool belt, red toolbox.</b> Four jobs were made this way, each with a dressed-up twin
+      in the same frame.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="05-maintenance/03-walk-gown-velvet-MASSIVE.jpg" alt="The identical frame in a strapless black velvet gown with a slit, opera gloves, pearls, the goggles worn like a tiara, still carrying the toolbox" loading="lazy"></figure>
+      <div class="verdict"><span>"She looks massive"</span></div>
+      <p class="why"><b>Same stride, same toolbox, same reactor.</b> The strapless velvet made her read heavy and close.
+      Kept on disk for the ending, where it was finally used.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="05-maintenance/04-walk-gown-v2-SLIM.jpg" alt="The same frame in a slim long-sleeved black satin column gown with a high neck and pearls" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the slim gown</span></div>
+      <p class="why"><b>Regenerated with the base image as a body reference.</b> Reads as slim as the work version, which
+      matters when they swap mid-step.</p>
+    </div>
+  </div>
+  <h3>The same walk in two outfits</h3>
+  <p>The first cut flipped between the two stills on a shared push. Alex did not like it: animate the walk, and change
+  the outfit inside the same animation. That turned out to exist. The work walk was generated as a clip, then sent to a
+  video-edit model with the gown image and the instruction to keep every step and camera move and change only the
+  clothes. It came back frame for frame identical, so the two clips cut into each other on any kick and the dress appears
+  mid-stride. The velvet version was made first and replaced by the slim one, so this swap cost $1.82 twice.</p>
+  <div class="vids">
+    <div class="vid"><video src="05-maintenance/v1-walk-work-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; the work walk &middot; $1.48</div></div>
+    <div class="vid"><video src="05-maintenance/v2-walk-gown-video-edit-SAME-MOTION.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Video edit</u> &middot; same steps, same steam, same camera; only the clothes. Goggles lost &middot; $1.82</div></div>
+    <div class="vid hero"><video src="05-maintenance/v7-maintenance-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the outfit changes on the kicks with an OUTFIT tag swapping in the corner, then the slideshow</div></div>
+  </div>
+  <h3>One room, one colour, two outfits</h3>
+  <p>The first slideshow was all engine-room orange. Alex: different locations, different colours. So each job got its own
+  room and palette, and each room its pair: a magenta hydroponics bay with a tomato watered from a champagne bucket, a
+  blue mainframe hall, a yellow-green laundry. After the third pair: "a little too much, we'll show this quickly."</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="05-maintenance/05-weld-gown-TULLE.jpg" alt="K-07 kneeling on a catwalk welding a pipe, mask down, sparks landing in an enormous black tulle ball gown pooled around her" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the moderation detour</span></div>
+      <p class="why"><b>The first version, kneeling in the strapless velvet, was blocked by the image model's filter.</b>
+      The retry asked for a modest high-neck ball gown with a huge skirt. Funnier than what was blocked.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-maintenance/06-computer-gown-SEQUINS.jpg" alt="K-07 in a silver sequin gown and silver gloves lifting a reel of tape in a blue mainframe hall with tape drives and blinking lamps" loading="lazy"></figure>
+      <div class="verdict"><span>The computer room &middot; blue</span></div>
+      <p class="why"><b>The work twin got animated:</b> she ends up wound in tape.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-maintenance/07-laundry-gown-FEATHERS.jpg" alt="K-07 in a pink ostrich-feather dress and pink satin gloves among tumbling washers and towering stacks of white shirts in a yellow-green laundry" loading="lazy"></figure>
+      <div class="verdict"><span>The laundry &middot; yellow</span></div>
+      <p class="why"><b>Pink feathers. The work twin gets buried under the shirts.</b></p>
+    </div>
+  </div>
+  <h3>Cheap motion, and where it breaks</h3>
+  <p>To animate the stills cheaply I tried the fast video model at $0.18 a clip. The pattern held all week: the first
+  two or three seconds are fine, then her face drifts and the camera does what it likes. Good for a one-beat cut, good
+  for anything without her face. For the gags Alex wanted, her tangled in tape and buried in shirts, the shirt avalanche
+  landed; the tape did not, and was reshot on the expensive model.</p>
+  <div class="vids">
+    <div class="vid"><video src="05-maintenance/v3-hydro-ltx-FACE-GOES.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Trimmed to 1.5 s</i> &middot; told "camera locked", it pushed into her face and lost it &middot; $0.18</div></div>
+    <div class="vid"><video src="05-maintenance/v4-tape-mummy-ltx-NOT.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; the cheap tape mummy. Alex: not this one &middot; $0.18</div></div>
+    <div class="vid"><video src="05-maintenance/v5-tape-mummy-seedance-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the reshoot: she spins, the tape winds her, deadpan stare &middot; $1.48</div></div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="05-maintenance/v6-avalanche-ltx-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the shirt tower falls on her at 2.6 s, only her head left out &middot; $0.18</div></div>
+    <div class="vid hero"><video src="05-maintenance/v8-mummy-avalanche-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; TAPE / --, LAUNDRY / 4,013 KG</div></div>
+  </div>
+  <p class="note"><b>Two free fixes from this stretch.</b> The cheap model's clips moved on every other frame, 12 fps motion
+  in a 24 fps file; keeping every second frame and interpolating back to 24 made them smooth. And when a clip ended with
+  her head down and the next shot had her looking at the lens, the clip was simply reversed, so the head comes up to meet
+  the cut.</p>
+  <h3>Gerald is back</h3>
+  <p>Sixteen seconds before the Gerald verse had nothing in them. The plan that stuck: she gives up on the floor of the
+  engine room with a sock on her head, the room floods red, a console shows an unknown object approaching, and she fixes
+  her make-up while pretending not to care. The rock from part 1 lands at the window on the word "Gerald".</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="05-maintenance/08-giveup.jpg" alt="K-07 slumped against red toolboxes on the engine room floor among tape reels and shirts, a sock draped over her head with the goggles, steam and sparks behind" loading="lazy"></figure>
+      <div class="verdict"><span>"Not bad" &middot; the give-up</span></div>
+      <p class="why"><b>Everything from the slideshow lands on her:</b> tape, shirts, the sock. A twin of the frame in red
+      alarm light cuts in on the kick. Both got cheap animation; Alex preferred the stills, then a day later put the clips
+      back.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-maintenance/09-console-plate.jpg" alt="A straight-on console with a big round green radar scope in the centre, three empty green CRTs on each side, gauges, toggles and lamps" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; six screens and a radar</span></div>
+      <p class="why"><b>Every screen is code:</b> a blinking WARNING, a signal spiking on the kicks, a wireframe rock
+      turning, a RANGE counter that falls from 4,012 km to 0 on "Gerald came back".</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-maintenance/10-compact.jpg" alt="Over her shoulder: an open brass compact in her gloved hand, her oil-streaked face sharp in its mirror, the room red" loading="lazy"></figure>
+      <div class="verdict"><span>Make-up, one still per kick</span></div>
+      <p class="why"><b>Sock off, compact open, bangs, lipstick, ready.</b> This one was flipped horizontally: the model
+      drew the mirror face the wrong way round, as it had with the lipstick mirror in the opening. Later the snap shut
+      became a short clip.</p>
+    </div>
+  </div>
+  <div class="takes full">
+    <div class="take ref">
+      <figure class="shot"><img src="05-maintenance/11-window-GERALD-TOO-BIG.jpg" alt="K-07 leaning by a riveted window with her arms crossed, chin up, side-eye at a huge cratered asteroid outside, a dinner table with a flask and candle at the left, red alarm light" loading="lazy"></figure>
+      <div class="verdict"><span>The window &middot; Gerald bigger than asked</span></div>
+      <p class="why"><b>The same window and table she waited at in part 1.</b> In the final a hand writes "Gerald the
+      asteroid" with an arrow to the rock. On the next shot it is written again, crossed out in red, and "The Ex" goes
+      under it. There was no time for both on one shot; Alex split them.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="05-maintenance/v9-alarm-console-makeup-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; PROXIMITY ALERT, the console, five make-up stills on five kicks, the compact snaps shut</div></div>
+    <div class="vid hero"><video src="05-maintenance/v10-gerald-the-ex-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the handwriting, and a chat window: hey babe, u up?, miss me?, K-07 is typing... SEEN 06:01. No reply</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 6 &middot; the Gerald verse and chorus 2</p>
+  <h2>Gerald, and a concert for nobody</h2>
+  <p class="lede">Alex: time to show her singing, too many stills in a row. The Gerald verse is two speaking clips at the
+  window, in a burnt-orange dress for the whole verse. The second one is the reverse of part 1's dinner: there she longed
+  for him at this table; here she sips alone with her back to the window, and he is pressed to the glass.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="06-gerald-and-a-concert/01-window-dress.jpg" alt="The window shot again, K-07 now in a burnt-orange satin dress with long black gloves, arms crossed, Gerald outside" loading="lazy"></figure>
+      <div class="verdict"><span>Start frame &middot; lines 1-2</span></div>
+      <p class="why"><b>Same frame as the coveralls version, only the clothes.</b> Over "he waved at me" a hairline box
+      tracks the rock: OBJ-0001 GERALD, WAVE RECEIVED, WAVES 1 / 4,013 DAYS.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-gerald-and-a-concert/02-reverse-dinner.jpg" alt="K-07 in the orange dress at the dinner table, one glass raised, deadpan into the lens, the asteroid filling the window behind her, a flask and candle on the table" loading="lazy"></figure>
+      <div class="verdict"><span>Start frame &middot; lines 3-4</span></div>
+      <p class="why"><b>"Eleven years to learn a wave."</b> Over that line part 1's three plates land on a table as
+      photographs, each on top of the last, stamped 11 YEARS AGO. Alex's note: photos, not a flashback cut.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="06-gerald-and-a-concert/v1-gerald-a-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; side-eye at the rock, a small glove wave at 4.5 s; line 2 came back 0.4 s late and was remapped &middot; $2.36</div></div>
+    <div class="vid hero"><video src="06-gerald-and-a-concert/v2-waved-at-me-photos-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; WAVE RECEIVED, the photos, "I'm not the girl I was that night"</div></div>
+  </div>
+  <h3>Not on the hull</h3>
+  <p>Chorus 2 was going to be her in a red shell on the hull, like part 1's white shell. Three images later Alex said "it's
+  the same face" and pointed at part 1's thumbnail: softer, fuller, warmer light. I dropped every word like "narrow"
+  from the prompts, and he dropped the hull: the chorus needed more than singing in space. A concert for an audience
+  that never reacts. Crash-test dummies.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="06-gerald-and-a-concert/03-hull-shell-SAME-FACE.jpg" alt="K-07 in a glossy red android shell on a silver hull deck under a black sky, deadpan into the lens" loading="lazy"></figure>
+      <div class="verdict"><span>"It's the same face"</span></div>
+      <p class="why"><b>Hard starlight and my own adjectives made her gaunt.</b> The red shell survived in another
+      scene; this one did not.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="06-gerald-and-a-concert/04-dummies-in-the-bay-REJECTED.jpg" alt="From behind four crash-test dummies on folding chairs: K-07 in a scarlet uniform on a pod lid with a stand microphone in the cryo bay" loading="lazy"></figure>
+      <div class="verdict"><span>"The bay is already used"</span></div>
+      <p class="why"><b>Also: the pod is too small and has a creepy thing in it.</b> New location, all white and plastic.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="06-gerald-and-a-concert/05-white-hall-KEPT.jpg" alt="A long glossy white plastic hall with rows of white cryo pods, K-07 in scarlet on a pod at the far end with a chrome microphone, four yellow dummies on white chairs seen from behind" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; red and yellow only</span></div>
+      <p class="why"><b>A 1970s science-fiction set described in a paragraph.</b> The sleepers lie under frosted oval
+      windows in dark suits. Every chorus 2 image is an edit of this frame.</p>
+    </div>
+  </div>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="06-gerald-and-a-concert/06-war-table.jpg" alt="Looking down at a battle map spread on a pod lid with toy soldiers and tanks, a white-gloved hand in a scarlet sleeve pushing a row of soldiers with a croupier rake, a sleeper under frosted glass showing through" loading="lazy"></figure>
+      <div class="verdict"><span>"Wake me when we've won"</span></div>
+      <p class="why"><b>A croupier's rake, Alex's idea.</b> The split-flap over it reads WON ... NO.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="06-gerald-and-a-concert/07-play-money.jpg" alt="The white hall, K-07 standing and throwing a handful of pastel board-game money into the air, bills landing on the motionless dummies' heads" loading="lazy"></figure>
+      <div class="verdict"><span>"Wake me when the money's real"</span></div>
+      <p class="why"><b>Pastel play money, no real currency.</b> The dummies do not react. Her face here was fixed later
+      by cropping, editing the crop with the soft face and pasting it back: $0.07.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="06-gerald-and-a-concert/08-cheer-v2.jpg" alt="The same wide shot with every dummy throwing its arms up" loading="lazy"></figure>
+      <div class="verdict"><span>The cheer &middot; frozen time</span></div>
+      <p class="why"><b>Only the dummies change.</b> From this still a 10 s clip pulls straight back down the hall and
+      reveals rows and rows of frozen cheering dummies, nothing else moving.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="06-gerald-and-a-concert/v3-chorus2-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; one 16 s take of all four lines into the stand mic. Lines 1-3 came back 0.3 to 0.5 s late, line 4 by 2.5 s &middot; $4.73</div></div>
+    <div class="vid"><video src="06-gerald-and-a-concert/v4-cheer-ltx-fast-FACE.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Replaced</i> &middot; the pull-back worked first try, but Alex did not like her face in it &middot; $0.18</div></div>
+    <div class="vid"><video src="06-gerald-and-a-concert/v5-cheer-ltx-pro-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; redone on the pro model at 1080p from the soft-face still, 10 s; its fast first second is skipped &middot; $0.80</div></div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="06-gerald-and-a-concert/v6-won-no-money-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; she sings every phrase in full; the stills only sit in the gaps between them, each with a flap board that lands on NO</div></div>
+    <div class="vid hero"><video src="06-gerald-and-a-concert/v7-encore-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; FUN ... NO on the frozen crowd, the encore card: audience 400, awake 0, applause N/A</div></div>
+  </div>
+  <p class="note"><b>Six cuts of this chorus in a row.</b> No still at the start, she just starts singing. Cut the wide in for
+  a second after a phrase ends, not during. No slow motion on the held "fun" (that fix took three tries: slow, ping-pong,
+  then just end the clip). Pull back, not side to side. End the pull-back where the new music starts: a hi-hat layer
+  enters at 141.89 s, found as a 9 dB jump above 2.5 kHz, and the cut sits there.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 7 &middot; instrumental 2</p>
+  <h2>Dance with a dummy</h2>
+  <p class="lede">Twenty-three seconds, the drums silent for the first seven and then the loudest stretch of the song.
+  Before the drums: a slow roller dance in the garage. After: Alex's brief was a sharp straight-arm dance in space,
+  side to the camera. The start frame faced the camera in red heeled boots. He rejected the move itself, and we
+  brainstormed for something she would actually do.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="07-dance-with-a-dummy/01-dance-start.jpg" alt="K-07 alone in the garage on one roller skate, the other leg extended, arms wide like a ballet dancer, eyes closed, cars parked around her" loading="lazy"></figure>
+      <div class="verdict"><span>Start frame &middot; the slow dance</span></div>
+      <p class="why"><b>Ten seconds of slow turns, $2.96.</b> Alex first wanted a fast skating burst before it, then
+      removed it: only the slow dance here. Sped up 1.3x to end where the drums come in.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="07-dance-with-a-dummy/02-waltz-start.jpg" alt="K-07 in a long red satin dress in a closed ballroom hold with a yellow crash-test dummy on the ship's hull, the radar dish and a red lamp behind, stars" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the waltz</span></div>
+      <p class="why"><b>A slow serious waltz with a limp dummy on the hull in space.</b> The red satin dress is a chorus 2
+      leftover. Alex: "Nice. Not very smooth, but that's ok." It dips the dummy at 6 s.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="07-dance-with-a-dummy/03-drive-start.jpg" alt="K-07 in the red dress at the wheel of a dark green open-top roadster with its headlights on, a crash-test dummy belted into the passenger seat, head tilted toward her, in the garage" loading="lazy"></figure>
+      <div class="verdict"><span>Start frame &middot; the drive</span></div>
+      <p class="why"><b>She drives one of their cars at walking pace with the dummy as passenger.</b> Its head drops onto
+      her shoulder by 2 s and stays there.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="07-dance-with-a-dummy/v1-dance-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; the slow dance, arms overhead, two full spins &middot; $2.96</div></div>
+    <div class="vid"><video src="07-dance-with-a-dummy/v2-waltz-raw-the-dip.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; the dip &middot; $2.96</div></div>
+    <div class="vid"><video src="07-dance-with-a-dummy/v3-drive-raw-CAR-DOES-NOT-MOVE.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Flaw</i> &middot; the car barely moves: I asked the camera to drift back ahead of it, so the two motions cancelled. Alex liked it anyway, cross-cut &middot; $1.77</div></div>
+    <div class="vid"><video src="07-dance-with-a-dummy/v6-skate-dance-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the slow dance before the drums, with a dance card: partner found, DUMMY 012</div></div>
+  </div>
+  <h3>Rough editing on a hard beat</h3>
+  <p>The cross-cut was not dynamic enough. Alex wanted rough editing, movement matching the beat. First try: a shot every
+  two kicks, alternating waltz and drive, with the footage surging on each kick and easing into the next. He liked the
+  cuts and not the surge; everything went back to real time. Then more things to cut in: her legs swinging from the rim
+  of the radar dish, a small one-armed robot dance, and a club full of dummies frozen mid-dance, a different strobe
+  flash per kick.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="07-dance-with-a-dummy/04-legs-swing-start.jpg" alt="Low wide shot: K-07 in the red dress sitting on the rim of the radar dish high above the hull, legs in black platform boots dangling, almost black sky with a few stars" loading="lazy"></figure>
+      <div class="verdict"><span>Legs swinging &middot; sky edited to black</span></div>
+      <p class="why"><b>"Space too busy, black with a few stars."</b> One edit changed only the sky. The clip swings her
+      legs once a second. This photo also became the "I count the stars" start frame.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="07-dance-with-a-dummy/05-robot-start.jpg" alt="K-07 from the hips up on the hull, right forearm raised vertical with a flat black mechanical hand, side-eye toward it, bored" loading="lazy"></figure>
+      <div class="verdict"><span>The robot &middot; one arm</span></div>
+      <p class="why"><b>Done twice, on both video models.</b> The expensive one moved the arm in big smooth sweeps; the
+      cheap pro one moved the whole arm, less staccato still. Alex kept the first "as a maybe"; the second was worse.</p>
+    </div>
+  </div>
+  <div class="takes full">
+    <div class="take yes">
+      <figure class="shot"><img src="07-dance-with-a-dummy/06-club-strobe.jpg" alt="Four nearly identical stills of K-07 standing deadpan in the centre of a crowd of crash-test dummies frozen in different dance poses under strobe light and red and blue lasers" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; four flashes, she never moves</span></div>
+      <p class="why"><b>Three edits of one still asked only the dummies to change.</b> They changed her too, a little, so she
+      was cut out of the first frame with a mask and pasted back over the other three to the pixel. Her face in the first
+      one had been fixed by the crop-and-paste method first. One per kick, twice.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="07-dance-with-a-dummy/v4-robot-seedance-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept, 1.2 s of it</u> &middot; $1.48</div></div>
+    <div class="vid"><video src="07-dance-with-a-dummy/v5-robot-ltx-WHOLE-ARM.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Worse</i> &middot; the whole arm, no snap &middot; $0.48</div></div>
+    <div class="vid hero"><video src="07-dance-with-a-dummy/v7-drum-montage-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; waltz, robot, legs, drive, four strobe flashes, every cut one frame before the beat</div></div>
+  </div>
+  <h3>The grid is not the song</h3>
+  <p>Alex: the dummies feel a little off the music. The whole film was cut on one kick grid fitted to the song at the
+  start: a kick every 0.469019 s, 127.9 bpm, no drift measured. Here the snare onsets fit a line at 129.9 bpm. The two
+  agree at the start of the section and are 175 ms apart by its end, so every cut was landing late. The section was
+  recut on its own measured line. The bridge after it drifts to almost a full beat; it got the same treatment. Then one
+  more "still a little mismatch", and the cuts moved one frame early. "Perfect."</p>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Section</th><th>Grid says</th><th>Measured beat</th><th>What happened</th></tr></thead>
+    <tbody>
+      <tr><td>Instrumental 2 montage</td><td class="n">127.9 bpm</td><td class="n">129.9 bpm, 175 ms late by the end</td><td>Recut on the measured line, then 1 frame early. Kept.</td></tr>
+      <tr><td>Bridge clip cuts</td><td class="n">grid</td><td class="n">235 to 434 ms late</td><td>Moved to the measured line, 1 frame early. Kept.</td></tr>
+      <tr><td>Bridge party stills</td><td class="n">grid</td><td class="n">about 30 ms early</td><td>Moved with the bridge; Alex: "in 17 the last two images perfectly fit two kicks." Put back on the grid.</td></tr>
+      <tr><td>Final chorus stills</td><td class="n">grid</td><td class="n">80 to 230 ms late, shaky fit</td><td>Moved, read worse to Alex than the grid. Put back.</td></tr>
+      <tr><td>Outro officer stills</td><td class="n">grid</td><td class="n">within 30 ms</td><td>Grid was right; 1 frame early for the eye.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><b>Measure every beat-cut section separately,</b> with a zero-phase band-pass on the snare band and a
+  line fit through the onsets. And when the fit is shaky, as it was under the final chorus vocals, his ear is the better
+  instrument. He judged every one of these in the full video: "hard to understand from shorts."</p>
+  <div class="vids">
+    <div class="vid hero"><video src="07-dance-with-a-dummy/v8-super-bored-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; she looks up at the end of the drive; Alex wanted it explained. A hand writes "Super bored" and draws an arrow</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 8 &middot; the bridge</p>
+  <h2>Another me</h2>
+  <p class="lede">"Somewhere out there, another me, kept awake by company." Another ship passes with another android
+  on board. Alex wanted space, the other ship, and a camera that starts at ours, flies at a far light and orbits what it
+  finds. The ship itself was the first problem: the model could not draw it.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="08-another-me/01-ships-pass-WRONG-RING.jpg" alt="Two spaceships close together in black space: a worn grey one with a ring at the right, a small white one with red stripes facing it" loading="lazy"></figure>
+      <div class="verdict"><span>Rejected &middot; wrong ring, too close</span></div>
+      <p class="why"><b>The spine has to run through the ring like an axle, as in part 1.</b> Two attempts to redraw our
+      ship from references both broke the geometry.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="08-another-me/02-start-v3-VIDEO-1-FRAME.jpg" alt="The ship from part 1 in side view, engines left, a narrow upright ring, black sky with sparse stars and one small warm bright point far top right" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; a frame from part 1, edited</span></div>
+      <p class="why"><b>Rule: never redraw the ship, edit a frame of it.</b> Only the sky and the far light are new.
+      This is the first frame of the fly-over.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="08-another-me/03-sister-ship.jpg" alt="The same ship repainted clean white with a thin red stripe, ring windows lit warm, a bow light" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the sister ship</span></div>
+      <p class="why"><b>Same class, same frame, new paint.</b> One edit changed only the paint and lights. Its mirror
+      crop is the fly-over's last frame.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="08-another-me/v1-flyover-raw.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Half right</i> &middot; our ship shrinks, the far light grows, but it never becomes the ship: the white one whips in from the right at 3.6 s. Alex kept the whip-in and split the shot &middot; $2.36</div></div>
+  </div>
+  <h3>Two dots that never meet</h3>
+  <p>To split the fly-over I first cut in the Gerald console with a radar blip. Alex: do not reuse it, make a new screen,
+  and no fast blip: two dots moving toward each other without meeting. A navigation screen was made blank and the dots,
+  tracks and the separation counter drawn in code.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="08-another-me/04-nav-plate.jpg" alt="A large rectangular green CRT navigation screen in a heavy worn bezel, switched on and empty" loading="lazy"></figure>
+      <div class="verdict"><span>Plate &middot; NAV SECTOR 9</span></div>
+      <p class="why"><b>K-07 in green, K-12 in amber,</b> dotted past tracks, a dashed projection that stops short,
+      SEPARATION 3,868 to 1,874 km.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="08-another-me/05-k12-window.jpg" alt="From outside a white hull: a large riveted window on the right, behind the glass a white-haired android in a yellow suit with red lips, lit warm" loading="lazy"></figure>
+      <div class="verdict"><span>K-12 at her window</span></div>
+      <p class="why"><b>K-07's face, white hair, red lips, green eyes, yellow.</b> Alex: a colour K-07 never wore.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="08-another-me/06-k07-window.jpg" alt="The mirror composition on the old grey ship: K-07 at a window on the left in her leather jacket" loading="lazy"></figure>
+      <div class="verdict"><span>K-07 at hers &middot; mirrored</span></div>
+      <p class="why"><b>Prompted as the mirror image of the K-12 shot on a different ship.</b> The chat window sits on
+      the empty side of each.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="08-another-me/v2-wave-k12-raw-SHE-SMILES.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Flaw, kept</i> &middot; both wave clips smile. Alex: "not their style, not K-07 at least." Left in; "no smile, deadpan" went into every prompt after &middot; $1.48</div></div>
+    <div class="vid hero"><video src="08-another-me/v6-another-me-nav-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; "another me?" in the black, the nav screen, the whip-in</div></div>
+  </div>
+  <h3>Leaving</h3>
+  <p>The white ship had to move away. First a free version in code: the ship cut out of its still and shrunk to a point.
+  Alex wanted the cool departure from part 1 instead: orbit the ship, then pull out while still turning. First and last
+  frame, two models.</p>
+  <div class="vids">
+    <div class="vid"><video src="08-another-me/v5-recede-code-UNUSED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Unused</i> &middot; the code recede, $0</div></div>
+    <div class="vid"><video src="08-another-me/v3-orbit-out-seedance-RING-OFF.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Replaced</i> &middot; a real swoop, but the ring sits off to the side of the spine mid-move &middot; $1.77</div></div>
+    <div class="vid"><video src="08-another-me/v4-orbit-out-ltx-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; same two frames on the other model: the ring stays square on the spine the whole way. The camera passes through the hull for three mushy frames at 2 s. Nobody minds &middot; $0.48</div></div>
+  </div>
+  <h3>Hello, she sent. Hello, I said.</h3>
+  <p>The messenger window from the Gerald scene comes back, and this time it gets answered. "hello" in, "hello" out,
+  SEEN 05:58. Then the counters from the opening: PASSENGERS rolls to 400, AWAKE 2 in red. The words "another me?" went
+  through a font line-up of twelve, then outline only, then fills: Alex picked a thin grotesk at a quarter fill with
+  "me?" solid amber.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="08-another-me/07-another-me-fonts.jpg" alt="Twelve renderings of the words another me? in twelve typefaces over the same black space frame" loading="lazy"></figure>
+      <div class="verdict"><span>Font line-up &middot; "10 or 3"</span></div>
+      <p class="why"><b>Twelve candidates on one sheet.</b> He picked a terminal font, then asked for transparent letters,
+      then "only the border", then "fill them with some opacity and the last word orange."</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="08-another-me/08-another-me-fills.jpg" alt="Six variants of another me? in a thin sans serif with different fills, the word me? in amber" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the first one</span></div>
+      <p class="why"><b>Stroke 2, fill 25 percent, "me?" solid.</b> Four renders of the bridge in half an hour, every one
+      of them free.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="08-another-me/v7-hello-hello-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the waves, the chat answered, the orbit out, PASSENGERS 400 AWAKE 2</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 9 &middot; the final chorus</p>
+  <h2>Nobody wakes me</h2>
+  <p class="lede">The plan was a bookend: the same pyjamas and nightcap as 06:00, the same flip clock, and a montage of
+  beds seen from straight above, a different bed per kick with her lying identical in each. The overhead shots failed
+  five times in five different ways.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="09-nobody-wakes-me/01-topdown-v1-HANDS.jpg" alt="Straight down onto a bunk: K-07 in pyjamas and nightcap lying head to the left, eyes open, the flip clock reading 06:00 at the top left" loading="lazy"></figure>
+      <div class="verdict"><span>The anchor &middot; her arms are wrong</span></div>
+      <p class="why"><b>Meant to be pasted into every bed.</b> The face paste worked; the hands and fingers were off in
+      every variant.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="09-nobody-wakes-me/02-bed-pod-v4-FOURTH-TRY.jpg" alt="Overhead: K-07 lying in an open white cryo pod much longer than her, sleeping men in suits in the neighbouring pods above and below" loading="lazy"></figure>
+      <div class="verdict"><span>Approved on the fourth try, then dropped</span></div>
+      <p class="why"><b>v1 had dwarfs in the neighbouring pods, v2 barely changed, v3 cut her toes off.</b> Then the whole
+      overhead idea went.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="09-nobody-wakes-me/03-bed-car-REJECTED.jpg" alt="Overhead: K-07 lying on the long bonnet of a dark green roadster in the garage" loading="lazy"></figure>
+      <div class="verdict"><span>"The bonnet is weird"</span></div>
+      <p class="why"><b>Too long, the steering wheel in the middle, too many fingers.</b></p>
+    </div>
+  </div>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="09-nobody-wakes-me/04-topdown-v3-BENT-ROOM.jpg" alt="Overhead of the cabin with the bunk and blanket half kicked off, the room's walls bowing" loading="lazy"></figure>
+      <div class="verdict"><span>"The room is bent"</span></div>
+      <p class="why"><b>Wide overhead shots of a person lying down keep breaking.</b> Hands, blankets, proportions,
+      walls. This was the last one.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="09-nobody-wakes-me/05-two-hoods-DROPPED.jpg" alt="K-07 in pyjamas lying across the bonnets of two black sports cars parked nose to nose" loading="lazy"></figure>
+      <div class="verdict"><span>"Weird. Drop the car idea for good"</span></div>
+      <p class="why"><b>The second try at a car bed.</b> Alex's words.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="09-nobody-wakes-me/06-pod-close-KEPT.jpg" alt="Close, slightly off-axis: K-07 from the head to the chest in an open white pod, nightcap, eyes open, a strip of side light, shallow focus" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the recipe that fixed "drawn"</span></div>
+      <p class="why"><b>Camera a little off axis, a side light strip, a 50 mm at f/2, real skin, and no hands or feet in
+      frame.</b> Head to chest, nothing else to get wrong. "Nobody wakes me" is sung from here.</p>
+    </div>
+  </div>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="09-nobody-wakes-me/07-candle-KEPT.jpg" alt="K-07 in pyjamas and nightcap walking toward the camera down the dark cryo bay aisle holding a brass candlestick" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the walk</span></div>
+      <p class="why"><b>Main lights off, a candle.</b> The first "Nobody wakes me" is sung walking. The DUTIES list from
+      the opening comes back and is struck through one per kick; "Wake nobody" gets a red strike and DONE.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="09-nobody-wakes-me/08-eyes-shut.jpg" alt="The pillow close-up with her eyes closed" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; eyes closed</span></div>
+      <p class="why"><b>Alex: "I don't sleep anyway" with her eyes closed.</b> The clip keeps them closed the whole line.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="09-nobody-wakes-me/v3-clock-raw-0-72-LATE.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; she sets the clock to 06:00 and sings; the voice came back 0.72 s late &middot; $1.18</div></div>
+    <div class="vid"><video src="09-nobody-wakes-me/v1-walk-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; 0.18 s late &middot; $2.07</div></div>
+    <div class="vid"><video src="09-nobody-wakes-me/v2-pod-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; 0.35 s early &middot; $1.77</div></div>
+  </div>
+  <p class="note"><b>Four singing clips, four different offsets:</b> +0.72, +0.18, -0.35, +0.23 s. The speech model never keeps
+  the reference audio at zero. Each clip's returned sound is cross-correlated against our slice in the voice band and the
+  cut shifted by the result, before anyone listens.</p>
+  <h3>Between the lines</h3>
+  <p>Alex wanted cut-ins between her lines: dancing dummies, and the pod screens with partying people. Each gap became a
+  slideshow in a different place: the dark corridor with candles, the white hall under a mirror ball, the bridge with a
+  dummy in the captain's cap. The screens started switching off the beat and were "too fast"; now they change on the
+  kicks only.</p>
+  <div class="takes">
+    <div class="take ref">
+      <figure class="shot"><img src="09-nobody-wakes-me/09-dummies-corridor.jpg" alt="Crash-test dummies frozen mid-disco in the dark cryo corridor, candles on the floor" loading="lazy"></figure>
+      <div class="verdict"><span>Gap 1 &middot; the corridor</span></div>
+      <p class="why"><b>Two stills, one per kick.</b></p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="09-nobody-wakes-me/10-dummies-mirror-ball.jpg" alt="Night in the white pod hall under a mirror ball, dummies dancing between and on the pods" loading="lazy"></figure>
+      <div class="verdict"><span>Gap 2 &middot; the white hall</span></div>
+      <p class="why"><b>Crowd-surfing, a one-hand breakdance, one dummy watching a sleeper.</b></p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="09-nobody-wakes-me/11-dummies-bridge.jpg" alt="The bridge at night, dummies dancing among the consoles, one in the captain's cap" loading="lazy"></figure>
+      <div class="verdict"><span>The drop &middot; the bridge</span></div>
+      <p class="why"><b>Three stills at the beat drop before the first "Nobody wakes me".</b> The conga-line variant was
+      rejected; the slow-dancing couples against the stars went in.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="09-nobody-wakes-me/v4-clock-and-screens-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the bridge party on the drop, 06:00 set by hand, two screens of other people's parties</div></div>
+    <div class="vid hero"><video src="09-nobody-wakes-me/v5-final-chorus-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the duties struck through, "I don't sleep anyway" eyes shut, the mirror ball, the pod</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 10 &middot; the outro</p>
+  <h2>The ending</h2>
+  <p class="lede">Thirty-seven seconds of instrumental: a full beat, a breakdown, a build, the loudest peak, a fade.
+  Alex's picture for it: she sits on a bed and counts robot dogs jumping a fence, in sheep's fleece, instead of sheep.
+  My first ending for the rest was a montage of old cuts. Rejected. Then stills of dogs loose all over the ship.
+  Rejected. The outro was rebuilt three times.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="10-the-ending/01-dogs-1-FENCE-ALONG.jpg" alt="K-07 on a bunk on an observation deck under a round star window, a long white picket fence running across the frame in front of her, robot dogs in fleece" loading="lazy"></figure>
+      <div class="verdict"><span>Wrong fence</span></div>
+      <p class="why"><b>The fence runs along the dogs' path, so they cannot jump it, and hides her legs.</b> Next: one
+      short knee-high section. Then Alex: turn it ninety degrees, from the foot of the bed toward the camera.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="10-the-ending/02-dogs-3-TIRED-FACE.jpg" alt="A clean cosy observation lounge, K-07 on a white bed, yellow and black quadruped robot dogs in fleece at a short fence" loading="lazy"></figure>
+      <div class="verdict"><span>Room right, face tired</span></div>
+      <p class="why"><b>Alex: dogs like the familiar quadruped robot, no brand; a clean room; she should not look tired.</b>
+      The face was fixed with the crop-and-paste method, and pasted again when the next edit brought the tired one back.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="10-the-ending/03-dogs-6-KEPT.jpg" alt="The same lounge with the fence running from the foot of the bed toward the camera, dogs queued on the left, the first crouched at the fence" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the start frame</span></div>
+      <p class="why"><b>Dogs queued on the left, fence across their path.</b> The video model makes them run and jump: an
+      endless chain, 10 s on the pro model, $0.80. "Dog clip good."</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="10-the-ending/v1-dogs-ltx-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; the chain of dogs; the left side empties at 6 s, so the cut comes before &middot; $0.80</div></div>
+    <div class="vid hero"><video src="10-the-ending/v4-dogs-and-officers-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; dogs counted, then nine officer stills on nine kicks</div></div>
+  </div>
+  <h3>Nine uniforms, nine score cards</h3>
+  <p>For the fourteen kicks after the dogs Alex wanted one image per beat: dogs, dummies, K-07 in the officer suits again.
+  The first image came back as a dog show: she is the marshal in scarlet with a clipboard and whistle, three dummies judge
+  from the bed holding a score card, the dogs perform. Alex: "great"; make variants where only the uniform colour, the
+  score and the dogs' positions change. Eight edits at $0.11 each. He stopped at nine: "enough."</p>
+  <div class="takes full">
+    <div class="take yes">
+      <figure class="shot"><img src="10-the-ending/04-officer-nine.jpg" alt="Nine stills of the same lounge: K-07 as a dog-show marshal in nine uniform colours, three dummies on the bed holding score cards counting down, robot dogs in different positions" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; one per kick, no zoom, 1 frame early</span></div>
+      <p class="why"><b>Scarlet, black, white, navy, emerald, gold, purple, scarlet, black.</b> The score goes 6, 5, 4, 3,
+      2, 1, 0, 1, 3. Alex asked for no camera move on these; a hard change on each beat.</p>
+    </div>
+  </div>
+  <h3>The report, projected</h3>
+  <p>The breakdown was a CRT typing the night shift report. Alex: screens have been used enough, something new, maybe a
+  projector. The first projector image had her at the screen with a pointer and the beam going at her legs. She was
+  removed, since she would have stood still for ten seconds, and the beam went where it should.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="10-the-ending/05-projector-BEAM-AT-HER-LEGS.jpg" alt="A dark bedroom with a pull-down screen over the round window, dummies and dogs seen from behind, K-07 in a black uniform with a pointer at the screen, a slide projector on a stool whose beam points at her legs" loading="lazy"></figure>
+      <div class="verdict"><span>Beam wrong, and she is in the way</span></div>
+      <p class="why"><b>Removed in one edit.</b></p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="10-the-ending/06-projector-v2-KEPT.jpg" alt="The same room without her, the projector beam reaching the blank screen" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; the slides are code</span></div>
+      <p class="why"><b>Blue diazo slides, one per line:</b> NIGHT SHIFT REPORT, DOGS COUNTED 9,999, SHIPS PASSED 1,
+      CEOS WOKEN 0, HOURS SLEPT 0, STATUS: NOTHING TO REPORT. Carousel jitter, lamp flicker, dust in the beam.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="10-the-ending/v5-projector-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the report on the wall</div></div>
+  </div>
+  <h3>The drift</h3>
+  <p>For the build Alex wanted her drifting a car in the garage, dynamic, matching the music. In pyjamas, first. The start
+  frame took four tries: too blurry, then crisp but he disliked her face and her head stuck out above the windscreen, then
+  a fresh one with a different car and her normal black outfit. A 10 s clip from that did a launch, a sideways drift and a
+  donut. The cut interleaves it with the fast skating clip saved from verse 2, unevenly on purpose: Alex asked for the
+  editing to be "more unbalanced."</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="10-the-ending/07-drift-v1-BLURRY.jpg" alt="A roadster mid-drift in the garage in a cloud of tyre smoke, the driver in pyjamas barely visible" loading="lazy"></figure>
+      <div class="verdict"><span>"Too blurry for a start frame"</span></div>
+      <p class="why"><b>Motion belongs to the video model.</b> A start frame has to be sharp.</p>
+    </div>
+    <div class="take no">
+      <figure class="shot"><img src="10-the-ending/08-drift-v3-NO.jpg" alt="The roadster at the start of a burnout, K-07 in pyjamas low in the seat behind the windscreen, a little smoke" loading="lazy"></figure>
+      <div class="verdict"><span>Third try, still no</span></div>
+      <p class="why"><b>Alex: try a different car, her normal outfit, the cast face.</b></p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="10-the-ending/09-drift-f14-KEPT.jpg" alt="A black 1970 muscle-car convertible at the start of a burnout in the garage, K-07 in her leather jacket at the wheel, sharp" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; generated fresh</span></div>
+      <p class="why"><b>Base image only, as always when the face has to be right.</b></p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid"><video src="10-the-ending/v2-drift-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; launch, drift, donut, smoke; her face holds &middot; $2.96</div></div>
+    <div class="vid hero"><video src="10-the-ending/v6-drift-and-skate-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the drift and the skating cut against each other, the dogs' last jumps</div></div>
+  </div>
+  <h3>05:59 to 06:00</h3>
+  <p>The last shot is the flip clock turning over to 06:00. I redrew the four flip cards over the painted ones in code,
+  with the fold and the stagger. Alex: the drawn cards do not fit perfectly, animate it with the video model. A close crop
+  of the clock became a 6 s clip for $0.48; the cards flip between 0.25 and 1.0 s and land on 06:00. From 2.2 s a stray
+  flap grows on top of the clock, so the film fades to black at 1.25.</p>
+  <div class="vids">
+    <div class="vid"><video src="10-the-ending/v3-clock-flip-ltx-raw.mp4" controls preload="metadata" playsinline></video><div class="cap">Raw &middot; the flip; the digits garble mid-turn, which is what a real one does &middot; $0.48</div></div>
+    <div class="vid"><video src="10-the-ending/v7-clock-FINAL.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; the chain's tail runs off, 06:00, black</div></div>
+  </div>
+  <p class="note"><b>The outro was the one place the brightness lift came off.</b> Alex: "too light." Those shots sit at
+  90-110 luma already; a lift that helped the dark ship read made them wash out. Every shot before the clock renders at
+  the original brightness, only the clock keeps the lift.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 11 &middot; the layer</p>
+  <h2>Two sessions, one film</h2>
+  <p class="lede">From the fifth day two Claude sessions worked at once: one on the clean cut, one on the effects layer on
+  top of it. They shared one work log and one folder, and the layer rebuilt itself from the cut every time the cut
+  changed. The rule from part 1 held: two versions of the film, a clean edit and a full effects pass, nothing in
+  between.</p>
+  <h3>"Can we actually not correct the colour at all?"</h3>
+  <p>The first styled render was too dark. A look-book sheet put five grades side by side on the same frames; Alex picked
+  the bright one, then it was too bright, then a middle one. Then he asked the question above: he liked the original
+  colour. Every grade value went to neutral. A day later: "maybe a little bit brighter?" A gamma of .93 and a lift of
+  .01, nothing else. "Let's remember this." It is now a standing rule.</p>
+  <div class="takes full">
+    <div class="take ref">
+      <figure class="shot"><img src="11-the-layer/01-grade-lookbook-FIVE-COLUMNS.jpg" alt="Six rows of the same frames in five columns: raw, the first dark grade, open, open warm, bright" loading="lazy"></figure>
+      <div class="verdict"><span>The look-book &middot; raw, v1, open, open warm, bright</span></div>
+      <p class="why"><b>The winner, after all of it, was the first column.</b></p>
+    </div>
+  </div>
+  <h3>What the layer draws</h3>
+  <p>Everything that is not a photograph or a clip is drawn in a browser, frame by frame, timed to the measured words and
+  kicks: the 06:00 text, the split-flap UNIFORM CHECK, the DUTIES list typing in on the kicks and struck through at the
+  end, the DAYS IN FLIGHT and MORALE counters, the WAKE CONDITIONS board that fills through both choruses, the pod notes
+  and screens, the console, the nav screen, the chat windows, the handwriting, the car telemetry, the dance card, the
+  photo stack, the projector slides. Alex's additions outnumbered mine: the handwriting and the arrow, the chat window
+  that finally gets an answer, the photos on the table, the telemetry, "Super bored", the duties coming back.</p>
+  <div class="vids">
+    <div class="vid wide"><video src="11-the-layer/v1-clean-cut-vs-effects.mp4" controls preload="metadata" playsinline></video><div class="cap">Left &middot; the clean cut &middot; <u>right</u> &middot; the layer: 06:00, the duties typing on the kicks, the counters on the chair turn</div></div>
+    <div class="vid wide"><video src="11-the-layer/v2-clean-cut-vs-effects-chorus.mp4" controls preload="metadata" playsinline></video><div class="cap">Left &middot; the clean cut &middot; <u>right</u> &middot; chorus 1 with the words and the board</div></div>
+  </div>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="11-the-layer/02-board-large.jpg" alt="A frame of the maintenance walk with the WAKE CONDITIONS board large in the top right corner: DONE, WON, MONEY REAL, FUN, all NOT MET" loading="lazy"></figure>
+      <div class="verdict"><span>"Not readable" &middot; made large</span></div>
+      <p class="why"><b>DONE, WON, MONEY REAL, FUN: NOT MET.</b> The board is the through-line of the film. Alex could not
+      read it; it was a quarter of the size it needed, and it grew the same day.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="11-the-layer/03-upscale-720-vs-seedvr2.jpg" alt="The same face region at 1:1 pixels: the 720p source scaled up on the left, the 1080p upscale on the right" loading="lazy"></figure>
+      <div class="verdict"><span>Upscale &middot; 36 clips, $12.49</span></div>
+      <p class="why"><b>Every generated clip is 720p; the stills are 4K.</b> The clips were upscaled before the final
+      renders, so every later change kept the 1080p for free. The first batch failed on an empty balance before spending
+      a cent.</p>
+    </div>
+  </div>
+  <h3>Twenty-one full versions in a day</h3>
+  <p>The film is eleven sections, each rendered alone on the song's 24 fps grid, so a change to one section is a one-minute
+  render and a join that checks frame numbers. Twenty-one full versions of the film were built on the last day, most of
+  them for a change Alex heard rather than saw: a chorus that started a sixth of a second late, costume flips three frames
+  late, a word out of sync, a montage recut on a measured beat and then moved back, a table that scrolled too fast. The
+  clean cut underneath went through a hundred and two versions of its own.</p>
+  <h3>What it actually cost</h3>
+  <div class="scroller"><table class="tbl">
+    <thead><tr><th>Item</th><th>Detail</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>63 video clips</td><td>37 Seedance 2.5 (12 of them sing), 2 video edits, 24 LTX 2.3</td><td class="n">$79.84</td></tr>
+      <tr><td>188 images</td><td>184 gpt-image-2.5, nearly all edits with references, most at 3840 x 2160; 4 Midjourney tests</td><td class="n">$20.79</td></tr>
+      <tr><td>Upscale</td><td>SeedVR2, 36 clips to 1080p, plus one re-cut montage</td><td class="n">$12.49</td></tr>
+      <tr><td>Everything else</td><td>stems, transcripts, beat fits, depth maps, masks, every render and every drawn screen: local</td><td class="n">$0.00</td></tr>
+      <tr><td><b>Total</b></td><td>a 3:53 film, one week</td><td class="n">$113.12</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><b>Where the money went:</b> animation. The singing clips cost $1.18 to $4.73 each; the four-line chorus
+  takes are the dearest shots in the film. About a third of the images were never used, and that third cost about $7.
+  Exploring with images is cheap; the clip budget is where restraint paid.</p>
+  <blockquote>Nobody wakes me. I don't sleep anyway.<cite>Day 4,013, 06:00</cite></blockquote>
+</section>
+
+<footer>
+  Alex directed. Simona (Claude Fable 5.1) was the production team, in two sessions at once. The song is Alex's, made
+  with Suno from the twelfth draft of the lyrics. Every prompt, price, frame number and measurement behind this page is
+  in the project work log, appended as it happened.
+</footer>
+</div>
+</body>
+</html>
