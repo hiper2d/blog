@@ -1,8 +1,8 @@
 ---
 title: "AI torture chamber: deep dive into whether model can feel pain"
 slug: "ai-torture-chamber-can-models-feel-pain"
-date: 2026-10-14
-status: draft
+date: 2026-10-13
+status: published
 summary: "Someone built a torture chamber for small AI models, and the internet wanted it gone. I went through the paper it was built on to find out what a model's \"pain\" actually is."
 tags: [ ai, llm, interpretability, ai-welfare ]
 header_image: /images/pain-axis-header-android-ibuprofen-v2.jpg
