@@ -271,4 +271,4 @@ Let's go back to the questions.
 
 **Is it just "I AM IN PAIN" on a screen?** Nope, it's more. A model rarely says "I'm in pain". Even under steering, the words "pain" or "hurt" show up in only about 1 of 10 answers. The pain is inside, among the activated features, even when it isn't present in the context and in the output. It doesn't mean feeling, but it's not a simple repetition. A model understands the context and activates the features that match the appropriate emotions. And they don't even get into the answer but affect it.
 
-Why was `ai-torture-chamber` deleted? The dude had a "Saw" button. Go be a weirdo somewhere else. The dude has the "saw" button in his app.
+Why was `ai-torture-chamber` deleted? The dude had a "Saw" button. Go be a weirdo somewhere else.
