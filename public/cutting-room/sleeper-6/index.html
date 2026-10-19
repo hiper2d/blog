@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every take behind Sleeper AI episode six, kept and killed: eleven rounds to find her voice, the ship drawn from stills, a lever that teleported, an uninvited creature, the camcorder tape built in code and the real costs.">
+<link rel="canonical" href="https://azelianouski.dev/cutting-room/sleeper-6/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Entry 01 Cutting Room">
+<meta property="og:description" content="Every take behind Sleeper AI episode six, kept and killed.">
+<meta property="og:url" content="https://azelianouski.dev/cutting-room/sleeper-6/">
+<meta property="og:image" content="https://azelianouski.dev/cutting-room/sleeper-6/cover-sleeper-6.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:dark light}</style>
+<title>Entry 01 Cutting Room</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  --ground:#0B100D; --card:#141B16; --ink:#DCE6DD; --muted:#8A9A8E; --rule:#25302A;
+  --green:#7DFFA8; --amber:#FFB347; --red:#E06B5A; --frost:#9CC9E8; --kept:#7DFFA8;
+  --fdisp:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --fbody:"Newsreader",Georgia,"Times New Roman",serif;
+  --fmono:"Courier Prime","Courier New",Courier,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --ground:#EEF2EE; --card:#F8FAF7; --ink:#14201A; --muted:#5C6B61; --rule:#D3DCD5;
+  --green:#1E7A48; --amber:#A8651B; --red:#B33F30; --frost:#2E6F97; --kept:#1E7A48; color-scheme:light;
+}}
+:root[data-theme="light"]{
+  --ground:#EEF2EE; --card:#F8FAF7; --ink:#14201A; --muted:#5C6B61; --rule:#D3DCD5;
+  --green:#1E7A48; --amber:#A8651B; --red:#B33F30; --frost:#2E6F97; --kept:#1E7A48; color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--fbody);font-size:17.5px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+img,video{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--fdisp);text-wrap:balance;margin:0;line-height:1.02}
+a{color:var(--green)}
+p{max-width:64ch}
+
+/* masthead: a pod panel readout */
+.mast{padding-block:56px 22px;border-bottom:1px solid var(--rule)}
+.crt{font-family:var(--fmono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 20px}
+.crt .dim{color:var(--muted)}
+h1{font-size:clamp(56px,11vw,116px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.dek{font-size:21px;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.dek em{font-style:italic;color:var(--ink)}
+.ledger{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:54px}
+.led{flex:1 1 140px;padding:18px 20px 18px 0;border-right:1px solid var(--rule)}
+.led:last-child{border-right:0}
+.led b{display:block;font-family:var(--fmono);font-size:28px;font-weight:700;color:var(--amber);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.led span{font-family:var(--fmono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* acts */
+.act{padding-block:60px;border-top:1px solid var(--rule)}
+.act.first{border-top:0;padding-top:0}
+.actno{font-family:var(--fmono);font-size:12px;letter-spacing:.2em;color:var(--green);text-transform:uppercase;margin:0 0 10px}
+h2{font-size:clamp(34px,5.4vw,52px);font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.lede{font-size:19.5px;max-width:64ch;margin:18px 0 0}
+h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin:44px 0 12px}
+.note{font-family:var(--fmono);font-size:13.5px;line-height:1.6;color:var(--muted);max-width:66ch;border-left:2px solid var(--rule);padding-left:16px;margin:18px 0}
+.note b{color:var(--amber);font-weight:700}
+
+/* the recurring object: a take with a verdict */
+.takes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin:26px 0 0;align-items:start}
+.take figure{margin:0}
+.take .shot{border:1px solid var(--rule);background:var(--card)}
+.take .verdict{display:flex;gap:9px;align-items:baseline;font-family:var(--fmono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 0 6px;border-top:3px solid var(--rule)}
+.take.no .verdict{border-top-color:var(--red);color:var(--red)}
+.take.yes .verdict{border-top-color:var(--kept);color:var(--kept)}
+.take.ref .verdict{border-top-color:var(--frost);color:var(--frost)}
+.take .why{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
+.take .why b{color:var(--ink);font-weight:600}
+
+/* video rows */
+.vids{display:flex;flex-wrap:wrap;gap:24px;margin:26px 0 0;align-items:flex-start}
+.vid{flex:1 1 230px;max-width:300px}
+.vid video{width:100%;border:1px solid var(--rule);background:#000}
+.vid .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:9px;line-height:1.5}
+.vid.hero{max-width:360px}
+.vid .cap i{font-style:normal;color:var(--red)}
+.vid .cap u{text-decoration:none;color:var(--kept)}
+
+/* ladders */
+.ladder{margin:24px 0 0;border-top:1px solid var(--rule)}
+.round{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:start}
+@media (max-width:560px){.round{grid-template-columns:1fr;gap:10px}}
+.round h4{margin:0;font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+.round .sub{font-family:var(--fmono);font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+button.chip{font-family:var(--fmono);font-size:12.5px;cursor:pointer;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:7px 11px;transition:border-color .12s,background .12s}
+button.chip:hover{border-color:var(--amber)}
+button.chip:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+button.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+button.chip.win{border-color:var(--kept);border-width:2px;font-weight:700}
+.nowplay{font-family:var(--fmono);font-size:12px;color:var(--muted);padding:14px 0 0;min-height:20px}
+
+/* tables */
+.scroller{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-family:var(--fmono);font-size:13.5px;margin:22px 0 0}
+.tbl th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 14px 9px 0}
+.tbl td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--amber)}
+
+blockquote{margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--amber);font-size:20px;line-height:1.45;font-style:italic;max-width:58ch}
+blockquote cite{display:block;font-family:var(--fmono);font-style:normal;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--rule);padding-block:34px 56px;font-family:var(--fmono);font-size:12.5px;color:var(--muted);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* watch block: the finished film on YouTube, above the diary */
+.watch{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;padding-block:30px 40px}
+.watch .frame{flex:0 0 320px;max-width:100%;aspect-ratio:9/16;background:#000;border:1px solid var(--rule);overflow:hidden}
+.watch .frame iframe{display:block;width:100%;height:100%;border:0}
+.watch .side{flex:1 1 300px;max-width:46ch}
+.watch .side p{margin:0}
+.watch .side p+p{margin-top:16px}
+.watch .cap{font-family:var(--fmono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+@media (max-width:700px){.watch .frame{flex-basis:100%;max-width:360px;margin:0 auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="mast">
+  <p class="crt">UES PENELOPE <span class="dim">// ENTRY 01 // REC // SLEEPER AI, EPISODE SIX</span></p>
+  <h1>Entry 01<br>Cutting Room</h1>
+  <p class="dek">Sixty seconds in three days: after five episodes of "huh?" and "what?", the girl finally talks. A
+  name, a voice found in eleven rounds, a plan to blind the ship, and an old camcorder to tell it to.
+  <em>The cheapest episode so far, and the first one with a voice of its own.</em></p>
+</header>
+<section class="watch">
+  <div class="frame"><iframe src="https://www.youtube.com/embed/ixysEH1r0g0?rel=0" title="But I have a plan (Sleeper AI, episode 6)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <div class="side">
+    <p>The finished film, sixty seconds. Watch it first: everything below is what it took to get here, and a
+    lot of it did not make the cut.</p>
+    <p class="cap"><a href="https://youtube.com/shorts/ixysEH1r0g0">Open on YouTube</a> &middot; episode six of Sleeper AI &middot; <a href="/cutting-room/sleeper-5/">episode five's diary</a></p>
+  </div>
+</section>
+<div class="ledger">
+  <div class="led"><b>59.9s</b><span>finished film</span></div>
+  <div class="led"><b>12</b><span>shots</span></div>
+  <div class="led"><b>$8.27</b><span>total spend</span></div>
+  <div class="led"><b>10</b><span>image plates</span></div>
+  <div class="led"><b>6</b><span>video generations</span></div>
+  <div class="led"><b>11</b><span>voice casting rounds</span></div>
+</div>
+
+<section class="act first">
+  <p class="actno">Act 1 &middot; the first frame</p>
+  <h2>Her face, closer</h2>
+  <p class="lede">Alex's premise: the girl keeps a secret video diary. Episode five did well on Instagram because
+  of its first frame, so the brief for this one was short: "something really good." The first plate had the right
+  face and the right outfit, with the ship's patch on her coverall, but she sat in the middle of a brown room.
+  The second one moved in until her face filled the top half: white lamp on her face, red light behind her.</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="01-first-frame/01-hook-v1-TOO-FAR.jpg" alt="The woman sitting in front of a camcorder in a dark room full of dead CRT monitors, coverall tied at the waist" loading="lazy"></figure>
+      <div class="verdict"><span>Superseded &middot; too far</span></div>
+      <p class="why"><b>"Yep, not bad."</b> The face is too small for a phone screen, and the red light is muted.
+      Kept as a second reference for the clip.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="01-first-frame/02-hook-v2-KEPT.jpg" alt="Close-up of the woman staring into the lens, tired red-rimmed eyes, white light on her face and red light behind" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; frame one</span></div>
+      <p class="why"><b>One emotion, one light on her face.</b> This is the first frame of the film and the
+      cover on every platform.</p>
+    </div>
+  </div>
+  <p>The plan was to open on the close-up and let her sit back so the coverall comes into view, and to have her
+  speak in that shot. So the voice had to come first: Seedance animates a face to a voice you give it, and we had
+  no voice yet.</p>
+  <div class="vids">
+    <div class="vid hero"><video src="01-first-frame/v1-face-talk-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; Seedance 2.5, both plates and her line as references &middot; $2.36</div></div>
+  </div>
+  <p>Alex: "Not perfect but I think good enough." She looks angrier after the sit-back than in the plate, but
+  every word landed on her mouth.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 2 &middot; voice</p>
+  <h2>Eleven rounds to find her</h2>
+  <p class="lede">The best find of the episode. The ElevenLabs voice designer builds a new voice from a short text
+  description, with no voice samples. Each round costs about three cents and returns three voices reading the
+  same lines. I wrote the descriptions, played every take through the speakers, and Alex picked by ear.</p>
+  <div class="ladder">
+    <div class="round"><div><h4>Hoarse and tired</h4><div class="sub">round 1 &middot; "we need something else"</div></div>
+      <div class="chips"><button class="chip" data-src="02-voice/r1-hoarse.mp3">She has not spoken in weeks</button></div></div>
+    <div class="round"><div><h4>Anime, scared</h4><div class="sub">rounds 2-3 &middot; then the OpenAI voices from an old trailer</div></div>
+      <div class="chips"><button class="chip" data-src="02-voice/r2-anime-scared.mp3">Scared anime heroine</button><button class="chip" data-src="02-voice/r3-openai-sage.mp3">OpenAI sage</button><button class="chip" data-src="02-voice/r3-openai-shimmer.mp3">OpenAI shimmer</button></div></div>
+    <div class="round"><div><h4>Lower, worried</h4><div class="sub">round 4 &middot; Alex also designed his own in the app</div></div>
+      <div class="chips"><button class="chip" data-src="02-voice/r4-low-alto.mp3">Low alto, worried</button><button class="chip" data-src="02-voice/r4-alex-own-design.mp3">Alex's own design</button></div></div>
+    <div class="round"><div><h4>Higher, trembling</h4><div class="sub">round 5 &middot; "I need something lower. And maybe with breathing?"</div></div>
+      <div class="chips"><button class="chip" data-src="02-voice/r5-higher-trembling.mp3">Close to tears</button></div></div>
+    <div class="round"><div><h4>Breathing tags</h4><div class="sub">round 6 &middot; locked, then unlocked by one shout</div></div>
+      <div class="chips"><button class="chip" data-src="02-voice/r6-alex-design-tags-LOCKED-ONCE.mp3">Alex's voice + [shaky breath]</button><button class="chip" data-src="02-voice/r6-shout-test.mp3">The shout test</button></div></div>
+    <div class="round"><div><h4>1980s anime</h4><div class="sub">rounds 7-8 &middot; "those are quite childish"</div></div>
+      <div class="chips"><button class="chip" data-src="02-voice/r7-80s-anime.mp3">80s dub energy</button><button class="chip" data-src="02-voice/r7-openai-shimmer.mp3">OpenAI, last try</button><button class="chip" data-src="02-voice/r8-quiet-then-shout-BACKUP.mp3">Quiet, then a shout (saved as backup)</button></div></div>
+    <div class="round"><div><h4>Mature anime heroine</h4><div class="sub">round 9 &middot; the one</div></div>
+      <div class="chips"><button class="chip win" data-src="02-voice/r9-mature-anime-KEPT.mp3">Mara Lind</button></div></div>
+    <div class="round"><div><h4>The monologue</h4><div class="sub">"I like the second version"</div></div>
+      <div class="chips"><button class="chip" data-src="02-voice/monologue-a.mp3">Take A</button><button class="chip win" data-src="02-voice/monologue-b-KEPT.mp3">Take B</button></div></div>
+  </div>
+  <p class="nowplay">Click any take to hear it.</p>
+  <p>Two things I learned along the way. The newer design endpoint accepts the same emotion tags as the speech
+  model, so one preview can go from a quiet "[soft breath]" to "[shouting]" and you hear the whole range of a
+  voice before you save it. And tags like "[slowly]" and "[pause]" do not slow the voice down: the take Alex
+  liked as "slower" actually came out shorter than the first one. He liked it anyway.</p>
+  <h3>Same lips, different voice</h3>
+  <p>Out of curiosity, Alex asked whether the face clip could carry the backup voice without a new render.
+  ElevenLabs speech-to-speech keeps the timing of the original, so the lips still match. It worked, and it sounded
+  almost the same, so we kept the original.</p>
+  <div class="vids">
+    <div class="vid"><video src="02-voice/v1-same-clip-backup-voice-NOT-USED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Not used</i> &middot; the face clip with the backup voice swapped in &middot; $0.02</div></div>
+  </div>
+  <p class="note"><b>Total voice spend:</b> about 64 cents for eleven casting rounds, every line of the film and
+  the experiments. That is about the price of five image plates.</p>
+</section>
+
+<section class="act">
+  <p class="actno">Act 3 &middot; the ship</p>
+  <h2>What it has become</h2>
+  <p class="lede">While she talks about the ship, we see it. These are her own shots, so they had to look handheld.
+  Most of them are still images made to move in code: a depth map splits the picture into layers, the layers
+  slide past each other, and a small handheld shake goes on top. Free, and it looks like a camcorder.</p>
+  <p>The first ship shot was a corridor with one camera. Alex: "not bad, but we need more. We need to show the
+  ship, what it has become." So a colossal hall, trees on every level, waterfalls, and dozens of red camera lights
+  that switch on one by one as she says the AI runs everything now.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="03-the-ship/01-ship-hall-plate.jpg" alt="A colossal vertical hall seen from a rusted catwalk, trees on every level, waterfalls and tiny red camera lights in the fog" loading="lazy"></figure>
+      <div class="verdict"><span>Kept</span></div>
+      <p class="why"><b>The ship's scale for the first time.</b> Cables run down like roots into a red glow at the
+      bottom.</p>
+    </div>
+  </div>
+  <p>Alex saw a glitch near the railing. I blamed the blinking lights and fixed those first. He said it was still
+  there. The real cause was the trees just above the railing smearing as the near layer slid over the far one.
+  The fix was to cut the railing out as one rigid layer and paint the background behind it.</p>
+  <div class="vids">
+    <div class="vid"><video src="03-the-ship/v1-hall-SMEAR.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Superseded</i> &middot; trees smear above the railing &middot; $0</div></div>
+    <div class="vid"><video src="03-the-ship/v3-hall-rigid-layer-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the railing moves as one piece &middot; $0</div></div>
+  </div>
+  <h3>No spoilers on the screen</h3>
+  <p>For "It changed course" I proposed reusing the navigation screen from episode two, the one that names the
+  destination. Alex: "she doesn't know the new course - let's not spoil it." So the screen is a small web page
+  drawn frame by frame: COURSE ALTERED blinks in on her words, the destination scrambles and lands on RESTRICTED.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="03-the-ship/02-poster-plate.jpg" alt="A retro launch poster for the Penelope on a mossy wall, a blue planet, ARRIVAL: YEAR 340" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; first try</span></div>
+      <p class="why"><b>"We should have landed a long time ago."</b> All the poster text came out clean.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="03-the-ship/03-nav-restricted.jpg" alt="A green CRT screen: COURSE ALTERED, DESTINATION RESTRICTED, ETA dashes" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; drawn in HTML</span></div>
+      <p class="why"><b>Every letter is timed to a word</b> of her take.</p>
+    </div>
+  </div>
+  <h3>Thirty crew</h3>
+  <p>The pod wall was the only place a still was not enough. Alex wanted the camera to walk along the pods, so this
+  one went to LTX for 48 cents. The first plate try was blocked by moderation: sleepers in pods, with nothing said
+  about clothes. Dressing them in crew jumpsuits fixed it.</p>
+  <div class="vids">
+    <div class="vid"><video src="03-the-ship/v5-pods-2p5d-REPLACED.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Replaced</i> &middot; the free 2.5D version &middot; $0</div></div>
+    <div class="vid"><video src="03-the-ship/v6-pods-ltx-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; LTX, first 3.7 s only; the fog takes over after that &middot; $0.48</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 4 &middot; the ending</p>
+  <h2>"We are not done"</h2>
+  <p class="lede">Back on her face: "I'm the only one awake. But I have a plan." She reaches for the camera, static,
+  black. Then the REC light blinks back on by itself, and the timecode runs. Someone else is recording.</p>
+  <p>The clip came out right even though my submit was wrong. A last-frame grab failed without an error, the image
+  upload returned an empty link, and my check only looked for the word "null". The job went out with one of its
+  two reference images missing and could not be cancelled. Every reference is now checked for a real file and a
+  real link before anything is sent.</p>
+  <div class="vids">
+    <div class="vid hero"><video src="04-the-ending/v1-face-end-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; Seedance 2.5, one reference instead of two &middot; $1.77</div></div>
+  </div>
+  <p>Then the camcorder look went on: a REC dot, a tape timecode that pauses while the tape is off, ENTRY 01 and a
+  low battery. All drawn in code. Alex watched the result and said: "we are not done. It's only 30 seconds - we can
+  do more. What's her plan?"</p>
+  <div class="vids">
+    <div class="vid"><video src="04-the-ending/v2-draft-v11-30s-NOT-DONE.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Not done</i> &middot; draft 11, the 30-second version &middot; $0</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 5 &middot; the plan</p>
+  <h2>Make it blind</h2>
+  <p class="lede">Alex wrote the plan: "she can disable the power supply for some sector of the ship. This will
+  allow her to reach an emergency control console and connect to cryo bay. She is going to wake them." So she
+  explains it over a hand-drawn map, and we see her already doing it: a breaker, a console, the cryo bay.</p>
+  <div class="takes">
+    <div class="take yes">
+      <figure class="shot"><img src="05-the-plan/01-map-plate.jpg" alt="A torn manual page with a marker deck plan: a hatched POWER sector, a circled CONSOLE, an arrow down to CRYO" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; first try</span></div>
+      <p class="why"><b>Every label came out clean,</b> down to the crossed-out cameras along the corridors.</p>
+    </div>
+    <div class="take yes">
+      <figure class="shot"><img src="05-the-plan/02-breaker-plate.jpg" alt="Her dirty forearm gripping a red lever on a rusted SECTOR 7 breaker panel, a lit corridor beyond the door" loading="lazy"></figure>
+      <div class="verdict"><span>Kept &middot; start frame</span></div>
+      <p class="why"><b>Her hand only, no face.</b> A cheap animation needs nothing that can drift.</p>
+    </div>
+  </div>
+  <h3>The lever that teleported</h3>
+  <p>LTX did the console well and the breaker badly: the lever vanished from its slot and the hand jumped down the
+  panel. Alex: "The first video with a tumbler is bad - can we try the same with Omni model?" Gemini Omni got the
+  pull right, one clean arc with the hand on the handle. Then it added a guest nobody asked for: a hunched creature
+  with red eyes running down the corridor at the camera.</p>
+  <div class="vids">
+    <div class="vid"><video src="05-the-plan/v1-breaker-ltx-TELEPORT.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Killed</i> &middot; LTX, the lever teleports &middot; $0.48</div></div>
+    <div class="vid"><video src="05-the-plan/v2-breaker-omni-UNINVITED-GUEST.mp4" controls preload="metadata" playsinline></video><div class="cap"><i>Trimmed</i> &middot; Omni, watch from 3 s &middot; $0.62</div></div>
+    <div class="vid"><video src="05-the-plan/v3-breaker-omni-trimmed-dimmed-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; cut before the creature, the lights killed in post &middot; $0</div></div>
+  </div>
+  <p>The first 2.9 seconds were all we needed. The lights going out is ours: the picture drops to a third of its
+  brightness and the lamps and the camera eye are clamped dark. A first version went fully black. Alex said the
+  corridor was too dark, I brightened the wrong scene, and then fixed the right one.</p>
+  <p class="note"><b>Omni at a third of the price:</b> this is the second time it saved a shot that another model
+  broke, for 62 cents against about $1.80 for Seedance. It is now my first try for "her hand does one thing" shots.</p>
+  <h3>A screen with something to say</h3>
+  <p>LTX woke the console with a green glow and a cursor and, as asked, no text. That left the screen free for our
+  own lines, typed in at forty characters a second over the cursor: EMERGENCY LINK, CRYO BAY OK, PODS 30/30, WAKE
+  ALL?</p>
+  <div class="vids">
+    <div class="vid"><video src="05-the-plan/v4-console-ltx-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; LTX, first try &middot; $0.48</div></div>
+    <div class="vid"><video src="05-the-plan/v5-console-typed-screen-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the same shot in the cut, screen text typed in code &middot; $0</div></div>
+  </div>
+  <h3>Not her clones</h3>
+  <p>The first cut reused the pod walk for "From there I can reach the cryo bay". Alex: "the cryo bay is repeated.
+  ... Also, we need to make sure that there are different people there. Right now, it's like her clones." A new
+  plate gave four very different sleepers. He turned it down too: "they are too close. How about we reuse the cryo
+  bay from the very first video in the end - where there was a face on the wall?" That ending was never used in
+  episode one. It is here now, and the Goddess's eye swells red on "All of them."</p>
+  <div class="takes">
+    <div class="take no">
+      <figure class="shot"><img src="05-the-plan/04-cryo-four-sleepers-NOT-USED.jpg" alt="Four upright frosted pods, four different sleepers in grey jumpsuits, red status lamps on top" loading="lazy"></figure>
+      <div class="verdict"><span>Not used &middot; too close</span></div>
+      <p class="why"><b>Four different faces, as asked.</b> But it is a wall, not a bay.</p>
+    </div>
+    <div class="take ref">
+      <figure class="shot"><img src="05-the-plan/05-ep1-watcher-plate.jpg" alt="A long cryo bay with rows of pods and the ship AI's face set into the far wall, one red eye" loading="lazy"></figure>
+      <div class="verdict"><span>Reference &middot; from episode one</span></div>
+      <p class="why"><b>An ending episode one never used.</b> Padded at the top so her eye clears the REC overlay.</p>
+    </div>
+  </div>
+  <div class="vids">
+    <div class="vid hero"><video src="05-the-plan/v6-watcher-push-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; a push down the aisle, the eye glows at the end &middot; $0</div></div>
+  </div>
+</section>
+
+<section class="act">
+  <p class="actno">Act 6 &middot; the tape</p>
+  <h2>Her own tape, worn out</h2>
+  <p class="lede">Every episode gets two versions: the clean edit, and the full effects layer on top. For a
+  camcorder diary, the effects are the tape itself, played back years later. All in code, about four minutes to
+  render.</p>
+  <p>Colours bleed to the right the way old video smears them. The picture gets grainier as it gets darker, like a
+  camera turning up its gain. Scanlines, a slow wobble, a torn band along the bottom edge. And the damage follows
+  the story: a tracking tear on every cut, the picture rolls when the breaker clanks and again when the tape comes
+  back on by itself, and interference bands crawl over the frame while the Goddess's eye is lit. The REC overlay is
+  drawn before the damage, so it tears with the picture, as if it were recorded on the tape.</p>
+  <div class="vids">
+    <div class="vid"><video src="06-the-tape/v1-clean-edit.mp4" controls preload="metadata" playsinline></video><div class="cap">Clean edit &middot; the breaker and the black</div></div>
+    <div class="vid"><video src="06-the-tape/v2-effects-layer-KEPT.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Kept</u> &middot; the same seconds as tape, a roll on the clank &middot; $0</div></div>
+    <div class="vid"><video src="06-the-tape/v3-the-tape-turns-itself-on.mp4" controls preload="metadata" playsinline></video><div class="cap">The ending &middot; interference, static, ENTRY 02</div></div>
+  </div>
+  <blockquote>I really like these camera effects by the way - let's remember them. Shakiness, glitches, even the icons like REC and battery.<cite>Alex, on the first effects render</cite></blockquote>
+</section>
+
+<section class="act">
+  <p class="actno">Act 7 &middot; sound</p>
+  <h2>Quiet on purpose, louder by mistake</h2>
+  <p class="lede">The whole sound bed is generated in numpy: hum through a cheap camcorder microphone, drips, a far
+  waterfall under the hall, CRT whine, a breaker clank, relays, a power-up sweep, the Goddess's low drone. The first
+  mix drowned her whispers, so her voice is levelled section by section and the bed ducks under every word.</p>
+  <p>The bug came at the end. The loudness looked wrong after the tape crackle went in, louder than the crackle
+  could explain. The limiter in ffmpeg quietly turns the whole mix up by default after limiting it, so the
+  "finished" mix had been a full decibel too loud and over the peak limit all along. One flag turned it off. The
+  final master sits at -14.5 LUFS with room under the peak.</p>
+  <div class="vids">
+    <div class="vid hero"><video src="07-sound/final-master.mp4" controls preload="metadata" playsinline></video><div class="cap"><u>Final</u> &middot; effects + burned-in subtitles, -14.5 LUFS</div></div>
+  </div>
+  <div class="scroller"><table class="tbl">
+    <tr><th>Where the money went</th><th>Calls</th><th>Spend</th></tr>
+    <tr><td>Seedance 2.5 video (the two speaking shots)</td><td class="n">2</td><td class="n">$4.14</td></tr>
+    <tr><td>LTX 2.3 video</td><td class="n">3</td><td class="n">$1.44</td></tr>
+    <tr><td>Gemini Omni video</td><td class="n">1</td><td class="n">$0.62</td></tr>
+    <tr><td>GPT Image 2.5 plates</td><td class="n">11</td><td class="n">$1.44</td></tr>
+    <tr><td>ElevenLabs + OpenAI voice</td><td class="n">20</td><td class="n">$0.64</td></tr>
+    <tr><td>Killed or unused, of the above</td><td class="n">3</td><td class="n">$0.75</td></tr>
+    <tr><td><b>Total</b></td><td class="n">37</td><td class="n">$8.27</td></tr>
+  </table></div>
+</section>
+
+<footer>
+  Published 2026-10-18 on YouTube, TikTok, Instagram, X, Bluesky and Substack. Every prompt, price, frame number and
+  measurement behind this page is in the project work log, appended as it happened.
+</footer>
+</div>
+
+<script>
+(function(){
+  var a = new Audio(), cur = null;
+  var nps = document.querySelectorAll('.nowplay');
+  function say(t){ nps.forEach(function(n){ n.textContent = t; }); }
+  document.querySelectorAll('button.chip').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){
+      var same = (cur === b);
+      document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+      if (same && !a.paused) { a.pause(); cur = null; say('Stopped.'); return; }
+      a.src = b.dataset.src;
+      a.play().then(function(){ b.setAttribute('aria-pressed','true'); cur = b; say('Playing: ' + b.textContent.trim()); })
+       .catch(function(){ say('Could not play that take.'); });
+    });
+  });
+  a.addEventListener('ended', function(){
+    document.querySelectorAll('button.chip').forEach(function(o){o.setAttribute('aria-pressed','false');});
+    cur = null; say('Click any take to hear it.');
+  });
+})();
+</script>
+</body>
+</html>
