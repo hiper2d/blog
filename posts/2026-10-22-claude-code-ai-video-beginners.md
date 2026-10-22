@@ -5,7 +5,7 @@ date: 2026-10-22
 status: published
 summary: "I start in an empty folder with a fresh Claude Code and teach it to make images, voices and music, and to edit them with FFmpeg. At the end it makes a 101-second narrated space story. Every prompt I used is here, ready to copy."
 tags: [ ai, video-production, claude-code, ffmpeg, tutorial ]
-header_image: /images/aivideo-ep2-header-item-nine.jpg
+header_image: /images/aivideo-ep2-header-item-nine-clean.jpg
 ---
 
 ## The way of the Jedi
