@@ -5,7 +5,7 @@ date: 2026-10-22
 status: published
 summary: "I start in an empty folder with a fresh Claude Code and teach it to make images, voices and music, and to edit them with FFmpeg. At the end it makes a 101-second narrated space story. Every prompt I used is here, ready to copy."
 tags: [ ai, video-production, claude-code, ffmpeg, tutorial ]
-header_image: /images/aivideo-ep2-cover.jpg
+header_image: /images/aivideo-ep2-header-item-nine.jpg
 ---
 
 ## The way of the Jedi
@@ -182,7 +182,7 @@ The same line, three engines:
 | Gemini TTS | $0.0025 | a style prompt in plain words |
 | ElevenLabs | $0.0071 | voice settings, a huge voice library, cloning |
 
-You can hear all three in the video at [10:23](https://youtu.be/Vc7AJ4xCl-U?t=623).
+You can hear all three in the video at [10:30](https://youtu.be/Vc7AJ4xCl-U?t=630).
 
 ## Music
 
@@ -226,7 +226,7 @@ There is one unwanted effect: the shaking. Zooming recalculates the frame size o
 
 <div style="position:relative;width:100%;aspect-ratio:16/9;margin:1.5rem 0 2rem;">
   <iframe
-    src="https://www.youtube-nocookie.com/embed/Vc7AJ4xCl-U?start=857"
+    src="https://www.youtube-nocookie.com/embed/Vc7AJ4xCl-U?start=861"
     title="The Silent Station, made from one prompt"
     style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:4px;"
     loading="lazy"
@@ -235,7 +235,7 @@ There is one unwanted effect: the shaking. Zooming recalculates the frame size o
   ></iframe>
 </div>
 
-*The story starts at 14:17 in the video.*
+*The story starts at 14:21 in the video.*
 
 > The station had been silent for three hundred days. It sat alone on the frozen plains of a nameless moon, where Saturn filled half the sky. [...] Then she leaned toward the microphone and said, "This is Kepler Station. We are still here."
 
