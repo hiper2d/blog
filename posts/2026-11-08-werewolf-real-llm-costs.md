@@ -3,7 +3,7 @@ title: "How much does it cost to run a text game with LLMs"
 slug: "werewolf-real-llm-costs"
 date: 2026-11-08
 status: published
-summary: "AI prices are confusing. Providers give you a lot of numbers and nothing to actually know how much you are going to pay in the long run. There is no point in these input/cached/output token prices if you have no idea how many reasoning tokens you'll spend on your tasks. How much will be cached. We are going to review the real-world usage of 27 frontier models."
+summary: "AI costs are confusing. Providers give you a lot of numbers and nothing to actually know how much you are going to pay in the long run. There is no point in these input/cached/output token prices if you have no idea how many reasoning tokens you'll spend on your tasks. How much will be cached. We are going to review the real-world usage of 27 frontier models."
 tags: [ ai, llm, pricing, prompt-caching ]
 header_image: /images/werewolf-costs-intro.jpg
 ---
