@@ -360,4 +360,10 @@ Need to do some digging.
 - Use classifiers for the game logic where possible.
 - Check your cost tracking against the balance every month. And in general, analyze statistics all the time.
 
+## The numbers keep growing
+
+The [Models page](https://aiwerewolf.net/models) in AI Werewolf shows the effective cost per turn for every model in the game, measured from real games. I re-measure it as the stats grow, so it works as a benchmark that keeps updating.
+
+It's biased. It reflects my use case, my bugs, and the cheap models people pick the most. But who said the other benchmarks are better? At least this one comes from the real world. Your project will probably look more like mine than like a generic benchmark.
+
 ![The Werewolf host at his table with a glass of whiskey.](/images/werewolf-costs-outro.jpg)
